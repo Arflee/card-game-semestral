@@ -21,7 +21,9 @@ public class SlidingDialogueText : MonoBehaviour
     private bool _isSkipped;
     private int dialogueIndex = 0;
 
-    private void Start()
+    public event Action OnDialogueSequenceEnd;
+
+    private void OnEnable()
     {
         inputActions = new StandardControls();
         inputActions.Player.Interact.Enable();
@@ -29,9 +31,19 @@ public class SlidingDialogueText : MonoBehaviour
         inputActions.Player.Interact.performed += OnMouseClick;
     }
 
+    private void OnDisable()
+    {
+        inputActions.Player.Interact.performed -= OnMouseClick;
+    }
+
     private void OnMouseClick(InputAction.CallbackContext context)
     {
-        if (dialogueIndex == _dialogueSequence.sequence.Length) return;
+        if (dialogueIndex == _dialogueSequence.sequence.Length)
+        {
+            OnDialogueSequenceEnd();
+            inputActions.Player.Interact.performed -= OnMouseClick;
+            return;
+        }
 
         if (_isTyping)
         {

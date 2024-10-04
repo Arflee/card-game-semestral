@@ -10,29 +10,40 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField]
     private SlidingDialogueText dialogueBubblePrefab;
 
-    private StandardControls inputActions;
+    private StandardControls _inputActions;
+    private SlidingDialogueText _createdBubble;
 
     private void OnEnable()
     {
-        inputActions = new StandardControls();
-        inputActions.Player.Interact.Enable();
+        _inputActions = new StandardControls();
+        _inputActions.Player.Interact.Enable();
 
-        inputActions.Player.Interact.performed += OnMouseClick;
+        _inputActions.Player.Interact.performed += OnMouseClick;
     }
 
     private void OnDisable()
     {
-        inputActions.Player.Interact.performed -= OnMouseClick;
+        _inputActions.Player.Interact.performed -= OnMouseClick;
     }
 
     private void OnMouseClick(InputAction.CallbackContext obj)
     {
-        SlidingDialogueText createdBubble = Instantiate(dialogueBubblePrefab, dialogueCanvas.transform);
-        createdBubble.gameObject.transform.localScale = new Vector2(0.1f, 0.1f);
+        _createdBubble = Instantiate(dialogueBubblePrefab, dialogueCanvas.transform);
+        _createdBubble.OnDialogueSequenceEnd += OnDialogueSequenceEnd;
+        _createdBubble.gameObject.transform.localScale = new Vector2(0.1f, 0.1f);
 
         //TODO Make appearing animation
-        createdBubble.gameObject.transform.DOScale(1f, 0.5f).SetEase(Ease.OutCubic);
+        _createdBubble.gameObject.transform.DOScale(1f, 0.5f).SetEase(Ease.OutCubic);
 
-        inputActions.Player.Interact.performed -= OnMouseClick;
+        _inputActions.Player.Interact.performed -= OnMouseClick;
+    }
+
+    private void OnDialogueSequenceEnd()
+    {
+        _createdBubble.gameObject.transform.DOScale(0f, 0.5f).SetEase(Ease.InCubic).OnComplete(() =>
+        {
+            _createdBubble.OnDialogueSequenceEnd -= OnDialogueSequenceEnd;
+            Destroy(_createdBubble.gameObject);
+        });
     }
 }

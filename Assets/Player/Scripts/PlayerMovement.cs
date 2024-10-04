@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private StandardControls controls;
+
     void OnEnable()
     {
         rb = GetComponent<Rigidbody2D>();
