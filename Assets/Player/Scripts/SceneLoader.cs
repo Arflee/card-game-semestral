@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,7 +12,7 @@ public class SceneLoader : MonoBehaviour
         {
             if (instance == null)
             {
-                GameObject go = new GameObject("Scene Loader");
+                GameObject go = new("Scene Loader");
                 instance = go.AddComponent<SceneLoader>();
                 DontDestroyOnLoad(go);
             }
@@ -33,9 +32,7 @@ public class SceneLoader : MonoBehaviour
         yield return new WaitUntil(() => asyncLoad.isDone);
 
         GameObject spawnPoint = GameObject.Find(spawnPointName);
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        PlayerMovement player = FindObjectOfType<PlayerMovement>();
         player.transform.position = spawnPoint.transform.position;
-        GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
-        camera.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, camera.transform.position.z);
     }
 }

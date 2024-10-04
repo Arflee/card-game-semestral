@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ScenePortal : MonoBehaviour
 {
@@ -10,7 +7,7 @@ public class ScenePortal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.TryGetComponent<PlayerMovement>(out var player))
         {
             SceneLoader.Instance.LoadScene(sceneName, spawnPointName);
         }
