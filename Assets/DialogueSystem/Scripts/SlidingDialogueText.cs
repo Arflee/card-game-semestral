@@ -18,6 +18,7 @@ public class SlidingDialogueText : MonoBehaviour
     private StandardControls inputActions;
     private bool _isTyping;
     private bool _isSkipped;
+    private int dialogueIndex = 0;
 
     private void Start()
     {
@@ -25,23 +26,25 @@ public class SlidingDialogueText : MonoBehaviour
         inputActions = new StandardControls();
         inputActions.Player.Interact.Enable();
 
-        inputActions.Player.Interact.performed += (context) => { if (_isTyping) _isSkipped = true; };
+        inputActions.Player.Interact.performed += OnMouseClick;
     }
 
-    private void Update()
+    private void OnMouseClick(InputAction.CallbackContext context)
     {
-        foreach (var dialogue in _dialogueSequence.sequence)
+        if (dialogueIndex == _dialogueSequence.sequence.Length) return;
+
+        if (_isTyping) _isSkipped = true;
+
+        if (!_isTyping)
         {
-            if (!_isTyping && inputActions.Player.Interact.IsPressed())
-            {
-                StartCoroutine(TypeSymbols(dialogue));
-            }
+            StartCoroutine(TypeSymbols(_dialogueSequence.sequence[dialogueIndex]));
         }
     }
 
     private IEnumerator TypeSymbols(string dialogue)
     {
         _isTyping = true;
+        _slidingText.text = string.Empty;
 
         for (int i = 0; i < dialogue.Length; i++)
         {
@@ -53,6 +56,7 @@ public class SlidingDialogueText : MonoBehaviour
                 _isSkipped = false;
                 break;
             }
+
             _slidingText.text += dialogue[i];
             _scrollRect.verticalNormalizedPosition = 0;
             yield return new WaitForSeconds(_dialogueSequence.delayPerSymbol);
@@ -60,5 +64,6 @@ public class SlidingDialogueText : MonoBehaviour
         }
 
         _isTyping = false;
+        dialogueIndex++;
     }
 }
