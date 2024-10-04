@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(TextMeshProUGUI))]
 public class SlidingDialogueText : MonoBehaviour
 {
     [SerializeField]
@@ -14,7 +13,9 @@ public class SlidingDialogueText : MonoBehaviour
     [SerializeField]
     private ScrollRect _scrollRect;
 
+    [SerializeField]
     private TextMeshProUGUI _slidingText;
+
     private StandardControls inputActions;
     private bool _isTyping;
     private bool _isSkipped;
@@ -22,7 +23,6 @@ public class SlidingDialogueText : MonoBehaviour
 
     private void Start()
     {
-        _slidingText = GetComponent<TextMeshProUGUI>();
         inputActions = new StandardControls();
         inputActions.Player.Interact.Enable();
 
@@ -33,9 +33,11 @@ public class SlidingDialogueText : MonoBehaviour
     {
         if (dialogueIndex == _dialogueSequence.sequence.Length) return;
 
-        if (_isTyping) _isSkipped = true;
-
-        if (!_isTyping)
+        if (_isTyping)
+        {
+            _isSkipped = true;
+        }
+        else
         {
             StartCoroutine(TypeSymbols(_dialogueSequence.sequence[dialogueIndex]));
         }

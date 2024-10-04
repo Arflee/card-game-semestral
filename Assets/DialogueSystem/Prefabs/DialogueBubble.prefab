@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 2870693463003613630}
   - component: {fileID: 8739868334914867508}
   - component: {fileID: 5732501455354126277}
+  - component: {fileID: 3184751573435302533}
   m_Layer: 5
   m_Name: DialogueBubble
   m_TagString: Untagged
@@ -226,6 +227,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: 0, y: 0, z: 0, w: 0}
   m_Softness: {x: 0, y: 0}
+--- !u!114 &3184751573435302533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309854110405630130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b794cb0a7071fc848af3859ee1dfd1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogueSequence: {fileID: 11400000, guid: d034edf45265ce249b46701168377799, type: 2}
+  _scrollRect: {fileID: 5407359389292932807}
+  _slidingText: {fileID: 8338448891109589092}
 --- !u!1 &2161527578144042842
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,7 +362,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1296110824864004119}
   m_HandleRect: {fileID: 8401902095021073824}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -628,7 +644,6 @@ GameObject:
   - component: {fileID: 8338330595502395828}
   - component: {fileID: 8338448891109589092}
   - component: {fileID: 3041103864457372569}
-  - component: {fileID: 6403719084358373367}
   m_Layer: 5
   m_Name: DialogueText
   m_TagString: Untagged
@@ -652,7 +667,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000015258789}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &8338330595502395828
@@ -766,20 +781,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
---- !u!114 &6403719084358373367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8732317817054037368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b794cb0a7071fc848af3859ee1dfd1b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _dialogueSequence: {fileID: 11400000, guid: d034edf45265ce249b46701168377799, type: 2}
-  _scrollRect: {fileID: 5407359389292932807}
 --- !u!1 &9022124968598426962
 GameObject:
   m_ObjectHideFlags: 0
