@@ -70,7 +70,7 @@ public class CardVisual : MonoBehaviour
         //Declarations
         parentCard = target;
         cardTransform = target.transform;
-        canvas = GetComponent<Canvas>();
+        canvas = GetComponentInParent<Canvas>();
         shadowCanvas = visualShadow.GetComponent<Canvas>();
 
         //Event Listening

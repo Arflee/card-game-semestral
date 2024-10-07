@@ -132,7 +132,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeedLimit: 100
+  selectionOffset: 50
   _isHovering: 0
+  PointerEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  PointerExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  PointerUpEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  PointerDownEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  BeginDragEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  EndDragEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  SelectEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  cardVisualPrefab: {fileID: 1057352984774220331, guid: 45bb3addbb980044283664edf8de3c34, type: 3}
+  instantiateVisual: 1
 --- !u!114 &1103735738293393698
 MonoBehaviour:
   m_ObjectHideFlags: 0

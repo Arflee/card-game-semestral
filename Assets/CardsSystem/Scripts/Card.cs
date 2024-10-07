@@ -15,7 +15,7 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 
     private bool _isDragging;
     private bool _wasDragged;
-    public bool _isHovering;
+    private bool _isHovering;
 
     private Vector3 _offset;
 
@@ -36,14 +36,26 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     public bool IsHovering => _isHovering;
     public bool IsDragging => _isDragging;
     public bool WasDragged => _wasDragged;
+
+    [SerializeField] private GameObject cardVisualPrefab;
     public CardVisual CardVisual { get; private set; }
+
     public float SelectionOffset => selectionOffset;
+
+
+    [SerializeField] private bool instantiateVisual = true;
 
     void Start()
     {
         _canvas = GetComponentInParent<Canvas>();
         _imageComponent = GetComponent<Image>();
         _mainCamera = Camera.main;
+
+        if (!instantiateVisual)
+            return;
+
+        CardVisual = Instantiate(cardVisualPrefab, _canvas.transform).GetComponent<CardVisual>();
+        CardVisual.Initialize(this);
     }
 
     void Update()
