@@ -45,7 +45,7 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 
     [SerializeField] private bool instantiateVisual = true;
 
-    void Start()
+    private void Start()
     {
         _canvas = GetComponentInParent<Canvas>();
         _imageComponent = GetComponent<Image>();
@@ -58,7 +58,7 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
         CardVisual.Initialize(this);
     }
 
-    void Update()
+    private void Update()
     {
         ClampPosition();
 
@@ -71,7 +71,7 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
         }
     }
 
-    void ClampPosition()
+    private void ClampPosition()
     {
         Vector2 screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         Vector3 clampedPosition = transform.position;

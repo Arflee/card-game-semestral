@@ -7,11 +7,11 @@ public class CardVisual : MonoBehaviour
     private bool initalize = false;
 
     [Header("Card")]
-    public Card parentCard;
+    private Card parentCard;
     private Transform cardTransform;
     private Vector3 rotationDelta;
     private int savedIndex;
-    Vector3 movementDelta;
+    private Vector3 movementDelta;
     private Canvas canvas;
 
     [Header("References")]
