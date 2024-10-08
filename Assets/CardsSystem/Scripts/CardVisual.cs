@@ -18,7 +18,6 @@ public class CardVisual : MonoBehaviour
     public Transform visualShadow;
     private float shadowOffset = 20;
     private Vector2 shadowDistance;
-    private Canvas shadowCanvas;
     [SerializeField] private Transform shakeParent;
     [SerializeField] private Transform tiltParent;
     [SerializeField] private Image cardImage;
@@ -71,7 +70,6 @@ public class CardVisual : MonoBehaviour
         parentCard = target;
         cardTransform = target.transform;
         canvas = GetComponentInParent<Canvas>();
-        shadowCanvas = visualShadow.GetComponent<Canvas>();
 
         //Event Listening
         parentCard.PointerEnterEvent.AddListener(PointerEnter);
@@ -198,7 +196,6 @@ public class CardVisual : MonoBehaviour
         canvas.overrideSorting = false;
 
         visualShadow.localPosition = shadowDistance;
-        shadowCanvas.overrideSorting = true;
     }
 
     private void PointerDown(Card card)
@@ -207,6 +204,5 @@ public class CardVisual : MonoBehaviour
             transform.DOScale(scaleOnSelect, scaleTransition).SetEase(scaleEase);
 
         visualShadow.localPosition += (-Vector3.up * shadowOffset);
-        shadowCanvas.overrideSorting = false;
     }
 }
