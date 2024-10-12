@@ -1,7 +1,10 @@
 using DG.Tweening;
+using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Canvas))]
 public class CardVisual : MonoBehaviour
 {
     private bool initalize = false;
@@ -12,7 +15,8 @@ public class CardVisual : MonoBehaviour
     private Vector3 rotationDelta;
     private int savedIndex;
     private Vector3 movementDelta;
-    private Canvas canvas;
+    private Canvas _globalCanvas;
+    private Canvas _localCanvas;
 
     [Header("References")]
     public Transform visualShadow;
@@ -20,7 +24,12 @@ public class CardVisual : MonoBehaviour
     private Vector2 shadowDistance;
     [SerializeField] private Transform shakeParent;
     [SerializeField] private Transform tiltParent;
+
+    [Header("Card info parameters")]
     [SerializeField] private Image cardImage;
+    [SerializeField] private TMP_Text cardName;
+    [SerializeField] private TMP_Text healthText;
+    [SerializeField] private TMP_Text attackText;
 
     [Header("Follow Parameters")]
     [SerializeField] private float followSpeed = 30;
@@ -64,12 +73,14 @@ public class CardVisual : MonoBehaviour
         shadowDistance = visualShadow.localPosition;
     }
 
-    public void Initialize(Card target, int index = 0)
+    public void Initialize(Card target, CombatCard combatProperties, int index = 0)
     {
         //Declarations
         parentCard = target;
         cardTransform = target.transform;
-        canvas = GetComponentInParent<Canvas>();
+        _globalCanvas = GetComponentInParent<Canvas>();
+        _localCanvas = GetComponent<Canvas>();
+        _localCanvas.worldCamera = Camera.main;
 
         //Event Listening
         parentCard.PointerEnterEvent.AddListener(PointerEnter);
@@ -79,6 +90,11 @@ public class CardVisual : MonoBehaviour
         parentCard.PointerDownEvent.AddListener(PointerDown);
         parentCard.PointerUpEvent.AddListener(PointerUp);
         parentCard.SelectEvent.AddListener(Select);
+
+        cardName.text = combatProperties.CardName;
+        healthText.text = combatProperties.Health.ToString();
+        attackText.text = combatProperties.Attack.ToString();
+
 
         //Initialization
         initalize = true;
@@ -165,12 +181,13 @@ public class CardVisual : MonoBehaviour
         if (scaleAnimations)
             transform.DOScale(scaleOnSelect, scaleTransition).SetEase(scaleEase);
 
-        canvas.overrideSorting = true;
+        _globalCanvas.overrideSorting = true;
     }
 
     private void EndDrag(Card card)
     {
-        canvas.overrideSorting = false;
+        _globalCanvas.overrideSorting = false;
+
         transform.DOScale(1, scaleTransition).SetEase(scaleEase);
     }
 
@@ -193,7 +210,7 @@ public class CardVisual : MonoBehaviour
     {
         if (scaleAnimations)
             transform.DOScale(longPress ? scaleOnHover : scaleOnSelect, scaleTransition).SetEase(scaleEase);
-        canvas.overrideSorting = false;
+        _globalCanvas.overrideSorting = false;
 
         visualShadow.localPosition = shadowDistance;
     }
@@ -204,5 +221,12 @@ public class CardVisual : MonoBehaviour
             transform.DOScale(scaleOnSelect, scaleTransition).SetEase(scaleEase);
 
         visualShadow.localPosition += (-Vector3.up * shadowOffset);
+    }
+
+    public void PutOnBackgrond()
+    {
+        _localCanvas.overrideSorting = true;
+        _localCanvas.sortingOrder = 1;
+        _localCanvas.sortingLayerName = "Background";
     }
 }

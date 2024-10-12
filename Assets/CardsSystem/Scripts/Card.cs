@@ -4,6 +4,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Image), typeof(Selectable))]
 public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler,
     IPointerEnterHandler, IPointerExitHandler, IPointerUpHandler, IPointerDownHandler
 {
@@ -12,6 +13,7 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 
     private Canvas _canvas;
     private Image _imageComponent;
+    private Selectable _selectableComponent;
 
     private bool _isDragging;
     private bool _wasDragged;
@@ -37,25 +39,23 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     public bool IsDragging => _isDragging;
     public bool WasDragged => _wasDragged;
 
-    [SerializeField] private GameObject cardVisualPrefab;
+    [SerializeField] private CardVisual cardVisualPrefab;
     public CardVisual CardVisual { get; private set; }
 
     public float SelectionOffset => selectionOffset;
 
-
-    [SerializeField] private bool instantiateVisual = true;
-
-    private void Start()
+    private void OnEnable()
     {
         _canvas = GetComponentInParent<Canvas>();
         _imageComponent = GetComponent<Image>();
         _mainCamera = Camera.main;
+        _selectableComponent = GetComponent<Selectable>();
+    }
 
-        if (!instantiateVisual)
-            return;
-
-        CardVisual = Instantiate(cardVisualPrefab, _canvas.transform).GetComponent<CardVisual>();
-        CardVisual.Initialize(this);
+    public void Initialize(CombatCard combatProperties)
+    {
+        CardVisual = Instantiate(cardVisualPrefab, _canvas.transform);
+        CardVisual.Initialize(this, combatProperties);
     }
 
     private void Update()
@@ -188,5 +188,18 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     public float NormalizedPosition()
     {
         return transform.parent.CompareTag("Slot") ? Remap((float)ParentIndex(), 0, (float)(transform.parent.parent.childCount - 1), 0, 1) : 0;
+    }
+
+    public void DisableCard()
+    {
+        PointerEnterEvent.RemoveAllListeners();
+        PointerExitEvent.RemoveAllListeners();
+        PointerUpEvent.RemoveAllListeners();
+        PointerDownEvent.RemoveAllListeners();
+        BeginDragEvent.RemoveAllListeners();
+        EndDragEvent.RemoveAllListeners();
+        SelectEvent.RemoveAllListeners();
+
+        _selectableComponent.enabled = false;
     }
 }

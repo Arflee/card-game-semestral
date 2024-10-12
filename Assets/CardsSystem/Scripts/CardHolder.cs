@@ -6,15 +6,14 @@ using UnityEngine.Events;
 
 public class CardHolder : MonoBehaviour
 {
-    private Card _selectedCard;
-    private Card _hoveredCard;
-
+    [SerializeField] private CardDeck playerDeck;
     [SerializeField] private GameObject slotPrefab;
     private RectTransform _rect;
 
     [Header("Spawn Settings")]
-    [SerializeField] private int cardsToSpawn = 7;
     private List<Card> _cards;
+    private Card _selectedCard;
+    private Card _hoveredCard;
 
     private bool _isCrossing = false;
     [SerializeField] private bool tweenCardReturn = true;
@@ -23,7 +22,7 @@ public class CardHolder : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < cardsToSpawn; i++)
+        for (int i = 0; i < playerDeck.MaxCardsInHand; i++)
         {
             Instantiate(slotPrefab, transform);
         }
@@ -32,8 +31,12 @@ public class CardHolder : MonoBehaviour
         _cards = GetComponentsInChildren<Card>().ToList();
         int cardCount = 0;
 
+
         foreach (Card card in _cards)
         {
+            var playerCombatCard = playerDeck.TakeCard();
+            card.Initialize(playerCombatCard);
+
             card.PointerEnterEvent.AddListener(CardPointerEnter);
             card.PointerExitEvent.AddListener(CardPointerExit);
             card.BeginDragEvent.AddListener(BeginDrag);
@@ -145,5 +148,15 @@ public class CardHolder : MonoBehaviour
     public void RegisterNewOnDragEndAction(UnityAction<Card> action)
     {
         _externalOnDragEndActions.Add(action);
+    }
+
+    public void UseCardFromHand(Card card)
+    {
+        var cardSlot = card.transform.parent;
+
+        card.DisableCard();
+        _cards.Remove(card);
+        card.CardVisual.PutOnBackgrond();
+        Destroy(cardSlot.gameObject);
     }
 }
