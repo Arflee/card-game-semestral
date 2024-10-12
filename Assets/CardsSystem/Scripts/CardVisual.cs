@@ -147,6 +147,9 @@ public class CardVisual : MonoBehaviour
         float tiltX = parentCard.IsHovering ? ((offset.y * -1) * manualTiltAmount) : 0;
         float tiltY = parentCard.IsHovering ? ((offset.x) * manualTiltAmount) : 0;
         float tiltZ = parentCard.IsDragging ? tiltParent.eulerAngles.z : (curveRotationOffset * (curve.rotationInfluence * parentCard.SiblingAmount()));
+        
+        if (float.IsNaN(tiltZ))
+            tiltZ = 0;
 
         float lerpX = Mathf.LerpAngle(tiltParent.eulerAngles.x, tiltX + (sine * autoTiltAmount), tiltSpeed * Time.deltaTime);
         float lerpY = Mathf.LerpAngle(tiltParent.eulerAngles.y, tiltY + (cosine * autoTiltAmount), tiltSpeed * Time.deltaTime);

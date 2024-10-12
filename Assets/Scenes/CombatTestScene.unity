@@ -787,6 +787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e67427177ff404b9518241ca3ed9b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardHolder: {fileID: 1314371922}
   maxCardsInHand: 7
   playerCards:
   - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
@@ -796,6 +797,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 374e9d12052dfd14ca5097c05502c176, type: 2}
   - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
   - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
+  - {fileID: 11400000, guid: 374e9d12052dfd14ca5097c05502c176, type: 2}
+  - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
+  - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
+  - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
 --- !u!114 &1314371922 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8173195852239707900, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
@@ -865,10 +870,10 @@ PrefabInstance:
     - target: {fileID: 2917390742140386515, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2084828445}
     - target: {fileID: 4733221832035886830, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_ChildAlignment
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5319436337358068572, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_Pivot.x
@@ -1239,6 +1244,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oppositeSlot: {fileID: 767416167}
+--- !u!20 &2084828445 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8518969864090515055, guid: 9881f00bfeeb555408f25316e8c99934, type: 3}
+  m_PrefabInstance: {fileID: 1000579556}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2102790304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2102790305}
+  - component: {fileID: 2102790306}
+  m_Layer: 0
+  m_Name: CombatStateMachine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2102790305
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102790304}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2102790306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102790304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b86aca08c12196644be7dcb03af271f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDeck: {fileID: 1094808341}
 --- !u!1 &2128196721
 GameObject:
   m_ObjectHideFlags: 0
@@ -1424,3 +1479,4 @@ SceneRoots:
   - {fileID: 1000579556}
   - {fileID: 1494971079}
   - {fileID: 1649581547}
+  - {fileID: 2102790305}

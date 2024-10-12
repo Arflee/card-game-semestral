@@ -6,6 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class CardDeck : MonoBehaviour
 {
+    [SerializeField] private CardHolder cardHolder;
     [SerializeField, Range(1, 10)] private int maxCardsInHand = 7;
     [SerializeField] private CombatCard[] playerCards;
 
@@ -14,19 +15,10 @@ public class CardDeck : MonoBehaviour
 
     public int MaxCardsInHand => maxCardsInHand;
 
-    private void Start()
+    private void Awake()
     {
         _cardDeck = new(playerCards.Reverse());
         _deckFrontImage = GetComponent<Image>();
-    }
-
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            TakeCard();
-        }
-
     }
 
     public CombatCard TakeCard()
@@ -37,7 +29,9 @@ public class CardDeck : MonoBehaviour
         }
 
         _deckFrontImage.color = new Color(0, _deckFrontImage.color.g - (1f / playerCards.Length), 0);
+        var takenCard = _cardDeck.Pop();
+        cardHolder.AddCard(takenCard);
 
-        return _cardDeck.Pop();
+        return takenCard;
     }
 }

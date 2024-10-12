@@ -6,12 +6,11 @@ using UnityEngine.Events;
 
 public class CardHolder : MonoBehaviour
 {
-    [SerializeField] private CardDeck playerDeck;
     [SerializeField] private GameObject slotPrefab;
     private RectTransform _rect;
 
     [Header("Spawn Settings")]
-    private List<Card> _cards;
+    private List<Card> _cards = new ();
     private Card _selectedCard;
     private Card _hoveredCard;
 
@@ -22,32 +21,7 @@ public class CardHolder : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < playerDeck.MaxCardsInHand; i++)
-        {
-            Instantiate(slotPrefab, transform);
-        }
-
         _rect = (RectTransform)transform;
-        _cards = GetComponentsInChildren<Card>().ToList();
-        int cardCount = 0;
-
-
-        foreach (Card card in _cards)
-        {
-            var playerCombatCard = playerDeck.TakeCard();
-            card.Initialize(playerCombatCard);
-
-            card.PointerEnterEvent.AddListener(CardPointerEnter);
-            card.PointerExitEvent.AddListener(CardPointerExit);
-            card.BeginDragEvent.AddListener(BeginDrag);
-            card.EndDragEvent.AddListener(EndDrag);
-            foreach (var action in _externalOnDragEndActions)
-            {
-                card.EndDragEvent.AddListener(action);
-            }
-            card.name = cardCount.ToString();
-            cardCount++;
-        }
     }
 
     private void BeginDrag(Card card)
@@ -98,7 +72,6 @@ public class CardHolder : MonoBehaviour
 
         for (int i = 0; i < _cards.Count; i++)
         {
-
             if (_selectedCard.transform.position.x > _cards[i].transform.position.x)
             {
                 if (_selectedCard.ParentIndex() < _cards[i].ParentIndex())
@@ -158,5 +131,26 @@ public class CardHolder : MonoBehaviour
         _cards.Remove(card);
         card.CardVisual.PutOnBackgrond();
         Destroy(cardSlot.gameObject);
+    }
+
+    public void AddCard(CombatCard combatCard)
+    {
+        var createdSlot = Instantiate(slotPrefab, transform);
+        var createdCard = createdSlot.GetComponentInChildren<Card>();
+        _cards.Add(createdCard);
+
+        createdCard.Initialize(combatCard);
+
+        createdCard.PointerEnterEvent.AddListener(CardPointerEnter);
+        createdCard.PointerExitEvent.AddListener(CardPointerExit);
+        createdCard.BeginDragEvent.AddListener(BeginDrag);
+        createdCard.EndDragEvent.AddListener(EndDrag);
+
+        foreach (var action in _externalOnDragEndActions)
+        {
+            createdCard.EndDragEvent.AddListener(action);
+        }
+
+        createdCard.name = combatCard.CardName;
     }
 }

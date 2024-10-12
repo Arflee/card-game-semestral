@@ -1197,6 +1197,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1789922227619831095, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
+      propertyPath: field of view
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
     - target: {fileID: 4888430626122968112, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_BoundingShape2D
       value: 
