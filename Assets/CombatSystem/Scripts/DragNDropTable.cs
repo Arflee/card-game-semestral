@@ -3,7 +3,7 @@ using UnityEngine;
 public class DragNDropTable : MonoBehaviour
 {
     [SerializeField] private CardHolder cardHolder;
-    [SerializeField] private RectTransform[] snapPoints;
+    [SerializeField] private CombatSlot[] snapPoints;
 
     private void Start()
     {
@@ -12,13 +12,13 @@ public class DragNDropTable : MonoBehaviour
 
     private void OnCardDragEnd(Card card)
     {
-        foreach (var point in snapPoints)
+        foreach (CombatSlot point in snapPoints)
         {
-            if (RectTransformUtility.RectangleContainsScreenPoint(point, (Vector2)card.transform.position) &&
+            if (RectTransformUtility.RectangleContainsScreenPoint((RectTransform)point.transform, (Vector2)card.transform.position) &&
                 point.CompareTag("Slot"))
             {
                 cardHolder.UseCardFromHand(card);
-
+                point.PutCardInSlot(card.CombatCard);
                 card.transform.SetParent(point.transform);
             }
         }

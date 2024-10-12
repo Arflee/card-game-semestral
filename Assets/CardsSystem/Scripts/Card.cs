@@ -41,6 +41,7 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 
     [SerializeField] private CardVisual cardVisualPrefab;
     public CardVisual CardVisual { get; private set; }
+    public CombatCard CombatCard { get; private set; }
 
     public float SelectionOffset => selectionOffset;
 
@@ -54,8 +55,9 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 
     public void Initialize(CombatCard combatProperties)
     {
+        CombatCard = combatProperties;
         CardVisual = Instantiate(cardVisualPrefab, _canvas.transform);
-        CardVisual.Initialize(this, combatProperties);
+        CardVisual.Initialize(this, CombatCard);
     }
 
     private void Update()

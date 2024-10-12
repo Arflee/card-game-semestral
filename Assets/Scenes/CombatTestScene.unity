@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 55465968}
   - component: {fileID: 55465970}
   - component: {fileID: 55465969}
+  - component: {fileID: 55465971}
   m_Layer: 5
   m_Name: spot1 (1)
   m_TagString: Untagged
@@ -197,6 +198,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 55465967}
   m_CullTransparentMesh: 1
+--- !u!114 &55465971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55465967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 712121eee59428b45a9d51c882a03530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oppositeSlot: {fileID: 1642840078}
 --- !u!1 &127129134
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,6 +222,7 @@ GameObject:
   - component: {fileID: 127129135}
   - component: {fileID: 127129137}
   - component: {fileID: 127129136}
+  - component: {fileID: 127129138}
   m_Layer: 5
   m_Name: spot1
   m_TagString: Untagged
@@ -272,6 +287,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 127129134}
   m_CullTransparentMesh: 1
+--- !u!114 &127129138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127129134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 712121eee59428b45a9d51c882a03530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oppositeSlot: {fileID: 1039434865}
 --- !u!224 &185609434 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5319436337358068572, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
@@ -327,6 +355,7 @@ GameObject:
   - component: {fileID: 767416164}
   - component: {fileID: 767416166}
   - component: {fileID: 767416165}
+  - component: {fileID: 767416167}
   m_Layer: 5
   m_Name: spot1 (2)
   m_TagString: Untagged
@@ -391,6 +420,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 767416163}
   m_CullTransparentMesh: 1
+--- !u!114 &767416167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767416163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 712121eee59428b45a9d51c882a03530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oppositeSlot: {fileID: 1809839023}
 --- !u!1 &925652371
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,10 +549,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardHolder: {fileID: 1314371922}
   snapPoints:
-  - {fileID: 2128196722}
-  - {fileID: 1642840075}
-  - {fileID: 1809839020}
-  - {fileID: 1039434862}
+  - {fileID: 2128196725}
+  - {fileID: 1642840078}
+  - {fileID: 1809839023}
+  - {fileID: 1039434865}
 --- !u!1001 &1000579556
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -579,6 +621,7 @@ GameObject:
   - component: {fileID: 1039434862}
   - component: {fileID: 1039434864}
   - component: {fileID: 1039434863}
+  - component: {fileID: 1039434865}
   m_Layer: 5
   m_Name: spot1 (3)
   m_TagString: Slot
@@ -643,6 +686,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1039434861}
   m_CullTransparentMesh: 1
+--- !u!114 &1039434865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039434861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 712121eee59428b45a9d51c882a03530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oppositeSlot: {fileID: 127129138}
 --- !u!1 &1094808337
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,6 +787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e67427177ff404b9518241ca3ed9b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxCardsInHand: 7
   playerCards:
   - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
   - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
@@ -739,7 +796,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 374e9d12052dfd14ca5097c05502c176, type: 2}
   - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
   - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
-  maxCardsInHand: 7
 --- !u!114 &1314371922 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8173195852239707900, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
@@ -948,6 +1004,7 @@ GameObject:
   - component: {fileID: 1642840075}
   - component: {fileID: 1642840077}
   - component: {fileID: 1642840076}
+  - component: {fileID: 1642840078}
   m_Layer: 5
   m_Name: spot1 (1)
   m_TagString: Slot
@@ -1012,6 +1069,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1642840074}
   m_CullTransparentMesh: 1
+--- !u!114 &1642840078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642840074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 712121eee59428b45a9d51c882a03530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oppositeSlot: {fileID: 55465971}
 --- !u!1 &1649581544
 GameObject:
   m_ObjectHideFlags: 0
@@ -1091,6 +1161,7 @@ GameObject:
   - component: {fileID: 1809839020}
   - component: {fileID: 1809839022}
   - component: {fileID: 1809839021}
+  - component: {fileID: 1809839023}
   m_Layer: 5
   m_Name: spot1 (2)
   m_TagString: Slot
@@ -1155,6 +1226,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1809839019}
   m_CullTransparentMesh: 1
+--- !u!114 &1809839023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809839019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 712121eee59428b45a9d51c882a03530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oppositeSlot: {fileID: 767416167}
 --- !u!1 &2128196721
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,6 +1250,7 @@ GameObject:
   - component: {fileID: 2128196722}
   - component: {fileID: 2128196724}
   - component: {fileID: 2128196723}
+  - component: {fileID: 2128196725}
   m_Layer: 5
   m_Name: spot1
   m_TagString: Slot
@@ -1230,6 +1315,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2128196721}
   m_CullTransparentMesh: 1
+--- !u!114 &2128196725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128196721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 712121eee59428b45a9d51c882a03530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oppositeSlot: {fileID: 2129513384}
 --- !u!1 &2129513380
 GameObject:
   m_ObjectHideFlags: 0
@@ -1241,6 +1339,7 @@ GameObject:
   - component: {fileID: 2129513381}
   - component: {fileID: 2129513383}
   - component: {fileID: 2129513382}
+  - component: {fileID: 2129513384}
   m_Layer: 5
   m_Name: spot1 (3)
   m_TagString: Untagged
@@ -1305,6 +1404,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129513380}
   m_CullTransparentMesh: 1
+--- !u!114 &2129513384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129513380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 712121eee59428b45a9d51c882a03530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oppositeSlot: {fileID: 2128196725}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
