@@ -4,11 +4,13 @@ public class CombatSlot : MonoBehaviour
 {
     [SerializeField] private CombatSlot oppositeSlot;
 
-    private CombatCard _cardInSlot;
+    public CombatCard CardInSlot { get; private set; }
+
+    public CombatSlot OppositeSlot => oppositeSlot;
 
     public void PutCardInSlot(CombatCard card)
     {
-        _cardInSlot = card;
-        Debug.Log(card.CardName);
+        CardInSlot = card;
     }
+
 }

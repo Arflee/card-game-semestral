@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CombatCard 1
   m_EditorClassIdentifier: 
   health: 2
-  attack: 0
+  damage: 1
   cardEffect: 0
   cardName: 2
   cardDescription: ASDASD

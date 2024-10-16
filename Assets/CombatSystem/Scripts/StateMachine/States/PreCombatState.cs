@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PreCombatState : CombatState
@@ -14,10 +15,8 @@ public class PreCombatState : CombatState
     {
         for (int i = 0; i < _playerDeck.MaxCardsInHand; i++)
         {
-            _playerDeck.TakeCard();
             yield return new WaitForSeconds(0.5f);
+            _playerDeck.TakeCard();
         }
-
-        //StateMachine.SetState(new PlayerState(StateMachine));
     }
 }

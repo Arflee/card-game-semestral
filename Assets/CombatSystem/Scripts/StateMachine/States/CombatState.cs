@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 
 public abstract class CombatState
 {
@@ -15,7 +16,12 @@ public abstract class CombatState
         throw new NotImplementedException();
     }
 
-    public virtual IEnumerator Attack()
+    public virtual IEnumerator Attack(CombatSlot slot)
+    {
+        throw new NotImplementedException();
+    }
+
+    public virtual IEnumerator EndTurn(DragNDropTable table)
     {
         throw new NotImplementedException();
     }

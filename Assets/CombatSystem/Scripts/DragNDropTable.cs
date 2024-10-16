@@ -1,9 +1,13 @@
+using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DragNDropTable : MonoBehaviour
 {
     [SerializeField] private CardHolder cardHolder;
     [SerializeField] private CombatSlot[] snapPoints;
+
+    public event Action<CombatSlot> OnTableSlotSnapped;
 
     private void Start()
     {
@@ -19,8 +23,14 @@ public class DragNDropTable : MonoBehaviour
             {
                 cardHolder.UseCardFromHand(card);
                 point.PutCardInSlot(card.CombatCard);
+                OnTableSlotSnapped(point);
                 card.transform.SetParent(point.transform);
             }
         }
+    }
+
+    public CombatCard GetOppositeCard(CombatSlot slot)
+    {
+        return slot.OppositeSlot.CardInSlot;
     }
 }

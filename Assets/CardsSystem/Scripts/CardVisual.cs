@@ -7,7 +7,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Canvas))]
 public class CardVisual : MonoBehaviour
 {
-    private bool initalize = false;
+    private bool _initialize = false;
 
     [Header("Card")]
     private Card parentCard;
@@ -28,6 +28,7 @@ public class CardVisual : MonoBehaviour
     [Header("Card info parameters")]
     [SerializeField] private Image cardImage;
     [SerializeField] private TMP_Text cardName;
+    [SerializeField] private TMP_Text cardDescription;
     [SerializeField] private TMP_Text healthText;
     [SerializeField] private TMP_Text attackText;
 
@@ -91,13 +92,21 @@ public class CardVisual : MonoBehaviour
         parentCard.PointerUpEvent.AddListener(PointerUp);
         parentCard.SelectEvent.AddListener(Select);
 
-        cardName.text = combatProperties.CardName;
-        healthText.text = combatProperties.Health.ToString();
-        attackText.text = combatProperties.Attack.ToString();
-
+        Initialize(combatProperties);
 
         //Initialization
-        initalize = true;
+        _initialize = true;
+
+    }
+
+    public void Initialize(CombatCard combatProperties)
+    {
+        cardName.text = combatProperties.CardName;
+        cardDescription.text = combatProperties.CardDescription;
+        healthText.text = combatProperties.Health.ToString();
+        attackText.text = combatProperties.Damage.ToString();
+
+        _initialize = false;
     }
 
     public void UpdateIndex(int length)
@@ -107,7 +116,7 @@ public class CardVisual : MonoBehaviour
 
     void Update()
     {
-        if (!initalize || parentCard == null) return;
+        if (!_initialize || parentCard == null) return;
 
         HandPositioning();
         SmoothFollow();

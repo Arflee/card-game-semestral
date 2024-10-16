@@ -1,9 +1,14 @@
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class PlayerState : CombatState
 {
+    private List<CombatSlot> _playedSlots;
+
     public PlayerState(CombatStateMachine machine) : base(machine)
     {
+        _playedSlots = new();
     }
 
     public override IEnumerator EnterState()
@@ -11,8 +16,28 @@ public class PlayerState : CombatState
         return base.EnterState();
     }
 
-    public override IEnumerator Attack()
+    public override IEnumerator Attack(CombatSlot slot)
     {
-        return base.Attack();
+        _playedSlots.Add(slot);
+        yield return null;
+    }
+
+    public override IEnumerator EndTurn(DragNDropTable table)
+    {
+        foreach (var slot in _playedSlots)
+        {
+            Debug.Log(slot.CardInSlot.Health);
+            CombatCard oppositeCard = table.GetOppositeCard(slot);
+
+            if (!oppositeCard)
+            {
+                Debug.LogWarning("Opposite slot is empty");
+                continue;
+            }
+
+            oppositeCard.TakeDamage(slot.CardInSlot);
+            Debug.Log(slot.CardInSlot.Health);
+            yield return null;
+        }
     }
 }

@@ -15,9 +15,8 @@ public class CombatCard : ScriptableObject
 
     [Header("Card parameters")]
     [SerializeField, Min(1)] private int health;
-    [SerializeField, Min(0)] private int attack;
+    [SerializeField, Min(0)] private int damage;
     [SerializeField, EnumFlags] private EffectType cardEffect;
-
 
     [Header("Card information")]
     [SerializeField] private string cardName;
@@ -25,6 +24,14 @@ public class CombatCard : ScriptableObject
     [SerializeField] private Sprite cardSprite;
 
     public string CardName => cardName;
+    public string CardDescription => cardDescription;
     public int Health => health;
-    public int Attack => attack;
+    public int Damage => damage;
+    public bool IsAlive => health > 0;
+
+    public void TakeDamage(CombatCard card)
+    {
+        card.health -= Damage;
+        health -= card.Damage;
+    }
 }

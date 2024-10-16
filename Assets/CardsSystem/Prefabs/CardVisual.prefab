@@ -64,6 +64,7 @@ MonoBehaviour:
   tiltParent: {fileID: 5037521101954701801}
   cardImage: {fileID: 7352998936812655986}
   cardName: {fileID: 5287797195728747682}
+  cardDescription: {fileID: 2699762686176027836}
   healthText: {fileID: 8794958655390194561}
   attackText: {fileID: 2111261511172646518}
   followSpeed: 15
@@ -316,8 +317,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00098328, y: 46.491886}
-  m_SizeDelta: {x: 200, y: 63.1757}
+  m_AnchoredPosition: {x: -0.00098328, y: 1.3681}
+  m_SizeDelta: {x: 200, y: 153.4233}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9008678086604548773
 CanvasRenderer:
@@ -374,8 +375,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

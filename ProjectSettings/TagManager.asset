@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ScenePortal
   - Slot
+  - EnemySlot
   layers:
   - Default
   - TransparentFX

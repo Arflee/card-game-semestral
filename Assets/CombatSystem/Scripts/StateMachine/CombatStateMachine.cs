@@ -1,21 +1,31 @@
+using System.Collections;
 using UnityEngine;
 
 public class CombatStateMachine : MonoBehaviour
 {
     [SerializeField] private CardDeck playerDeck;
+    [SerializeField] private DragNDropTable table;
+
+    private PlayerState _playerState;
 
     public CardDeck PlayerDeck => playerDeck;
 
     public CombatState State { get; private set; }
 
-    private void Start()
+    private IEnumerator Start()
     {
-        SetState(new PreCombatState(this));
+        table.OnTableSlotSnapped += OnCardDragEnd;
+        yield return new PreCombatState(this).EnterState();
+        _playerState = new PlayerState(this);
     }
 
-    public void SetState(CombatState state)
+    private void OnCardDragEnd(CombatSlot slot)
     {
-        State = state;
-        StartCoroutine(State.EnterState());
+        StartCoroutine(_playerState.Attack(slot));
+    }
+
+    public void OnTurnEndButtonClicked()
+    {
+        StartCoroutine(_playerState.EndTurn(table));
     }
 }
