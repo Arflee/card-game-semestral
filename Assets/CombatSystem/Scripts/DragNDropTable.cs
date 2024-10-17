@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class DragNDropTable : MonoBehaviour
 {
@@ -22,14 +21,14 @@ public class DragNDropTable : MonoBehaviour
                 point.CompareTag("Slot"))
             {
                 cardHolder.UseCardFromHand(card);
-                point.PutCardInSlot(card.CombatCard);
+                point.PutCardInSlot(card.CombatDTO);
                 OnTableSlotSnapped(point);
                 card.transform.SetParent(point.transform);
             }
         }
     }
 
-    public CombatCard GetOppositeCard(CombatSlot slot)
+    public CombatCardDTO GetOppositeCard(CombatSlot slot)
     {
         return slot.OppositeSlot.CardInSlot;
     }

@@ -74,7 +74,7 @@ public class CardVisual : MonoBehaviour
         shadowDistance = visualShadow.localPosition;
     }
 
-    public void Initialize(Card target, CombatCard combatProperties, int index = 0)
+    public void Initialize(Card target, CombatCardDTO combatProperties, int index = 0)
     {
         //Declarations
         parentCard = target;
@@ -99,14 +99,21 @@ public class CardVisual : MonoBehaviour
 
     }
 
-    public void Initialize(CombatCard combatProperties)
+    public void Initialize(CombatCardDTO combatProperties)
     {
-        cardName.text = combatProperties.CardName;
-        cardDescription.text = combatProperties.CardDescription;
+        cardName.text = combatProperties.Name;
+        cardDescription.text = combatProperties.Description;
         healthText.text = combatProperties.Health.ToString();
         attackText.text = combatProperties.Damage.ToString();
 
+        combatProperties.OnTakeDamageEvent += UpdateTextOnTakeDamage;
+
         _initialize = false;
+    }
+
+    private void UpdateTextOnTakeDamage(CombatCardDTO obj)
+    {
+        healthText.text = obj.Health.ToString();
     }
 
     public void UpdateIndex(int length)

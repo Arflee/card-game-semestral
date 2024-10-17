@@ -27,11 +27,4 @@ public class CombatCard : ScriptableObject
     public string CardDescription => cardDescription;
     public int Health => health;
     public int Damage => damage;
-    public bool IsAlive => health > 0;
-
-    public void TakeDamage(CombatCard card)
-    {
-        card.health -= Damage;
-        health -= card.Damage;
-    }
 }

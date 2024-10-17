@@ -26,18 +26,18 @@ public class PlayerState : CombatState
     {
         foreach (var slot in _playedSlots)
         {
-            Debug.Log(slot.CardInSlot.Health);
-            CombatCard oppositeCard = table.GetOppositeCard(slot);
+            CombatCardDTO oppositeCard = table.GetOppositeCard(slot);
 
-            if (!oppositeCard)
+            if (oppositeCard == null)
             {
                 Debug.LogWarning("Opposite slot is empty");
                 continue;
             }
 
             oppositeCard.TakeDamage(slot.CardInSlot);
-            Debug.Log(slot.CardInSlot.Health);
-            yield return null;
+            slot.CardInSlot.TakeDamage(oppositeCard);
         }
+
+        yield return null;
     }
 }

@@ -12,11 +12,12 @@ public class CombatStateMachine : MonoBehaviour
 
     public CombatState State { get; private set; }
 
-    private IEnumerator Start()
+    private void Start()
     {
         table.OnTableSlotSnapped += OnCardDragEnd;
-        yield return new PreCombatState(this).EnterState();
         _playerState = new PlayerState(this);
+
+       StartCoroutine(new PreCombatState(this).EnterState());
     }
 
     private void OnCardDragEnd(CombatSlot slot)

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79c9c8a8609bbb4591197163e73c2f8, type: 3}
   m_Name: CombatCard 2
   m_EditorClassIdentifier: 
-  health: 3
+  health: 2
   damage: 2
   cardEffect: 0
-  cardName: 3
+  cardName: 2
   cardDescription: ASDASD
   cardSprite: {fileID: 0}
