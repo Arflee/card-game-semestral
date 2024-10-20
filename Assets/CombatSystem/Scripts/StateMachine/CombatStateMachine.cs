@@ -31,6 +31,6 @@ public class CombatStateMachine : MonoBehaviour
     public void OnTurnEndButtonClicked()
     {
         //TODO
-        StartCoroutine(_playerState.EndTurn(table));
+        //StartCoroutine(_playerState.EndTurn(table));
     }
 }
