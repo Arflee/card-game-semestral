@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PreCombatState : CombatState
@@ -18,5 +17,8 @@ public class PreCombatState : CombatState
             yield return new WaitForSeconds(0.5f);
             _playerDeck.TakeCard();
         }
+
+        //TODO
+        StateMachine.SetState(new PlayerState(StateMachine));
     }
 }

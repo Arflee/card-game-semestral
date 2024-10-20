@@ -1,8 +1,9 @@
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class EnemyInitializer : MonoBehaviour
 {
     [SerializeField] private CardVisual visualPrefab;
     [SerializeField] private CombatCard[] enemyHand;
@@ -10,7 +11,7 @@ public class Enemy : MonoBehaviour
     private List<CombatCardDTO> _cardObjects;
     private CombatSlot[] _slots;
 
-    private void Start()
+    public IEnumerator Initialize()
     {
         _cardObjects = new();
 
@@ -25,6 +26,7 @@ public class Enemy : MonoBehaviour
         for (int i = 0; i < _slots.Length; i++)
         {
             CardVisual visual = Instantiate(visualPrefab, _slots[i].transform);
+            yield return new WaitForSeconds(0.5f);
             CombatCardDTO currentCard = _cardObjects[i % _slots.Length];
 
             _slots[i].PutCardInSlot(currentCard);

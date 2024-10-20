@@ -39,5 +39,6 @@ public class PlayerState : CombatState
         }
 
         yield return null;
+        StateMachine.SetState(new EnemyState(StateMachine));
     }
 }
