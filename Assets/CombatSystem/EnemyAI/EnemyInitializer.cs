@@ -26,11 +26,12 @@ public class EnemyInitializer : MonoBehaviour
         for (int i = 0; i < _slots.Length; i++)
         {
             CardVisual visual = Instantiate(visualPrefab, _slots[i].transform);
-            yield return new WaitForSeconds(0.5f);
             CombatCardDTO currentCard = _cardObjects[i % _slots.Length];
 
             _slots[i].PutCardInSlot(currentCard);
             visual.Initialize(currentCard);
+
+            yield return new WaitForSeconds(0.5f);
         }
     }
 }

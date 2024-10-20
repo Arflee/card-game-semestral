@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CombatStateMachine : MonoBehaviour
@@ -12,12 +14,15 @@ public class CombatStateMachine : MonoBehaviour
     public CardDeck PlayerDeck => playerDeck;
     public EnemyInitializer EnemyInitializer => enemyInitializer;
     public CombatState State { get; private set; }
-    public DragNDropTable Table { get; private set; }
+    public DragNDropTable Table => table;
+    public List<CombatSlot> PlayerCardsOnTable { get; private set; } = new();
+    public List<CombatSlot> EnemyCardsOnTable { get; private set; } = new();
+
+    public event Action OnEndTurn;
 
     private void Start()
     {
-        //table.OnTableSlotSnapped += OnCardDragEnd;
-        //_playerState = new PlayerState(this);
+        table.OnTableSlotSnapped += OnCardDragEnd;
 
         SetState(new PreCombatState(this));
     }
@@ -28,9 +33,13 @@ public class CombatStateMachine : MonoBehaviour
         StartCoroutine(State.EnterState());
     }
 
+    private void OnCardDragEnd(CombatSlot slot)
+    {
+        PlayerCardsOnTable.Add(slot);
+    }
+
     public void OnTurnEndButtonClicked()
     {
-        //TODO
-        //StartCoroutine(_playerState.EndTurn(table));
+        OnEndTurn();
     }
 }

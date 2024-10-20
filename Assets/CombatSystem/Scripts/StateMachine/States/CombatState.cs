@@ -15,14 +15,4 @@ public abstract class CombatState
     {
         throw new NotImplementedException();
     }
-
-    public virtual IEnumerator Attack(CombatSlot slot)
-    {
-        throw new NotImplementedException();
-    }
-
-    public virtual IEnumerator EndTurn(DragNDropTable table)
-    {
-        throw new NotImplementedException();
-    }
 }
