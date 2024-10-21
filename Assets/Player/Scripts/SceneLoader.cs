@@ -22,6 +22,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadScene(string sceneName, string spawnPointName)
     {
+        Time.timeScale = 1;
         StartCoroutine(LoadSceneAsync(sceneName, spawnPointName));
     }
 
@@ -32,6 +33,8 @@ public class SceneLoader : MonoBehaviour
         yield return new WaitUntil(() => asyncLoad.isDone);
 
         GameObject spawnPoint = GameObject.Find(spawnPointName);
+        if (spawnPoint == null)
+            yield break;
         PlayerMovement player = FindObjectOfType<PlayerMovement>();
         player.transform.position = spawnPoint.transform.position;
     }
