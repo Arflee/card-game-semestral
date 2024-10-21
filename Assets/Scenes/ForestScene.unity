@@ -5282,7 +5282,7 @@ PolygonCollider2D:
     m_Paths:
     - - {x: -9.547491, y: 5.3737106}
       - {x: -9.556757, y: -16.152882}
-      - {x: 27.083265, y: -17.846893}
+      - {x: 28.903511, y: -16.099455}
       - {x: 28.847656, y: -26.958757}
       - {x: 47.987583, y: -26.983786}
       - {x: 47.978405, y: 5.3614397}
@@ -5471,11 +5471,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.6071658
+      value: 1.9849072
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0011253357
+      value: 0.49914455
       objectReference: {fileID: 0}
     - target: {fileID: 4379666920158019866, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5485,6 +5485,10 @@ PrefabInstance:
       propertyPath: m_BoundingShape2D
       value: 
       objectReference: {fileID: 937309559}
+    - target: {fileID: 7578534046453655973, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 18.349976
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
