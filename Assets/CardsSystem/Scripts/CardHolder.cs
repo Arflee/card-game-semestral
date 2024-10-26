@@ -113,12 +113,9 @@ public class CardHolder : MonoBehaviour
 
     public void UseCardFromHand(Card card)
     {
-        var cardSlot = card.transform.parent;
-
         card.DisableCard();
         _cards.Remove(card);
         card.CardVisual.PutOnBackgrond();
-        Destroy(cardSlot.gameObject);
     }
 
     public void AddCard(CombatCard combatCard)

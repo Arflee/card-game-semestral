@@ -4,7 +4,7 @@ using UnityEngine;
 public class DragNDropTable : MonoBehaviour
 {
     [SerializeField] private CardHolder cardHolder;
-    [SerializeField] private RectTransform playerCardsPlayer;
+    [SerializeField] private RectTransform playedCardsPlayer;
 
     public event Action<Card> OnTableSlotSnapped;
 
@@ -15,12 +15,12 @@ public class DragNDropTable : MonoBehaviour
 
     private void OnCardDragEnd(Card card)
     {
-        if (RectTransformUtility.RectangleContainsScreenPoint((RectTransform)playerCardsPlayer.transform, (Vector2)card.transform.position) &&
-            playerCardsPlayer.CompareTag("Slot"))
+        if (RectTransformUtility.RectangleContainsScreenPoint((RectTransform)playedCardsPlayer.transform, (Vector2)card.transform.position) &&
+            playedCardsPlayer.CompareTag("Slot"))
         {
             cardHolder.UseCardFromHand(card);
             OnTableSlotSnapped?.Invoke(card);
-            card.transform.SetParent(playerCardsPlayer.transform);
+            card.transform.parent.SetParent(playedCardsPlayer.transform);
         }
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
-using UnityEditorInternal;
+using System.Data;
+using System.Linq;
 using UnityEngine;
 
 public class CombatStateMachine : MonoBehaviour
@@ -44,26 +45,10 @@ public class CombatStateMachine : MonoBehaviour
         AddCardOnPlayerTable(card);
     }
 
-    private void OnDieEvent(Card card)
+    private void RemoveCardFromTable(Card card)
     {
-        card.OnDieEvent -= OnDieEvent;
-
         Destroy(card.CardVisual.gameObject);
-        Destroy(card.gameObject);
-    }
-
-    private void OnPlayerCardDie(Card card)
-    {
-        card.OnDieEvent -= OnPlayerCardDie;
-        PlayerCardsOnTable.Remove(card);
-        Debug.Log(PlayerCardsOnTable.Count);
-    }
-
-    private void OnEnemyCardDie(Card card)
-    {
-        card.OnDieEvent -= OnEnemyCardDie;
-        EnemyCardsOnTable.Remove(card);
-        Debug.Log(EnemyCardsOnTable.Count);
+        Destroy(card.transform.parent.gameObject);
     }
 
     public void SetState(CombatState state)
@@ -75,20 +60,43 @@ public class CombatStateMachine : MonoBehaviour
     public void AddCardOnPlayerTable(Card card)
     {
         PlayerCardsOnTable.Add(card);
-        card.OnDieEvent += OnDieEvent;
-        card.OnDieEvent += OnPlayerCardDie;
     }
 
     public void AddCardOnEnemyTable(Card card)
     {
         EnemyCardsOnTable.Add(card);
-        card.OnDieEvent += OnDieEvent;
-        card.OnDieEvent += OnEnemyCardDie;
     }
 
     public void OnTurnEndButtonClicked()
     {
         OnEndTurn?.Invoke();
+
+        List<Card> cardsToBeRemoved = new List<Card>();
+
+        foreach (var card in PlayerCardsOnTable)
+        {
+            if (!card.CombatDTO.IsAlive)
+            {
+                cardsToBeRemoved.Add(card);
+                RemoveCardFromTable(card);
+                //todo call on player card die
+            }
+        }
+
+        PlayerCardsOnTable = new(PlayerCardsOnTable.Except(cardsToBeRemoved));
+        cardsToBeRemoved.Clear();
+
+        foreach (var card in EnemyCardsOnTable)
+        {
+            if (!card.CombatDTO.IsAlive)
+            {
+                cardsToBeRemoved.Add(card);
+                RemoveCardFromTable(card);
+                //todo call on enemy card die
+            }
+        }
+
+        EnemyCardsOnTable = new(EnemyCardsOnTable.Except(cardsToBeRemoved));
     }
 
     public void ChangeTurn()

@@ -46,7 +46,6 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     public CombatCardDTO CombatDTO { get; private set; }
 
     public float SelectionOffset => selectionOffset;
-    public event Action<Card> OnDieEvent;
     public event Action<Card> OnTakeDamageEvent;
 
     private void OnEnable()
@@ -212,10 +211,5 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     {
         CombatDTO.Health -= source.CombatDTO.Damage;
         OnTakeDamageEvent?.Invoke(this);
-
-        if (!CombatDTO.IsAlive)
-        {
-            OnDieEvent?.Invoke(this);
-        }
     }
 }
