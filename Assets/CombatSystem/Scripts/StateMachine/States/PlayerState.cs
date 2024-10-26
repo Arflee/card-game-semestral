@@ -1,36 +1,35 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
 
 public class PlayerState : CombatState
 {
     public PlayerState(CombatStateMachine machine) : base(machine)
     {
+        StateMachine.OnEndTurn += OnEndTurn;
     }
 
     public override IEnumerator EnterState()
     {
-        StateMachine.OnEndTurn += OnEndTurn;
         yield return null;
     }
 
     private void OnEndTurn()
     {
-        foreach (var slot in StateMachine.PlayerCardsOnTable)
+        for (int i = 0; i < StateMachine.PlayerCardsOnTable.Count; i++)
         {
-            CombatCardDTO oppositeCard = StateMachine.Table.GetOppositeCard(slot);
-
-            if (oppositeCard == null)
+            if (i + 1 > StateMachine.EnemyCardsOnTable.Count)
             {
-                Debug.LogWarning("Opposite slot is empty");
+                Debug.Log(i + " Attacks crystal");
                 continue;
             }
 
-            oppositeCard.TakeDamage(slot.CardInSlot);
-            slot.CardInSlot.TakeDamage(oppositeCard);
+            var playerCard = StateMachine.PlayerCardsOnTable[i];
+            var enemyCard = StateMachine.EnemyCardsOnTable[i];
+
+            enemyCard.TakeDamageFrom(playerCard);
+            playerCard.TakeDamageFrom(enemyCard);
         }
 
-        StateMachine.SetState(new EnemyState(StateMachine));
+        StateMachine.ChangeTurn();
     }
 }

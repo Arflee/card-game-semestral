@@ -23,8 +23,8 @@ public class CombatCard : ScriptableObject
     [SerializeField, TextArea(3, 7)] private string cardDescription;
     [SerializeField] private Sprite cardSprite;
 
-    public string CardName => cardName;
-    public string CardDescription => cardDescription;
+    public string Name => cardName;
+    public string Description => cardDescription;
     public int Health => health;
     public int Damage => damage;
 }

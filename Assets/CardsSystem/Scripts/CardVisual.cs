@@ -1,5 +1,4 @@
 using DG.Tweening;
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -67,14 +66,13 @@ public class CardVisual : MonoBehaviour
 
     private float curveYOffset;
     private float curveRotationOffset;
-    private Coroutine pressCoroutine;
 
     private void Start()
     {
         shadowDistance = visualShadow.localPosition;
     }
 
-    public void Initialize(Card target, CombatCardDTO combatProperties, int index = 0)
+    public void Initialize(Card target, CombatCardDTO combatProperties)
     {
         //Declarations
         parentCard = target;
@@ -106,17 +104,17 @@ public class CardVisual : MonoBehaviour
         healthText.text = combatProperties.Health.ToString();
         attackText.text = combatProperties.Damage.ToString();
 
-        combatProperties.OnTakeDamageEvent += UpdateTextOnTakeDamage;
+        parentCard.OnTakeDamageEvent += UpdateTextOnTakeDamage;
 
         _initialize = false;
     }
 
-    private void UpdateTextOnTakeDamage(CombatCardDTO obj)
+    private void UpdateTextOnTakeDamage(Card card)
     {
-        healthText.text = obj.Health.ToString();
+        healthText.text = card.CombatDTO.Health.ToString();
     }
 
-    public void UpdateIndex(int length)
+    public void UpdateIndex()
     {
         transform.SetSiblingIndex(parentCard.transform.parent.GetSiblingIndex());
     }
@@ -178,7 +176,7 @@ public class CardVisual : MonoBehaviour
     {
         DOTween.Kill(2, true);
         float dir = state ? 1 : 0;
-        shakeParent.DOPunchPosition(shakeParent.up * selectPunchAmount * dir, scaleTransition, 10, 1);
+        shakeParent.DOPunchPosition(dir * selectPunchAmount * shakeParent.up, scaleTransition, 10, 1);
         shakeParent.DOPunchRotation(Vector3.forward * (hoverPunchAngle / 2), hoverTransition, 20, 1).SetId(2);
 
         if (scaleAnimations)

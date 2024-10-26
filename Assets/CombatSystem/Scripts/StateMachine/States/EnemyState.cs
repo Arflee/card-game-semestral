@@ -3,6 +3,7 @@ using System.Collections;
 public class EnemyState : CombatState
 {
     private EnemyInitializer _initializer;
+    private bool _wasInitialized = false;
 
     public EnemyState(CombatStateMachine machine) : base(machine)
     {
@@ -11,6 +12,19 @@ public class EnemyState : CombatState
 
     public override IEnumerator EnterState()
     {
-        yield return _initializer.Initialize();
+        if (!_wasInitialized)
+        {
+            _wasInitialized = true;
+            var createdCards = _initializer.PlaceStartCards();
+
+            foreach (var card in createdCards)
+            {
+                StateMachine.AddCardOnEnemyTable(card);
+            }
+
+            yield return null;
+        }
+
+        StateMachine.ChangeTurn();
     }
 }

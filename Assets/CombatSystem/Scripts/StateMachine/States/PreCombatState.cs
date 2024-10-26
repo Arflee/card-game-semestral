@@ -18,6 +18,6 @@ public class PreCombatState : CombatState
             _playerDeck.TakeCard();
         }
 
-        StateMachine.SetState(new PlayerState(StateMachine));
+        StateMachine.ChangeTurn();
     }
 }

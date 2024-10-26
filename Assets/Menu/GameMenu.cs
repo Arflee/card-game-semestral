@@ -7,26 +7,32 @@ public class GameMenu : MonoBehaviour
     [SerializeField] private GameObject menu;
     [SerializeField] private GameObject settings;
 
-    private bool menuOn;
+    private bool _menuOn = false;
+    private StandardControls _controls;
 
     private void Start()
     {
-        ShowMenu(menuOn);
+        _controls = new StandardControls();
+
+        _controls.UI.Enable();
+        _controls.UI.Cancel.performed += OnCancelButtonPress;
     }
 
-    void Update()
+    private void OnDisable()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
-        {
-            ShowMenu(!menuOn);
-        }
+        _controls.UI.Cancel.performed -= OnCancelButtonPress;
     }
 
-    public void ShowMenu(bool show)
+    private void OnCancelButtonPress(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
-        menuOn = show;
-        menu.SetActive(show);
+        ShowMenu();
+    }
+
+    private void ShowMenu()
+    {
+        _menuOn = !_menuOn;
+        menu.SetActive(_menuOn);
         settings.SetActive(false);
-        Time.timeScale = show ? 0f : 1f;
+        Time.timeScale = _menuOn ? 0f : 1f;
     }
 }

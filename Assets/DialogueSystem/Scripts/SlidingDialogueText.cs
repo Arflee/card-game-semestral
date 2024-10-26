@@ -40,7 +40,7 @@ public class SlidingDialogueText : MonoBehaviour
     {
         if (dialogueIndex == _dialogueSequence.sequence.Length)
         {
-            OnDialogueSequenceEnd();
+            OnDialogueSequenceEnd?.Invoke();
             inputActions.Player.Interact.performed -= OnMouseClick;
             return;
         }
