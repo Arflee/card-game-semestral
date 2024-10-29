@@ -521,16 +521,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardHolder: {fileID: 1314371922}
-  maxCardsInHand: 2
+  maxCardsInHand: 1
   playerCards:
+  - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
   - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
   - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
   - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
-  - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
-  - {fileID: 0}
   - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
   - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
-  - {fileID: 0}
   - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
   - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
   - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
@@ -1059,8 +1057,7 @@ MonoBehaviour:
   cardSlotPrefab: {fileID: 575835118737254313, guid: a86ada4f9b399784cb9af4003a4421b9, type: 3}
   visualPrefab: {fileID: 3700769039360204207, guid: 45bb3addbb980044283664edf8de3c34, type: 3}
   enemyHand:
-  - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
-  - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
+  - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
   playedCardsEnemy: {fileID: 1204193607}
 --- !u!20 &2084828445 stripped
 Camera:

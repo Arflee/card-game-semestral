@@ -3,7 +3,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
-using UnityEngine.Splines;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Image), typeof(Selectable))]
@@ -58,7 +57,7 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 
     public void Initialize(CombatCard combatProperties)
     {
-        CombatDTO = new(combatProperties.Name, combatProperties.Description, combatProperties.Health, combatProperties.Damage);
+        CombatDTO = new(combatProperties);
         CardVisual = Instantiate(cardVisualPrefab, _canvas.transform);
         CardVisual.Initialize(this, CombatDTO);
     }
@@ -205,6 +204,7 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
         SelectEvent.RemoveAllListeners();
 
         _selectableComponent.enabled = false;
+        enabled = false;
     }
 
     public void TakeDamageFrom(Card source)

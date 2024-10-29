@@ -8,6 +8,8 @@ public class DragNDropTable : MonoBehaviour
 
     public event Action<Card> OnTableSlotSnapped;
 
+    public Transform PlayerTableSide => playedCardsPlayer;
+
     private void Start()
     {
         cardHolder.RegisterNewOnDragEndAction(OnCardDragEnd);

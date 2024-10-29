@@ -9,12 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79c9c8a8609bbb4591197163e73c2f8, type: 3}
-  m_Name: CombatCard 3
+  m_Script: {fileID: 11500000, guid: 4c765d66814bc6e4f94cf76cc432b69a, type: 3}
+  m_Name: AddCardOnUse
   m_EditorClassIdentifier: 
-  health: 3
-  damage: 3
-  cardEffect: 0
-  cardName: 3
-  cardDescription: ASDASD
-  cardSprite: {fileID: 0}
+  cardsAmount: 1

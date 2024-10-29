@@ -1,20 +1,20 @@
-using System;
-using System.Xml.Linq;
-using UnityEngine;
+using System.Collections.Generic;
 
 public class CombatCardDTO
 {
-    public CombatCardDTO(string name, string description, int health, int damage)
+    public CombatCardDTO(CombatCard card)
     {
-        Name = name;
-        Description = description;
-        Health = health;
-        Damage = damage;
+        Name = card.Name;
+        Description = card.Description;
+        Health = card.Health;
+        Damage = card.Damage;
+        CardEffects = new(card.CardEffects);
     }
 
-    public string Name { get; set; }
-    public string Description { get; set; }
+    public string Name { get; private set; }
+    public string Description { get; private set; }
     public int Health { get; set; }
     public int Damage { get; set; }
     public bool IsAlive => Health > 0;
+    public List<CardEffect> CardEffects { get; private set; }
 }

@@ -1,22 +1,13 @@
-using System;
+using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CombatCard", menuName = "New Combat Card Type")]
+[CreateAssetMenu(fileName = "CombatCard", menuName = "New Combat Card")]
 public class CombatCard : ScriptableObject
 {
-    [Flags]
-    public enum EffectType
-    {
-        Haste = 1,
-        Deathtouch = 2,
-        Attacker = 4,
-        Blocker = 8
-    }
-
     [Header("Card parameters")]
     [SerializeField, Min(1)] private int health;
     [SerializeField, Min(0)] private int damage;
-    [SerializeField, EnumFlags] private EffectType cardEffect;
+    [SerializeField] private CardEffect[] _effects;
 
     [Header("Card information")]
     [SerializeField] private string cardName;
@@ -27,4 +18,5 @@ public class CombatCard : ScriptableObject
     public string Description => cardDescription;
     public int Health => health;
     public int Damage => damage;
+    public IEnumerable<CardEffect> CardEffects => _effects;
 }

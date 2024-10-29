@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using UnityEngine;
 
@@ -40,25 +39,18 @@ public class CombatStateMachine : MonoBehaviour
         table.OnTableSlotSnapped -= OnCardDragEnd;
     }
 
-    private void OnCardDragEnd(Card card)
-    {
-        AddCardOnPlayerTable(card);
-    }
-
-    private void RemoveCardFromTable(Card card)
-    {
-        Destroy(card.CardVisual.gameObject);
-        Destroy(card.transform.parent.gameObject);
-    }
-
     public void SetState(CombatState state)
     {
         State = state;
         StartCoroutine(State.EnterState());
     }
 
-    public void AddCardOnPlayerTable(Card card)
+    private void OnCardDragEnd(Card card)
     {
+        foreach (var effect in card.CombatDTO.CardEffects)
+        {
+            effect.OnUse(PlayerDeck, card);
+        }
         PlayerCardsOnTable.Add(card);
     }
 
@@ -67,23 +59,36 @@ public class CombatStateMachine : MonoBehaviour
         EnemyCardsOnTable.Add(card);
     }
 
+    private void RemoveCardFromTable(Card card)
+    {
+        Destroy(card.CardVisual.gameObject);
+        Destroy(card.transform.parent.gameObject);
+    }
+
     public void OnTurnEndButtonClicked()
     {
         OnEndTurn?.Invoke();
 
-        List<Card> cardsToBeRemoved = new List<Card>();
+        List<Card> cardsToBeRemoved = new();
+        List<Card> cardsToBeAdded = new();
 
         foreach (var card in PlayerCardsOnTable)
         {
             if (!card.CombatDTO.IsAlive)
             {
+                foreach (var effect in card.CombatDTO.CardEffects)
+                {
+                    cardsToBeAdded.Add(effect.OnDeathCreateCard(card, table.PlayerTableSide));
+                }
                 cardsToBeRemoved.Add(card);
                 RemoveCardFromTable(card);
-                //todo call on player card die
             }
         }
 
         PlayerCardsOnTable = new(PlayerCardsOnTable.Except(cardsToBeRemoved));
+        PlayerCardsOnTable.AddRange(cardsToBeAdded);
+
+        cardsToBeAdded.Clear();
         cardsToBeRemoved.Clear();
 
         foreach (var card in EnemyCardsOnTable)
@@ -92,7 +97,6 @@ public class CombatStateMachine : MonoBehaviour
             {
                 cardsToBeRemoved.Add(card);
                 RemoveCardFromTable(card);
-                //todo call on enemy card die
             }
         }
 

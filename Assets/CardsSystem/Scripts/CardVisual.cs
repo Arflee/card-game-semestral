@@ -90,15 +90,6 @@ public class CardVisual : MonoBehaviour
         parentCard.PointerUpEvent.AddListener(PointerUp);
         parentCard.SelectEvent.AddListener(Select);
 
-        Initialize(combatProperties);
-
-        //Initialization
-        _initialize = true;
-
-    }
-
-    public void Initialize(CombatCardDTO combatProperties)
-    {
         cardName.text = combatProperties.Name;
         cardDescription.text = combatProperties.Description;
         healthText.text = combatProperties.Health.ToString();
@@ -106,7 +97,9 @@ public class CardVisual : MonoBehaviour
 
         parentCard.OnTakeDamageEvent += UpdateTextOnTakeDamage;
 
-        _initialize = false;
+        //Initialization
+        _initialize = true;
+
     }
 
     private void UpdateTextOnTakeDamage(Card card)

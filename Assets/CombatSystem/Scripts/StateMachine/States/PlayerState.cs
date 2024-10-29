@@ -17,7 +17,7 @@ public class PlayerState : CombatState
     {
         for (int i = 0; i < StateMachine.PlayerCardsOnTable.Count; i++)
         {
-            if (i + 1 > StateMachine.EnemyCardsOnTable.Count)
+            if (PlayerHasMoreCards(i))
             {
                 Debug.Log(i + " Attacks crystal");
                 continue;
@@ -31,5 +31,10 @@ public class PlayerState : CombatState
         }
 
         StateMachine.ChangeTurn();
+    }
+
+    private bool PlayerHasMoreCards(int index)
+    {
+        return index + 1 > StateMachine.EnemyCardsOnTable.Count;
     }
 }

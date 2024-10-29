@@ -17,6 +17,8 @@ public class CardHolder : MonoBehaviour
 
     private List<UnityAction<Card>> _externalOnDragEndActions = new();
 
+    public List<Card> CardsInHand => _cards;
+
     private void Start()
     {
         _rect = (RectTransform)transform;

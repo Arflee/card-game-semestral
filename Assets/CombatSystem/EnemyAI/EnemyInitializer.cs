@@ -8,15 +8,16 @@ public class EnemyInitializer : MonoBehaviour
     [SerializeField] private CombatCard[] enemyHand;
     [SerializeField] private RectTransform playedCardsEnemy;
 
-    private List<Card> _cardObjects = new();
-
     public List<Card> PlaceStartCards()
     {
+        List<Card> _cardObjects = new();
+
         for (int i = 0; i < enemyHand.Length; i++)
         {
             var cardSlot = Instantiate(cardSlotPrefab, playedCardsEnemy.transform);
             var card = cardSlot.GetComponentInChildren<Card>();
             card.Initialize(enemyHand[i]);
+            card.DisableCard();
 
             _cardObjects.Add(card);
         }

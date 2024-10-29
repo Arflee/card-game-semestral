@@ -12,19 +12,14 @@ public class EnemyState : CombatState
 
     public override IEnumerator EnterState()
     {
-        if (!_wasInitialized)
+        var createdCards = _initializer.PlaceStartCards();
+
+        foreach (var card in createdCards)
         {
-            _wasInitialized = true;
-            var createdCards = _initializer.PlaceStartCards();
-
-            foreach (var card in createdCards)
-            {
-                StateMachine.AddCardOnEnemyTable(card);
-            }
-
-            yield return null;
+            StateMachine.AddCardOnEnemyTable(card);
         }
 
+        yield return null;
         StateMachine.ChangeTurn();
     }
 }
