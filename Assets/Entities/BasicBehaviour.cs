@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,12 +7,14 @@ public class BasicBehaviour : MonoBehaviour
 {
     [SerializeField] float speed = 5f;
     [SerializeField] float distanceThreshold = 0.1f;
+    [SerializeField] float delay = 0f;
 
     public Vector2[] points = new Vector2[0];
     public bool loop;
 
     private int targetPointIndex = 0;
     private int indexDirection = 1;
+    private bool isWaiting = false;
     
     private void Start()
     {
@@ -25,18 +28,24 @@ public class BasicBehaviour : MonoBehaviour
         Vector2 targetDirection = targetPoint - (Vector2)transform.position;
         float distance = targetDirection.magnitude;
 
-        if (distance <= distanceThreshold)
+        if (distance <= distanceThreshold && !isWaiting)
         {
-            targetPointIndex += indexDirection;
-            if (loop && targetPointIndex == points.Length)
-                targetPointIndex = 0;
-            else if (targetPointIndex == points.Length || targetPointIndex < 0)
+            isWaiting = true;
+            DOVirtual.DelayedCall(delay, () =>
             {
-                indexDirection *= -1;
-                targetPointIndex += indexDirection * 2;
-            }
+                targetPointIndex += indexDirection;
+                if (loop && targetPointIndex == points.Length)
+                    targetPointIndex = 0;
+                else if (targetPointIndex == points.Length || targetPointIndex < 0)
+                {
+                    indexDirection *= -1;
+                    targetPointIndex += indexDirection * 2;
+                }
+                isWaiting = false;
+            });
         }
 
-        transform.Translate(targetDirection.normalized * speed * Time.deltaTime);
+        if (!isWaiting)
+            transform.Translate(targetDirection.normalized * speed * Time.deltaTime);
     }
 }
