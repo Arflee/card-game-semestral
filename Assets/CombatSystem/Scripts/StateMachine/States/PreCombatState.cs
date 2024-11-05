@@ -18,6 +18,8 @@ public class PreCombatState : CombatState
             _playerDeck.TakeCard();
         }
 
+        StateMachine.ManaPanel.SpawnCrystalPrefabs(StateMachine.MaxPlayerMana);
+
         StateMachine.ChangeTurn();
     }
 }

@@ -10,6 +10,7 @@ public class PlayerState : CombatState
 
     public override IEnumerator EnterState()
     {
+        StateMachine.ManaPanel.ResetManaCrystals(StateMachine.PlayerMana);
         yield return null;
     }
 

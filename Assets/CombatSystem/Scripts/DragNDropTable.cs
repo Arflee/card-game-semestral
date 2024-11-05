@@ -6,7 +6,7 @@ public class DragNDropTable : MonoBehaviour
     [SerializeField] private CardHolder cardHolder;
     [SerializeField] private RectTransform playedCardsPlayer;
 
-    public event Action<Card> OnTableSlotSnapped;
+    public event Func<Card, bool> OnTableSlotSnapped;
 
     public Transform PlayerTableSide => playedCardsPlayer;
 
@@ -20,9 +20,15 @@ public class DragNDropTable : MonoBehaviour
         if (RectTransformUtility.RectangleContainsScreenPoint((RectTransform)playedCardsPlayer.transform, (Vector2)card.transform.position) &&
             playedCardsPlayer.CompareTag("Slot"))
         {
-            cardHolder.UseCardFromHand(card);
-            OnTableSlotSnapped?.Invoke(card);
-            card.transform.parent.SetParent(playedCardsPlayer.transform);
+            if (OnTableSlotSnapped?.Invoke(card) ?? false)
+            {
+                cardHolder.UseCardFromHand(card);
+                card.transform.parent.SetParent(playedCardsPlayer.transform);
+            }
+            else
+            {
+                Debug.Log("not enough mana");
+            }
         }
     }
 }

@@ -1,9 +1,8 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CardEffect", menuName = "CardEffects/On Death/After death use card on table")]
+[CreateAssetMenu(fileName = "CardEffect", menuName = "Card Effects/On Death/After death use card on table")]
 
-public class UseCardOnDeathEffect : CardEffect
+public class CreateCardOnDeathEffect : CardEffect
 {
     [SerializeField] private GameObject _cardSlotPrefab;
     [SerializeField] private CombatCard _combatPreset;

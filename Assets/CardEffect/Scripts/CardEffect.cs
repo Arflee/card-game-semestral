@@ -3,7 +3,7 @@ using UnityEngine;
 
 public abstract class CardEffect : ScriptableObject
 {
-    public virtual void OnUse(CardDeck deck, Card usedCard)
+    public virtual void OnUse(CardDeck deck, Card usedCard, List<Card> playerTable)
     {
 
     }

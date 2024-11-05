@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   damage: 99
-  _effects: []
+  manaCost: 3
+  effects: []
   cardName: 3
   cardDescription: ASDASD
   cardSprite: {fileID: 0}

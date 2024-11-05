@@ -212,4 +212,18 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
         CombatDTO.Health -= source.CombatDTO.Damage;
         OnTakeDamageEvent?.Invoke(this);
     }
+
+    public void BuffHealth(int amount)
+    {
+        CombatDTO.Health += amount;
+        // TODO add new event for ui redrawing
+        OnTakeDamageEvent?.Invoke(this);
+    }
+
+    public void BuffDamage(int amount)
+    {
+        CombatDTO.Damage += amount;
+        // TODO add new event for ui redrawing
+        OnTakeDamageEvent?.Invoke(this);
+    }
 }

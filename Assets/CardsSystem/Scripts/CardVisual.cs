@@ -29,7 +29,7 @@ public class CardVisual : MonoBehaviour
     [SerializeField] private TMP_Text cardName;
     [SerializeField] private TMP_Text cardDescription;
     [SerializeField] private TMP_Text healthText;
-    [SerializeField] private TMP_Text attackText;
+    [SerializeField] private TMP_Text damageText;
 
     [Header("Follow Parameters")]
     [SerializeField] private float followSpeed = 30;
@@ -93,7 +93,7 @@ public class CardVisual : MonoBehaviour
         cardName.text = combatProperties.Name;
         cardDescription.text = combatProperties.Description;
         healthText.text = combatProperties.Health.ToString();
-        attackText.text = combatProperties.Damage.ToString();
+        damageText.text = combatProperties.Damage.ToString();
 
         parentCard.OnTakeDamageEvent += UpdateTextOnTakeDamage;
 
@@ -105,6 +105,7 @@ public class CardVisual : MonoBehaviour
     private void UpdateTextOnTakeDamage(Card card)
     {
         healthText.text = card.CombatDTO.Health.ToString();
+        damageText.text = card.CombatDTO.Damage.ToString();
     }
 
     public void UpdateIndex()

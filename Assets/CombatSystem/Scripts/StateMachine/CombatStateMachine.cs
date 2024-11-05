@@ -8,6 +8,7 @@ public class CombatStateMachine : MonoBehaviour
     [SerializeField] private CardDeck playerDeck;
     [SerializeField] private DragNDropTable table;
     [SerializeField] private EnemyInitializer enemyInitializer;
+    [SerializeField] private ManaPanel manaPanel;
 
     private bool _isPlayerTurn = false;
     private PlayerState _playerState;
@@ -18,11 +19,17 @@ public class CombatStateMachine : MonoBehaviour
     public CombatState State { get; private set; }
     public List<Card> PlayerCardsOnTable { get; private set; } = new();
     public List<Card> EnemyCardsOnTable { get; private set; } = new();
+    public ManaPanel ManaPanel => manaPanel;
 
     public event Action OnEndTurn;
 
     public int PlayerCrystals { get; private set; } = 3;
     public int EnemyCrystals { get; private set; } = 3;
+
+    public int EnemyMana { get; private set; } = 3;
+    public int PlayerMana { get; private set; } = 3;
+    public int MaxPlayerMana { get; private set; } = 10;
+    public int MaxEnemyMana { get; private set; } = 10;
 
     private void Start()
     {
@@ -45,13 +52,21 @@ public class CombatStateMachine : MonoBehaviour
         StartCoroutine(State.EnterState());
     }
 
-    private void OnCardDragEnd(Card card)
+    private bool OnCardDragEnd(Card card)
     {
+        if (card.CombatDTO.ManaCost > PlayerMana) return false;
+
+        PlayerCardsOnTable.Add(card);
+        PlayerMana -= card.CombatDTO.ManaCost;
+        manaPanel.UseManaCrystals(card.CombatDTO.ManaCost);
+
         foreach (var effect in card.CombatDTO.CardEffects)
         {
-            effect.OnUse(PlayerDeck, card);
+            Debug.Log("used effect");
+            effect.OnUse(PlayerDeck, card, PlayerCardsOnTable);
         }
-        PlayerCardsOnTable.Add(card);
+
+        return true;
     }
 
     public void AddCardOnEnemyTable(Card card)
@@ -108,6 +123,7 @@ public class CombatStateMachine : MonoBehaviour
         if (_isPlayerTurn)
         {
             _isPlayerTurn = !_isPlayerTurn;
+            PlayerMana = Math.Clamp(++PlayerMana, 0, MaxPlayerMana);
             SetState(_playerState);
         }
         else

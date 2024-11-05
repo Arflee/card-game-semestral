@@ -3,7 +3,6 @@ using System.Collections;
 public class EnemyState : CombatState
 {
     private EnemyInitializer _initializer;
-    private bool _wasInitialized = false;
 
     public EnemyState(CombatStateMachine machine) : base(machine)
     {

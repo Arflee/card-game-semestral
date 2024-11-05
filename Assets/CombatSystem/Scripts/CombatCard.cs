@@ -7,7 +7,8 @@ public class CombatCard : ScriptableObject
     [Header("Card parameters")]
     [SerializeField, Min(1)] private int health;
     [SerializeField, Min(0)] private int damage;
-    [SerializeField] private CardEffect[] _effects;
+    [SerializeField, Min(0)] private int manaCost;
+    [SerializeField] private CardEffect[] effects;
 
     [Header("Card information")]
     [SerializeField] private string cardName;
@@ -18,5 +19,6 @@ public class CombatCard : ScriptableObject
     public string Description => cardDescription;
     public int Health => health;
     public int Damage => damage;
-    public IEnumerable<CardEffect> CardEffects => _effects;
+    public int ManaCost => manaCost;
+    public IEnumerable<CardEffect> CardEffects => effects;
 }

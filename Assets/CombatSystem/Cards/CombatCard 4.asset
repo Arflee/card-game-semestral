@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 4
   damage: 4
-  _effects:
-  - {fileID: 11400000, guid: ca2f4139588626641a6dece3fcdde516, type: 2}
+  manaCost: 4
+  effects:
+  - {fileID: 11400000, guid: 991ff83b2855331449c4078ae7c5967f, type: 2}
   cardName: 4
   cardDescription: ASDASD
   cardSprite: {fileID: 0}
