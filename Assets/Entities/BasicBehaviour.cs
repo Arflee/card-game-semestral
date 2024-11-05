@@ -7,34 +7,37 @@ public class BasicBehaviour : MonoBehaviour
 {
     [SerializeField] float speed = 5f;
     [SerializeField] float distanceThreshold = 0.1f;
-    [SerializeField] float delay = 0f;
+    [SerializeField] float pause = 0f;
 
+    public enum Mode { Normal, Loop, Once }
+    public Mode mode = Mode.Normal;
     public Vector2[] points = new Vector2[0];
-    public bool loop;
 
     private int targetPointIndex = 0;
     private int indexDirection = 1;
     private bool isWaiting = false;
-    
-    private void Start()
+
+    protected virtual void Update()
     {
         if (points.Length == 0)
-            points = new Vector2[] { transform.position };
-    }
+            return;
 
-    private void Update()
-    {
         Vector2 targetPoint = points[targetPointIndex];
         Vector2 targetDirection = targetPoint - (Vector2)transform.position;
         float distance = targetDirection.magnitude;
 
         if (distance <= distanceThreshold && !isWaiting)
         {
+            if (points.Length == 1)
+                return;
+
             isWaiting = true;
-            DOVirtual.DelayedCall(delay, () =>
+            if (mode == Mode.Once && targetPointIndex == points.Length - 1)
+                return;
+            DOVirtual.DelayedCall(pause, () =>
             {
                 targetPointIndex += indexDirection;
-                if (loop && targetPointIndex == points.Length)
+                if (mode == Mode.Loop && targetPointIndex == points.Length)
                     targetPointIndex = 0;
                 else if (targetPointIndex == points.Length || targetPointIndex < 0)
                 {

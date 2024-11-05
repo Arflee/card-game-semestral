@@ -1,13 +1,16 @@
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(BasicBehaviour))]
+[CustomEditor(typeof(BasicBehaviour), true)]
 public class BasicBehaviourEditor : Editor
 {
     private void OnSceneGUI()
     {
         BasicBehaviour basicBehaviour = (BasicBehaviour)target;
         Vector2[] points = basicBehaviour.points;
+
+        if (points.Length == 0)
+            return;
 
         Handles.color = Color.red;
         GUIStyle style = new GUIStyle { fontSize = 20, normal = new GUIStyleState { textColor = Color.white } };
@@ -22,7 +25,7 @@ public class BasicBehaviourEditor : Editor
         Handles.color = Color.blue;
         for (int i = 0; i < points.Length - 1; i++)
             Handles.DrawLine(points[i], points[i + 1], 3);
-        if (basicBehaviour.loop)
+        if (basicBehaviour.mode == BasicBehaviour.Mode.Loop)
             Handles.DrawLine(points[points.Length - 1], points[0], 3);
         
         for (int i = 0; i < points.Length; i++)
