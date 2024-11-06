@@ -12,16 +12,16 @@ public class ManaPanel : MonoBehaviour
         for (int i = 0; i < amount; i++)
         {
             var crystal = Instantiate(manaCrystalPrefab, transform);
+            crystal.SetActive(false);
             manaCrystals.Add(crystal);
         }
-
-        //manaCrystals.Reverse();
     }
 
     public void UseManaCrystals(int amount)
     {
-        var usedCrystals = manaCrystals.Take(amount);
-        foreach (var crystal in usedCrystals)
+        var activeCrystals = manaCrystals.Where(c => c.activeInHierarchy).Take(amount);
+
+        foreach (var crystal in activeCrystals)
         {
             crystal.SetActive(false);
         }
@@ -29,14 +29,11 @@ public class ManaPanel : MonoBehaviour
 
     public void ResetManaCrystals(int newCrystalAmount)
     {
+        manaCrystals.ForEach(c => c.SetActive(false));
+
         for (int i = 0; i < newCrystalAmount; i++)
         {
             manaCrystals[i].SetActive(true);
-        }
-
-        for (int i = newCrystalAmount; i < manaCrystals.Count; i++)
-        {
-            manaCrystals[i].SetActive(false);
         }
     }
 }

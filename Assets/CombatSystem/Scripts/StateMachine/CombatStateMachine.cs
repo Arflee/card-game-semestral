@@ -26,10 +26,9 @@ public class CombatStateMachine : MonoBehaviour
     public int PlayerCrystals { get; private set; } = 3;
     public int EnemyCrystals { get; private set; } = 3;
 
-    public int EnemyMana { get; private set; } = 3;
     public int PlayerMana { get; private set; } = 3;
+    public int PlayerManaNextTurn { get; private set; } = 4;
     public int MaxPlayerMana { get; private set; } = 10;
-    public int MaxEnemyMana { get; private set; } = 10;
 
     private void Start()
     {
@@ -84,38 +83,32 @@ public class CombatStateMachine : MonoBehaviour
     {
         OnEndTurn?.Invoke();
 
-        List<Card> cardsToBeRemoved = new();
         List<Card> cardsToBeAdded = new();
 
-        foreach (var card in PlayerCardsOnTable)
+        var deadCards = PlayerCardsOnTable.Where(card => !card.CombatDTO.IsAlive);
+
+        foreach (var card in deadCards)
         {
-            if (!card.CombatDTO.IsAlive)
+            foreach (var effect in card.CombatDTO.CardEffects)
             {
-                foreach (var effect in card.CombatDTO.CardEffects)
+                var createdCard = effect.OnDeathCreateCard(card, table.PlayerTableSide);
+                if (createdCard)
                 {
-                    cardsToBeAdded.Add(effect.OnDeathCreateCard(card, table.PlayerTableSide));
+                    cardsToBeAdded.Add(createdCard);
                 }
-                cardsToBeRemoved.Add(card);
-                RemoveCardFromTable(card);
             }
         }
 
-        PlayerCardsOnTable = new(PlayerCardsOnTable.Except(cardsToBeRemoved));
+        PlayerCardsOnTable = PlayerCardsOnTable.Except(deadCards).ToList();
         PlayerCardsOnTable.AddRange(cardsToBeAdded);
 
-        cardsToBeAdded.Clear();
-        cardsToBeRemoved.Clear();
-
-        foreach (var card in EnemyCardsOnTable)
+        foreach (var card in deadCards)
         {
-            if (!card.CombatDTO.IsAlive)
-            {
-                cardsToBeRemoved.Add(card);
-                RemoveCardFromTable(card);
-            }
+            RemoveCardFromTable(card);
         }
 
-        EnemyCardsOnTable = new(EnemyCardsOnTable.Except(cardsToBeRemoved));
+        deadCards = EnemyCardsOnTable.Where(card => !card.CombatDTO.IsAlive);
+        EnemyCardsOnTable = EnemyCardsOnTable.Except(deadCards).ToList();
     }
 
     public void ChangeTurn()
@@ -123,7 +116,8 @@ public class CombatStateMachine : MonoBehaviour
         if (_isPlayerTurn)
         {
             _isPlayerTurn = !_isPlayerTurn;
-            PlayerMana = Math.Clamp(++PlayerMana, 0, MaxPlayerMana);
+            PlayerMana = PlayerManaNextTurn;
+            PlayerManaNextTurn = Math.Clamp(PlayerManaNextTurn + 1, 0, MaxPlayerMana);
             SetState(_playerState);
         }
         else

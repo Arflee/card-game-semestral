@@ -18,7 +18,7 @@ public class EnemyState : CombatState
             StateMachine.AddCardOnEnemyTable(card);
         }
 
-        yield return null;
         StateMachine.ChangeTurn();
+        yield return null;
     }
 }

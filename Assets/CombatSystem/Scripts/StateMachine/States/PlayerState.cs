@@ -16,11 +16,13 @@ public class PlayerState : CombatState
 
     private void OnEndTurn()
     {
+        int cardsDifference = StateMachine.EnemyCardsOnTable.Count - StateMachine.PlayerCardsOnTable.Count;
+
         for (int i = 0; i < StateMachine.PlayerCardsOnTable.Count; i++)
         {
             if (PlayerHasMoreCards(i))
             {
-                Debug.Log(i + " Attacks crystal");
+                Debug.Log("Player attacks crystal");
                 continue;
             }
 
@@ -29,6 +31,11 @@ public class PlayerState : CombatState
 
             enemyCard.TakeDamageFrom(playerCard);
             playerCard.TakeDamageFrom(enemyCard);
+        }
+
+        for (int i = StateMachine.PlayerCardsOnTable.Count; i < StateMachine.PlayerCardsOnTable.Count + cardsDifference; i++)
+        {
+            Debug.Log(StateMachine.EnemyCardsOnTable[i].name + " attacks player's crystal");
         }
 
         StateMachine.ChangeTurn();
