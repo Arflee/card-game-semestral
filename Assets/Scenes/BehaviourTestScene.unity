@@ -5282,6 +5282,7 @@ GameObject:
   - component: {fileID: 921405261}
   - component: {fileID: 921405263}
   - component: {fileID: 921405262}
+  - component: {fileID: 921405264}
   m_Layer: 0
   m_Name: Square (2)
   m_TagString: Untagged
@@ -5323,7 +5324,7 @@ MonoBehaviour:
   - {x: 23.075352, y: -11.789839}
   - {x: 28.108143, y: -11.498686}
   - {x: 28.482485, y: -8.9614935}
-  nextState: {fileID: 0}
+  nextState: {fileID: 921405264}
   gizmosColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!212 &921405263
 SpriteRenderer:
@@ -5377,6 +5378,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &921405264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921405260}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e9cd33ea07c63c4d8ee0d5f7cb5c438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  distanceThreshold: 0.1
+  points:
+  - {x: 25.114252, y: -12.208202}
+  - {x: 28.653881, y: -10.549774}
+  - {x: 26.846937, y: -8.099259}
+  - {x: 22.391459, y: -9.485409}
+  - {x: 25.832079, y: -10.302247}
+  nextState: {fileID: 921405262}
+  gizmosColor: {r: 0.7933531, g: 0, b: 1, a: 1}
 --- !u!1001 &921807248
 PrefabInstance:
   m_ObjectHideFlags: 0
