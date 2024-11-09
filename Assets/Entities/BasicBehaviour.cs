@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicBehaviour : MonoBehaviour
+public class BasicBehaviour : BehaviourState
 {
     [SerializeField] float speed = 5f;
     [SerializeField] float distanceThreshold = 0.1f;
@@ -12,28 +12,42 @@ public class BasicBehaviour : MonoBehaviour
     public enum Mode { Normal, Loop, Once, RandomWalk }
     public Mode mode = Mode.Normal;
     public Vector2[] points = new Vector2[0];
-    public bool finnished = false;
+
+    [Header("States")]
+    public BehaviourState nextState;
+    public float maxTimeActive;
+
+    [Header("Gizmos")]
     public Color gizmosColor = Color.blue;
 
     private int targetPointIndex = 0;
     private int prevPointIndex = 0;
     private int indexDirection = 1;
     private bool isWaiting = false;
+    protected float timeLeft;
 
     protected virtual void OnEnable()
     {
-        Debug.Log("Enabled", this);        
+        Debug.Log("Enabled: " + ToString(), this);
         targetPointIndex = 0;
         prevPointIndex = 0;
         indexDirection = 1;
         isWaiting = false;
-        finnished = false;
+        Finished = false;
+        timeLeft = maxTimeActive;
     }
 
     protected virtual void Update()
     {
         if (points.Length == 0)
             return;
+
+        if (maxTimeActive > 0)
+        {
+            timeLeft -= Time.deltaTime;
+            if (timeLeft < 0)
+                Finished = true;
+        }
 
         Vector2 targetPoint = points[targetPointIndex];
         Vector2 targetDirection = targetPoint - (Vector2)transform.position;
@@ -47,7 +61,7 @@ public class BasicBehaviour : MonoBehaviour
             isWaiting = true;
             if (mode == Mode.Once && targetPointIndex == points.Length - 1)
             {
-                finnished = true;
+                Finished = true;
                 return;
             }
             DOVirtual.DelayedCall(pause, () =>
@@ -84,5 +98,10 @@ public class BasicBehaviour : MonoBehaviour
 
         if (!isWaiting)
             transform.Translate(targetDirection.normalized * speed * Time.deltaTime);
+    }
+
+    public override BehaviourState NextState()
+    {
+        return nextState;
     }
 }

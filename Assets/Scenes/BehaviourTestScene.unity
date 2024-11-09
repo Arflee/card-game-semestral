@@ -766,7 +766,8 @@ MonoBehaviour:
   - {x: 8.792023, y: -9.8706875}
   - {x: 3.2479734, y: -11.661642}
   - {x: 3.2885125, y: -4.89163}
-  finnished: 0
+  nextState: {fileID: 142605124}
+  maxTimeActive: 20
   gizmosColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!212 &142605122
 SpriteRenderer:
@@ -832,13 +833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c43aad1177063704cade768b3fe23fde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  states:
-  - active: {fileID: 142605121}
-    nextStateIndex: 1
-    maxTime: 60
-  - active: {fileID: 142605124}
-    nextStateIndex: 0
-    maxTime: 0
+  currentState: {fileID: 142605121}
 --- !u!114 &142605124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -860,7 +855,8 @@ MonoBehaviour:
   - {x: 1.4472489, y: -9.859979}
   - {x: 7.651156, y: -11.558255}
   - {x: 8.448305, y: -7.468529}
-  finnished: 0
+  nextState: {fileID: 142605121}
+  maxTimeActive: 0
   gizmosColor: {r: 0.6396227, g: 0.6396227, b: 1, a: 1}
 --- !u!1 &153367134
 GameObject:
@@ -7843,7 +7839,8 @@ MonoBehaviour:
   mode: 0
   points:
   - {x: 12.73789, y: -9.734852}
-  finnished: 0
+  nextState: {fileID: 0}
+  maxTimeActive: 0
   gizmosColor: {r: 0, g: 0, b: 1, a: 1}
   triggerArea: {fileID: 1446689905}
   layerMask:
