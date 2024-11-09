@@ -5324,8 +5324,8 @@ MonoBehaviour:
   - {x: 23.075352, y: -11.789839}
   - {x: 28.108143, y: -11.498686}
   - {x: 28.482485, y: -8.9614935}
-  nextState: {fileID: 921405264}
   gizmosColor: {r: 0, g: 0, b: 1, a: 1}
+  nextState: {fileID: 921405264}
 --- !u!212 &921405263
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5398,8 +5398,8 @@ MonoBehaviour:
   - {x: 26.846937, y: -8.099259}
   - {x: 22.391459, y: -9.485409}
   - {x: 25.832079, y: -10.302247}
-  nextState: {fileID: 921405262}
   gizmosColor: {r: 0.7933531, g: 0, b: 1, a: 1}
+  nextState: {fileID: 921405262}
 --- !u!1001 &921807248
 PrefabInstance:
   m_ObjectHideFlags: 0

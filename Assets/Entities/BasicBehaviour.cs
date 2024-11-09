@@ -3,22 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicBehaviour : BehaviourState
+public class BasicBehaviour : PointBehaviour
 {
-    [SerializeField] float speed = 5f;
-    [SerializeField] float distanceThreshold = 0.1f;
+    [Header("Rest")]
     [SerializeField] float pause = 0f;
 
     public enum Mode { Normal, Loop, Once, RandomWalk }
     public Mode mode = Mode.Normal;
-    public Vector2[] points = new Vector2[0];
 
     [Header("States")]
     public BehaviourState nextState;
     public float maxTimeActive;
-
-    [Header("Gizmos")]
-    public Color gizmosColor = Color.blue;
 
     private int targetPointIndex = 0;
     private int prevPointIndex = 0;

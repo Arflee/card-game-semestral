@@ -1,12 +1,12 @@
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(ClosestPointBehaviour), true)]
-public class ClosestPointBehaviourEditor : Editor
+[CustomEditor(typeof(PointBehaviour), true)]
+public class PointBehaviourEditor : Editor
 {
     private void OnSceneGUI()
     {
-        ClosestPointBehaviour behaviour = (ClosestPointBehaviour)target;
+        PointBehaviour behaviour = (PointBehaviour)target;
         Vector2[] points = behaviour.points;
 
         if (points.Length == 0)

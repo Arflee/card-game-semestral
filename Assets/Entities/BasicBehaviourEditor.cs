@@ -12,7 +12,7 @@ public class BasicBehaviourEditor : Editor
         if (points.Length == 0)
             return;
 
-        Handles.color = Color.red;
+        Handles.color = basicBehaviour.gizmosColor;
         GUIStyle style = new GUIStyle { fontSize = 20, normal = new GUIStyleState { textColor = Color.white } };
 
         for (int i = 0; i < points.Length; i++)
