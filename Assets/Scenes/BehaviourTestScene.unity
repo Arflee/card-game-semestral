@@ -721,6 +721,8 @@ GameObject:
   - component: {fileID: 142605120}
   - component: {fileID: 142605122}
   - component: {fileID: 142605121}
+  - component: {fileID: 142605124}
+  - component: {fileID: 142605123}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -760,10 +762,12 @@ MonoBehaviour:
   pause: 0
   mode: 1
   points:
-  - {x: 6.950535, y: -6.0672603}
-  - {x: 8.747765, y: -11.242739}
+  - {x: 7.2160945, y: -6.4213386}
+  - {x: 8.792023, y: -9.8706875}
   - {x: 3.2479734, y: -11.661642}
   - {x: 3.2885125, y: -4.89163}
+  finnished: 0
+  gizmosColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!212 &142605122
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -816,6 +820,48 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &142605123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142605119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c43aad1177063704cade768b3fe23fde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  states:
+  - active: {fileID: 142605121}
+    nextStateIndex: 1
+    maxTime: 60
+  - active: {fileID: 142605124}
+    nextStateIndex: 0
+    maxTime: 0
+--- !u!114 &142605124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142605119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fae04ba74595d34c82711b76765fc23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  distanceThreshold: 0.1
+  pause: 0
+  mode: 2
+  points:
+  - {x: 4.809143, y: -6.9833064}
+  - {x: 1.4472489, y: -9.859979}
+  - {x: 7.651156, y: -11.558255}
+  - {x: 8.448305, y: -7.468529}
+  finnished: 0
+  gizmosColor: {r: 0.6396227, g: 0.6396227, b: 1, a: 1}
 --- !u!1 &153367134
 GameObject:
   m_ObjectHideFlags: 0
@@ -5581,11 +5627,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.6136212
+      value: 2.61018
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4988737
+      value: 0.49887466
       objectReference: {fileID: 0}
     - target: {fileID: 4379666920158019866, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7797,6 +7843,8 @@ MonoBehaviour:
   mode: 0
   points:
   - {x: 12.73789, y: -9.734852}
+  finnished: 0
+  gizmosColor: {r: 0, g: 0, b: 1, a: 1}
   triggerArea: {fileID: 1446689905}
   layerMask:
     serializedVersion: 2

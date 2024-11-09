@@ -10,6 +10,12 @@ public class TriggerBehaviour : BasicBehaviour
     private bool running = false;
     private ContactFilter2D contactFilter;
 
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        running = false;
+    }
+
     private void Start()
     {
         contactFilter.SetLayerMask(layerMask);

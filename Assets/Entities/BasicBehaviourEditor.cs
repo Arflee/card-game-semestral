@@ -24,7 +24,7 @@ public class BasicBehaviourEditor : Editor
 
         if (basicBehaviour.mode != BasicBehaviour.Mode.RandomWalk)
         {
-            Handles.color = Color.blue;
+            Handles.color = basicBehaviour.gizmosColor;
             for (int i = 0; i < points.Length - 1; i++)
                 Handles.DrawLine(points[i], points[i + 1], 3);
             if (basicBehaviour.mode == BasicBehaviour.Mode.Loop)

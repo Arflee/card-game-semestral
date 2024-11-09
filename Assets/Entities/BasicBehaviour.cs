@@ -13,11 +13,22 @@ public class BasicBehaviour : MonoBehaviour
     public Mode mode = Mode.Normal;
     public Vector2[] points = new Vector2[0];
     public bool finnished = false;
+    public Color gizmosColor = Color.blue;
 
     private int targetPointIndex = 0;
     private int prevPointIndex = 0;
     private int indexDirection = 1;
     private bool isWaiting = false;
+
+    protected virtual void OnEnable()
+    {
+        Debug.Log("Enabled", this);        
+        targetPointIndex = 0;
+        prevPointIndex = 0;
+        indexDirection = 1;
+        isWaiting = false;
+        finnished = false;
+    }
 
     protected virtual void Update()
     {
