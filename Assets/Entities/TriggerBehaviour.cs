@@ -2,31 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerBehaviour : BasicBehaviour
+public class TriggerBehaviour : BehaviourState
 {
     [SerializeField] private Collider2D triggerArea;
     [SerializeField] private LayerMask layerMask;
 
-    private bool running = false;
-    private ContactFilter2D contactFilter;
+    [Header("States")]
+    [SerializeField] public BehaviourState nextState;
 
-    protected override void OnEnable()
-    {
-        base.OnEnable();
-        running = false;
-    }
+    private ContactFilter2D contactFilter;
 
     private void Start()
     {
         contactFilter.SetLayerMask(layerMask);
     }
 
-    protected override void Update()
+    protected virtual void Update()
     {
-        if (!running)
-            running = Physics2D.OverlapCollider(triggerArea, contactFilter, new Collider2D[1]) > 0;
+        if (Physics2D.OverlapCollider(triggerArea, contactFilter, new Collider2D[1]) > 0)
+            Finished();
+    }
 
-        if (running)
-            base.Update();
+    public override BehaviourState NextState()
+    {
+        return nextState;
     }
 }

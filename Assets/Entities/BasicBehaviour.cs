@@ -26,28 +26,27 @@ public class BasicBehaviour : BehaviourState
     private bool isWaiting = false;
     protected float timeLeft;
 
-    protected virtual void OnEnable()
+    protected override void OnEnable()
     {
-        Debug.Log("Enabled: " + ToString(), this);
+        base.OnEnable();
         targetPointIndex = 0;
         prevPointIndex = 0;
         indexDirection = 1;
         isWaiting = false;
-        Finished = false;
         timeLeft = maxTimeActive;
     }
 
     protected virtual void Update()
     {
-        if (points.Length == 0)
-            return;
-
         if (maxTimeActive > 0)
         {
             timeLeft -= Time.deltaTime;
             if (timeLeft < 0)
-                Finished = true;
+                Finished();
         }
+
+        if (points.Length == 0)
+            return;
 
         Vector2 targetPoint = points[targetPointIndex];
         Vector2 targetDirection = targetPoint - (Vector2)transform.position;
@@ -61,9 +60,10 @@ public class BasicBehaviour : BehaviourState
             isWaiting = true;
             if (mode == Mode.Once && targetPointIndex == points.Length - 1)
             {
-                Finished = true;
+                Finished();
                 return;
             }
+
             DOVirtual.DelayedCall(pause, () =>
             {
                 if (points.Length == 2)
