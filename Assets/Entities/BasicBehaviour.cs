@@ -12,6 +12,7 @@ public class BasicBehaviour : MonoBehaviour
     public enum Mode { Normal, Loop, Once, RandomWalk }
     public Mode mode = Mode.Normal;
     public Vector2[] points = new Vector2[0];
+    public bool finnished = false;
 
     private int targetPointIndex = 0;
     private int prevPointIndex = 0;
@@ -34,7 +35,10 @@ public class BasicBehaviour : MonoBehaviour
 
             isWaiting = true;
             if (mode == Mode.Once && targetPointIndex == points.Length - 1)
+            {
+                finnished = true;
                 return;
+            }
             DOVirtual.DelayedCall(pause, () =>
             {
                 if (points.Length == 2)

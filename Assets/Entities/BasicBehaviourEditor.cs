@@ -22,11 +22,14 @@ public class BasicBehaviourEditor : Editor
             Handles.Label(labelPos, i.ToString(), style);
         }
 
-        Handles.color = Color.blue;
-        for (int i = 0; i < points.Length - 1; i++)
-            Handles.DrawLine(points[i], points[i + 1], 3);
-        if (basicBehaviour.mode == BasicBehaviour.Mode.Loop)
-            Handles.DrawLine(points[points.Length - 1], points[0], 3);
+        if (basicBehaviour.mode != BasicBehaviour.Mode.RandomWalk)
+        {
+            Handles.color = Color.blue;
+            for (int i = 0; i < points.Length - 1; i++)
+                Handles.DrawLine(points[i], points[i + 1], 3);
+            if (basicBehaviour.mode == BasicBehaviour.Mode.Loop)
+                Handles.DrawLine(points[points.Length - 1], points[0], 3);
+        }
         
         for (int i = 0; i < points.Length; i++)
             points[i] = Handles.PositionHandle(basicBehaviour.points[i], Quaternion.identity);
