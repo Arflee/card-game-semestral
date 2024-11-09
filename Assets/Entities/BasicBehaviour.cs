@@ -9,11 +9,12 @@ public class BasicBehaviour : MonoBehaviour
     [SerializeField] float distanceThreshold = 0.1f;
     [SerializeField] float pause = 0f;
 
-    public enum Mode { Normal, Loop, Once }
+    public enum Mode { Normal, Loop, Once, RandomWalk }
     public Mode mode = Mode.Normal;
     public Vector2[] points = new Vector2[0];
 
     private int targetPointIndex = 0;
+    private int prevPointIndex = 0;
     private int indexDirection = 1;
     private bool isWaiting = false;
 
@@ -36,6 +37,24 @@ public class BasicBehaviour : MonoBehaviour
                 return;
             DOVirtual.DelayedCall(pause, () =>
             {
+                if (points.Length == 2)
+                {
+                    targetPointIndex = 1 - targetPointIndex;
+                    isWaiting = false;
+                    return;
+                }
+
+                if (mode == Mode.RandomWalk)
+                {
+                    int newIndex = Random.Range(0, points.Length);
+                    while (newIndex == targetPointIndex || newIndex == prevPointIndex)
+                        newIndex = Random.Range(0, points.Length);
+                    prevPointIndex = targetPointIndex;
+                    targetPointIndex = newIndex;
+                    isWaiting = false;
+                    return;
+                }
+
                 targetPointIndex += indexDirection;
                 if (mode == Mode.Loop && targetPointIndex == points.Length)
                     targetPointIndex = 0;
