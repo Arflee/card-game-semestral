@@ -23,6 +23,14 @@ public class LinkedBehaviour : BehaviourState
         }
     }
 
+    protected virtual void OnDisable()
+    {
+        foreach (var state in states)
+        {
+            state.CancelFinish -= LinkedFinish;
+        }
+    }
+
     private bool LinkedFinish()
     {
         foreach (var state in states)
