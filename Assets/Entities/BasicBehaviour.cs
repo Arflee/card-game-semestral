@@ -13,13 +13,11 @@ public class BasicBehaviour : PointBehaviour
 
     [Header("States")]
     public BehaviourState nextState;
-    public float maxTimeActive;
 
     private int targetPointIndex = 0;
     private int prevPointIndex = 0;
     private int indexDirection = 1;
     private bool isWaiting = false;
-    protected float timeLeft;
 
     protected override void OnEnable()
     {
@@ -28,18 +26,10 @@ public class BasicBehaviour : PointBehaviour
         prevPointIndex = 0;
         indexDirection = 1;
         isWaiting = false;
-        timeLeft = maxTimeActive;
     }
 
     protected virtual void Update()
     {
-        if (maxTimeActive > 0)
-        {
-            timeLeft -= Time.deltaTime;
-            if (timeLeft < 0)
-                Finished();
-        }
-
         if (points.Length == 0)
             return;
 
