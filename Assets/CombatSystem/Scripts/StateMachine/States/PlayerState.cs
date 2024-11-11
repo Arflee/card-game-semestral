@@ -35,7 +35,11 @@ public class PlayerState : CombatState
 
         for (int i = StateMachine.PlayerCardsOnTable.Count; i < StateMachine.PlayerCardsOnTable.Count + cardsDifference; i++)
         {
-            Debug.Log(StateMachine.EnemyCardsOnTable[i].name + " attacks player's crystal");
+            var enemyCard = StateMachine.EnemyCardsOnTable[i];
+            if (!StateMachine.LifeCrystalPanel.TryAttackCrystal(enemyCard.CombatDTO.Damage))
+            {
+                Debug.LogError("player is dead");
+            }
         }
 
         StateMachine.ChangeTurn();

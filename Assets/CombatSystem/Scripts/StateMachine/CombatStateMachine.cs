@@ -9,6 +9,7 @@ public class CombatStateMachine : MonoBehaviour
     [SerializeField] private DragNDropTable table;
     [SerializeField] private EnemyInitializer enemyInitializer;
     [SerializeField] private ManaPanel manaPanel;
+    [SerializeField] private LifeCrystalPanel lifeCrystalPanel;
 
     private bool _isPlayerTurn = false;
     private PlayerState _playerState;
@@ -20,6 +21,7 @@ public class CombatStateMachine : MonoBehaviour
     public List<Card> PlayerCardsOnTable { get; private set; } = new();
     public List<Card> EnemyCardsOnTable { get; private set; } = new();
     public ManaPanel ManaPanel => manaPanel;
+    public LifeCrystalPanel LifeCrystalPanel => lifeCrystalPanel;
 
     public event Action OnEndTurn;
 
@@ -109,6 +111,11 @@ public class CombatStateMachine : MonoBehaviour
 
         deadCards = EnemyCardsOnTable.Where(card => !card.CombatDTO.IsAlive);
         EnemyCardsOnTable = EnemyCardsOnTable.Except(deadCards).ToList();
+
+        foreach (var card in deadCards)
+        {
+            RemoveCardFromTable(card);
+        }
     }
 
     public void ChangeTurn()
