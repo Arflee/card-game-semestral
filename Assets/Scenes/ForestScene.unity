@@ -5330,7 +5330,7 @@ GameObject:
   - component: {fileID: 975658899}
   - component: {fileID: 975658898}
   m_Layer: 0
-  m_Name: Medved Tata
+  m_Name: Bear Father
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5377,8 +5377,8 @@ SpriteRenderer:
   m_SortingLayerID: -2015702617
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.381132, g: 0.20643114, b: 0.08845136, a: 1}
+  m_Sprite: {fileID: 21300000, guid: fb09059a7ab9abd499d322c4c343f4db, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5586,11 +5586,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.6084466
+      value: 2.6114483
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.49887657
+      value: 0.49887466
       objectReference: {fileID: 0}
     - target: {fileID: 4379666920158019866, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7869,7 +7869,7 @@ GameObject:
   - component: {fileID: 1519588407}
   - component: {fileID: 1519588406}
   m_Layer: 0
-  m_Name: Liska
+  m_Name: Fox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7916,8 +7916,8 @@ SpriteRenderer:
   m_SortingLayerID: -2015702617
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.79622644, g: 0.56112903, b: 0.27492344, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 21ed3098bd9dd954ea10f4ede27b808d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
