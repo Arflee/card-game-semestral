@@ -231,12 +231,12 @@ TextureImporter:
       name: forest_objects_5
       rect:
         serializedVersion: 2
-        x: 484
+        x: 483
         y: 773
         width: 237
         height: 236
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -256,8 +256,8 @@ TextureImporter:
         y: 771
         width: 239
         height: 238
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
