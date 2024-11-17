@@ -8,6 +8,7 @@ public class Bridge : MonoBehaviour
     [SerializeField] private LayerMask bearLayer;
     public Vector2[] points;
     public LayerMask obstacleLayers;
+    public Collider2D riverCollider;
     
     private DestroyBridgeBehaviour[] villagers = new DestroyBridgeBehaviour[0];
 
@@ -32,7 +33,7 @@ public class Bridge : MonoBehaviour
             float minDir = float.PositiveInfinity;
             foreach (var p in points)
             {
-                Vector2 dir = p - pos; // A -> B = B - A
+                Vector2 dir = p - pos;
                 float dist = dir.magnitude;
                 if (Physics2D.Raycast(pos, dir, dist, obstacleLayers))
                     continue;
@@ -55,6 +56,7 @@ public class Bridge : MonoBehaviour
     public void Colapase()
     {
         gameObject.SetActive(false);
+        riverCollider.enabled = true;
         foreach (var item in villagers)
             item.BridgeWasDestroyed();
     }

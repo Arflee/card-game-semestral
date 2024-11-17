@@ -72,6 +72,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 28723175712777385}
   m_SourcePrefab: {fileID: 100100000, guid: 6a88d87e70d1eb7489489113556822f6, type: 3}
+--- !u!114 &4530103511781716166 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6000824469609220763, guid: 6a88d87e70d1eb7489489113556822f6, type: 3}
+  m_PrefabInstance: {fileID: 7897377694369200733}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4898785367025817576}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 119c572b146ad284690c61f60ff6a2cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4898785367025817576 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3342485102768467381, guid: 6a88d87e70d1eb7489489113556822f6, type: 3}
@@ -119,7 +130,11 @@ MonoBehaviour:
   gizmosColor: {r: 0, g: 0, b: 1, a: 1}
   pause: 0
   mode: 2
+  obstacles:
+    serializedVersion: 2
+    m_Bits: 64
   nextState: {fileID: 7225858483731758196}
+  whenPathBlockedState: {fileID: 4530103511781716166}
 --- !u!114 &7225858483731758196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,4 +202,8 @@ MonoBehaviour:
   gizmosColor: {r: 0.79084253, g: 0, b: 1, a: 1}
   pause: 0
   mode: 2
+  obstacles:
+    serializedVersion: 2
+    m_Bits: 64
   nextState: {fileID: 6347191898772536902}
+  whenPathBlockedState: {fileID: 4530103511781716166}
