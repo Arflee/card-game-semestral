@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private StandardControls _controls;
     private Animator _animator;
+    private int _lastDirection = 0;
 
     void OnEnable()
     {
@@ -24,11 +25,20 @@ public class PlayerMovement : MonoBehaviour
         Vector2 movementVector = _controls.Player.Move.ReadValue<Vector2>();
         _rigidbody.velocity = movementVector * speed;
 
-        if (movementVector.x > 0)
-            _animator.SetInteger("Direction", 1);
-        else if (movementVector.x < 0)
-            _animator.SetInteger("Direction", -1);
-        else
-            _animator.SetInteger("Direction", 0);
+        int direction = 0;
+        if (movementVector.x < 0)
+        {
+            direction = -1;
+            _lastDirection = direction;
+        }
+        else if (movementVector.x > 0)
+        {
+            direction = 1;
+            _lastDirection = direction;
+        }
+        else if (movementVector.y != 0)
+            direction = _lastDirection;
+
+        _animator.SetInteger("Direction", direction);
     }
 }
