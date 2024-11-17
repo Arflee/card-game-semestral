@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicBehaviour : PointBehaviour
+public class LocalBasicBehaviour : PointBehaviour
 {
     [Header("Rest")]
     [SerializeField] float pause = 0f;
@@ -11,17 +11,13 @@ public class BasicBehaviour : PointBehaviour
     public enum Mode { Normal, Loop, Once, RandomWalk }
     public Mode mode = Mode.Normal;
 
-    public LayerMask obstacles;
-
     [Header("States")]
     public BehaviourState nextState;
-    public BehaviourState whenPathBlockedState;
 
     private int targetPointIndex = 0;
     private int prevPointIndex = 0;
     private int indexDirection = 1;
     private bool isWaiting = false;
-    private bool pathBlocked = false;
 
     protected override void OnEnable()
     {
@@ -30,7 +26,6 @@ public class BasicBehaviour : PointBehaviour
         prevPointIndex = 0;
         indexDirection = 1;
         isWaiting = false;
-        pathBlocked = false;
     }
 
     protected virtual void Update()
@@ -83,16 +78,6 @@ public class BasicBehaviour : PointBehaviour
                     targetPointIndex += indexDirection * 2;
                 }
                 isWaiting = false;
-
-                if (obstacles.value != 0)
-                {
-                    Vector2 dir = points[targetPointIndex] - (Vector2)transform.position;
-                    if (Physics2D.Raycast(transform.position, dir, dir.magnitude, obstacles))
-                    {
-                        pathBlocked = true;
-                        Finished();
-                    }
-                }
             });
         }
 
@@ -102,8 +87,6 @@ public class BasicBehaviour : PointBehaviour
 
     public override BehaviourState NextState()
     {
-        if (pathBlocked)
-            return whenPathBlockedState;
         return nextState;
     }
 }

@@ -6,6 +6,7 @@ public class WaitBehaviour : BehaviourState
 {
     [Header("States")]
     public BehaviourState nextState;
+    public float minTimeActive;
     public float maxTimeActive;
 
     protected float timeLeft;
@@ -18,7 +19,7 @@ public class WaitBehaviour : BehaviourState
     protected override void OnEnable()
     {
         base.OnEnable();
-        timeLeft = maxTimeActive;
+        timeLeft = Random.Range(minTimeActive, maxTimeActive);
     }
 
     protected virtual void Update()
