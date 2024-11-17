@@ -873,6 +873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextState: {fileID: 0}
+  minTimeActive: 0
   maxTimeActive: 20
 --- !u!1 &153367134
 GameObject:
@@ -5685,10 +5686,6 @@ PrefabInstance:
     - target: {fileID: 31092569981166217, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 31092569981166217, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
-      propertyPath: m_Layer
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1239548956943440691, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_DeadZoneWidth
