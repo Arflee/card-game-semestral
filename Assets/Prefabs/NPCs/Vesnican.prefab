@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8526722327296987061}
   - component: {fileID: 7789968971762634198}
   - component: {fileID: 6000824469609220763}
+  - component: {fileID: 2894221376374619866}
   m_Layer: 11
   m_Name: Vesnican
   m_TagString: Untagged
@@ -171,3 +172,18 @@ MonoBehaviour:
   obstacleLayers:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &2894221376374619866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3342485102768467381}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53daa0f80e2ec034aa450a5d2c5a7408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextState: {fileID: 6000824469609220763}
+  speed: 5
+  distanceThreshold: 0.1

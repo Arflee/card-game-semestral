@@ -23,17 +23,14 @@ public class RandomVisiblePointBehaviour : PointBehaviour
                 visiblePoints.Add(p);
         }
 
-        if (visiblePoints.Count == 0 || (visiblePoints.Count == 1 && visiblePoints[0] == targetPoint))
+        visiblePoints.Remove(targetPoint);
+        if (visiblePoints.Count == 0)
         {
             targetPoint = transform.position;
             return;
         }
 
         Vector2 newPoint = visiblePoints[Random.Range(0, visiblePoints.Count)];
-        while (newPoint == targetPoint)
-        {
-            newPoint = visiblePoints[Random.Range(0, visiblePoints.Count)];
-        }
         targetPoint = newPoint;
     }
 

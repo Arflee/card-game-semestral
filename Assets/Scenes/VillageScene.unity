@@ -6021,60 +6021,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e46c9b4a1f48ba4396582062cb3b055, type: 3}
---- !u!1 &1447954950 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3342485102768467381, guid: 6a88d87e70d1eb7489489113556822f6, type: 3}
-  m_PrefabInstance: {fileID: 1778063990}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1447954953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1447954950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 274bcd6630a83344cb6a66bdfb5ea307, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerArea: {fileID: 1995659793}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 1024
-  nextState: {fileID: 1447954958}
---- !u!114 &1447954958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1447954950}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e9cd33ea07c63c4d8ee0d5f7cb5c438, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  distanceThreshold: 0.1
-  points:
-  - {x: 26.31121, y: -19.938831}
-  gizmosColor: {r: 0, g: 0, b: 1, a: 1}
-  nextState: {fileID: 1447954959}
---- !u!114 &1447954959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1447954950}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53daa0f80e2ec034aa450a5d2c5a7408, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bridge: {fileID: 1995659790}
-  nextState: {fileID: 0}
 --- !u!1001 &1466637300
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6258,7 +6204,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -8033,16 +7979,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3342485102768467381, guid: 6a88d87e70d1eb7489489113556822f6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1447954953}
-    - targetCorrespondingSourceObject: {fileID: 3342485102768467381, guid: 6a88d87e70d1eb7489489113556822f6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1447954958}
-    - targetCorrespondingSourceObject: {fileID: 3342485102768467381, guid: 6a88d87e70d1eb7489489113556822f6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1447954959}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a88d87e70d1eb7489489113556822f6, type: 3}
 --- !u!1001 &1800066476
 PrefabInstance:
@@ -8989,6 +8926,7 @@ GameObject:
   - component: {fileID: 1995659792}
   - component: {fileID: 1995659791}
   - component: {fileID: 1995659793}
+  - component: {fileID: 1995659794}
   m_Layer: 0
   m_Name: Bridge
   m_TagString: Untagged
@@ -9108,6 +9046,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &1995659794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995659790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b878a43a6fd368c4fb1f4a178187bcc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bearLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  points:
+  - {x: 24.807417, y: -20.297247}
+  - {x: 26.39113, y: -20.055664}
+  obstacleLayers:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1001 &2021134056
 PrefabInstance:
   m_ObjectHideFlags: 0

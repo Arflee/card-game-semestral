@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class DestroyBridgeBehaviour : BehaviourState
 {
-    public GameObject bridge;
     [SerializeField] BehaviourState nextState;
+    [SerializeField] protected float speed = 5f;
+    [SerializeField] protected float distanceThreshold = 0.1f;
+
+    private Vector2 target;
+    private Bridge bridge;
+
+    public void Setup(Vector2 target, Bridge bridge)
+    {
+        this.target = target;
+        this.bridge = bridge;
+    }
 
     public override BehaviourState NextState()
     {
@@ -15,11 +25,31 @@ public class DestroyBridgeBehaviour : BehaviourState
     protected override void OnEnable()
     {
         base.OnEnable();
-        bridge.SetActive(false);
+        foreach (var item in GetComponents<BehaviourState>())
+            if (item != this)
+                item.enabled = false;
     }
 
     private void Update()
     {
+
+        Vector2 targetDirection = target - (Vector2)transform.position;
+        float distance = targetDirection.magnitude;
+        if (distance <= distanceThreshold)
+        {
+            Finished();
+            bridge.Colapase();
+            return;
+        }
+
+        transform.Translate(targetDirection.normalized * speed * Time.deltaTime);
+    }
+
+    public void BridgeWasDestroyed()
+    {
+        if (!enabled)
+            return;
+
         Finished();
     }
 }
