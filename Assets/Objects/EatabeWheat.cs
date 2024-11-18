@@ -8,6 +8,7 @@ public class EatabeWheat : MonoBehaviour
     [SerializeField] private LayerMask bearLayer;
 
     public float Freshness { get; private set; }
+    public Field field;
 
     private void Start()
     {
@@ -39,6 +40,9 @@ public class EatabeWheat : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (Freshness > 0 && (bearLayer.value & (1 << collision.gameObject.layer)) > 0)
+        {
+            field.DestroyWheat(this);
             Destroy(gameObject);
+        }
     }
 }

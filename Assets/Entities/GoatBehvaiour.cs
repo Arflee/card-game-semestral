@@ -8,15 +8,17 @@ public class GoatBehvaiour : BehaviourState
     [SerializeField] protected float speed = 5f;
     [SerializeField] protected float distanceThreshold = 0.1f;
     [SerializeField] float eatTime = 0f;
+    [SerializeField] float wheatDestroyed = 0.9f;
 
     [SerializeField] private Field field;
+    [SerializeField] BehaviourState nextState;
 
     bool isWaiting = false;
     EatabeWheat target = null;
 
     public override BehaviourState NextState()
     {
-        return null;
+        return nextState;
     }
 
     private void SearchNextTarget()
@@ -38,6 +40,9 @@ public class GoatBehvaiour : BehaviourState
 
     private void Update()
     {
+        if (field.WheatDestroyed > wheatDestroyed)
+            Finished();
+
         if (isWaiting)
             return;
 
