@@ -1,36 +1,52 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
 
 public class PlayerState : CombatState
 {
     public PlayerState(CombatStateMachine machine) : base(machine)
     {
+        StateMachine.OnEndTurn += OnEndTurn;
     }
 
     public override IEnumerator EnterState()
     {
-        StateMachine.OnEndTurn += OnEndTurn;
+        StateMachine.ManaPanel.ResetManaCrystals(StateMachine.PlayerMana);
         yield return null;
     }
 
     private void OnEndTurn()
     {
-        foreach (var slot in StateMachine.PlayerCardsOnTable)
-        {
-            CombatCardDTO oppositeCard = StateMachine.Table.GetOppositeCard(slot);
+        int cardsDifference = StateMachine.EnemyCardsOnTable.Count - StateMachine.PlayerCardsOnTable.Count;
 
-            if (oppositeCard == null)
+        for (int i = 0; i < StateMachine.PlayerCardsOnTable.Count; i++)
+        {
+            if (PlayerHasMoreCards(i))
             {
-                Debug.LogWarning("Opposite slot is empty");
+                Debug.Log("Player attacks crystal");
                 continue;
             }
 
-            oppositeCard.TakeDamage(slot.CardInSlot);
-            slot.CardInSlot.TakeDamage(oppositeCard);
+            var playerCard = StateMachine.PlayerCardsOnTable[i];
+            var enemyCard = StateMachine.EnemyCardsOnTable[i];
+
+            enemyCard.TakeDamageFrom(playerCard);
+            playerCard.TakeDamageFrom(enemyCard);
         }
 
-        StateMachine.SetState(new EnemyState(StateMachine));
+        for (int i = StateMachine.PlayerCardsOnTable.Count; i < StateMachine.PlayerCardsOnTable.Count + cardsDifference; i++)
+        {
+            var enemyCard = StateMachine.EnemyCardsOnTable[i];
+            if (!StateMachine.LifeCrystalPanel.TryAttackCrystal(enemyCard.CombatDTO.Damage))
+            {
+                Debug.LogError("player is dead");
+            }
+        }
+
+        StateMachine.ChangeTurn();
+    }
+
+    private bool PlayerHasMoreCards(int index)
+    {
+        return index + 1 > StateMachine.EnemyCardsOnTable.Count;
     }
 }

@@ -990,6 +990,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 135447152054582056, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1014,25 +1015,27 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -2015702617
       objectReference: {fileID: 0}
+=======
+>>>>>>> combat-system
     - target: {fileID: 1239548956943440691, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_DeadZoneWidth
-      value: 0.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1239548956943440691, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_SoftZoneWidth
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 1239548956943440691, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_DeadZoneHeight
-      value: 0.05
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1239548956943440691, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_SoftZoneHeight
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 1239548956943440691, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_UnlimitedSoftZone
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1575349430772088567, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1074,6 +1077,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 1789922227619831095, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: orthographic size
       value: 3.5
@@ -1097,6 +1101,19 @@ PrefabInstance:
     - target: {fileID: 7578534046453655973, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 18.349976
+=======
+    - target: {fileID: 4888430626122968112, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
+      propertyPath: m_BoundingShape2D
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491433514912796936, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
+      propertyPath: m_VertexColorAlwaysGammaSpace
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491433514912796936, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 1
+>>>>>>> combat-system
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

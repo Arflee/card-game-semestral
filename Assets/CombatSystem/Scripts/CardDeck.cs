@@ -10,14 +10,14 @@ public class CardDeck : MonoBehaviour
     [SerializeField, Range(1, 10)] private int maxCardsInHand = 7;
     [SerializeField] private CombatCard[] playerCards;
 
-    private Stack<CombatCard> _cardDeck;
+    private Queue<CombatCard> _cardDeck;
     private Image _deckFrontImage;
 
     public int MaxCardsInHand => maxCardsInHand;
 
     private void Awake()
     {
-        _cardDeck = new(playerCards.Reverse());
+        _cardDeck = new(playerCards);
         _deckFrontImage = GetComponent<Image>();
     }
 
@@ -29,7 +29,7 @@ public class CardDeck : MonoBehaviour
         }
 
         _deckFrontImage.color = new Color(0, _deckFrontImage.color.g - (1f / playerCards.Length), 0);
-        var takenCard = _cardDeck.Pop();
+        var takenCard = _cardDeck.Dequeue();
         cardHolder.AddCard(takenCard);
 
         return takenCard;

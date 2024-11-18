@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   damage: 2
-  cardEffect: 0
+  manaCost: 2
+  effects: []
   cardName: 2
   cardDescription: ASDASD
   cardSprite: {fileID: 0}

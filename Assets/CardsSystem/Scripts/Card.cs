@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -44,6 +45,7 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     public CombatCardDTO CombatDTO { get; private set; }
 
     public float SelectionOffset => selectionOffset;
+    public event Action<Card> OnTakeDamageEvent;
 
     private void OnEnable()
     {
@@ -51,12 +53,11 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
         _imageComponent = GetComponent<Image>();
         _mainCamera = Camera.main;
         _selectableComponent = GetComponent<Selectable>();
-
     }
 
     public void Initialize(CombatCard combatProperties)
     {
-        CombatDTO = new(combatProperties.CardName, combatProperties.CardDescription, combatProperties.Health, combatProperties.Damage);
+        CombatDTO = new(combatProperties);
         CardVisual = Instantiate(cardVisualPrefab, _canvas.transform);
         CardVisual.Initialize(this, CombatDTO);
     }
@@ -127,7 +128,6 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
         PointerExitEvent.Invoke(this);
         _isHovering = false;
     }
-
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -204,5 +204,26 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
         SelectEvent.RemoveAllListeners();
 
         _selectableComponent.enabled = false;
+        enabled = false;
+    }
+
+    public void TakeDamageFrom(Card source)
+    {
+        CombatDTO.Health -= source.CombatDTO.Damage;
+        OnTakeDamageEvent?.Invoke(this);
+    }
+
+    public void BuffHealth(int amount)
+    {
+        CombatDTO.Health += amount;
+        // TODO add new event for ui redrawing
+        OnTakeDamageEvent?.Invoke(this);
+    }
+
+    public void BuffDamage(int amount)
+    {
+        CombatDTO.Damage += amount;
+        // TODO add new event for ui redrawing
+        OnTakeDamageEvent?.Invoke(this);
     }
 }

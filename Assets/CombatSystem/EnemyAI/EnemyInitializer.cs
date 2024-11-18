@@ -1,37 +1,27 @@
 using System.Collections.Generic;
-using System.Collections;
-using System.Linq;
 using UnityEngine;
 
 public class EnemyInitializer : MonoBehaviour
 {
+    [SerializeField] private GameObject cardSlotPrefab;
     [SerializeField] private CardVisual visualPrefab;
     [SerializeField] private CombatCard[] enemyHand;
+    [SerializeField] private RectTransform playedCardsEnemy;
 
-    private List<CombatCardDTO> _cardObjects;
-    private CombatSlot[] _slots;
-
-    public IEnumerator Initialize()
+    public List<Card> PlaceStartCards()
     {
-        _cardObjects = new();
+        List<Card> _cardObjects = new();
 
-        foreach (var item in enemyHand)
+        for (int i = 0; i < enemyHand.Length; i++)
         {
-            _cardObjects.Add(new CombatCardDTO(item));
+            var cardSlot = Instantiate(cardSlotPrefab, playedCardsEnemy.transform);
+            var card = cardSlot.GetComponentInChildren<Card>();
+            card.Initialize(enemyHand[i]);
+            card.DisableCard();
+
+            _cardObjects.Add(card);
         }
 
-        var slotsGO = GameObject.FindGameObjectsWithTag("EnemySlot");
-        _slots = slotsGO.Select((el) => { return el.GetComponent<CombatSlot>(); }).ToArray();
-
-        for (int i = 0; i < _slots.Length; i++)
-        {
-            CardVisual visual = Instantiate(visualPrefab, _slots[i].transform);
-            CombatCardDTO currentCard = _cardObjects[i % _slots.Length];
-
-            _slots[i].PutCardInSlot(currentCard);
-            visual.Initialize(currentCard);
-
-            yield return new WaitForSeconds(0.5f);
-        }
+        return _cardObjects;
     }
 }

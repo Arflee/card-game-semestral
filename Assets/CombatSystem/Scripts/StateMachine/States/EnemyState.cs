@@ -11,6 +11,14 @@ public class EnemyState : CombatState
 
     public override IEnumerator EnterState()
     {
-        yield return _initializer.Initialize();
+        var createdCards = _initializer.PlaceStartCards();
+
+        foreach (var card in createdCards)
+        {
+            StateMachine.AddCardOnEnemyTable(card);
+        }
+
+        StateMachine.ChangeTurn();
+        yield return null;
     }
 }
