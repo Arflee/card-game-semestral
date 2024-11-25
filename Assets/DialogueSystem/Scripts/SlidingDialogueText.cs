@@ -8,14 +8,12 @@ using UnityEngine.UI;
 public class SlidingDialogueText : MonoBehaviour
 {
     [SerializeField]
-    private DialogueSequence _dialogueSequence;
-
-    [SerializeField]
     private ScrollRect _scrollRect;
 
     [SerializeField]
     private TextMeshProUGUI _slidingText;
 
+    private DialogueSequence _dialogueSequence;
     private StandardControls inputActions;
     private bool _isTyping;
     private bool _isSkipped;
@@ -25,10 +23,15 @@ public class SlidingDialogueText : MonoBehaviour
 
     private void OnEnable()
     {
-        inputActions = new StandardControls();
+        inputActions = PlayerMovement.Controls;
         inputActions.Player.Interact.Enable();
 
         inputActions.Player.Interact.performed += OnMouseClick;
+    }
+
+    public void Init(DialogueSequence sequence)
+    {
+        _dialogueSequence = sequence;
     }
 
     private void OnDisable()

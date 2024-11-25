@@ -634,6 +634,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a58f43446f287814fa837a724d8c53ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStateEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &60487298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -646,6 +649,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bcd6630a83344cb6a66bdfb5ea307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStateEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2069353502}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: EnableDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   triggerArea: {fileID: 1546052060}
   layerMask:
     serializedVersion: 2
@@ -663,10 +681,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e9cd33ea07c63c4d8ee0d5f7cb5c438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStateEnd:
+    m_PersistentCalls:
+      m_Calls: []
   speed: 4
   distanceThreshold: 0.1
   points:
-  - {x: -7.612432, y: -9.400195}
+  - {x: -1.2806292, y: -9.400195}
   gizmosColor: {r: 0, g: 0, b: 1, a: 1}
   nextState: {fileID: 60487297}
 --- !u!114 &60487300
@@ -681,6 +702,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c9cbb92a6ff6ea4ba9b1f395230ca63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStateEnd:
+    m_PersistentCalls:
+      m_Calls: []
   nextState: {fileID: 60487299}
   minTimeActive: 2
   maxTimeActive: 2
@@ -7102,6 +7126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad82e58831633de478a16924e6717ee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStateEnd:
+    m_PersistentCalls:
+      m_Calls: []
   speed: 3
   distanceThreshold: 1
   targetsTag: Player
@@ -7118,6 +7145,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bcd6630a83344cb6a66bdfb5ea307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStateEnd:
+    m_PersistentCalls:
+      m_Calls: []
   triggerArea: {fileID: 975658903}
   layerMask:
     serializedVersion: 2
@@ -7170,6 +7200,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347f2993a4182f04e91fe9012722bb2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStateEnd:
+    m_PersistentCalls:
+      m_Calls: []
   nextState: {fileID: 0}
 --- !u!1001 &978420277
 PrefabInstance:
@@ -7390,6 +7423,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 413738972795999814, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 413738972795999814, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 413738972795999814, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 413738972795999814, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 1239548956943440691, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_DeadZoneWidth
       value: 0.2
@@ -7491,6 +7540,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
+--- !u!1 &995863022 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8031027846459492457, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
+  m_PrefabInstance: {fileID: 995863021}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1010819815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7570,6 +7624,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fae04ba74595d34c82711b76765fc23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStateEnd:
+    m_PersistentCalls:
+      m_Calls: []
   speed: 2.5
   distanceThreshold: 0.5
   points:
@@ -7594,6 +7651,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bcd6630a83344cb6a66bdfb5ea307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStateEnd:
+    m_PersistentCalls:
+      m_Calls: []
   triggerArea: {fileID: 1546052060}
   layerMask:
     serializedVersion: 2
@@ -7611,6 +7671,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347f2993a4182f04e91fe9012722bb2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStateEnd:
+    m_PersistentCalls:
+      m_Calls: []
   nextState: {fileID: 1020789517}
 --- !u!114 &1020789514
 MonoBehaviour:
@@ -7624,6 +7687,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bcd6630a83344cb6a66bdfb5ea307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStateEnd:
+    m_PersistentCalls:
+      m_Calls: []
   triggerArea: {fileID: 1020789515}
   layerMask:
     serializedVersion: 2
@@ -7676,6 +7742,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e9cd33ea07c63c4d8ee0d5f7cb5c438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStateEnd:
+    m_PersistentCalls:
+      m_Calls: []
   speed: 2
   distanceThreshold: 0.1
   points:
@@ -7694,6 +7763,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c9cbb92a6ff6ea4ba9b1f395230ca63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStateEnd:
+    m_PersistentCalls:
+      m_Calls: []
   nextState: {fileID: 1020789516}
   minTimeActive: 2
   maxTimeActive: 2
@@ -7709,6 +7781,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54b527df4a6b20f449a6ed8798bf5617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStateEnd:
+    m_PersistentCalls:
+      m_Calls: []
   honeyTrees:
   - {fileID: 1214464612}
   - {fileID: 3130570757622862012}
@@ -7726,6 +7801,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fae04ba74595d34c82711b76765fc23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStateEnd:
+    m_PersistentCalls:
+      m_Calls: []
   speed: 5
   distanceThreshold: 0.5
   points:
@@ -12154,6 +12232,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99699134f0539d949b00f7f6e4931421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStateEnd:
+    m_PersistentCalls:
+      m_Calls: []
   source: {fileID: 1601592896}
   nextState: {fileID: 1601592898}
 --- !u!114 &1601592898
@@ -12168,6 +12249,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c9cbb92a6ff6ea4ba9b1f395230ca63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStateEnd:
+    m_PersistentCalls:
+      m_Calls: []
   nextState: {fileID: 1601592899}
   minTimeActive: 0.2
   maxTimeActive: 5
@@ -12183,6 +12267,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a3f0f810fd2212449a88ba0e5083f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStateEnd:
+    m_PersistentCalls:
+      m_Calls: []
   nextStates:
   - {fileID: 1601592898}
   - {fileID: 1601592897}
@@ -12200,6 +12287,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e9cd33ea07c63c4d8ee0d5f7cb5c438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStateEnd:
+    m_PersistentCalls:
+      m_Calls: []
   speed: 5
   distanceThreshold: 0.25
   points:
@@ -15064,6 +15154,53 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2477882521445282075, guid: 1e46c9b4a1f48ba4396582062cb3b055, type: 3}
   m_PrefabInstance: {fileID: 2061267982}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2069353501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2069353503}
+  - component: {fileID: 2069353502}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2069353502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069353501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776008d1a78a36645b0f7a603bdf4ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogueSequence: {fileID: 11400000, guid: d034edf45265ce249b46701168377799, type: 2}
+  dialogueCanvas: {fileID: 995863022}
+  dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
+--- !u!4 &2069353503
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069353501}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.0842514, y: -10.941146, z: -4.0269046}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2080838914
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15927,3 +16064,4 @@ SceneRoots:
   - {fileID: 4988325392641136253}
   - {fileID: 60487295}
   - {fileID: 1546052059}
+  - {fileID: 2069353503}

@@ -34,6 +34,6 @@ public class RandomPointBehaviour : PointBehaviour
             return;
         }
 
-        transform.Translate(targetDirection.normalized * speed * Time.deltaTime);
+        transform.Translate(speed * Time.deltaTime * targetDirection.normalized);
     }
 }

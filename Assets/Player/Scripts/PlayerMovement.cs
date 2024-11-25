@@ -7,19 +7,33 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 5f;
 
     private Rigidbody2D _rigidbody;
-    private StandardControls _controls;
+    private static StandardControls _controls;
+    public static StandardControls Controls
+    {
+        get
+        {
+            _controls ??= new StandardControls();
+
+            return _controls;
+        }
+        private set
+        {
+            _controls = value;
+        }
+    }
 
     void OnEnable()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        _controls = new StandardControls();
-        _controls.Player.Move.Enable();
+
+        Controls ??= new StandardControls();
+        Controls.Player.Move.Enable();
     }
 
     void Update()
     {
         // TODO add acceleration
-        Vector2 movementVector = _controls.Player.Move.ReadValue<Vector2>();
+        Vector2 movementVector = Controls.Player.Move.ReadValue<Vector2>();
         _rigidbody.velocity = movementVector * speed;
     }
 }

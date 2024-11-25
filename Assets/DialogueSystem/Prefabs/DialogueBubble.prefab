@@ -239,7 +239,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b794cb0a7071fc848af3859ee1dfd1b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueSequence: {fileID: 11400000, guid: d034edf45265ce249b46701168377799, type: 2}
   _scrollRect: {fileID: 5407359389292932807}
   _slidingText: {fileID: 8338448891109589092}
 --- !u!1 &2161527578144042842
