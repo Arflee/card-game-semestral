@@ -545,7 +545,7 @@ GameObject:
   - component: {fileID: 60487295}
   - component: {fileID: 60487294}
   - component: {fileID: 60487298}
-  - component: {fileID: 60487300}
+  - component: {fileID: 60487301}
   - component: {fileID: 60487299}
   - component: {fileID: 60487297}
   m_Layer: 0
@@ -634,9 +634,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a58f43446f287814fa837a724d8c53ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnStateEnd:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &60487298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -649,26 +646,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bcd6630a83344cb6a66bdfb5ea307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnStateEnd:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2069353502}
-        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
-        m_MethodName: EnableDialogue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   triggerArea: {fileID: 1546052060}
   layerMask:
     serializedVersion: 2
     m_Bits: 1024
-  nextState: {fileID: 60487300}
+  nextState: {fileID: 60487301}
 --- !u!114 &60487299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -681,16 +663,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e9cd33ea07c63c4d8ee0d5f7cb5c438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnStateEnd:
-    m_PersistentCalls:
-      m_Calls: []
   speed: 4
   distanceThreshold: 0.1
   points:
   - {x: -1.2806292, y: -9.400195}
   gizmosColor: {r: 0, g: 0, b: 1, a: 1}
   nextState: {fileID: 60487297}
---- !u!114 &60487300
+--- !u!114 &60487301
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -699,15 +678,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 60487293}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c9cbb92a6ff6ea4ba9b1f395230ca63, type: 3}
+  m_Script: {fileID: 11500000, guid: e1670148a1d7ec0449d38992a78e81a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnStateEnd:
-    m_PersistentCalls:
-      m_Calls: []
+  dialogue: {fileID: 2069353502}
   nextState: {fileID: 60487299}
-  minTimeActive: 2
-  maxTimeActive: 2
 --- !u!1001 &64595709
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7126,9 +7101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad82e58831633de478a16924e6717ee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnStateEnd:
-    m_PersistentCalls:
-      m_Calls: []
   speed: 3
   distanceThreshold: 1
   targetsTag: Player
@@ -7145,9 +7117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bcd6630a83344cb6a66bdfb5ea307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnStateEnd:
-    m_PersistentCalls:
-      m_Calls: []
   triggerArea: {fileID: 975658903}
   layerMask:
     serializedVersion: 2
@@ -7200,9 +7169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347f2993a4182f04e91fe9012722bb2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnStateEnd:
-    m_PersistentCalls:
-      m_Calls: []
   nextState: {fileID: 0}
 --- !u!1001 &978420277
 PrefabInstance:
@@ -7624,9 +7590,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fae04ba74595d34c82711b76765fc23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnStateEnd:
-    m_PersistentCalls:
-      m_Calls: []
   speed: 2.5
   distanceThreshold: 0.5
   points:
@@ -7651,9 +7614,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bcd6630a83344cb6a66bdfb5ea307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnStateEnd:
-    m_PersistentCalls:
-      m_Calls: []
   triggerArea: {fileID: 1546052060}
   layerMask:
     serializedVersion: 2
@@ -7671,9 +7631,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347f2993a4182f04e91fe9012722bb2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnStateEnd:
-    m_PersistentCalls:
-      m_Calls: []
   nextState: {fileID: 1020789517}
 --- !u!114 &1020789514
 MonoBehaviour:
@@ -7687,9 +7644,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bcd6630a83344cb6a66bdfb5ea307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnStateEnd:
-    m_PersistentCalls:
-      m_Calls: []
   triggerArea: {fileID: 1020789515}
   layerMask:
     serializedVersion: 2
@@ -7742,9 +7696,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e9cd33ea07c63c4d8ee0d5f7cb5c438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnStateEnd:
-    m_PersistentCalls:
-      m_Calls: []
   speed: 2
   distanceThreshold: 0.1
   points:
@@ -7763,9 +7714,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c9cbb92a6ff6ea4ba9b1f395230ca63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnStateEnd:
-    m_PersistentCalls:
-      m_Calls: []
   nextState: {fileID: 1020789516}
   minTimeActive: 2
   maxTimeActive: 2
@@ -7781,9 +7729,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54b527df4a6b20f449a6ed8798bf5617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnStateEnd:
-    m_PersistentCalls:
-      m_Calls: []
   honeyTrees:
   - {fileID: 1214464612}
   - {fileID: 3130570757622862012}
@@ -7801,9 +7746,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fae04ba74595d34c82711b76765fc23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnStateEnd:
-    m_PersistentCalls:
-      m_Calls: []
   speed: 5
   distanceThreshold: 0.5
   points:
@@ -12232,9 +12174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99699134f0539d949b00f7f6e4931421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnStateEnd:
-    m_PersistentCalls:
-      m_Calls: []
   source: {fileID: 1601592896}
   nextState: {fileID: 1601592898}
 --- !u!114 &1601592898
@@ -12249,9 +12188,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c9cbb92a6ff6ea4ba9b1f395230ca63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnStateEnd:
-    m_PersistentCalls:
-      m_Calls: []
   nextState: {fileID: 1601592899}
   minTimeActive: 0.2
   maxTimeActive: 5
@@ -12267,9 +12203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a3f0f810fd2212449a88ba0e5083f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnStateEnd:
-    m_PersistentCalls:
-      m_Calls: []
   nextStates:
   - {fileID: 1601592898}
   - {fileID: 1601592897}
@@ -12287,9 +12220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e9cd33ea07c63c4d8ee0d5f7cb5c438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnStateEnd:
-    m_PersistentCalls:
-      m_Calls: []
   speed: 5
   distanceThreshold: 0.25
   points:

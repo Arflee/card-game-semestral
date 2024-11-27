@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
@@ -11,6 +12,8 @@ public class DialogueTrigger : MonoBehaviour
 
     [SerializeField]
     private SlidingDialogueText dialogueBubblePrefab;
+
+    public event Action OnDialogueEnd;
 
     private StandardControls _inputActions;
     private SlidingDialogueText _createdBubble;
@@ -29,6 +32,7 @@ public class DialogueTrigger : MonoBehaviour
         _createdBubble.Init(_dialogueSequence);
 
         _createdBubble.OnDialogueSequenceEnd += OnDialogueSequenceEnd;
+        _createdBubble.OnDialogueSequenceEnd += OnDialogueEnd;
         _createdBubble.gameObject.transform.localScale = new Vector2(0.1f, 0.1f);
 
         //TODO Make/Change appearing animation
