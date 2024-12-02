@@ -4,9 +4,11 @@ using UnityEngine;
 public class DragNDropTable : MonoBehaviour
 {
     [SerializeField] private CardHolder cardHolder;
-    [SerializeField] private CombatSlot[] snapPoints;
+    [SerializeField] private RectTransform playedCardsPlayer;
 
-    public event Action<CombatSlot> OnTableSlotSnapped;
+    public event Func<Card, bool> OnTableSlotSnapped;
+
+    public Transform PlayerTableSide => playedCardsPlayer;
 
     private void Start()
     {
@@ -15,21 +17,18 @@ public class DragNDropTable : MonoBehaviour
 
     private void OnCardDragEnd(Card card)
     {
-        foreach (CombatSlot point in snapPoints)
+        if (RectTransformUtility.RectangleContainsScreenPoint((RectTransform)playedCardsPlayer.transform, (Vector2)card.transform.position) &&
+            playedCardsPlayer.CompareTag("Slot"))
         {
-            if (RectTransformUtility.RectangleContainsScreenPoint((RectTransform)point.transform, (Vector2)card.transform.position) &&
-                point.CompareTag("Slot"))
+            if (OnTableSlotSnapped?.Invoke(card) ?? false)
             {
                 cardHolder.UseCardFromHand(card);
-                point.PutCardInSlot(card.CombatDTO);
-                OnTableSlotSnapped(point);
-                card.transform.SetParent(point.transform);
+                card.transform.parent.SetParent(playedCardsPlayer.transform);
+            }
+            else
+            {
+                Debug.Log("not enough mana");
             }
         }
-    }
-
-    public CombatCardDTO GetOppositeCard(CombatSlot slot)
-    {
-        return slot.OppositeSlot.CardInSlot;
     }
 }

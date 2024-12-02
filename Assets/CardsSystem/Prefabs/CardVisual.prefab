@@ -66,7 +66,7 @@ MonoBehaviour:
   cardName: {fileID: 5287797195728747682}
   cardDescription: {fileID: 2699762686176027836}
   healthText: {fileID: 8794958655390194561}
-  attackText: {fileID: 2111261511172646518}
+  damageText: {fileID: 2111261511172646518}
   followSpeed: 15
   rotationAmount: 60
   rotationSpeed: 20
@@ -864,7 +864,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7556503461241642029, guid: 2c4fdc0e1047c4b49ab90dd876b386e4, type: 3}
       propertyPath: m_fontColor.g
-      value: 0
+      value: 0.79263175
       objectReference: {fileID: 0}
     - target: {fileID: 7556503461241642029, guid: 2c4fdc0e1047c4b49ab90dd876b386e4, type: 3}
       propertyPath: m_fontColor.r
@@ -872,7 +872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7556503461241642029, guid: 2c4fdc0e1047c4b49ab90dd876b386e4, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4278190335
+      value: 4278242047
       objectReference: {fileID: 0}
     - target: {fileID: 8340944720910601132, guid: 2c4fdc0e1047c4b49ab90dd876b386e4, type: 3}
       propertyPath: m_Name

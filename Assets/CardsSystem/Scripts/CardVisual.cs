@@ -1,5 +1,4 @@
 using DG.Tweening;
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -30,7 +29,7 @@ public class CardVisual : MonoBehaviour
     [SerializeField] private TMP_Text cardName;
     [SerializeField] private TMP_Text cardDescription;
     [SerializeField] private TMP_Text healthText;
-    [SerializeField] private TMP_Text attackText;
+    [SerializeField] private TMP_Text damageText;
 
     [Header("Follow Parameters")]
     [SerializeField] private float followSpeed = 30;
@@ -67,14 +66,13 @@ public class CardVisual : MonoBehaviour
 
     private float curveYOffset;
     private float curveRotationOffset;
-    private Coroutine pressCoroutine;
 
     private void Start()
     {
         shadowDistance = visualShadow.localPosition;
     }
 
-    public void Initialize(Card target, CombatCardDTO combatProperties, int index = 0)
+    public void Initialize(Card target, CombatCardDTO combatProperties)
     {
         //Declarations
         parentCard = target;
@@ -92,31 +90,25 @@ public class CardVisual : MonoBehaviour
         parentCard.PointerUpEvent.AddListener(PointerUp);
         parentCard.SelectEvent.AddListener(Select);
 
-        Initialize(combatProperties);
+        cardName.text = combatProperties.Name;
+        cardDescription.text = combatProperties.Description;
+        healthText.text = combatProperties.Health.ToString();
+        damageText.text = combatProperties.Damage.ToString();
+
+        parentCard.OnTakeDamageEvent += UpdateTextOnTakeDamage;
 
         //Initialization
         _initialize = true;
 
     }
 
-    public void Initialize(CombatCardDTO combatProperties)
+    private void UpdateTextOnTakeDamage(Card card)
     {
-        cardName.text = combatProperties.Name;
-        cardDescription.text = combatProperties.Description;
-        healthText.text = combatProperties.Health.ToString();
-        attackText.text = combatProperties.Damage.ToString();
-
-        combatProperties.OnTakeDamageEvent += UpdateTextOnTakeDamage;
-
-        _initialize = false;
+        healthText.text = card.CombatDTO.Health.ToString();
+        damageText.text = card.CombatDTO.Damage.ToString();
     }
 
-    private void UpdateTextOnTakeDamage(CombatCardDTO obj)
-    {
-        healthText.text = obj.Health.ToString();
-    }
-
-    public void UpdateIndex(int length)
+    public void UpdateIndex()
     {
         transform.SetSiblingIndex(parentCard.transform.parent.GetSiblingIndex());
     }
@@ -178,7 +170,7 @@ public class CardVisual : MonoBehaviour
     {
         DOTween.Kill(2, true);
         float dir = state ? 1 : 0;
-        shakeParent.DOPunchPosition(shakeParent.up * selectPunchAmount * dir, scaleTransition, 10, 1);
+        shakeParent.DOPunchPosition(dir * selectPunchAmount * shakeParent.up, scaleTransition, 10, 1);
         shakeParent.DOPunchRotation(Vector3.forward * (hoverPunchAngle / 2), hoverTransition, 20, 1).SetId(2);
 
         if (scaleAnimations)

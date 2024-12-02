@@ -11,12 +11,13 @@ public class CardHolder : MonoBehaviour
     [Header("Spawn Settings")]
     private List<Card> _cards = new ();
     private Card _selectedCard;
-    private Card _hoveredCard;
 
     private bool _isCrossing = false;
     [SerializeField] private bool tweenCardReturn = true;
 
     private List<UnityAction<Card>> _externalOnDragEndActions = new();
+
+    public List<Card> CardsInHand => _cards;
 
     private void Start()
     {
@@ -41,16 +42,6 @@ public class CardHolder : MonoBehaviour
         _rect.sizeDelta -= Vector2.right;
 
         _selectedCard = null;
-    }
-
-    private void CardPointerEnter(Card card)
-    {
-        _hoveredCard = card;
-    }
-
-    private void CardPointerExit(Card card)
-    {
-        _hoveredCard = null;
     }
 
     private void Update()
@@ -113,7 +104,7 @@ public class CardHolder : MonoBehaviour
         //Updated Visual Indexes
         foreach (Card card in _cards)
         {
-            card.CardVisual.UpdateIndex(transform.childCount);
+            card.CardVisual.UpdateIndex();
         }
     }
 
@@ -124,24 +115,18 @@ public class CardHolder : MonoBehaviour
 
     public void UseCardFromHand(Card card)
     {
-        var cardSlot = card.transform.parent;
-
         card.DisableCard();
         _cards.Remove(card);
         card.CardVisual.PutOnBackgrond();
-        Destroy(cardSlot.gameObject);
     }
 
     public void AddCard(CombatCard combatCard)
     {
         var createdSlot = Instantiate(slotPrefab, transform);
         var createdCard = createdSlot.GetComponentInChildren<Card>();
-        _cards.Add(createdCard);
 
         createdCard.Initialize(combatCard);
 
-        createdCard.PointerEnterEvent.AddListener(CardPointerEnter);
-        createdCard.PointerExitEvent.AddListener(CardPointerExit);
         createdCard.BeginDragEvent.AddListener(BeginDrag);
         createdCard.EndDragEvent.AddListener(EndDrag);
 
@@ -150,6 +135,8 @@ public class CardHolder : MonoBehaviour
             createdCard.EndDragEvent.AddListener(action);
         }
 
-        createdCard.name = combatCard.CardName;
+        createdCard.name = combatCard.Name; 
+
+        _cards.Add(createdCard);
     }
 }

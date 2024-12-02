@@ -1,34 +1,22 @@
-using System;
+using System.Collections.Generic;
 
 public class CombatCardDTO
 {
-    public CombatCardDTO(string name, string description, int health, int damage)
-    {
-        Name = name;
-        Description = description;
-        Health = health;
-        Damage = damage;
-    }
-
     public CombatCardDTO(CombatCard card)
     {
-        Name = card.CardName;
-        Description = card.CardDescription;
+        Name = card.Name;
+        Description = card.Description;
         Health = card.Health;
         Damage = card.Damage;
+        ManaCost = card.ManaCost;
+        CardEffects = new(card.CardEffects);
     }
 
-    public string Name { get; set; }
-    public string Description { get; set; }
+    public string Name { get; }
+    public string Description { get; }
     public int Health { get; set; }
     public int Damage { get; set; }
+    public int ManaCost { get; }
     public bool IsAlive => Health > 0;
-
-    public event Action<CombatCardDTO> OnTakeDamageEvent;
-
-    public void TakeDamage(CombatCardDTO source)
-    {
-        Health -= source.Damage;
-        OnTakeDamageEvent(this);
-    }
+    public List<CardEffect> CardEffects { get; private set; }
 }

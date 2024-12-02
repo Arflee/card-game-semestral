@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class FightBearBehaviour : BehaviourState
 {
-    [SerializeField] public BehaviourState nextState;
+    [SerializeField] public BehaviourState onWinNextState;
+    [SerializeField] public BehaviourState onLooseNextState;
 
     public override BehaviourState NextState()
     {
-        return nextState;
+        return onWinNextState;
     }
 
     protected override void OnEnable()
