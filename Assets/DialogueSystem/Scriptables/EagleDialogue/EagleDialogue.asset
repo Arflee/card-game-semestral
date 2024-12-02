@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0268bdc1baf48b429d0a02764a4c2ab, type: 3}
+  m_Name: EagleDialogue
+  m_EditorClassIdentifier: 
+  monologues:
+  - speakerName: Orel
+    sequence: AAAAAAAAAAAA
+  - speakerName: "Hr\xE1\u010D"
+    sequence: "\u010Cau orle. Pos\xEDl\xE1 m\u011B li\u0161ka, prej u\u017E j\xED
+      to tvoje \u0159van\xED leze krkem, mohl bys\u2026"
+  - speakerName: Orel
+    sequence: AAAAAAAAAAAAAAAA
+  - speakerName: "Hr\xE1\u010D"
+    sequence: "\u2026 mohl bys s t\xEDm pros\xEDm p\u0159estat?"
+  - speakerName: Orel
+    sequence: AAAAAAAAAA
+  - speakerName: "Hr\xE1\u010D"
+    sequence: "Hele, zat\xEDm jsem na tebe hodnej\u2026\r\n"
+  - speakerName: Orel
+    sequence: AAAAAAAAAA
+  - speakerName: "Hr\xE1\u010D"
+    sequence: "J\xE1 t\u011B varuju, p\u0159esta\u0148 s t\xEDm! "
+  - speakerName: Orel
+    sequence: AAAAAAAAAAAAAAAAAAAAAAA
+  - speakerName: "Hr\xE1\u010D"
+    sequence: "Ty vocase, posledn\xED varov\xE1n\xED, jinak vol\xEDm n\xE1sil\xED!\r\n"
+  - speakerName: Orel
+    sequence: "\u2026"
+  - speakerName: Orel
+    sequence: A
+  - speakerName: "Vyprav\u011B\u010D"
+    sequence: "V tu chv\xEDli Medv\u011Bd\u016Fv poh\xE1r trp\u011Blivosti p\u0159etekl.
+      Ne\u017E se provokuj\xEDc\xED orel nad\xE1l, byl vyzv\xE1n na epick\xFD souboj.\r"
+  delayPerSymbol: 0.02
+  availableChoices: []
