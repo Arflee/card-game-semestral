@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEngine;
 
 public class EnemyState : CombatState
 {
@@ -11,12 +12,13 @@ public class EnemyState : CombatState
 
     public override IEnumerator EnterState()
     {
-        var createdCards = _initializer.PlaceStartCards();
-
-        foreach (var card in createdCards)
+        var nextCard = _initializer.GetNextCard();
+        if (nextCard == null)
         {
-            StateMachine.AddCardOnEnemyTable(card);
+            Debug.LogWarning("Enemey is out of cards!");
+            yield return null;
         }
+        StateMachine.AddCardOnEnemyTable(nextCard);
 
         StateMachine.ChangeTurn();
         yield return null;

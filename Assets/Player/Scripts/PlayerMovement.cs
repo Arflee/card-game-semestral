@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
@@ -8,6 +8,9 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D _rigidbody;
     private static StandardControls _controls;
+    private int _lastDirection = 0;
+    private Animator _animator;
+
     public static StandardControls Controls
     {
         get
@@ -25,6 +28,10 @@ public class PlayerMovement : MonoBehaviour
     void OnEnable()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        _controls = new StandardControls();
+        _controls.Player.Move.Enable();
+        _animator = GetComponent<Animator>();
+
 
         Controls ??= new StandardControls();
         Controls.Player.Move.Enable();

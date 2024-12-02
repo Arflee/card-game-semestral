@@ -678,8 +678,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue: {fileID: 2069353502}
   nextState: {fileID: 60487299}
-  minTimeActive: 2
-  maxTimeActive: 2
 --- !u!1001 &64595709
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9751,6 +9749,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8787e712e3cb9549a8517b6ef28b24f, type: 3}
+--- !u!4 &1268454866 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2477882521445282075, guid: 1e46c9b4a1f48ba4396582062cb3b055, type: 3}
+  m_PrefabInstance: {fileID: 2080838914}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1282665047
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10315,6 +10318,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2477882521445282075, guid: 1e46c9b4a1f48ba4396582062cb3b055, type: 3}
   m_PrefabInstance: {fileID: 1345270736}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1364521479 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2754413547690233697, guid: d06e323b031426649a1fa684fd936a6b, type: 3}
+  m_PrefabInstance: {fileID: 64595709}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1364923237
 PrefabInstance:
@@ -14938,11 +14946,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e46c9b4a1f48ba4396582062cb3b055, type: 3}
---- !u!4 &2061267983 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2477882521445282075, guid: 1e46c9b4a1f48ba4396582062cb3b055, type: 3}
-  m_PrefabInstance: {fileID: 2061267982}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2097759235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15126,7 +15129,6 @@ Transform:
   - {fileID: 1473362441}
   - {fileID: 1010819816}
   - {fileID: 748807145}
-  - {fileID: 2061267983}
   - {fileID: 1834015395}
   - {fileID: 1142588050}
   - {fileID: 1748489119}
@@ -15262,6 +15264,8 @@ Transform:
   - {fileID: 1787639552}
   - {fileID: 417048578}
   - {fileID: 311949732}
+  - {fileID: 1364521479}
+  - {fileID: 1268454866}
   m_Father: {fileID: 349300285}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2113360000 stripped
@@ -15732,3 +15736,4 @@ SceneRoots:
   - {fileID: 60487295}
   - {fileID: 1546052059}
   - {fileID: 2069353503}
+  - {fileID: 99946596}
