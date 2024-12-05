@@ -1,11 +1,11 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class BehaviourState : MonoBehaviour
 {
     public event Func<bool> CancelFinish;
+
     public abstract BehaviourState NextState();
 
     protected virtual void OnEnable()
@@ -15,9 +15,11 @@ public abstract class BehaviourState : MonoBehaviour
 
     public void Finished()
     {
-        if (CancelFinish != null)
-            if (CancelFinish.Invoke())
-                return;
+        if (CancelFinish?.Invoke() ?? false)
+        {
+            return;
+        }
+
         enabled = false;
         BehaviourState next = NextState();
         if (next != null)

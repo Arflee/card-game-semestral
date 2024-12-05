@@ -5,23 +5,48 @@ public class EnemyInitializer : MonoBehaviour
 {
     [SerializeField] private GameObject cardSlotPrefab;
     [SerializeField] private CardVisual visualPrefab;
-    [SerializeField] private CombatCard[] enemyHand;
+    [SerializeField] private CombatCard[] enemyDeck;
     [SerializeField] private RectTransform playedCardsEnemy;
 
-    public List<Card> PlaceStartCards()
+    private Stack<CombatCard> _shuffledDeck;
+
+    public void OnEnable()
     {
-        List<Card> _cardObjects = new();
+        _shuffledDeck = new(Shuffle(enemyDeck));
+    }
 
-        for (int i = 0; i < enemyHand.Length; i++)
+    public Card GetNextCard()
+    {
+        if (_shuffledDeck.Count == 0)
         {
-            var cardSlot = Instantiate(cardSlotPrefab, playedCardsEnemy.transform);
-            var card = cardSlot.GetComponentInChildren<Card>();
-            card.Initialize(enemyHand[i]);
-            card.DisableCard();
-
-            _cardObjects.Add(card);
+            return null;
         }
 
-        return _cardObjects;
+        var nextCard = _shuffledDeck.Pop();
+
+        var cardSlot = Instantiate(cardSlotPrefab, playedCardsEnemy.transform);
+        var card = cardSlot.GetComponentInChildren<Card>();
+        card.Initialize(nextCard);
+        card.DisableCard();
+
+        return card;
+    }
+
+    //https://www.wikiwand.com/en/articles/Fisher-Yates_shuffle
+    private List<T> Shuffle<T>(IEnumerable<T> listToShuffle)
+    {
+        List<T> copiedDeck = new (listToShuffle);
+
+        List<T> shuffled = new();
+        System.Random random = new();
+
+        while (copiedDeck.Count > 0)
+        {
+            int k = random.Next(copiedDeck.Count);
+            shuffled.Add(copiedDeck[k]);
+            copiedDeck.RemoveAt(k);
+        }
+
+        return shuffled;
     }
 }
