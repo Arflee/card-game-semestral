@@ -239,5 +239,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 207d0dbc04c516346bf67e3eec10980d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crystalEffect: {fileID: 11400000, guid: 4c064e77e901676479487d30bbeaa55f, type: 2}
   healthText: {fileID: 8903607032240186424}
-  parameters: {fileID: 11400000, guid: e5d2ce0ddd2f02740b706f1581dc6903, type: 2}

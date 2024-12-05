@@ -13,14 +13,18 @@ public class EnemyState : CombatState
     public override IEnumerator EnterState()
     {
         var nextCard = _initializer.GetNextCard();
+
         if (nextCard == null)
         {
-            Debug.LogWarning("Enemey is out of cards!");
+            Debug.LogWarning("Enemy is out of cards!");
             yield return null;
         }
-        StateMachine.AddCardOnEnemyTable(nextCard);
+        else
+        {
+            StateMachine.AddCardOnEnemyTable(nextCard);
 
-        StateMachine.ChangeTurn();
-        yield return null;
+            StateMachine.ChangeTurn();
+            yield return null;
+        }
     }
 }

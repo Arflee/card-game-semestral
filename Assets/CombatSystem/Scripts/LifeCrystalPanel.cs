@@ -23,6 +23,9 @@ public class LifeCrystalPanel : MonoBehaviour
     public bool TryAttackCrystal(int damage)
     {
         var lastCrystal = spawnedCrystals.Peek();
+        if (lastCrystal == null)
+            return false;
+
 
         if (lastCrystal.Health <= damage)
         {
