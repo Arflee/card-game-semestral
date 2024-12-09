@@ -1,11 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoadSceneBehaviour : BehaviourState
 {
+    [SerializeField] private string sceneName;
+    [SerializeField] private BehaviourState nextState; 
+
+    protected override void OnEnable()
+    {
+        DOTween.Clear(true);
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+    }
+
     public override BehaviourState NextState()
     {
-        throw new System.NotImplementedException();
+        return nextState;
     }
 }
