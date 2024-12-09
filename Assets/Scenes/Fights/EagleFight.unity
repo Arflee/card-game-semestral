@@ -520,7 +520,6 @@ GameObject:
   - component: {fileID: 1094808338}
   - component: {fileID: 1094808340}
   - component: {fileID: 1094808339}
-  - component: {fileID: 1094808341}
   m_Layer: 5
   m_Name: CardsDeck
   m_TagString: Untagged
@@ -585,30 +584,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094808337}
   m_CullTransparentMesh: 1
---- !u!114 &1094808341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1094808337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24e67427177ff404b9518241ca3ed9b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardHolder: {fileID: 1314371922}
-  maxCardsInHand: 5
-  playerCards:
-  - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
-  - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
-  - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
-  - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
-  - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
-  - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
-  - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
-  - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
-  - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
 --- !u!1 &1204193606
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,7 +820,11 @@ PrefabInstance:
     - target: {fileID: 8173195852239707900, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: playerDeck
       value: 
-      objectReference: {fileID: 1094808341}
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173195852239707900, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
+      propertyPath: tweenCardReturn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8173195852239707900, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: OnEndCardDrag.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -1293,7 +1272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86aca08c12196644be7dcb03af271f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDeck: {fileID: 1094808341}
+  playerDeck: {fileID: 0}
   table: {fileID: 925652376}
   enemyInitializer: {fileID: 1992420335}
   manaPanel: {fileID: 1751210915}

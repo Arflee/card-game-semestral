@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class CombatStateMachine : MonoBehaviour
 {
-    [SerializeField] private CardDeck playerDeck;
     [SerializeField] private DragNDropTable table;
     [SerializeField] private EnemyInitializer enemyInitializer;
     [SerializeField] private ManaPanel manaPanel;
@@ -14,8 +13,9 @@ public class CombatStateMachine : MonoBehaviour
     private bool _isPlayerTurn = false;
     private PlayerState _playerState;
     private EnemyState _enemyState;
+    private CardDeck _playerDeck;
 
-    public CardDeck PlayerDeck => playerDeck;
+    public CardDeck PlayerDeck => _playerDeck;
     public EnemyInitializer EnemyInitializer => enemyInitializer;
     public CombatState State { get; private set; }
     public List<Card> PlayerCardsOnTable { get; private set; } = new();
@@ -34,6 +34,7 @@ public class CombatStateMachine : MonoBehaviour
 
     private void Start()
     {
+        _playerDeck = FindObjectOfType<CardDeck>();
         _playerState = new PlayerState(this);
         _enemyState = new EnemyState(this);
 
