@@ -521,7 +521,6 @@ GameObject:
   - component: {fileID: 1094808340}
   - component: {fileID: 1094808339}
   - component: {fileID: 1094808341}
-  - component: {fileID: 1094808342}
   m_Layer: 5
   m_Name: CardsDeck
   m_TagString: Untagged
@@ -610,23 +609,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
   - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
   - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
---- !u!320 &1094808342
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1094808337}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 1f2c4aa38792f3e48b451641d7a6872d, type: 2}
-  m_InitialState: 1
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings: []
-  m_ExposedReferences:
-    m_References: []
 --- !u!1 &1204193606
 GameObject:
   m_ObjectHideFlags: 0

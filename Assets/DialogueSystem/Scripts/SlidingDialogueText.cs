@@ -19,8 +19,10 @@ public class SlidingDialogueText : MonoBehaviour
     private bool _isTyping;
     private bool _isSkipped;
     private int _dialogueIndex = 0;
-
+    private List<Button> _createdButtons = new();
+    
     public event Action OnDialogueSequenceEnd;
+
 
     private void OnEnable()
     {
@@ -47,7 +49,8 @@ public class SlidingDialogueText : MonoBehaviour
         {
             if (_dialogueSequence.availableChoices.Count != 0)
             {
-                if (_choicePanel.activeSelf) return;
+                if (_choicePanel.activeSelf)
+                    return;
 
                 _choicePanel.SetActive(true);
                 _scrollRect.gameObject.SetActive(false);
@@ -55,8 +58,14 @@ public class SlidingDialogueText : MonoBehaviour
                 {
                     DialogueChoice choice = _dialogueSequence.availableChoices[i];
                     var button = Instantiate(_choiceButton, _choicePanel.transform);
+                    _createdButtons.Add(button);
                     int temp = i;
-                    button.onClick.AddListener(() => ChooseDialogueSequenceOnClick(temp));
+                    button.onClick.AddListener(() =>
+                    {
+                        ChooseDialogueSequenceOnClick(temp);
+                        _createdButtons.ForEach(b => Destroy(b.gameObject));
+                        _createdButtons.Clear();
+                    });
                     button.GetComponentInChildren<TextMeshProUGUI>().text = choice.choiceDescription;
                 }
 
