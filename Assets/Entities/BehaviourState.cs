@@ -22,6 +22,8 @@ public abstract class BehaviourState : MonoBehaviour
         enabled = false;
         BehaviourState next = NextState();
         if (next != null)
+        {
             next.enabled = true;
+        }
     }
 }

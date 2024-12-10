@@ -1,12 +1,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Dialogue Sequence", menuName = "Create New Dialogue Sequence", order = 1)]
+[CreateAssetMenu(fileName = "Dialogue Sequence", menuName = "Dialogues/Create New Dialogue Sequence", order = 1)]
 public class DialogueSequence : ScriptableObject
 {
-    public List<DialogueSpeaker> monologues;
-    public float delayPerSymbol;
-    public List<DialogueChoice> availableChoices;
+    [SerializeField] protected List<DialogueSpeaker> monologues;
+    [SerializeField] protected float delayPerSymbol;
+    [SerializeField] protected List<DialogueChoice> availableChoices;
+
+    public float DelayPerSymbol => delayPerSymbol;
+
+    public virtual List<DialogueSpeaker> Monologues => monologues;
+
+    public virtual List<DialogueChoice> AvaliableChoices => availableChoices;
+
 }
 
 [System.Serializable]

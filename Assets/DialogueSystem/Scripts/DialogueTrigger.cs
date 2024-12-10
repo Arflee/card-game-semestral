@@ -35,13 +35,11 @@ public class DialogueTrigger : MonoBehaviour
         _createdBubble.OnDialogueSequenceEnd += OnDialogueEnd;
         _createdBubble.gameObject.transform.localScale = new Vector2(0.1f, 0.1f);
 
-        //TODO Make/Change appearing animation
         _createdBubble.gameObject.transform.DOScale(1f, 0.5f).SetEase(Ease.OutCubic);
     }
 
     private void OnDialogueSequenceEnd()
     {
-        //TODO Make/Change disappearing animation
         _createdBubble.gameObject.transform.DOScale(0f, 0.5f).SetEase(Ease.InCubic).OnComplete(() =>
         {
             _createdBubble.OnDialogueSequenceEnd -= OnDialogueSequenceEnd;
