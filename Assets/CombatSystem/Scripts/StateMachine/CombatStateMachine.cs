@@ -14,6 +14,7 @@ public class CombatStateMachine : MonoBehaviour
     private PlayerState _playerState;
     private EnemyState _enemyState;
     private CardDeck _playerDeck;
+    private GameHandler _gameStateHandler;
 
     public CardDeck PlayerDeck => _playerDeck;
     public EnemyInitializer EnemyInitializer => enemyInitializer;
@@ -27,16 +28,19 @@ public class CombatStateMachine : MonoBehaviour
 
     public int PlayerCrystals { get; private set; } = 3;
     public int EnemyCrystals { get; private set; } = 3;
-
     public int PlayerMana { get; private set; } = 3;
     public int PlayerManaNextTurn { get; private set; } = 4;
     public int MaxPlayerMana { get; private set; } = 10;
+    public GameHandler GameHandler => _gameStateHandler;
+
 
     private void Start()
     {
         _playerDeck = FindObjectOfType<CardDeck>();
         _playerState = new PlayerState(this);
         _enemyState = new EnemyState(this);
+
+        _gameStateHandler = FindObjectOfType<GameHandler>();
 
         table.OnTableSlotSnapped += OnCardDragEnd;
 
@@ -64,7 +68,6 @@ public class CombatStateMachine : MonoBehaviour
 
         foreach (var effect in card.CombatDTO.CardEffects)
         {
-            Debug.Log("used effect");
             effect.OnUse(PlayerDeck, card, PlayerCardsOnTable);
         }
 
@@ -99,6 +102,8 @@ public class CombatStateMachine : MonoBehaviour
                 {
                     cardsToBeAdded.Add(createdCard);
                 }
+
+                createdCard = effect.OnDeathTakeCardAndUse(PlayerDeck, card, PlayerCardsOnTable);
             }
         }
 
@@ -117,6 +122,8 @@ public class CombatStateMachine : MonoBehaviour
         {
             RemoveCardFromTable(card);
         }
+
+        ChangeTurn();
     }
 
     public void ChangeTurn()

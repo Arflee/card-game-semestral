@@ -14,7 +14,7 @@ public class CardDeck : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this);
+        DontDestroyOnLoad(gameObject);
         SceneManager.activeSceneChanged += OnNewSceneAdded;
     }
 
@@ -33,6 +33,18 @@ public class CardDeck : MonoBehaviour
 
         var takenCard = _cardDeck.Dequeue();
         _cardHolder.AddCard(takenCard);
+
+        return takenCard;
+    }
+
+    public CombatCard TakeCardWithoutAddingToHolder()
+    {
+        if (_cardDeck.Count == 0)
+        {
+            return null;
+        }
+
+        var takenCard = _cardDeck.Dequeue();
 
         return takenCard;
     }

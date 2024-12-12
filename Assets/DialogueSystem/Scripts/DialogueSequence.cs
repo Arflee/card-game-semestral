@@ -12,13 +12,23 @@ public class DialogueSequence : ScriptableObject
 
     public virtual List<DialogueSpeaker> Monologues => monologues;
 
-    public virtual List<DialogueChoice> AvaliableChoices => availableChoices;
+    public virtual List<DialogueChoice> AvailableChoices => availableChoices;
 
 }
 
 [System.Serializable]
 public class DialogueSpeaker
 {
+    public DialogueSpeaker()
+    {
+        
+    }
+    public DialogueSpeaker(string name, string sequence)
+    {
+        speakerName = name;
+        this.sequence = sequence;
+    }
+
     public string speakerName;
     [TextArea(3, 50)] public string sequence;
 }

@@ -9,8 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0d6959acd228c046942bc65ad2d2a09, type: 3}
-  m_Name: BuffAdjacent
+  m_Script: {fileID: 11500000, guid: a79c9c8a8609bbb4591197163e73c2f8, type: 3}
+  m_Name: "Sil\xE1k"
   m_EditorClassIdentifier: 
-  healthBuff: 10
-  damageBuff: 10
+  manaCost: 3
+  cardName: "Sil\xE1k"
+  cardDescription: 
+  cardSprite: {fileID: 0}
+  health: 1
+  damage: 5
+  combatEffects: []

@@ -9,11 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 314a271ea3ba7be478b2f0b11502d2f2, type: 3}
-  m_Name: SpellCard
+  m_Script: {fileID: 11500000, guid: a79c9c8a8609bbb4591197163e73c2f8, type: 3}
+  m_Name: "Trjo\u0161ka"
   m_EditorClassIdentifier: 
-  manaCost: 0
-  effects: []
-  cardName: 
+  manaCost: 2
+  cardName: "Trjo\u0161ka"
   cardDescription: 
   cardSprite: {fileID: 0}
+  health: 2
+  damage: 2
+  combatEffects:
+  - {fileID: 11400000, guid: 7bc7ab78a06808149bdfd7d4dd5c9300, type: 2}

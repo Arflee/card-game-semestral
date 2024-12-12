@@ -17,6 +17,6 @@ MonoBehaviour:
     sequence: asdasdasd123123[x]
   - speakerName: asdasdasd [X]
     sequence: asdasdasdas         []
-  delayPerSymbol: 0
+  delayPerSymbol: 0.01
   availableChoices: []
   variableGenerator: {fileID: 11400000, guid: 2f43634bd96dcac43825b8861efd87e6, type: 2}

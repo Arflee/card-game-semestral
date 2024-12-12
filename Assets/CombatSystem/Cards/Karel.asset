@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79c9c8a8609bbb4591197163e73c2f8, type: 3}
-  m_Name: CombatCard 1
+  m_Name: Karel
   m_EditorClassIdentifier: 
-  health: 1
-  damage: 1
-  manaCost: 1
-  effects: []
-  cardName: 1
-  cardDescription: ASDASD
+  manaCost: 2
+  cardName: Karel
+  cardDescription: 
   cardSprite: {fileID: 0}
+  health: 2
+  damage: 2
+  combatEffects:
+  - {fileID: 11400000, guid: 9bd62c9375efc7c4a97442120c509c12, type: 2}

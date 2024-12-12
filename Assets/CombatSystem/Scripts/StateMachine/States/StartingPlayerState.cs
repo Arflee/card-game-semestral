@@ -39,10 +39,9 @@ public class StartingPlayerState : CombatState
             if (!StateMachine.LifeCrystalPanel.TryAttackCrystal(enemyCard.CombatDTO.Damage))
             {
                 Debug.LogError("player is dead");
+                StateMachine.SetState(new LoseState(StateMachine));
             }
         }
-
-        StateMachine.ChangeTurn();
     }
 
     private bool PlayerHasMoreCards(int index)

@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    [SerializeField]
-    private DialogueSequence _dialogueSequence;
+    [SerializeField] private DialogueSequence _dialogueSequence;
 
-    [SerializeField]
-    private GameObject dialogueCanvas;
+    [SerializeField] private GameObject dialogueCanvas;
 
-    [SerializeField]
-    private SlidingDialogueText dialogueBubblePrefab;
+    [SerializeField] private SlidingDialogueText dialogueBubblePrefab;
 
     public event Action OnDialogueEnd;
 

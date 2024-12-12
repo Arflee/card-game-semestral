@@ -47,16 +47,16 @@ public class SlidingDialogueText : MonoBehaviour
     {
         if (_dialogueIndex == _dialogueSequence.Monologues.Count)
         {
-            if (_dialogueSequence.AvaliableChoices.Count != 0)
+            if (_dialogueSequence.AvailableChoices.Count != 0)
             {
                 if (_choicePanel.activeSelf)
                     return;
 
                 _choicePanel.SetActive(true);
                 _scrollRect.gameObject.SetActive(false);
-                for (int i = 0; i < _dialogueSequence.AvaliableChoices.Count; i++)
+                for (int i = 0; i < _dialogueSequence.AvailableChoices.Count; i++)
                 {
-                    DialogueChoice choice = _dialogueSequence.AvaliableChoices[i];
+                    DialogueChoice choice = _dialogueSequence.AvailableChoices[i];
                     var button = Instantiate(_choiceButton, _choicePanel.transform);
                     _createdButtons.Add(button);
                     int temp = i;
@@ -91,7 +91,7 @@ public class SlidingDialogueText : MonoBehaviour
     private void ChooseDialogueSequenceOnClick(int buttonIndex)
     {
         _dialogueIndex = 0;
-        _dialogueSequence = _dialogueSequence.AvaliableChoices[buttonIndex].avalableChoice;
+        _dialogueSequence = _dialogueSequence.AvailableChoices[buttonIndex].avalableChoice;
         _scrollRect.gameObject.SetActive(true);
         _choicePanel.SetActive(false);
 
