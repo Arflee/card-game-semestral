@@ -1,14 +1,14 @@
 using UnityEngine;
 
-public class GameHandler : MonoBehaviour
+public class GameEndingHandler : MonoBehaviour
 {
-    enum GameEndings
+    public enum Endings
     {
         Win,
         Lose
     }
 
-    private GameEndings _lastPlayedGame;
+    private Endings _lastPlayedGame;
 
     private void Awake()
     {
@@ -17,11 +17,11 @@ public class GameHandler : MonoBehaviour
 
     public void PlayerLostGame()
     {
-        _lastPlayedGame = GameEndings.Lose;
+        _lastPlayedGame = Endings.Lose;
     }
 
     public void PlayerWonGame()
     {
-        _lastPlayedGame = GameEndings.Win;
+        _lastPlayedGame = Endings.Win;
     }
 }

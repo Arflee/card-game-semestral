@@ -2,7 +2,7 @@ using System.Collections;
 
 public class LoseState : CombatState
 {
-    private GameHandler _gameHandler;
+    private GameEndingHandler _gameHandler;
 
     public LoseState(CombatStateMachine machine) : base(machine)
     {

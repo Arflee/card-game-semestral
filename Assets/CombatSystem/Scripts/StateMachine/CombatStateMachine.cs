@@ -14,7 +14,7 @@ public class CombatStateMachine : MonoBehaviour
     private PlayerState _playerState;
     private EnemyState _enemyState;
     private CardDeck _playerDeck;
-    private GameHandler _gameStateHandler;
+    private GameEndingHandler _gameStateHandler;
 
     public CardDeck PlayerDeck => _playerDeck;
     public EnemyInitializer EnemyInitializer => enemyInitializer;
@@ -31,7 +31,7 @@ public class CombatStateMachine : MonoBehaviour
     public int PlayerMana { get; private set; } = 3;
     public int PlayerManaNextTurn { get; private set; } = 4;
     public int MaxPlayerMana { get; private set; } = 10;
-    public GameHandler GameHandler => _gameStateHandler;
+    public GameEndingHandler GameHandler => _gameStateHandler;
 
 
     private void Start()
@@ -40,7 +40,7 @@ public class CombatStateMachine : MonoBehaviour
         _playerState = new PlayerState(this);
         _enemyState = new EnemyState(this);
 
-        _gameStateHandler = FindObjectOfType<GameHandler>();
+        _gameStateHandler = FindObjectOfType<GameEndingHandler>();
 
         table.OnTableSlotSnapped += OnCardDragEnd;
 

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CardEffect", menuName = "Card Effects/On Use/Transform all own cards")]
@@ -10,6 +11,11 @@ public class TransformAllOwnCardsToOtherEffect : CardEffect
     {
         foreach (var card in playerTable)
         {
+            if (card == usedCard)
+            {
+                continue;
+            }
+
             card.Reinitialize(changeCard);
         }
     }

@@ -677,7 +677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue: {fileID: 2069353502}
-  nextState: {fileID: 0}
+  nextState: {fileID: 60487299}
 --- !u!1001 &64595709
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3762,7 +3762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 776008d1a78a36645b0f7a603bdf4ad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueSequence: {fileID: 0}
+  _dialogueSequence: {fileID: 11400000, guid: 1a9dae324d9e52549aa2a077f06aebd8, type: 2}
   dialogueCanvas: {fileID: 995863022}
   dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
 --- !u!4 &445453502
@@ -15147,7 +15147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 776008d1a78a36645b0f7a603bdf4ad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueSequence: {fileID: 0}
+  _dialogueSequence: {fileID: 11400000, guid: d034edf45265ce249b46701168377799, type: 2}
   dialogueCanvas: {fileID: 995863022}
   dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
 --- !u!4 &2069353503
