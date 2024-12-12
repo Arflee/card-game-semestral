@@ -127,6 +127,55 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5319436337358068572, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
   m_PrefabInstance: {fileID: 1494971079}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &878273921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 878273923}
+  - component: {fileID: 878273922}
+  m_Layer: 0
+  m_Name: CardDeck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &878273922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878273921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24e67427177ff404b9518241ca3ed9b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxCardsInHand: 1
+  playerCards:
+  - {fileID: 11400000, guid: 124631e689f611947aa60554089ef233, type: 2}
+  - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
+  - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
+--- !u!4 &878273923
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878273921}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &925652371
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,8 +569,6 @@ GameObject:
   - component: {fileID: 1094808338}
   - component: {fileID: 1094808340}
   - component: {fileID: 1094808339}
-  - component: {fileID: 1094808341}
-  - component: {fileID: 1094808342}
   m_Layer: 5
   m_Name: CardsDeck
   m_TagString: Untagged
@@ -586,47 +633,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094808337}
   m_CullTransparentMesh: 1
---- !u!114 &1094808341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1094808337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24e67427177ff404b9518241ca3ed9b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardHolder: {fileID: 1314371922}
-  maxCardsInHand: 5
-  playerCards:
-  - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
-  - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
-  - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
-  - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
-  - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
-  - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
-  - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
-  - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
-  - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
---- !u!320 &1094808342
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1094808337}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 1f2c4aa38792f3e48b451641d7a6872d, type: 2}
-  m_InitialState: 1
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings: []
-  m_ExposedReferences:
-    m_References: []
 --- !u!1 &1204193606
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,7 +869,7 @@ PrefabInstance:
     - target: {fileID: 8173195852239707900, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: playerDeck
       value: 
-      objectReference: {fileID: 1094808341}
+      objectReference: {fileID: 0}
     - target: {fileID: 8173195852239707900, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: OnEndCardDrag.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -1257,10 +1263,10 @@ MonoBehaviour:
   cardSlotPrefab: {fileID: 575835118737254313, guid: a86ada4f9b399784cb9af4003a4421b9, type: 3}
   visualPrefab: {fileID: 3700769039360204207, guid: 45bb3addbb980044283664edf8de3c34, type: 3}
   enemyDeck:
-  - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
-  - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
-  - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
-  - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
+  - {fileID: 11400000, guid: da3e026b03f9669498032813d178d315, type: 2}
+  - {fileID: 11400000, guid: da3e026b03f9669498032813d178d315, type: 2}
+  - {fileID: 11400000, guid: da3e026b03f9669498032813d178d315, type: 2}
+  - {fileID: 11400000, guid: da3e026b03f9669498032813d178d315, type: 2}
   playedCardsEnemy: {fileID: 1204193607}
 --- !u!20 &2084828445 stripped
 Camera:
@@ -1311,7 +1317,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86aca08c12196644be7dcb03af271f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDeck: {fileID: 1094808341}
   table: {fileID: 925652376}
   enemyInitializer: {fileID: 1992420335}
   manaPanel: {fileID: 1751210915}
@@ -1427,3 +1432,4 @@ SceneRoots:
   - {fileID: 1649581547}
   - {fileID: 2102790305}
   - {fileID: 1992420334}
+  - {fileID: 878273923}

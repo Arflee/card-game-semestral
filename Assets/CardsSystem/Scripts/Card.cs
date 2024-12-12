@@ -62,6 +62,12 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
         CardVisual.Initialize(this, CombatDTO);
     }
 
+    public void Reinitialize(CombatCard combatProperties)
+    {
+        CombatDTO = new(combatProperties);
+        CardVisual.Reinitialize(CombatDTO);
+    }
+
     private void Update()
     {
         ClampPosition();

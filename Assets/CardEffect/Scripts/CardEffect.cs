@@ -29,4 +29,9 @@ public abstract class CardEffect : ScriptableObject
     {
 
     }
+
+    public virtual Card OnDeathTakeCardAndUse(CardDeck deck, Card playedCard, List<Card> playerTable)
+    {
+        return null;
+    }
 }

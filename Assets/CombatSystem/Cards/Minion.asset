@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79c9c8a8609bbb4591197163e73c2f8, type: 3}
-  m_Name: CombatCard 3
+  m_Name: Minion
   m_EditorClassIdentifier: 
-  health: 3
-  damage: 99
-  manaCost: 3
-  effects: []
-  cardName: 3
-  cardDescription: ASDASD
+  manaCost: 1
+  cardName: Minion
+  cardDescription: 
   cardSprite: {fileID: 0}
+  health: 1
+  damage: 1
+  combatEffects: []

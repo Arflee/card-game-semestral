@@ -20,6 +20,6 @@ public class PreCombatState : CombatState
 
         StateMachine.ManaPanel.SpawnCrystalPrefabs(StateMachine.MaxPlayerMana);
 
-        StateMachine.ChangeTurn();
+        StateMachine.SetState(new StartingPlayerState(StateMachine));
     }
 }

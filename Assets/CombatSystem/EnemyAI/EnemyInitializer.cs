@@ -12,7 +12,7 @@ public class EnemyInitializer : MonoBehaviour
 
     public void OnEnable()
     {
-        _shuffledDeck = new(Shuffle(enemyDeck));
+        _shuffledDeck = new(Utility.Shuffle(enemyDeck));
     }
 
     public Card GetNextCard()
@@ -30,23 +30,5 @@ public class EnemyInitializer : MonoBehaviour
         card.DisableCard();
 
         return card;
-    }
-
-    //https://www.wikiwand.com/en/articles/Fisher-Yates_shuffle
-    private List<T> Shuffle<T>(IEnumerable<T> listToShuffle)
-    {
-        List<T> copiedDeck = new (listToShuffle);
-
-        List<T> shuffled = new();
-        System.Random random = new();
-
-        while (copiedDeck.Count > 0)
-        {
-            int k = random.Next(copiedDeck.Count);
-            shuffled.Add(copiedDeck[k]);
-            copiedDeck.RemoveAt(k);
-        }
-
-        return shuffled;
     }
 }

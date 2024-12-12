@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 public class CombatCardDTO
 {
@@ -9,7 +10,7 @@ public class CombatCardDTO
         Health = card.Health;
         Damage = card.Damage;
         ManaCost = card.ManaCost;
-        CardEffects = new(card.CardEffects);
+        CardEffects = new(card.CardEffects ?? Enumerable.Empty<CardEffect>());
     }
 
     public string Name { get; }

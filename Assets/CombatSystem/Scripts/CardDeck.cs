@@ -1,24 +1,27 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(Image))]
 public class CardDeck : MonoBehaviour
 {
-    [SerializeField] private CardHolder cardHolder;
     [SerializeField, Range(1, 10)] private int maxCardsInHand = 7;
     [SerializeField] private CombatCard[] playerCards;
 
     private Queue<CombatCard> _cardDeck;
-    private Image _deckFrontImage;
+    private CardHolder _cardHolder;
 
     public int MaxCardsInHand => maxCardsInHand;
 
     private void Awake()
     {
-        _cardDeck = new(playerCards);
-        _deckFrontImage = GetComponent<Image>();
+        DontDestroyOnLoad(gameObject);
+        SceneManager.activeSceneChanged += OnNewSceneAdded;
+    }
+
+    private void OnNewSceneAdded(Scene arg0, Scene arg1)
+    {
+        _cardDeck = new(Utility.Shuffle(playerCards));
+        _cardHolder = FindObjectOfType<CardHolder>();
     }
 
     public CombatCard TakeCard()
@@ -28,9 +31,20 @@ public class CardDeck : MonoBehaviour
             return null;
         }
 
-        _deckFrontImage.color = new Color(0, _deckFrontImage.color.g - (1f / playerCards.Length), 0);
         var takenCard = _cardDeck.Dequeue();
-        cardHolder.AddCard(takenCard);
+        _cardHolder.AddCard(takenCard);
+
+        return takenCard;
+    }
+
+    public CombatCard TakeCardWithoutAddingToHolder()
+    {
+        if (_cardDeck.Count == 0)
+        {
+            return null;
+        }
+
+        var takenCard = _cardDeck.Dequeue();
 
         return takenCard;
     }

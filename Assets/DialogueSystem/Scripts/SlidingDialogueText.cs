@@ -19,8 +19,10 @@ public class SlidingDialogueText : MonoBehaviour
     private bool _isTyping;
     private bool _isSkipped;
     private int _dialogueIndex = 0;
-
+    private List<Button> _createdButtons = new();
+    
     public event Action OnDialogueSequenceEnd;
+
 
     private void OnEnable()
     {
@@ -32,7 +34,7 @@ public class SlidingDialogueText : MonoBehaviour
 
     public void Init(DialogueSequence sequence)
     {
-        _speakersName.text = sequence.monologues[0].speakerName;
+        _speakersName.text = sequence.Monologues[0].speakerName;
         _dialogueSequence = sequence;
     }
 
@@ -43,20 +45,27 @@ public class SlidingDialogueText : MonoBehaviour
 
     private void OnMouseClick(InputAction.CallbackContext context)
     {
-        if (_dialogueIndex == _dialogueSequence.monologues.Count)
+        if (_dialogueIndex == _dialogueSequence.Monologues.Count)
         {
-            if (_dialogueSequence.availableChoices.Count != 0)
+            if (_dialogueSequence.AvailableChoices.Count != 0)
             {
-                if (_choicePanel.activeSelf) return;
+                if (_choicePanel.activeSelf)
+                    return;
 
                 _choicePanel.SetActive(true);
                 _scrollRect.gameObject.SetActive(false);
-                for (int i = 0; i < _dialogueSequence.availableChoices.Count; i++)
+                for (int i = 0; i < _dialogueSequence.AvailableChoices.Count; i++)
                 {
-                    DialogueChoice choice = _dialogueSequence.availableChoices[i];
+                    DialogueChoice choice = _dialogueSequence.AvailableChoices[i];
                     var button = Instantiate(_choiceButton, _choicePanel.transform);
+                    _createdButtons.Add(button);
                     int temp = i;
-                    button.onClick.AddListener(() => ChooseDialogueSequenceOnClick(temp));
+                    button.onClick.AddListener(() =>
+                    {
+                        ChooseDialogueSequenceOnClick(temp);
+                        _createdButtons.ForEach(b => Destroy(b.gameObject));
+                        _createdButtons.Clear();
+                    });
                     button.GetComponentInChildren<TextMeshProUGUI>().text = choice.choiceDescription;
                 }
 
@@ -75,18 +84,18 @@ public class SlidingDialogueText : MonoBehaviour
         }
         else
         {
-            StartCoroutine(TypeSymbols(_dialogueSequence.monologues[_dialogueIndex]));
+            StartCoroutine(TypeSymbols(_dialogueSequence.Monologues[_dialogueIndex]));
         }
 
     }
     private void ChooseDialogueSequenceOnClick(int buttonIndex)
     {
         _dialogueIndex = 0;
-        _dialogueSequence = _dialogueSequence.availableChoices[buttonIndex].avalableChoice;
+        _dialogueSequence = _dialogueSequence.AvailableChoices[buttonIndex].avalableChoice;
         _scrollRect.gameObject.SetActive(true);
         _choicePanel.SetActive(false);
 
-        StartCoroutine(TypeSymbols(_dialogueSequence.monologues[_dialogueIndex]));
+        StartCoroutine(TypeSymbols(_dialogueSequence.Monologues[_dialogueIndex]));
     }
 
     private IEnumerator TypeSymbols(DialogueSpeaker monologue)
@@ -108,7 +117,7 @@ public class SlidingDialogueText : MonoBehaviour
 
             _slidingText.text += monologue.sequence[i];
             _scrollRect.verticalNormalizedPosition = 0;
-            yield return new WaitForSeconds(_dialogueSequence.delayPerSymbol);
+            yield return new WaitForSeconds(_dialogueSequence.DelayPerSymbol);
             LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)_scrollRect.transform);
         }
 
