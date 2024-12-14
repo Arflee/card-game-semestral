@@ -7,14 +7,9 @@ public class BuffAdjacentCardsOnUseEffect : CardEffect
     [SerializeField] private int healthBuff = 1;
     [SerializeField] private int damageBuff = 1;
 
-    public override void OnUse(CombatState combatState, CombatStateMachine manager)
+    public override void OnUse(CombatState combatState, CombatStateMachine manager, Card card)
     {
-        int cardPosition = combatState.OwnersCardsOnTable.Count - 1;
-
-        if (cardPosition >= 1)
-        {
-            combatState.OwnersCardsOnTable[cardPosition - 1].BuffHealth(healthBuff);
-            combatState.OwnersCardsOnTable[cardPosition - 1].BuffDamage(damageBuff);
-        }
+        card.BuffHealth(healthBuff);
+        card.BuffDamage(damageBuff);
     }
 }

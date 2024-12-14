@@ -23,7 +23,7 @@ public class EnemyState : CombatState
         {
             foreach (var effect in card.CombatDTO.CardEffects)
             {
-                effect.OnTurnStart(this, StateMachine);
+                effect.OnTurnStart(this, StateMachine, card);
             }
         }
 

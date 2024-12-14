@@ -68,7 +68,7 @@ public class CombatStateMachine : MonoBehaviour
 
         foreach (var effect in card.CombatDTO.CardEffects)
         {
-            effect.OnUse(State, this);
+            effect.OnUse(State, this, card);
         }
 
         return true;
@@ -79,7 +79,7 @@ public class CombatStateMachine : MonoBehaviour
         EnemyCardsOnTable.Add(card);
         foreach (var effect in card.CombatDTO.CardEffects)
         {
-            effect.OnUse(State, this);
+            effect.OnUse(State, this, card);
         }
     }
 

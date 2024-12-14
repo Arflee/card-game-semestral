@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Destroy All On Use", menuName = "Card Effects/On Use/Destroy All")]
 public class DestroyAllOnUse : CardEffect
 {
-    public override void OnUse(CombatState combatState, CombatStateMachine manager)
+    public override void OnUse(CombatState combatState, CombatStateMachine manager, Card card)
     {
         while (combatState.OwnersCardsOnTable.Count > 1)
         {
@@ -11,9 +11,9 @@ public class DestroyAllOnUse : CardEffect
             combatState.OwnersCardsOnTable.RemoveAt(0);
         }
 
-        foreach (var card in combatState.OpponentsCardsOnTable)
+        foreach (var c in combatState.OpponentsCardsOnTable)
         {
-            manager.RemoveCardFromTable(card);
+            manager.RemoveCardFromTable(c);
         }
 
         combatState.OpponentsCardsOnTable.Clear();

@@ -7,7 +7,7 @@ public class TakeCardOnStartOfTurn : CardEffect
 {
     [SerializeField, Min(1)] private int cardsAmount;
 
-    public override void OnTurnStart(CombatState combatState, CombatStateMachine manager)
+    public override void OnTurnStart(CombatState combatState, CombatStateMachine manager, Card card)
     {
         if (combatState.OwnersDeck == null)
             return;

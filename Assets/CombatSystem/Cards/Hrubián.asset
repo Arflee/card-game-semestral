@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79c9c8a8609bbb4591197163e73c2f8, type: 3}
-  m_Name: "Sbohem a \u0161\xE1te\u010Dek"
+  m_Name: "Hrubi\xE1n"
   m_EditorClassIdentifier: 
-  manaCost: 5
-  cardName: "Sbohem a \u0161\xE1te\u010Dek"
-  cardDescription: "P\u0159i vstupu na boji\u0161t\u011B zabije v\u0161echny karty
-    v boji\u0161ti"
+  manaCost: 0
+  cardName: "Hrubi\xE1n"
+  cardDescription: "Na za\u010D\xE1tku kola dostane +2/+2"
   cardSprite: {fileID: 0}
-  health: 5
-  damage: 5
+  health: 2
+  damage: 2
   combatEffects:
-  - {fileID: 11400000, guid: 8a98f6fb0d86a5f4e8829c2cd13d9590, type: 2}
+  - {fileID: 11400000, guid: fa51f5a3d37ed8f4e9c1a920b74d3a59, type: 2}
