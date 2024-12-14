@@ -1,37 +1,30 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 
 public abstract class CardEffect : ScriptableObject
 {
-    public virtual void OnUse(CardDeck deck, Card usedCard, List<Card> playerTable)
+    public virtual void OnUse(CombatState combatState)
     {
 
     }
 
-    public virtual void OnHit(Card target)
+    public virtual void OnHit(CombatState combatState, Card target)
     {
 
     }
 
-    public virtual void OnTakeDamage(Card source)
+    public virtual void OnTakeDamage(CombatState combatState, Card source)
     {
 
     }
 
-    public virtual Card OnDeathCreateCard(Card deadCard, Transform parentTransform)
+    public virtual bool Die(CombatState combatState, Card card)
     {
-        return null;
+        return true;
     }
 
-    public virtual void OnTurnStart(CardDeck deck, Card card, List<Card> playerTable)
+    public virtual void OnTurnStart(CombatState combatState)
     {
 
-    }
-
-    public virtual Card OnDeathTakeCardAndUse(CardDeck deck, Card playedCard, List<Card> playerTable)
-    {
-        return null;
     }
 }

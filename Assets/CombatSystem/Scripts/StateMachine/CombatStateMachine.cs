@@ -68,7 +68,7 @@ public class CombatStateMachine : MonoBehaviour
 
         foreach (var effect in card.CombatDTO.CardEffects)
         {
-            effect.OnUse(PlayerDeck, card, PlayerCardsOnTable);
+            effect.OnUse(State);
         }
 
         return true;
@@ -77,6 +77,10 @@ public class CombatStateMachine : MonoBehaviour
     public void AddCardOnEnemyTable(Card card)
     {
         EnemyCardsOnTable.Add(card);
+        foreach (var effect in card.CombatDTO.CardEffects)
+        {
+            effect.OnUse(State);
+        }
     }
 
     private void RemoveCardFromTable(Card card)
@@ -92,21 +96,18 @@ public class CombatStateMachine : MonoBehaviour
         List<Card> cardsToBeAdded = new();
 
         var deadCards = PlayerCardsOnTable.Where(card => !card.CombatDTO.IsAlive);
+        var deadThatSurvived = new List<Card>();
 
         foreach (var card in deadCards)
         {
             foreach (var effect in card.CombatDTO.CardEffects)
             {
-                var createdCard = effect.OnDeathCreateCard(card, table.PlayerTableSide);
-                if (createdCard)
-                {
-                    cardsToBeAdded.Add(createdCard);
-                }
-
-                createdCard = effect.OnDeathTakeCardAndUse(PlayerDeck, card, PlayerCardsOnTable);
+                if (!effect.Die(State, card))
+                    deadThatSurvived.Add(card);
             }
         }
 
+        deadCards = deadCards.Except(deadThatSurvived);
         PlayerCardsOnTable = PlayerCardsOnTable.Except(deadCards).ToList();
         PlayerCardsOnTable.AddRange(cardsToBeAdded);
 

@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79c9c8a8609bbb4591197163e73c2f8, type: 3}
-  m_Name: "Velik\xE1n"
+  m_Name: "Sbohem a \u0161\xE1te\u010Dek"
   m_EditorClassIdentifier: 
   manaCost: 5
-  cardName: 
-  cardDescription: "Blokuje a\u017E 10 karet najednou"
+  cardName: "Sbohem a \u0161\xE1te\u010Dek"
+  cardDescription: "P\u0159i vstupu na boji\u0161t\u011B zabije v\u0161echny karty
+    v boji\u0161ti"
   cardSprite: {fileID: 0}
-  health: 15
+  health: 5
   damage: 5
   combatEffects: []

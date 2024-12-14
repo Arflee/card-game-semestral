@@ -1,9 +1,16 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PreCombatState : CombatState
 {
     private CardDeck _playerDeck;
+    public override CardDeck OwnersDeck => null;
+
+    public override List<Card> OwnersCardsOnTable => null;
+
+    public override List<Card> OpponentsCardsOnTable => null;
+
 
     public PreCombatState(CombatStateMachine machine) : base(machine)
     {
