@@ -18,4 +18,5 @@ MonoBehaviour:
   cardSprite: {fileID: 0}
   health: 2
   damage: 0
-  combatEffects: []
+  combatEffects:
+  - {fileID: 0}

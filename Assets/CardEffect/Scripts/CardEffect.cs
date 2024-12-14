@@ -25,7 +25,7 @@ public abstract class CardEffect : ScriptableObject
         return null;
     }
 
-    public virtual void OnTurnStart()
+    public virtual void OnTurnStart(CardDeck deck, Card card, List<Card> playerTable)
     {
 
     }

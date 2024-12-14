@@ -12,6 +12,14 @@ public class EnemyState : CombatState
 
     public override IEnumerator EnterState()
     {
+        foreach (var card in StateMachine.EnemyCardsOnTable)
+        {
+            foreach (var effect in card.CombatDTO.CardEffects)
+            {
+                effect.OnTurnStart(StateMachine.PlayerDeck, card, StateMachine.PlayerCardsOnTable);
+            }
+        }
+
         var nextCard = _initializer.GetNextCard();
 
         if (nextCard == null)

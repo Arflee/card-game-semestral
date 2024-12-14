@@ -1165,17 +1165,19 @@ MonoBehaviour:
   maxCardsInHand: 3
   playerCards:
   - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
-  - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
   - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
   - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
   - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
   - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
-  - {fileID: 11400000, guid: 53932172f5ee33943a6d05beb611ee46, type: 2}
-  - {fileID: 11400000, guid: 53932172f5ee33943a6d05beb611ee46, type: 2}
-  - {fileID: 11400000, guid: 1f7528277a4c3ed45b04269353f4bd25, type: 2}
+  - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
   - {fileID: 11400000, guid: 006a4be560779ac4d9f1bd306be1e66a, type: 2}
   - {fileID: 11400000, guid: 006a4be560779ac4d9f1bd306be1e66a, type: 2}
-  - {fileID: 11400000, guid: 124631e689f611947aa60554089ef233, type: 2}
+  - {fileID: 11400000, guid: 006a4be560779ac4d9f1bd306be1e66a, type: 2}
+  - {fileID: 11400000, guid: 006a4be560779ac4d9f1bd306be1e66a, type: 2}
+  - {fileID: 11400000, guid: 006a4be560779ac4d9f1bd306be1e66a, type: 2}
+  - {fileID: 11400000, guid: 006a4be560779ac4d9f1bd306be1e66a, type: 2}
+  - {fileID: 11400000, guid: 006a4be560779ac4d9f1bd306be1e66a, type: 2}
+  - {fileID: 11400000, guid: 006a4be560779ac4d9f1bd306be1e66a, type: 2}
 --- !u!222 &135602146
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3771,6 +3773,7 @@ MonoBehaviour:
   _dialogueSequence: {fileID: 11400000, guid: 1a9dae324d9e52549aa2a077f06aebd8, type: 2}
   dialogueCanvas: {fileID: 995863022}
   dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
+  skipInEditor: 1
 --- !u!4 &445453502
 Transform:
   m_ObjectHideFlags: 0
@@ -15156,6 +15159,7 @@ MonoBehaviour:
   _dialogueSequence: {fileID: 11400000, guid: d034edf45265ce249b46701168377799, type: 2}
   dialogueCanvas: {fileID: 995863022}
   dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
+  skipInEditor: 1
 --- !u!4 &2069353503
 Transform:
   m_ObjectHideFlags: 0
