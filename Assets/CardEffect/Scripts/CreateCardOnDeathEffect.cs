@@ -7,10 +7,10 @@ public class CreateCardOnDeathEffect : CardEffect
 {
     [SerializeField] private CombatCard _combatPreset;
 
-    public override bool Die(CombatState combatState, Card card)
+    public override bool Die(CombatState combatState, CombatStateMachine manager, Card card)
     {
         card.Reinitialize(_combatPreset);
-        card.CombatDTO.CardEffects.ForEach(eff => eff.OnUse(combatState));
+        card.CombatDTO.CardEffects.ForEach(eff => eff.OnUse(combatState, manager));
         return false;
     }
 }

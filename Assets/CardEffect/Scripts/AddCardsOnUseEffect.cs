@@ -6,7 +6,7 @@ public class AddCardsOnUseEffect : CardEffect
 {
     [SerializeField, Min(1)] private int cardsAmount;
 
-    public override void OnUse(CombatState combatState)
+    public override void OnUse(CombatState combatState, CombatStateMachine manager)
     {
         if (combatState.OwnersDeck == null)
             return;

@@ -15,7 +15,7 @@ public class PlayerState : StartingPlayerState
         {
             foreach (var effect in card.CombatDTO.CardEffects)
             {
-                effect.OnTurnStart(this);
+                effect.OnTurnStart(this, StateMachine);
             }
         }
 
