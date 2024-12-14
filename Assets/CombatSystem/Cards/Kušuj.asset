@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manaCost: 2
   cardName: "Ku\u0161uj"
-  cardDescription: 
+  cardDescription: "P\u0159i \xFAto\u010Den\xED ho nejde zas\xE1hnout"
   cardSprite: {fileID: 0}
   health: 1
   damage: 3

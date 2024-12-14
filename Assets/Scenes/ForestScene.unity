@@ -1162,7 +1162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e67427177ff404b9518241ca3ed9b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCardsInHand: 5
+  maxCardsInHand: 3
   playerCards:
   - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
   - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
@@ -1170,6 +1170,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
   - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
   - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
+  - {fileID: 11400000, guid: 53932172f5ee33943a6d05beb611ee46, type: 2}
+  - {fileID: 11400000, guid: 53932172f5ee33943a6d05beb611ee46, type: 2}
+  - {fileID: 11400000, guid: 1f7528277a4c3ed45b04269353f4bd25, type: 2}
+  - {fileID: 11400000, guid: 006a4be560779ac4d9f1bd306be1e66a, type: 2}
+  - {fileID: 11400000, guid: 006a4be560779ac4d9f1bd306be1e66a, type: 2}
+  - {fileID: 11400000, guid: 124631e689f611947aa60554089ef233, type: 2}
 --- !u!222 &135602146
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7582,7 +7588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.274967
+      value: 5.2774925
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.y

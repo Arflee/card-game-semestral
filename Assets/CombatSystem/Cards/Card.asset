@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manaCost: 2
   cardName: Card
-  cardDescription: This is just a card
+  cardDescription: 
   cardSprite: {fileID: 0}
   health: 2
   damage: 2

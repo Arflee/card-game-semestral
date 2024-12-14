@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manaCost: 2
   cardName: "Trjo\u0161ka"
-  cardDescription: 
+  cardDescription: "P\u0159i smrti vylo\u017E\xED 1/1 Jo\u0161ku"
   cardSprite: {fileID: 0}
   health: 2
   damage: 2

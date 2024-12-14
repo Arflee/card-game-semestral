@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manaCost: 5
   cardName: 
-  cardDescription: 
+  cardDescription: "Blokuje a\u017E 10 karet najednou"
   cardSprite: {fileID: 0}
   health: 15
   damage: 5
