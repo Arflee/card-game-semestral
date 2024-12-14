@@ -9,13 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79c9c8a8609bbb4591197163e73c2f8, type: 3}
-  m_Name: Card
+  m_Script: {fileID: 11500000, guid: 60eb0eee3d7b0f4499b159a9764065fc, type: 3}
+  m_Name: TransformTo2-2
   m_EditorClassIdentifier: 
-  manaCost: 2
-  cardName: Card
-  cardDescription: 
-  cardSprite: {fileID: 0}
-  health: 2
-  damage: 2
-  combatEffects: []
+  changeCard: {fileID: 11400000, guid: da3e026b03f9669498032813d178d315, type: 2}

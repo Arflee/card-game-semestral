@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60eb0eee3d7b0f4499b159a9764065fc, type: 3}
-  m_Name: TransformToOtherCards
+  m_Name: TransformTo5-5
   m_EditorClassIdentifier: 
-  changeCard: {fileID: 11400000, guid: da3e026b03f9669498032813d178d315, type: 2}
+  changeCard: {fileID: 11400000, guid: 6fb1e3e42aaa2904da8a4061e61c201c, type: 2}
