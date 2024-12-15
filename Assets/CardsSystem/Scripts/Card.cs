@@ -230,6 +230,9 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 
     public void BuffDamage(int amount)
     {
+        if (CombatDTO.Damage + amount < 0)
+            amount = -CombatDTO.Damage;
+
         CombatDTO.Damage += amount;
         // TODO add new event for ui redrawing
         OnTakeDamageEvent?.Invoke(this);
