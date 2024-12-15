@@ -7,14 +7,14 @@ public class TakeCardOnStartOfTurn : CardEffect
 {
     [SerializeField, Min(1)] private int cardsAmount;
 
-    public override void OnTurnStart(CombatState combatState, CombatStateMachine manager, Card card)
+    public override void OnTurnStart(CardOwner cardOwner, CombatStateMachine manager, Card card)
     {
-        if (combatState.OwnersDeck == null)
+        if (cardOwner.OwnersDeck == null)
             return;
 
         for (int i = 0; i < cardsAmount; i++)
         {
-            if (combatState.OwnersDeck.TakeCard(card.Owner) == null)
+            if (cardOwner.OwnersDeck.TakeCard(card.Owner) == null)
             {
                 Debug.Log("ran out of cards in deck");
             }

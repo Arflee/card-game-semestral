@@ -1271,10 +1271,11 @@ MonoBehaviour:
   cardSlotPrefab: {fileID: 575835118737254313, guid: a86ada4f9b399784cb9af4003a4421b9, type: 3}
   visualPrefab: {fileID: 3700769039360204207, guid: 45bb3addbb980044283664edf8de3c34, type: 3}
   enemyDeck:
-  - {fileID: 11400000, guid: da3e026b03f9669498032813d178d315, type: 2}
-  - {fileID: 11400000, guid: da3e026b03f9669498032813d178d315, type: 2}
-  - {fileID: 11400000, guid: da3e026b03f9669498032813d178d315, type: 2}
-  - {fileID: 11400000, guid: da3e026b03f9669498032813d178d315, type: 2}
+  - {fileID: 11400000, guid: 53932172f5ee33943a6d05beb611ee46, type: 2}
+  - {fileID: 11400000, guid: 53932172f5ee33943a6d05beb611ee46, type: 2}
+  - {fileID: 11400000, guid: 01c367d6677e9164980ed254a6cb6488, type: 2}
+  - {fileID: 11400000, guid: 006a4be560779ac4d9f1bd306be1e66a, type: 2}
+  - {fileID: 11400000, guid: 783e63971c9326d46bbbcebb217d35f2, type: 2}
   playedCardsEnemy: {fileID: 1204193607}
 --- !u!20 &2084828445 stripped
 Camera:

@@ -2,23 +2,20 @@
 
 public class PlayerState : StartingPlayerState
 {
-    private CardOwner _owner;
-
     public PlayerState(CombatStateMachine machine) : base(machine)
     {
         StateMachine.OnEndTurn += OnEndTurn;
-        _owner = new CardOwner(this);
     }
 
     public override IEnumerator EnterState()
     {
-        StateMachine.PlayerDeck.TakeCard(_owner);
+        StateMachine.PlayerDeck.TakeCard(StateMachine.PlayerOwner);
         StateMachine.ManaPanel.ResetManaCrystals(StateMachine.PlayerMana);
         foreach (var card in StateMachine.PlayerCardsOnTable)
         {
             foreach (var effect in card.CombatDTO.CardEffects)
             {
-                effect.OnTurnStart(this, StateMachine, card);
+                effect.OnTurnStart(StateMachine.PlayerOwner, StateMachine, card);
             }
         }
 

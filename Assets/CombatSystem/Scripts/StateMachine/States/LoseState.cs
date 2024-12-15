@@ -5,12 +5,6 @@ public class LoseState : CombatState
 {
     private GameEndingHandler _gameHandler;
 
-    public override CardDeck OwnersDeck => null;
-
-    public override List<Card> OwnersCardsOnTable => null;
-
-    public override List<Card> OpponentsCardsOnTable => null;
-
     public LoseState(CombatStateMachine machine) : base(machine)
     {
         _gameHandler = machine.GameHandler;

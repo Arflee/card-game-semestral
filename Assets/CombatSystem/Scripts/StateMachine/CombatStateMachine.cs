@@ -21,6 +21,8 @@ public class CombatStateMachine : MonoBehaviour
     public CombatState State { get; private set; }
     public List<Card> PlayerCardsOnTable { get; private set; } = new();
     public List<Card> EnemyCardsOnTable { get; private set; } = new();
+    public CardOwner PlayerOwner { get; private set; }
+    public CardOwner EnemyOwner { get; private set; }
     public ManaPanel ManaPanel => manaPanel;
     public LifeCrystalPanel LifeCrystalPanel => lifeCrystalPanel;
 
@@ -43,6 +45,9 @@ public class CombatStateMachine : MonoBehaviour
         _gameStateHandler = FindObjectOfType<GameEndingHandler>();
 
         table.OnTableSlotSnapped += OnCardDragEnd;
+
+        PlayerOwner = new CardOwner(_playerDeck, PlayerCardsOnTable, EnemyCardsOnTable);
+        EnemyOwner = new CardOwner(null, EnemyCardsOnTable, PlayerCardsOnTable);
 
         SetState(new PreCombatState(this));
     }
@@ -68,7 +73,7 @@ public class CombatStateMachine : MonoBehaviour
 
         foreach (var effect in card.CombatDTO.CardEffects)
         {
-            effect.OnUse(State, this, card);
+            effect.OnUse(PlayerOwner, this, card);
         }
 
         return true;
@@ -79,7 +84,7 @@ public class CombatStateMachine : MonoBehaviour
         EnemyCardsOnTable.Add(card);
         foreach (var effect in card.CombatDTO.CardEffects)
         {
-            effect.OnUse(State, this, card);
+            effect.OnUse(EnemyOwner, this, card);
         }
     }
 
@@ -88,7 +93,7 @@ public class CombatStateMachine : MonoBehaviour
         bool destroy = true;
         foreach (var effect in card.CombatDTO.CardEffects)
         {
-            if (!effect.Die(card.Owner.state, this, card))
+            if (!effect.Die(card.Owner, this, card))
                 destroy = false;
         }
 

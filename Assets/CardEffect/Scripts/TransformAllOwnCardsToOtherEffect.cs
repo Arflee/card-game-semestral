@@ -5,9 +5,9 @@ public class TransformAllOwnCardsToOtherEffect : CardEffect
 {
     [SerializeField] private CombatCard changeCard;
 
-    public override void OnUse(CombatState combatState, CombatStateMachine manager, Card card)
+    public override void OnUse(CardOwner cardOwner, CombatStateMachine manager, Card card)
     {
-        foreach (var c in combatState.OwnersCardsOnTable)
+        foreach (var c in cardOwner.OwnersCardsOnTable)
         {
             c.Reinitialize(changeCard);
         }

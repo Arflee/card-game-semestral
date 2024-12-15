@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class StartingPlayerState : CombatState
 {
-    public override CardDeck OwnersDeck => StateMachine.PlayerDeck;
-
-    public override List<Card> OwnersCardsOnTable => StateMachine.PlayerCardsOnTable;
-
-    public override List<Card> OpponentsCardsOnTable => StateMachine.EnemyCardsOnTable;
-
     public StartingPlayerState(CombatStateMachine machine) : base(machine)
     {
     }

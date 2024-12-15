@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class CardOwner
 {
-    public CombatState state;
+    public CardDeck OwnersDeck { get; }
+    public List<Card> OwnersCardsOnTable { get; }
+    public List<Card> OpponentsCardsOnTable { get; }
 
-    public CardOwner(CombatState state)
+    public CardOwner(CardDeck ownersDeck, List<Card> ownersCards, List<Card> opponentsCards)
     {
-        this.state = state;
+        OwnersDeck = ownersDeck;
+        OwnersCardsOnTable = ownersCards;
+        OpponentsCardsOnTable = opponentsCards;
     }
 }

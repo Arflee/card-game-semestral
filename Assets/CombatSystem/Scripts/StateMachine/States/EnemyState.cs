@@ -5,18 +5,10 @@ using UnityEngine;
 public class EnemyState : CombatState
 {
     private EnemyInitializer _initializer;
-    private CardOwner _owner;
-
-    public override CardDeck OwnersDeck => null;
-
-    public override List<Card> OwnersCardsOnTable => StateMachine.EnemyCardsOnTable;
-
-    public override List<Card> OpponentsCardsOnTable => StateMachine.PlayerCardsOnTable;
 
     public EnemyState(CombatStateMachine machine) : base(machine)
     {
         _initializer = machine.EnemyInitializer;
-        _owner = new CardOwner(this);
     }
 
     public override IEnumerator EnterState()
@@ -25,11 +17,11 @@ public class EnemyState : CombatState
         {
             foreach (var effect in card.CombatDTO.CardEffects)
             {
-                effect.OnTurnStart(this, StateMachine, card);
+                effect.OnTurnStart(StateMachine.EnemyOwner, StateMachine, card);
             }
         }
 
-        var nextCard = _initializer.GetNextCard(_owner);
+        var nextCard = _initializer.GetNextCard(StateMachine.EnemyOwner);
 
         if (nextCard == null)
         {
