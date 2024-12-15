@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0268bdc1baf48b429d0a02764a4c2ab, type: 3}
+  m_Name: Mom first cave
+  m_EditorClassIdentifier: 
+  monologues:
+  - speakerName: Mamka
+    sequence: "Ale d\u011Bcka, u\u017E jste doz\xE1pasili? Nen\xED v\xE1m nic? Kolikr\xE1t
+      v\xE1m to m\xE1m \u0159\xEDkat! Mus\xEDte na sebe d\xE1vat pozor!\r"
+  - speakerName: "Medv\u011Bd"
+    sequence: "Bratr s t\xEDm za\u010Dal!"
+  - speakerName: Mamka
+    sequence: "P\u0159\xED\u0161t\u011B se jd\u011Bte pr\xE1t ven do lesa, tam je
+      m\u011Bkk\xE1 tr\xE1va. Mus\xEDte b\xFDt zodpov\u011Bdn\xED, u\u017E jste skoro
+      dosp\u011Bl\xED. J\xE1 a t\xE1ta u\u017E st\xE1rneme, za p\xE1r let tu nebudeme.
+      Na to mus\xEDte b\xFDt p\u0159ipraveni a ne takhle blbnout!"
+  - speakerName: "Medv\u011Bd"
+    sequence: Nojo furt.
+  - speakerName: Mamka
+    sequence: "A v\u016Fbec, mysl\xEDm, \u017Ee je nejvy\u0161\u0161\xED \u010Das,
+      abych ti uk\xE1zala pokro\u010Dil\xE9 techniky magick\xE9ho souboje v na\u0161em
+      magick\xE9m sv\u011Bt\u011B."
+  - speakerName: "Medv\u011Bd"
+    sequence: "V\xE1\u017En\u011B?!"
+  - speakerName: Mamka
+    sequence: " Poj\u010F za mnou."
+  delayPerSymbol: 0
+  availableChoices: []

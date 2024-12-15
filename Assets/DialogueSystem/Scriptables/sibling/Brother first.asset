@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0268bdc1baf48b429d0a02764a4c2ab, type: 3}
+  m_Name: Brother first
+  m_EditorClassIdentifier: 
+  monologues:
+  - speakerName: Bratr
+    sequence: "Dobr\xE9 r\xE1no! Jak jsme se vyspali? "
+  - speakerName: "Medv\u011Bd"
+    sequence: "Hmmm\u2026"
+  - speakerName: Bratr
+    sequence: "Poj\u010Fme se sourozenecky poprat, jak to ka\u017Ed\xE9 r\xE1no d\u011Bl\xE1me!"
+  - speakerName: "Medv\u011Bd"
+    sequence: "V\u017Edy\u0165 v\xED\u0161, \u017Ee dokud nem\xE1m vypit\xFD svoje
+      medv\u011Bd\xED kafe, nem\xE1\u0161 na m\u011B v\u016Fbec mluvit."
+  - speakerName: Bratr
+    sequence: "Ale not\xE1k, nebu\u010F pru\u010Fas!"
+  - speakerName: "Medv\u011Bd"
+    sequence: "Nech m\u011B bejt.\r\n"
+  - speakerName: Bratr
+    sequence: "Pros\xEDm, pros\xEDm, pros\xEDm, pros\xEDm!"
+  - speakerName: "Medv\u011Bd"
+    sequence: "Jsem stra\u0161n\u011B grogy, \u017Ee jsem \xFApln\u011B zapomn\u011Bl,
+      jak se pr\xE1t. Nech\xE1me to na potom. "
+  - speakerName: Bratr
+    sequence: "Ale prdlajs zapom\u011Bl! "
+  - speakerName: "Medv\u011Bd"
+    sequence: "U\u017E mi do\u0161ly v\xFDmluvy, prost\u011B m\u011B nech."
+  - speakerName: Bratr
+    sequence: "To m\xE1\u0161 blb\xFD, bra\u0148 se! "
+  - speakerName: "Vyprav\u011B\u010D"
+    sequence: "Bratr se postavil na zadn\xED tlapy a s v\xE1le\u010Dn\xFDm pok\u0159ikem
+      se rozb\u011Bhl k medv\u011Bdovi."
+  delayPerSymbol: 0
+  availableChoices: []
