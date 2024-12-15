@@ -3769,7 +3769,7 @@ MonoBehaviour:
   _dialogueSequence: {fileID: 11400000, guid: 1a9dae324d9e52549aa2a077f06aebd8, type: 2}
   dialogueCanvas: {fileID: 995863022}
   dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
-  skipInEditor: 1
+  skipInEditor: 0
 --- !u!4 &445453502
 Transform:
   m_ObjectHideFlags: 0
@@ -15155,7 +15155,7 @@ MonoBehaviour:
   _dialogueSequence: {fileID: 11400000, guid: d034edf45265ce249b46701168377799, type: 2}
   dialogueCanvas: {fileID: 995863022}
   dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
-  skipInEditor: 1
+  skipInEditor: 0
 --- !u!4 &2069353503
 Transform:
   m_ObjectHideFlags: 0

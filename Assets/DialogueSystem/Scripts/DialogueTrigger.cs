@@ -10,7 +10,7 @@ public class DialogueTrigger : MonoBehaviour
 
     [SerializeField] private SlidingDialogueText dialogueBubblePrefab;
 
-    [SerializeField] private bool skipInEditor = true;
+    [SerializeField] private bool skipInEditor = false;
 
     public event Action OnDialogueEnd;
 
