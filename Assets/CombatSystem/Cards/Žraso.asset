@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79c9c8a8609bbb4591197163e73c2f8, type: 3}
+  m_Name: "\u017Draso"
+  m_EditorClassIdentifier: 
+  manaCost: 4
+  cardName: "\u017Draso"
+  cardDescription: "P\u0159i vstupu na boji\u0161t\u011B zni\u010D\xED v\u0161echny
+    svoje karty na boji\u0161ti, za ka\u017Edou takhle zni\u010Denou kartu dostane
+    +2/2"
+  cardSprite: {fileID: 0}
+  health: 2
+  damage: 2
+  combatEffects:
+  - {fileID: 11400000, guid: 9e74298ccc704784fbf7bc6ef5790f91, type: 2}
