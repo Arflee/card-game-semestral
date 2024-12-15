@@ -6,11 +6,14 @@ public class AddCardsOnUseEffect : CardEffect
 {
     [SerializeField, Min(1)] private int cardsAmount;
 
-    public override void OnUse(CardDeck deck, Card target, List<Card> playerTable)
+    public override void OnUse(CardOwner cardOwner, CombatStateMachine manager, Card card)
     {
+        if (cardOwner.OwnersDeck == null)
+            return;
+
         for (int i = 0; i < cardsAmount; i++)
         {
-            if (deck.TakeCard() == null)
+            if (cardOwner.OwnersDeck.TakeCard(card.Owner) == null)
             {
                 Debug.Log("ran out of cards in deck");
             }

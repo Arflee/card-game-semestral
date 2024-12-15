@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PreCombatState : CombatState
@@ -15,7 +16,7 @@ public class PreCombatState : CombatState
         for (int i = 0; i < _playerDeck.MaxCardsInHand; i++)
         {
             yield return new WaitForSeconds(0.5f);
-            _playerDeck.TakeCard();
+            _playerDeck.TakeCard(StateMachine.PlayerOwner);
         }
 
         StateMachine.ManaPanel.SpawnCrystalPrefabs(StateMachine.MaxPlayerMana);

@@ -10,6 +10,8 @@ public class DialogueTrigger : MonoBehaviour
 
     [SerializeField] private SlidingDialogueText dialogueBubblePrefab;
 
+    [SerializeField] private bool skipInEditor = false;
+
     public event Action OnDialogueEnd;
 
     private StandardControls _inputActions;
@@ -23,6 +25,14 @@ public class DialogueTrigger : MonoBehaviour
 
     public void EnableDialogue()
     {
+#if UNITY_EDITOR
+        if (skipInEditor && OnDialogueEnd != null)
+        {
+            OnDialogueEnd();
+            return;
+        }
+#endif
+
         _inputActions.Player.Move.Disable();
 
         _createdBubble = Instantiate(dialogueBubblePrefab, dialogueCanvas.transform);

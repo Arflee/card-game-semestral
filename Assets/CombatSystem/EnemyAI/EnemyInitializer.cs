@@ -15,7 +15,7 @@ public class EnemyInitializer : MonoBehaviour
         _shuffledDeck = new(Utility.Shuffle(enemyDeck));
     }
 
-    public Card GetNextCard()
+    public Card GetNextCard(CardOwner owner)
     {
         if (_shuffledDeck.Count == 0)
         {
@@ -26,7 +26,7 @@ public class EnemyInitializer : MonoBehaviour
 
         var cardSlot = Instantiate(cardSlotPrefab, playedCardsEnemy.transform);
         var card = cardSlot.GetComponentInChildren<Card>();
-        card.Initialize(nextCard);
+        card.Initialize(nextCard, owner);
         card.DisableCard();
 
         return card;

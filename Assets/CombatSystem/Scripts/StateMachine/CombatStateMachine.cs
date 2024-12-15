@@ -21,6 +21,8 @@ public class CombatStateMachine : MonoBehaviour
     public CombatState State { get; private set; }
     public List<Card> PlayerCardsOnTable { get; private set; } = new();
     public List<Card> EnemyCardsOnTable { get; private set; } = new();
+    public CardOwner PlayerOwner { get; private set; }
+    public CardOwner EnemyOwner { get; private set; }
     public ManaPanel ManaPanel => manaPanel;
     public LifeCrystalPanel LifeCrystalPanel => lifeCrystalPanel;
 
@@ -43,6 +45,9 @@ public class CombatStateMachine : MonoBehaviour
         _gameStateHandler = FindObjectOfType<GameEndingHandler>();
 
         table.OnTableSlotSnapped += OnCardDragEnd;
+
+        PlayerOwner = new CardOwner(_playerDeck, PlayerCardsOnTable, EnemyCardsOnTable);
+        EnemyOwner = new CardOwner(null, EnemyCardsOnTable, PlayerCardsOnTable);
 
         SetState(new PreCombatState(this));
     }
@@ -68,7 +73,7 @@ public class CombatStateMachine : MonoBehaviour
 
         foreach (var effect in card.CombatDTO.CardEffects)
         {
-            effect.OnUse(PlayerDeck, card, PlayerCardsOnTable);
+            effect.OnUse(PlayerOwner, this, card);
         }
 
         return true;
@@ -77,6 +82,27 @@ public class CombatStateMachine : MonoBehaviour
     public void AddCardOnEnemyTable(Card card)
     {
         EnemyCardsOnTable.Add(card);
+        foreach (var effect in card.CombatDTO.CardEffects)
+        {
+            effect.OnUse(EnemyOwner, this, card);
+        }
+    }
+
+    public void DestroyCard(Card card)
+    {
+        bool destroy = true;
+        foreach (var effect in card.CombatDTO.CardEffects)
+        {
+            if (!effect.Die(card.Owner, this, card))
+                destroy = false;
+        }
+
+        if (destroy)
+        {
+            PlayerCardsOnTable.Remove(card);
+            EnemyCardsOnTable.Remove(card);
+            RemoveCardFromTable(card);
+        }
     }
 
     private void RemoveCardFromTable(Card card)
@@ -89,38 +115,16 @@ public class CombatStateMachine : MonoBehaviour
     {
         OnEndTurn?.Invoke();
 
-        List<Card> cardsToBeAdded = new();
-
-        var deadCards = PlayerCardsOnTable.Where(card => !card.CombatDTO.IsAlive);
-
+        var deadCards = PlayerCardsOnTable.Where(card => !card.CombatDTO.IsAlive).ToList();
         foreach (var card in deadCards)
         {
-            foreach (var effect in card.CombatDTO.CardEffects)
-            {
-                var createdCard = effect.OnDeathCreateCard(card, table.PlayerTableSide);
-                if (createdCard)
-                {
-                    cardsToBeAdded.Add(createdCard);
-                }
-
-                createdCard = effect.OnDeathTakeCardAndUse(PlayerDeck, card, PlayerCardsOnTable);
-            }
+            DestroyCard(card);
         }
 
-        PlayerCardsOnTable = PlayerCardsOnTable.Except(deadCards).ToList();
-        PlayerCardsOnTable.AddRange(cardsToBeAdded);
-
+        deadCards = EnemyCardsOnTable.Where(card => !card.CombatDTO.IsAlive).ToList();
         foreach (var card in deadCards)
         {
-            RemoveCardFromTable(card);
-        }
-
-        deadCards = EnemyCardsOnTable.Where(card => !card.CombatDTO.IsAlive);
-        EnemyCardsOnTable = EnemyCardsOnTable.Except(deadCards).ToList();
-
-        foreach (var card in deadCards)
-        {
-            RemoveCardFromTable(card);
+            DestroyCard(card);
         }
 
         ChangeTurn();

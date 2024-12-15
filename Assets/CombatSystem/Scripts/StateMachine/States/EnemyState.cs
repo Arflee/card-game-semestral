@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyState : CombatState
@@ -12,7 +13,15 @@ public class EnemyState : CombatState
 
     public override IEnumerator EnterState()
     {
-        var nextCard = _initializer.GetNextCard();
+        foreach (var card in StateMachine.EnemyCardsOnTable)
+        {
+            foreach (var effect in card.CombatDTO.CardEffects)
+            {
+                effect.OnTurnStart(StateMachine.EnemyOwner, StateMachine, card);
+            }
+        }
+
+        var nextCard = _initializer.GetNextCard(StateMachine.EnemyOwner);
 
         if (nextCard == null)
         {

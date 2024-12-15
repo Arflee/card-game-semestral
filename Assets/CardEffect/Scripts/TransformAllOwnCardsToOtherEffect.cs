@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CardEffect", menuName = "Card Effects/On Use/Transform all own cards")]
@@ -7,16 +5,11 @@ public class TransformAllOwnCardsToOtherEffect : CardEffect
 {
     [SerializeField] private CombatCard changeCard;
 
-    public override void OnUse(CardDeck deck, Card usedCard, List<Card> playerTable)
+    public override void OnUse(CardOwner cardOwner, CombatStateMachine manager, Card card)
     {
-        foreach (var card in playerTable)
+        foreach (var c in cardOwner.OwnersCardsOnTable)
         {
-            if (card == usedCard)
-            {
-                continue;
-            }
-
-            card.Reinitialize(changeCard);
+            c.Reinitialize(changeCard);
         }
     }
 }

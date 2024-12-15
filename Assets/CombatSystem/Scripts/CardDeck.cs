@@ -24,7 +24,7 @@ public class CardDeck : MonoBehaviour
         _cardHolder = FindObjectOfType<CardHolder>();
     }
 
-    public CombatCard TakeCard()
+    public CombatCard TakeCard(CardOwner owner)
     {
         if (_cardDeck.Count == 0)
         {
@@ -32,7 +32,7 @@ public class CardDeck : MonoBehaviour
         }
 
         var takenCard = _cardDeck.Dequeue();
-        _cardHolder.AddCard(takenCard);
+        _cardHolder.AddCard(takenCard, owner);
 
         return takenCard;
     }

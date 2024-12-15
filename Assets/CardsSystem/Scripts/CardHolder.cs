@@ -120,12 +120,12 @@ public class CardHolder : MonoBehaviour
         card.CardVisual.PutOnBackgrond();
     }
 
-    public void AddCard(CombatCard combatCard)
+    public void AddCard(CombatCard combatCard, CardOwner owner)
     {
         var createdSlot = Instantiate(slotPrefab, transform);
         var createdCard = createdSlot.GetComponentInChildren<Card>();
 
-        createdCard.Initialize(combatCard);
+        createdCard.Initialize(combatCard, owner);
 
         createdCard.BeginDragEvent.AddListener(BeginDrag);
         createdCard.EndDragEvent.AddListener(EndDrag);
