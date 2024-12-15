@@ -14,7 +14,7 @@ public class TakeCardOnStartOfTurn : CardEffect
 
         for (int i = 0; i < cardsAmount; i++)
         {
-            if (combatState.OwnersDeck.TakeCard() == null)
+            if (combatState.OwnersDeck.TakeCard(card.Owner) == null)
             {
                 Debug.Log("ran out of cards in deck");
             }

@@ -9,7 +9,17 @@ public class BuffAdjacentCardsOnUseEffect : CardEffect
 
     public override void OnUse(CombatState combatState, CombatStateMachine manager, Card card)
     {
-        card.BuffHealth(healthBuff);
-        card.BuffDamage(damageBuff);
+        int index = combatState.OwnersCardsOnTable.Count - 2;
+        if (index < 0)
+            return;
+
+        Card adjacent = combatState.OwnersCardsOnTable[index];
+
+        adjacent.BuffHealth(healthBuff);
+        adjacent.BuffDamage(damageBuff);
+        if (!adjacent.CombatDTO.IsAlive)
+        {
+            manager.DestroyCard(adjacent);
+        }
     }
 }

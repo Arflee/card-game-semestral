@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyState : CombatState
 {
     private EnemyInitializer _initializer;
+    private CardOwner _owner;
 
     public override CardDeck OwnersDeck => null;
 
@@ -15,6 +16,7 @@ public class EnemyState : CombatState
     public EnemyState(CombatStateMachine machine) : base(machine)
     {
         _initializer = machine.EnemyInitializer;
+        _owner = new CardOwner(this);
     }
 
     public override IEnumerator EnterState()
@@ -27,7 +29,7 @@ public class EnemyState : CombatState
             }
         }
 
-        var nextCard = _initializer.GetNextCard();
+        var nextCard = _initializer.GetNextCard(_owner);
 
         if (nextCard == null)
         {

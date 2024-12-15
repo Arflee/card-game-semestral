@@ -43,6 +43,7 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     [SerializeField] private CardVisual cardVisualPrefab;
     public CardVisual CardVisual { get; private set; }
     public CombatCardDTO CombatDTO { get; private set; }
+    public CardOwner Owner { get; private set; }
 
     public float SelectionOffset => selectionOffset;
     public event Action<Card> OnTakeDamageEvent;
@@ -55,8 +56,9 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
         _selectableComponent = GetComponent<Selectable>();
     }
 
-    public void Initialize(CombatCard combatProperties)
+    public void Initialize(CombatCard combatProperties, CardOwner owner)
     {
+        Owner = owner;
         CombatDTO = new(combatProperties);
         CardVisual = Instantiate(cardVisualPrefab, _canvas.transform);
         CardVisual.Initialize(this, CombatDTO);

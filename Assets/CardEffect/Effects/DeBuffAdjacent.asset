@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0d6959acd228c046942bc65ad2d2a09, type: 3}
-  m_Name: BuffAdjacent
+  m_Name: DeBuffAdjacent
   m_EditorClassIdentifier: 
-  healthBuff: 2
-  damageBuff: 1
+  healthBuff: -2
+  damageBuff: -2

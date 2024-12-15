@@ -7,15 +7,12 @@ public class DestroyAllOnUse : CardEffect
     {
         while (combatState.OwnersCardsOnTable.Count > 1)
         {
-            manager.RemoveCardFromTable(combatState.OwnersCardsOnTable[0]);
-            combatState.OwnersCardsOnTable.RemoveAt(0);
+            manager.DestroyCard(combatState.OwnersCardsOnTable[0]);
         }
 
-        foreach (var c in combatState.OpponentsCardsOnTable)
+        while (combatState.OpponentsCardsOnTable.Count > 0)
         {
-            manager.RemoveCardFromTable(c);
+            manager.DestroyCard(combatState.OpponentsCardsOnTable[0]);
         }
-
-        combatState.OpponentsCardsOnTable.Clear();
     }
 }

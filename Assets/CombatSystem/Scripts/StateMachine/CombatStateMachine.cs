@@ -83,7 +83,24 @@ public class CombatStateMachine : MonoBehaviour
         }
     }
 
-    public void RemoveCardFromTable(Card card)
+    public void DestroyCard(Card card)
+    {
+        bool destroy = true;
+        foreach (var effect in card.CombatDTO.CardEffects)
+        {
+            if (!effect.Die(card.Owner.state, this, card))
+                destroy = false;
+        }
+
+        if (destroy)
+        {
+            PlayerCardsOnTable.Remove(card);
+            EnemyCardsOnTable.Remove(card);
+            RemoveCardFromTable(card);
+        }
+    }
+
+    private void RemoveCardFromTable(Card card)
     {
         Destroy(card.CardVisual.gameObject);
         Destroy(card.transform.parent.gameObject);
@@ -93,35 +110,16 @@ public class CombatStateMachine : MonoBehaviour
     {
         OnEndTurn?.Invoke();
 
-        List<Card> cardsToBeAdded = new();
-
-        var deadCards = PlayerCardsOnTable.Where(card => !card.CombatDTO.IsAlive);
-        var deadThatSurvived = new List<Card>();
-
+        var deadCards = PlayerCardsOnTable.Where(card => !card.CombatDTO.IsAlive).ToList();
         foreach (var card in deadCards)
         {
-            foreach (var effect in card.CombatDTO.CardEffects)
-            {
-                if (!effect.Die(State, this, card))
-                    deadThatSurvived.Add(card);
-            }
+            DestroyCard(card);
         }
 
-        deadCards = deadCards.Except(deadThatSurvived);
-        PlayerCardsOnTable = PlayerCardsOnTable.Except(deadCards).ToList();
-        PlayerCardsOnTable.AddRange(cardsToBeAdded);
-
+        deadCards = EnemyCardsOnTable.Where(card => !card.CombatDTO.IsAlive).ToList();
         foreach (var card in deadCards)
         {
-            RemoveCardFromTable(card);
-        }
-
-        deadCards = EnemyCardsOnTable.Where(card => !card.CombatDTO.IsAlive);
-        EnemyCardsOnTable = EnemyCardsOnTable.Except(deadCards).ToList();
-
-        foreach (var card in deadCards)
-        {
-            RemoveCardFromTable(card);
+            DestroyCard(card);
         }
 
         ChangeTurn();
