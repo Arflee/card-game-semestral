@@ -17,7 +17,7 @@ public class TakeCardAndUseOnDeathEffect : CardEffect
         }
 
         card.Reinitialize(takenCard);
-        card.CombatDTO.CardEffects.ForEach(eff => eff.OnUse(cardOwner, manager, card));
+        // card.CombatDTO.CardEffects.ForEach(eff => eff.OnUse(cardOwner, manager, card));
         return false;
     }
 }

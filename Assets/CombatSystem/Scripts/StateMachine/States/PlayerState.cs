@@ -20,13 +20,9 @@ public class PlayerState : StartingPlayerState
 
         foreach (var card in StateMachine.PlayerCardsOnTable)
         {
-            foreach (var effect in card.CombatDTO.CardEffects)
+            foreach (var effect in card.CombatDTO.OnStartTurnEffects)
             {
-                // TODO visualize only when effect does something
-                // card.CardVisual.ShowEffect();
-                // yield return new WaitForSeconds(0.5f);
-                effect.OnTurnStart(StateMachine.PlayerOwner, StateMachine, card);
-                // card.CardVisual.HideEffect();
+                yield return effect.StartEffect(StateMachine, card);
             }
         }
 

@@ -10,7 +10,7 @@ public class CreateCardOnDeathEffect : CardEffect
     public override bool Die(CardOwner cardOwner, CombatStateMachine manager, Card card)
     {
         card.Reinitialize(_combatPreset);
-        card.CombatDTO.CardEffects.ForEach(eff => eff.OnUse(cardOwner, manager, card));
+        // card.CombatDTO.CardEffects.ForEach(eff => eff.OnUse(cardOwner, manager, card));
         return false;
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -69,30 +70,31 @@ public class CombatStateMachine : MonoBehaviour
         PlayerCardsOnTable.Add(card);
         PlayerMana -= card.CombatDTO.ManaCost;
         manaPanel.UseManaCrystals(card.CombatDTO.ManaCost);
-
-        foreach (var effect in card.CombatDTO.CardEffects)
-        {
-            effect.OnUse(PlayerOwner, this, card);
-        }
-
+        StartCoroutine(AddCard(card));
         return true;
     }
 
     public void AddCardOnEnemyTable(Card card)
     {
         EnemyCardsOnTable.Add(card);
-        foreach (var effect in card.CombatDTO.CardEffects)
+        StartCoroutine(AddCard(card));
+    }
+
+    private IEnumerator AddCard(Card card)
+    {
+        foreach (var effect in card.CombatDTO.OnUseEffects)
         {
-            effect.OnUse(EnemyOwner, this, card);
+            yield return effect.StartEffect(this, card);
         }
     }
 
-    public void DestroyCard(Card card)
+    public IEnumerator DestroyCard(Card card)
     {
         bool destroy = true;
-        foreach (var effect in card.CombatDTO.CardEffects)
+        foreach (var effect in card.CombatDTO.OnDeathEffects)
         {
-            if (!effect.Die(card.Owner, this, card))
+            yield return effect.StartEffect(this, card);
+            if (effect.PreventDeath)
                 destroy = false;
         }
 
@@ -114,19 +116,25 @@ public class CombatStateMachine : MonoBehaviour
     {
         OnEndTurn?.Invoke();
 
+        StartCoroutine(CleanBoardAfterTurn());
+    }
+
+    private IEnumerator CleanBoardAfterTurn()
+    {
         var deadCards = PlayerCardsOnTable.Where(card => !card.CombatDTO.IsAlive).ToList();
         foreach (var card in deadCards)
         {
-            DestroyCard(card);
+            yield return DestroyCard(card);
         }
 
         deadCards = EnemyCardsOnTable.Where(card => !card.CombatDTO.IsAlive).ToList();
         foreach (var card in deadCards)
         {
-            DestroyCard(card);
+            yield return DestroyCard(card);
         }
 
         ChangeTurn();
+
     }
 
     public void ChangeTurn()

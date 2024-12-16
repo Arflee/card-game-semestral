@@ -22,3 +22,7 @@ MonoBehaviour:
   damage: 2
   combatEffects:
   - {fileID: 11400000, guid: 9e74298ccc704784fbf7bc6ef5790f91, type: 2}
+  onUseEffects:
+  - {fileID: 11400000, guid: db6c4a2c516e8bc4d9e82575bd7a10d3, type: 2}
+  onStartTurnEffects: []
+  onDeathEffects: []
