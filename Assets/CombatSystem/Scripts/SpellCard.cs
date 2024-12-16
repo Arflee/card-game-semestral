@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SpellCard", menuName = "New Card/Spell Card")]
 public class SpellCard : CardCharsSO
 {
-    [SerializeField] private SpellEffect[] effects;
+    [SerializeField] private CardEffect[] effects;
 
-    public IEnumerable<SpellEffect> SpellEffects => effects;
+    public IEnumerable<CardEffect> SpellEffects => effects;
 }

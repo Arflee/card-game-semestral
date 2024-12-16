@@ -7,16 +7,14 @@ public class CombatCard : CardCharsSO
     [Header("Card parameters")]
     [SerializeField, Min(1)] private int health;
     [SerializeField, Min(0)] private int damage;
-    [SerializeField] private CardEffect[] combatEffects;
-    [SerializeField] private NormalCardEffect[] onUseEffects;
-    [SerializeField] private NormalCardEffect[] onStartTurnEffects;
-    [SerializeField] private NormalCardEffect[] onDeathEffects;
+    [SerializeField] private CardEffect[] onUseEffects;
+    [SerializeField] private CardEffect[] onStartTurnEffects;
+    [SerializeField] private CardEffect[] onDeathEffects;
 
     public int Health => health;
     public int Damage => damage;
-    public IEnumerable<CardEffect> CardEffects => combatEffects;
-    public IEnumerable<NormalCardEffect> OnUseEffects => onUseEffects;
-    public IEnumerable<NormalCardEffect> OnStartTurnEffects => onStartTurnEffects;
-    public IEnumerable<NormalCardEffect> OnDeathEffects => onDeathEffects;
+    public IEnumerable<CardEffect> OnUseEffects => onUseEffects;
+    public IEnumerable<CardEffect> OnStartTurnEffects => onStartTurnEffects;
+    public IEnumerable<CardEffect> OnDeathEffects => onDeathEffects;
 
 }

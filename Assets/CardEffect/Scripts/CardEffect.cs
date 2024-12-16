@@ -1,30 +1,17 @@
+using System.Collections;
 using UnityEngine;
-
 
 public abstract class CardEffect : ScriptableObject
 {
-    public virtual void OnUse(CardOwner cardOwner, CombatStateMachine manager, Card card)
-    {
+    public bool PreventDeath { get; protected set; } = false;
 
+    public IEnumerator StartEffect(CombatStateMachine manager, Card card)
+    {
+        PreventDeath = false;
+        card.CardVisual.ShowEffect();
+        yield return TriggerEffect(card.Owner, manager, card);
+        card.CardVisual.HideEffect();
     }
 
-    public virtual void OnHit(CardOwner cardOwner, CombatStateMachine manager, Card card, Card target)
-    {
-
-    }
-
-    public virtual void OnTakeDamage(CardOwner cardOwner, CombatStateMachine manager, Card card, Card source)
-    {
-
-    }
-
-    public virtual bool Die(CardOwner cardOwner, CombatStateMachine manager, Card card)
-    {
-        return true;
-    }
-
-    public virtual void OnTurnStart(CardOwner cardOwner, CombatStateMachine manager, Card card)
-    {
-
-    }
+    protected abstract IEnumerator TriggerEffect(CardOwner cardOwner, CombatStateMachine manager, Card card);
 }

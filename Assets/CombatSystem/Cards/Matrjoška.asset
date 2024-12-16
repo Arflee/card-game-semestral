@@ -18,9 +18,7 @@ MonoBehaviour:
   cardSprite: {fileID: 0}
   health: 3
   damage: 3
-  combatEffects:
-  - {fileID: 11400000, guid: ca2f4139588626641a6dece3fcdde516, type: 2}
   onUseEffects: []
   onStartTurnEffects: []
   onDeathEffects:
-  - {fileID: 11400000, guid: 170c0c58b78702542a924cd659682f41, type: 2}
+  - {fileID: 11400000, guid: b7745b73a9168c14087a4db81043468f, type: 2}
