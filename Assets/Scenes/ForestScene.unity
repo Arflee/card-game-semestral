@@ -1213,11 +1213,17 @@ MonoBehaviour:
   maxCardsInHand: 3
   playerCards:
   - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
+  - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
+  - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
+  - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
+  - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
+  - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
+  - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
   - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
   - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
-  - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
-  - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
-  - {fileID: 11400000, guid: 80611f43c1affa940907042da061c694, type: 2}
+  - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
+  - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
+  - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
   - {fileID: 11400000, guid: 80611f43c1affa940907042da061c694, type: 2}
   - {fileID: 11400000, guid: 80611f43c1affa940907042da061c694, type: 2}
   - {fileID: 11400000, guid: 80611f43c1affa940907042da061c694, type: 2}
@@ -7635,11 +7641,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.7222776
+      value: 5.2774925
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.49667454
+      value: 0.4977274
       objectReference: {fileID: 0}
     - target: {fileID: 4379666920158019866, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.x
