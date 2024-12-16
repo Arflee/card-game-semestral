@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0268bdc1baf48b429d0a02764a4c2ab, type: 3}
+  m_Name: Beekeeper 1. fight
+  m_EditorClassIdentifier: 
+  monologues:
+  - speakerName: "Medv\u011Bd"
+    sequence: "Hej ty! Co tu chce\u0161? Tohle je soukromej pozemek!"
+  - speakerName: "V\u010Dela\u0159"
+    sequence: ...
+  - speakerName: "Medv\u011Bd"
+    sequence: "Nic mi na to ne\u0159ekne\u0161? Vypadni, ne\u017E ti magicky nakopu
+      zadek!\r"
+  - speakerName: "Vyprav\u011B\u010D"
+    sequence: "Ani\u017E by v\u010Dela\u0159 cokoliv \u0159ekl, za\u010Dal \xFAto\u010Dit.\r"
+  delayPerSymbol: 0
+  availableChoices: []

@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0268bdc1baf48b429d0a02764a4c2ab, type: 3}
+  m_Name: Goat
+  m_EditorClassIdentifier: 
+  monologues:
+  - speakerName: Koza
+    sequence: "co tu hce\u0161 medv\u011Bteeeee? "
+  - speakerName: "Medv\u011Bd"
+    sequence: Nevotravuj.
+  - speakerName: Koza
+    sequence: "ty se\u0161 drsoun! tohle je m\xED pol\xED\u010Dko a j\xE1 sem tadi
+      doma! tady se chov\xE1me zlu\u0161n\u011B\u011B\u011B\u011B\u011B\u011B!"
+  - speakerName: "Medv\u011Bd"
+    sequence: "Uhni, du si pro svoje v\u010Dely!"
+  - speakerName: Koza
+    sequence: "tobys mn\u011B musel slu\u017En\u011B\u011B\u011B\u011B\u011B\u011B
+      poprosisd!"
+  - speakerName: "Medv\u011Bd"
+    sequence: UHNI TY SLEPICE!
+  - speakerName: Koza
+    sequence: "jak\xE1 slepyceeee j\xE1 sem koza! M\xC9\xC9\xC9!"
+  - speakerName: "Medv\u011Bd"
+    sequence: "Na tohle nem\xE1m \u010Das! Uhni, nebo se bra\u0148!"
+  - speakerName: Koza
+    sequence: "Dostaneeee\u0161! M\xC9\xC9\xC9\xC9\xC9!"
+  - speakerName: "Vyprav\u011B\u010D"
+    sequence: "A tak si n\xE1\u0161 nabru\u010Den\xFD hrdina prodlou\u017Eil cestu
+      o jeden souboj.\r\n"
+  delayPerSymbol: 0
+  availableChoices: []

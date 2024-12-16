@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0268bdc1baf48b429d0a02764a4c2ab, type: 3}
+  m_Name: Angry goat
+  m_EditorClassIdentifier: 
+  monologues:
+  - speakerName: Koza
+    sequence: "ti blbe\u010Dku! to bilo m\xFD obil\xFD, M\xC9\xC9\xC9\xC9, to mi
+      spalat\xED\u0161!"
+  - speakerName: "Medv\u011Bd"
+    sequence: "Aha, a jak m\u011B k tomu asi donut\xED\u0161?"
+  - speakerName: Koza
+    sequence: "M\xC9\xC9\xC9 nakopu \u0165\xE9\xE9\xE9\xE9\xE9 \u0165y debil\xE9\xE9\xE9\xE9!"
+  - speakerName: "Medv\u011Bd"
+    sequence: "Tak poj\u010F, kozy d\xE1v\xE1m k ve\u010De\u0159i!\r"
+  - speakerName: "Vyprav\u011B\u010D"
+    sequence: "Jak ale medv\u011Bd brzy poznal, tuhle kozu si jen tak k ve\u010De\u0159i
+      ned\xE1."
+  delayPerSymbol: 0
+  availableChoices: []

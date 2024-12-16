@@ -33,7 +33,8 @@ MonoBehaviour:
   - speakerName: Orel
     sequence: AAAAAAAAAAAAAAAAAAAAAAA
   - speakerName: "Hr\xE1\u010D"
-    sequence: "Ty vocase, posledn\xED varov\xE1n\xED, jinak vol\xEDm n\xE1sil\xED!\r\n"
+    sequence: "Ty vocase ok\u0159\xEDdlen\xE1, posledn\xED varov\xE1n\xED, jinak
+      vol\xEDm n\xE1sil\xED!\r\n"
   - speakerName: Orel
     sequence: "\u2026"
   - speakerName: Orel
