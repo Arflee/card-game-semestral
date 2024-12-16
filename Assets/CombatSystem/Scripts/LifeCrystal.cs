@@ -16,5 +16,6 @@ public class LifeCrystal : MonoBehaviour
     public void TakeDamage(int damage)
     {
         Health -= damage;
+        healthText.text = Health.ToString();
     }
 }
