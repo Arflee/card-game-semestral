@@ -282,7 +282,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 1523037853
-  m_SortingOrder: 0
+  m_SortingOrder: -1000
   m_TargetDisplay: 0
 --- !u!114 &925652376
 MonoBehaviour:
@@ -498,10 +498,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1053563919}
-  - component: {fileID: 1053563920}
   - component: {fileID: 1053563921}
+  - component: {fileID: 1053563920}
   m_Layer: 5
-  m_Name: LifeCrystalsPanel
+  m_Name: LifeCrystalsPanelPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -514,45 +514,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053563918}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 185609434}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -650, y: -392}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 234, y: -218.05998}
+  m_SizeDelta: {x: 100, y: 463.88}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1053563920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1053563918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 3
-  m_Spacing: 21.66
-  m_ChildForceExpandWidth: 0
-  m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
---- !u!114 &1053563921
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -564,8 +538,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dfa7abb2ea7d8548a6d38cf8275e2bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crystalParameters: {fileID: 11400000, guid: e5d2ce0ddd2f02740b706f1581dc6903, type: 2}
-  lifeCrystalPrefab: {fileID: 1101803612430905105, guid: 49e00c18b3b5e984c8d10dd26a39acb9, type: 3}
+  lifeCrystalPrefab: {fileID: 950447330668382623, guid: c2240fd5656d2624895debfd06d05be1, type: 3}
+--- !u!114 &1053563921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053563918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 21.66
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &1094808337
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,6 +753,82 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f92a3b5be75cdbf4cac36b115cbbbc9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1335416792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1335416793}
+  - component: {fileID: 1335416795}
+  - component: {fileID: 1335416794}
+  m_Layer: 5
+  m_Name: LifeCrystalsPanelEnemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1335416793
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335416792}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 185609434}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -436, y: 452}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1335416794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335416792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dfa7abb2ea7d8548a6d38cf8275e2bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeCrystalPrefab: {fileID: 950447330668382623, guid: c2240fd5656d2624895debfd06d05be1, type: 3}
+--- !u!114 &1335416795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335416792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 3
+  m_Spacing: 21.66
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1001 &1494971079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -909,6 +984,12 @@ PrefabInstance:
       insertIndex: 0
       addedObject: {fileID: 925652372}
     - targetCorrespondingSourceObject: {fileID: 5319436337358068572, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 1335416793}
+    - targetCorrespondingSourceObject: {fileID: 5319436337358068572, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1053563919}
+    - targetCorrespondingSourceObject: {fileID: 5319436337358068572, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       insertIndex: -1
       addedObject: {fileID: 127315536371876398}
     - targetCorrespondingSourceObject: {fileID: 5319436337358068572, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
@@ -923,9 +1004,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5319436337358068572, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1751210911}
-    - targetCorrespondingSourceObject: {fileID: 5319436337358068572, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1053563919}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
 --- !u!1 &1649581544
@@ -1329,7 +1407,7 @@ MonoBehaviour:
   table: {fileID: 925652376}
   enemyInitializer: {fileID: 1992420335}
   manaPanel: {fileID: 1751210915}
-  lifeCrystalPanel: {fileID: 1053563921}
+  lifeCrystalPanel: {fileID: 1053563920}
 --- !u!224 &127315536371876398
 RectTransform:
   m_ObjectHideFlags: 0

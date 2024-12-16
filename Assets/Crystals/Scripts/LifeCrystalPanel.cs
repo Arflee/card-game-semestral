@@ -2,20 +2,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(HorizontalLayoutGroup))]
+[RequireComponent(typeof(LayoutGroup))]
 public class LifeCrystalPanel : MonoBehaviour
 {
-    [SerializeField] private LifeCrystalParameters crystalParameters;
-    [SerializeField] private LifeCrystal lifeCrystalPrefab;
+    [SerializeField] private CommonLifeCrystal lifeCrystalPrefab;
 
-    private Queue<LifeCrystal> spawnedCrystals = new();
+    private Queue<CommonLifeCrystal> spawnedCrystals = new();
 
     private void Start()
     {
-        for (int i = 0; i < crystalParameters.CrystalAmount; i++)
+        for (int i = 0; i < lifeCrystalPrefab.CrystalAmount; i++)
         {
             var createdCrystal = Instantiate(lifeCrystalPrefab, transform);
-            createdCrystal.Initialize(crystalParameters.Health);
             spawnedCrystals.Enqueue(createdCrystal);
         }
     }
