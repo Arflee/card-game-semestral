@@ -48,4 +48,9 @@ public class CardDeck : MonoBehaviour
 
         return takenCard;
     }
+
+    public int CardCount()
+    {
+        return _cardDeck.Count;
+    }
 }
