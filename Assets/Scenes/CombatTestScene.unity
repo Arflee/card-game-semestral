@@ -153,7 +153,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxCardsInHand: 2
   playerCards:
-  - {fileID: 11400000, guid: 1f7528277a4c3ed45b04269353f4bd25, type: 2}
   - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
   - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
   - {fileID: 11400000, guid: 7c3f4726bc6f302439c3ec16a69a6abd, type: 2}
@@ -171,6 +170,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
   - {fileID: 11400000, guid: 006a4be560779ac4d9f1bd306be1e66a, type: 2}
   - {fileID: 11400000, guid: 7c3f4726bc6f302439c3ec16a69a6abd, type: 2}
+  - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
+  - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
+  - {fileID: 11400000, guid: 783e63971c9326d46bbbcebb217d35f2, type: 2}
+  - {fileID: 11400000, guid: 783e63971c9326d46bbbcebb217d35f2, type: 2}
 --- !u!4 &878273923
 Transform:
   m_ObjectHideFlags: 0
@@ -267,6 +270,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 59931786920857578, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
+      propertyPath: playerDeck
+      value: 
+      objectReference: {fileID: 878273922}
     - target: {fileID: 59931786920857578, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: enemyInitializer
       value: 

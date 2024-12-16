@@ -17,7 +17,11 @@ public class EnemyState : CombatState
         {
             foreach (var effect in card.CombatDTO.CardEffects)
             {
+                // TODO visualize only when effect does something
+                // card.CardVisual.ShowEffect();
+                // yield return new WaitForSeconds(0.5f);
                 effect.OnTurnStart(StateMachine.EnemyOwner, StateMachine, card);
+                // card.CardVisual.HideEffect();
             }
         }
 
@@ -30,6 +34,7 @@ public class EnemyState : CombatState
         }
         else
         {
+            yield return new WaitForSeconds(0.5f);
             StateMachine.AddCardOnEnemyTable(nextCard);
 
             StateMachine.ChangeTurn();
