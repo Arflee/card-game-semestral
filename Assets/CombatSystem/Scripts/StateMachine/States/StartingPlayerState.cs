@@ -21,23 +21,29 @@ public class StartingPlayerState : CombatState
 
         for (int i = 0; i < StateMachine.PlayerCardsOnTable.Count; i++)
         {
+            var playerCard = StateMachine.PlayerCardsOnTable[i];
+
             if (PlayerHasMoreCards(i))
             {
+                if (!StateMachine.TryAttackEnemyCrystal(playerCard.CombatDTO.Damage))
+                {
+                    Debug.LogError("enemy is dead");
+                    StateMachine.SetState(new WinState(StateMachine));
+                }
                 Debug.Log("Player attacks crystal");
                 continue;
             }
 
-            var playerCard = StateMachine.PlayerCardsOnTable[i];
             var enemyCard = StateMachine.EnemyCardsOnTable[i];
 
             enemyCard.TakeDamageFrom(playerCard);
             playerCard.TakeDamageFrom(enemyCard);
         }
 
-        for (int i = StateMachine.PlayerCardsOnTable.Count; i < StateMachine.PlayerCardsOnTable.Count + cardsDifference; i++)
+        for (int i = StateMachine.PlayerCardsOnTable.Count; i < StateMachine.EnemyCardsOnTable.Count; i++)
         {
             var enemyCard = StateMachine.EnemyCardsOnTable[i];
-            if (!StateMachine.LifeCrystalPanel.TryAttackCrystal(enemyCard.CombatDTO.Damage))
+            if (!StateMachine.TryAttackPlayerCrystal(enemyCard.CombatDTO.Damage))
             {
                 Debug.LogError("player is dead");
                 StateMachine.SetState(new LoseState(StateMachine));

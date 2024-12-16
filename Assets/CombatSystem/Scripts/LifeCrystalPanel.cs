@@ -20,21 +20,23 @@ public class LifeCrystalPanel : MonoBehaviour
         }
     }
 
-    public bool TryAttackCrystal(int damage)
+    public int AttackCrystal(int damage)
     {
+        if (spawnedCrystals.Count == 0)
+            return 0;
+
         var lastCrystal = spawnedCrystals.Peek();
         if (lastCrystal == null)
-            return false;
-
+            return 0;
 
         if (lastCrystal.Health <= damage)
         {
             spawnedCrystals.Dequeue();
             lastCrystal.gameObject.SetActive(false);
-            return spawnedCrystals.Count > 0;
+            return spawnedCrystals.Count;
         }
 
         lastCrystal.TakeDamage(damage);
-        return true;
+        return spawnedCrystals.Count;
     }
 }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manaCost: 2
   cardName: "Hostinsk\xFD"
-  cardDescription: "P\u0159i vstupu do boji\u0161t\u011B +1/1 veldej\u0161\xED kart\u011B"
+  cardDescription: "P\u0159i vstupu do boji\u0161t\u011B +1/2 veldej\u0161\xED kart\u011B"
   cardSprite: {fileID: 0}
   health: 2
   damage: 0

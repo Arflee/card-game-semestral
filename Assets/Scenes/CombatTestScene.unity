@@ -162,13 +162,20 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
   - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
   - {fileID: 11400000, guid: 7c3f4726bc6f302439c3ec16a69a6abd, type: 2}
-  - {fileID: 11400000, guid: 7c3f4726bc6f302439c3ec16a69a6abd, type: 2}
-  - {fileID: 11400000, guid: 7c3f4726bc6f302439c3ec16a69a6abd, type: 2}
-  - {fileID: 11400000, guid: 7c3f4726bc6f302439c3ec16a69a6abd, type: 2}
   - {fileID: 11400000, guid: 1f7528277a4c3ed45b04269353f4bd25, type: 2}
   - {fileID: 11400000, guid: 53932172f5ee33943a6d05beb611ee46, type: 2}
+  - {fileID: 11400000, guid: 180f9b0843b69c644867a0cbff98ed3b, type: 2}
+  - {fileID: 11400000, guid: 7377d6aa45d11694bb40fc53018902f5, type: 2}
+  - {fileID: 11400000, guid: 80611f43c1affa940907042da061c694, type: 2}
+  - {fileID: 11400000, guid: 124631e689f611947aa60554089ef233, type: 2}
+  - {fileID: 11400000, guid: ccc2a248fa5fa8a41951265777b2e277, type: 2}
   - {fileID: 11400000, guid: 53932172f5ee33943a6d05beb611ee46, type: 2}
-  - {fileID: 11400000, guid: 53932172f5ee33943a6d05beb611ee46, type: 2}
+  - {fileID: 11400000, guid: 1f7528277a4c3ed45b04269353f4bd25, type: 2}
+  - {fileID: 11400000, guid: 01c367d6677e9164980ed254a6cb6488, type: 2}
+  - {fileID: 11400000, guid: e1cb1ff753367c54793fb83e448c2752, type: 2}
+  - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
+  - {fileID: 11400000, guid: 006a4be560779ac4d9f1bd306be1e66a, type: 2}
+  - {fileID: 11400000, guid: 7c3f4726bc6f302439c3ec16a69a6abd, type: 2}
 --- !u!4 &878273923
 Transform:
   m_ObjectHideFlags: 0
@@ -355,6 +362,83 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9881f00bfeeb555408f25316e8c99934, type: 3}
+--- !u!1 &1012193545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1012193546}
+  - component: {fileID: 1012193548}
+  - component: {fileID: 1012193547}
+  m_Layer: 5
+  m_Name: EnemyCrystalsPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1012193546
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012193545}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 185609434}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 650, y: 185}
+  m_SizeDelta: {x: 500, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1012193547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012193545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dfa7abb2ea7d8548a6d38cf8275e2bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crystalParameters: {fileID: 11400000, guid: e5d2ce0ddd2f02740b706f1581dc6903, type: 2}
+  lifeCrystalPrefab: {fileID: 1101803612430905105, guid: 49e00c18b3b5e984c8d10dd26a39acb9, type: 3}
+--- !u!114 &1012193548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012193545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 8
+  m_Spacing: 21.66
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &1049264574
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,6 +1010,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5319436337358068572, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1053563919}
+    - targetCorrespondingSourceObject: {fileID: 5319436337358068572, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1012193546}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
 --- !u!1 &1649581544
@@ -1276,6 +1363,20 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 01c367d6677e9164980ed254a6cb6488, type: 2}
   - {fileID: 11400000, guid: 006a4be560779ac4d9f1bd306be1e66a, type: 2}
   - {fileID: 11400000, guid: 783e63971c9326d46bbbcebb217d35f2, type: 2}
+  - {fileID: 11400000, guid: 124631e689f611947aa60554089ef233, type: 2}
+  - {fileID: 11400000, guid: ccc2a248fa5fa8a41951265777b2e277, type: 2}
+  - {fileID: 11400000, guid: 01c367d6677e9164980ed254a6cb6488, type: 2}
+  - {fileID: 11400000, guid: e1cb1ff753367c54793fb83e448c2752, type: 2}
+  - {fileID: 11400000, guid: 7c3f4726bc6f302439c3ec16a69a6abd, type: 2}
+  - {fileID: 11400000, guid: 7c3f4726bc6f302439c3ec16a69a6abd, type: 2}
+  - {fileID: 11400000, guid: 006a4be560779ac4d9f1bd306be1e66a, type: 2}
+  - {fileID: 11400000, guid: 180f9b0843b69c644867a0cbff98ed3b, type: 2}
+  - {fileID: 11400000, guid: 7377d6aa45d11694bb40fc53018902f5, type: 2}
+  - {fileID: 11400000, guid: 124631e689f611947aa60554089ef233, type: 2}
+  - {fileID: 11400000, guid: 1f7528277a4c3ed45b04269353f4bd25, type: 2}
+  - {fileID: 11400000, guid: e1cb1ff753367c54793fb83e448c2752, type: 2}
+  - {fileID: 11400000, guid: 006a4be560779ac4d9f1bd306be1e66a, type: 2}
+  - {fileID: 11400000, guid: 7c3f4726bc6f302439c3ec16a69a6abd, type: 2}
   playedCardsEnemy: {fileID: 1204193607}
 --- !u!20 &2084828445 stripped
 Camera:
@@ -1330,6 +1431,7 @@ MonoBehaviour:
   enemyInitializer: {fileID: 1992420335}
   manaPanel: {fileID: 1751210915}
   lifeCrystalPanel: {fileID: 1053563921}
+  enemyCrystalPanel: {fileID: 1012193547}
 --- !u!224 &127315536371876398
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1346,8 +1448,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: 1000, y: 100}
+  m_AnchoredPosition: {x: 0, y: -104.93}
+  m_SizeDelta: {x: 1000, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &912148208208961987
 CanvasRenderer:

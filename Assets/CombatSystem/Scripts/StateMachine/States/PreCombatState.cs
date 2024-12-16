@@ -19,7 +19,7 @@ public class PreCombatState : CombatState
             _playerDeck.TakeCard(StateMachine.PlayerOwner);
         }
 
-        StateMachine.ManaPanel.SpawnCrystalPrefabs(StateMachine.MaxPlayerMana);
+        StateMachine.ManaPanel.SpawnCrystalPrefabs(StateMachine.PlayerCrystals + StateMachine.PlayerMana);
 
         StateMachine.SetState(new StartingPlayerState(StateMachine));
     }

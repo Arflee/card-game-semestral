@@ -9,6 +9,7 @@ public class CombatStateMachine : MonoBehaviour
     [SerializeField] private EnemyInitializer enemyInitializer;
     [SerializeField] private ManaPanel manaPanel;
     [SerializeField] private LifeCrystalPanel lifeCrystalPanel;
+    [SerializeField] private LifeCrystalPanel enemyCrystalPanel;
 
     private bool _isPlayerTurn = false;
     private PlayerState _playerState;
@@ -24,15 +25,12 @@ public class CombatStateMachine : MonoBehaviour
     public CardOwner PlayerOwner { get; private set; }
     public CardOwner EnemyOwner { get; private set; }
     public ManaPanel ManaPanel => manaPanel;
-    public LifeCrystalPanel LifeCrystalPanel => lifeCrystalPanel;
 
     public event Action OnEndTurn;
 
     public int PlayerCrystals { get; private set; } = 3;
     public int EnemyCrystals { get; private set; } = 3;
     public int PlayerMana { get; private set; } = 3;
-    public int PlayerManaNextTurn { get; private set; } = 4;
-    public int MaxPlayerMana { get; private set; } = 10;
     public GameEndingHandler GameHandler => _gameStateHandler;
 
 
@@ -135,8 +133,8 @@ public class CombatStateMachine : MonoBehaviour
         if (_isPlayerTurn)
         {
             _isPlayerTurn = !_isPlayerTurn;
-            PlayerMana = PlayerManaNextTurn;
-            PlayerManaNextTurn = Math.Clamp(PlayerManaNextTurn + 1, 0, MaxPlayerMana);
+            PlayerMana = 6 - PlayerCrystals;
+            //PlayerManaNextTurn = Math.Clamp(PlayerManaNextTurn + 1, 0, MaxPlayerMana);
             SetState(_playerState);
         }
         else
@@ -144,5 +142,17 @@ public class CombatStateMachine : MonoBehaviour
             _isPlayerTurn = !_isPlayerTurn;
             SetState(_enemyState);
         }
+    }
+
+    public bool TryAttackEnemyCrystal(int damage)
+    {
+        EnemyCrystals = enemyCrystalPanel.AttackCrystal(damage);
+        return EnemyCrystals > 0;
+    }
+
+    public bool TryAttackPlayerCrystal(int damage)
+    {
+        PlayerCrystals = lifeCrystalPanel.AttackCrystal(damage);
+        return PlayerCrystals > 0;
     }
 }
