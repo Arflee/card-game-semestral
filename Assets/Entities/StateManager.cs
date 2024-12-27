@@ -8,7 +8,7 @@ public class StateManager : MonoBehaviour
 
     public Dictionary<string, bool> _states = new Dictionary<string, bool>();
 
-    void Awake()
+    private void Awake()
     {
         if (Instance == null)
         {

@@ -10,6 +10,7 @@ public class LoadSceneBehaviour : BehaviourState
     protected override void OnEnable()
     {
         DOTween.Clear(true);
+        //CrossScenePlayerState.Instance.SavePosition()
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
 
