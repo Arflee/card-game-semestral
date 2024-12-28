@@ -13,6 +13,7 @@ public class LoseState : CombatState
     public override IEnumerator EnterState()
     {
         _gameHandler.PlayerLostGame(SceneManager.GetActiveScene().name);
+        
         yield return null;
     }
 }

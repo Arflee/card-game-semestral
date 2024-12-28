@@ -31,8 +31,7 @@ public class PlayerMovement : MonoBehaviour
         _controls = new StandardControls();
         _controls.Player.Move.Enable();
         _animator = GetComponent<Animator>();
-
-
+        
         Controls ??= new StandardControls();
         Controls.Player.Move.Enable();
     }

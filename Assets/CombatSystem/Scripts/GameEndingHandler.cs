@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameEndingHandler : MonoBehaviour
 {
@@ -31,18 +32,35 @@ public class GameEndingHandler : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
-
-        DontDestroyOnLoad(this);
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void PlayerLostGame(string gameId)
     {
         _gameEndings[gameId] = Ending.Lose;
+        ReturnToLastScene();
     }
 
     public void PlayerWonGame(string gameId)
     {
         _gameEndings[gameId] = Ending.Win;
+        ReturnToLastScene();
+    }
+
+    private void ReturnToLastScene()
+    {
+        var sceneLoad = SceneManager.LoadSceneAsync(CrossScenePlayerState.Instance.SceneName);
+        sceneLoad.completed += SceneLoadCompleted;
+    }
+
+    private void SceneLoadCompleted(AsyncOperation obj)
+    {
+        var player = FindObjectOfType<PlayerMovement>();
+        player.transform.position = CrossScenePlayerState.Instance.Position;
     }
 }

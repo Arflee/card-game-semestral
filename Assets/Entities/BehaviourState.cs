@@ -31,19 +31,19 @@ public abstract class BehaviourState : MonoBehaviour
 
     protected virtual void OnEnable()
     {
-        Debug.Log("Enabled: " + ToString(), this);
+        //Debug.Log("Enabled: " + ToString(), this);
 
-        // Load state if it was previously saved
-        if (StateManager.Instance.HasState(_id))
-        {
-            enabled = StateManager.Instance.GetState(_id);
-        }
+        //// Load state if it was previously saved
+        //if (StateManager.Instance.HasState(_id))
+        //{
+        //    enabled = StateManager.Instance.GetState(_id);
+        //}
     }
 
     protected virtual void OnDisable()
     {
-        // Save state
-        StateManager.Instance.SetState(_id, enabled);
+        //// Save state
+        //StateManager.Instance.SetState(_id, enabled);
     }
 
     public void Finished()
