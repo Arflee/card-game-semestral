@@ -968,7 +968,7 @@ MonoBehaviour:
   _dialogueSequence: {fileID: 11400000, guid: e91b553fb76aff84c8ce25a70c21da24, type: 2}
   dialogueCanvas: {fileID: 995863022}
   dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
-  skipInEditor: 0
+  skipInEditor: 1
 --- !u!1001 &95690059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1108,6 +1108,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1495970753}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &106322972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 106322973}
+  - component: {fileID: 106322974}
+  m_Layer: 0
+  m_Name: FoxOnWinDialogieManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &106322973
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106322972}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.0842514, y: -10.941146, z: -4.0269046}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1818846953}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &106322974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106322972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776008d1a78a36645b0f7a603bdf4ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogueSequence: {fileID: 11400000, guid: f432eb6fa8a949b4da2c3b901cc74171, type: 2}
+  dialogueCanvas: {fileID: 995863022}
+  dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
+  skipInEditor: 0
 --- !u!1001 &111202460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11735,7 +11783,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameId: EagleFight
   dialogueOnDidntFight: {fileID: 1334161689}
-  dialogueOnWin: {fileID: 0}
+  dialogueOnWin: {fileID: 106322974}
   dialogueOnLose: {fileID: 1260753597}
   onWinNextState: {fileID: 0}
   onLoseNextState: {fileID: 1519588411}
@@ -12308,6 +12356,8 @@ GameObject:
   - component: {fileID: 1601592900}
   - component: {fileID: 1601592899}
   - component: {fileID: 1601592903}
+  - component: {fileID: 1601592904}
+  - component: {fileID: 1601592905}
   - component: {fileID: 1601592898}
   - component: {fileID: 1601592897}
   - component: {fileID: 1601592896}
@@ -12616,6 +12666,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: EagleFight
   nextState: {fileID: 0}
+--- !u!114 &1601592904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601592893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bf719f1a06293f4b9099aa37669e9f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameId: EagleFight
+  nextState: {fileID: 1601592905}
+--- !u!114 &1601592905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601592893}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a58f43446f287814fa837a724d8c53ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1608070558
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13466,6 +13542,7 @@ Transform:
   - {fileID: 445453502}
   - {fileID: 1334161688}
   - {fileID: 1260753596}
+  - {fileID: 106322973}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1820425217

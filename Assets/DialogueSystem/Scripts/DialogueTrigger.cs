@@ -17,7 +17,7 @@ public class DialogueTrigger : MonoBehaviour
     private StandardControls _inputActions;
     private SlidingDialogueText _createdBubble;
 
-    private void OnEnable()
+    private void Start()
     {
         _inputActions = PlayerMovement.Controls;
         _inputActions.Player.Interact.Enable();

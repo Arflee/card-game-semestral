@@ -1,4 +1,4 @@
-public class DisapearBehaviour : BehaviourState
+public class DisappearBehaviour : BehaviourState
 {
     public override BehaviourState NextState()
     {

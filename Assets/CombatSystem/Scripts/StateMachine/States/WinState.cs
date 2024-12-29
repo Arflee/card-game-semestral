@@ -1,14 +1,18 @@
 using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class WinState : CombatState
 {
+    private GameEndingHandler _gameHandler;
+
     public WinState(CombatStateMachine machine) : base(machine)
     {
+        _gameHandler = machine.GameHandler;
     }
 
     public override IEnumerator EnterState()
     {
-        return base.EnterState();
+        _gameHandler.PlayerWonGame(SceneManager.GetActiveScene().name);
+        yield return null;
     }
 }

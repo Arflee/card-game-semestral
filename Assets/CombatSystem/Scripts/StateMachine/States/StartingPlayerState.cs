@@ -26,7 +26,6 @@ public class StartingPlayerState : CombatState
             {
                 if (!StateMachine.TryAttackEnemyCrystal(playerCard.CombatDTO.Damage))
                 {
-                    Debug.LogError("enemy is dead");
                     StateMachine.SetState(new WinState(StateMachine));
                 }
                 Debug.Log("Player attacks crystal");
@@ -44,7 +43,6 @@ public class StartingPlayerState : CombatState
             var enemyCard = StateMachine.EnemyCardsOnTable[i];
             if (!StateMachine.TryAttackPlayerCrystal(enemyCard.CombatDTO.Damage))
             {
-                Debug.LogError("player is dead");
                 StateMachine.SetState(new LoseState(StateMachine));
             }
         }
