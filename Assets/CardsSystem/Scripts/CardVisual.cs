@@ -66,9 +66,8 @@ public class CardVisual : MonoBehaviour
     [SerializeField] private CurveParameters curve;
 
     [Header("Effects")]
-    [SerializeField] private Outline outline;
-    [SerializeField] private Color effectOutlineColor;
-    [SerializeField] private Color normalOutlineColor;
+    [SerializeField] private Color effectDescribtionColor;
+    [SerializeField] private Color normalDescribtionColor;
 
     private float curveYOffset;
     private float curveRotationOffset;
@@ -255,11 +254,11 @@ public class CardVisual : MonoBehaviour
 
     public void ShowEffect()
     {
-        // outline.effectColor = effectOutlineColor;
+        cardDescription.color = effectDescribtionColor;
     }
 
     public void HideEffect()
     {
-        // outline.effectColor = normalOutlineColor;
+        cardDescription.color = normalDescribtionColor;
     }
 }

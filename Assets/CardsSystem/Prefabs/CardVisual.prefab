@@ -162,9 +162,8 @@ MonoBehaviour:
   swapTransition: 0.2
   swapVibrato: 5
   curve: {fileID: 11400000, guid: 56c8edf429bd4df47aa61cc8dd92d940, type: 2}
-  outline: {fileID: 0}
-  effectOutlineColor: {r: 1, g: 0, b: 0, a: 1}
-  normalOutlineColor: {r: 0, g: 0, b: 0, a: 1}
+  effectDescribtionColor: {r: 1, g: 0.43541235, b: 0, a: 1}
+  normalDescribtionColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!223 &6930167636189593843
 Canvas:
   m_ObjectHideFlags: 0
