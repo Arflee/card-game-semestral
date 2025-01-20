@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manaCost: 2
   cardName: Knihomol
-  cardDescription: "P\u0159i vstupu na plochu +2 karty"
+  cardDescription: "P\u0159i vylo\u017Een\xED +2 karty"
   cardSprite: {fileID: 0}
   health: 1
   damage: 1

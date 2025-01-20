@@ -255,11 +255,11 @@ public class CardVisual : MonoBehaviour
 
     public void ShowEffect()
     {
-        outline.effectColor = effectOutlineColor;
+        // outline.effectColor = effectOutlineColor;
     }
 
     public void HideEffect()
     {
-        outline.effectColor = normalOutlineColor;
+        // outline.effectColor = normalOutlineColor;
     }
 }

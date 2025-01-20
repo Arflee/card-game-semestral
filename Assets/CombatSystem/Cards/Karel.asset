@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manaCost: 2
   cardName: Karel
-  cardDescription: "P\u0159i vstupu na boji\u0161t\u011B, zm\u011Bn\xED v\u0161echny
-    karty na 2/2 bez schopnost\xED"
+  cardDescription: "P\u0159i vylo\u017Een\xED, zm\u011Bn\xED v\u0161echny karty na
+    2/2 bez schopnost\xED"
   cardSprite: {fileID: 0}
   health: 2
   damage: 2

@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(HorizontalLayoutGroup))]
 public class LifeCrystalPanel : MonoBehaviour
 {
     [SerializeField] private LifeCrystalParameters crystalParameters;
