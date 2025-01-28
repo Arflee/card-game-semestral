@@ -8,6 +8,7 @@ public class EnemyInitializer : MonoBehaviour
     [SerializeField] private CombatCard[] enemyDeck;
     [SerializeField] private RectTransform playedCardsEnemy;
 
+    public int cardsPerTurn = 1;
     private Stack<CombatCard> _shuffledDeck;
 
     public void OnEnable()
