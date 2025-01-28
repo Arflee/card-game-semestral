@@ -90,15 +90,18 @@ public class CombatStateMachine : MonoBehaviour
 
     public IEnumerator DestroyCard(Card card)
     {
-        bool destroy = true;
+        if (card.IsDestroyed)
+            yield break;
+
+        card.IsDestroyed = true;
         foreach (var effect in card.CombatDTO.OnDeathEffects)
         {
             yield return effect.StartEffect(this, card);
             if (effect.PreventDeath)
-                destroy = false;
+                card.IsDestroyed = false;
         }
 
-        if (destroy)
+        if (card.IsDestroyed)
         {
             PlayerCardsOnTable.Remove(card);
             EnemyCardsOnTable.Remove(card);

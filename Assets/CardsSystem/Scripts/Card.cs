@@ -39,6 +39,7 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     public bool IsHovering => _isHovering;
     public bool IsDragging => _isDragging;
     public bool WasDragged => _wasDragged;
+    public bool IsDestroyed = false;
 
     [SerializeField] private CardVisual cardVisualPrefab;
     public CardVisual CardVisual { get; private set; }

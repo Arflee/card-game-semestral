@@ -27,7 +27,6 @@ public class EnemyState : CombatState
 
             if (nextCard == null)
             {
-                Debug.LogWarning("Enemy is out of cards!");
                 yield return null;
             }
             else
