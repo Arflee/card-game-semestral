@@ -723,20 +723,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardSlotPrefab: {fileID: 575835118737254313, guid: a86ada4f9b399784cb9af4003a4421b9, type: 3}
   visualPrefab: {fileID: 3700769039360204207, guid: 45bb3addbb980044283664edf8de3c34, type: 3}
-  enemyDeck:
-  - {fileID: 11400000, guid: e22efca93976d5c438ad0d9f38c0ddcd, type: 2}
-  - {fileID: 11400000, guid: e22efca93976d5c438ad0d9f38c0ddcd, type: 2}
-  - {fileID: 11400000, guid: e22efca93976d5c438ad0d9f38c0ddcd, type: 2}
-  - {fileID: 11400000, guid: e22efca93976d5c438ad0d9f38c0ddcd, type: 2}
-  - {fileID: 11400000, guid: e22efca93976d5c438ad0d9f38c0ddcd, type: 2}
-  - {fileID: 11400000, guid: e22efca93976d5c438ad0d9f38c0ddcd, type: 2}
-  - {fileID: 11400000, guid: e22efca93976d5c438ad0d9f38c0ddcd, type: 2}
-  - {fileID: 11400000, guid: e22efca93976d5c438ad0d9f38c0ddcd, type: 2}
-  - {fileID: 11400000, guid: e22efca93976d5c438ad0d9f38c0ddcd, type: 2}
-  - {fileID: 11400000, guid: e22efca93976d5c438ad0d9f38c0ddcd, type: 2}
+  enemy: {fileID: 11400000, guid: 4544f71cac1424647b422eca947d0811, type: 2}
   playedCardsEnemy: {fileID: 1204193607}
-  shuffleDeck: 0
-  cardsPerTurn: 1
 --- !u!20 &2084828445 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 8518969864090515055, guid: 9881f00bfeeb555408f25316e8c99934, type: 3}

@@ -21,18 +21,19 @@ public class EnemyState : CombatState
             }
         }
 
-        for (int i = 0; i < _initializer.cardsPerTurn; i++)
-        {
-            var nextCard = _initializer.GetNextCard(StateMachine.EnemyOwner);
+        yield return new WaitForSeconds(0.5f);
 
-            if (nextCard == null)
+        var nextCards = _initializer.GetNextCards(StateMachine.EnemyOwner);
+        foreach (var card in nextCards)
+        {
+            if (card == null)
             {
                 yield return null;
             }
             else
             {
                 yield return new WaitForSeconds(0.5f);
-                StateMachine.AddCardOnEnemyTable(nextCard);
+                StateMachine.AddCardOnEnemyTable(card);
             }
         }
 
