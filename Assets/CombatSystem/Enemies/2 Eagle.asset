@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f95edbd1baf01e45804076c2c34baf2, type: 3}
+  m_Name: 2 Eagle
+  m_EditorClassIdentifier: 
+  _enemyDeck:
+  - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
+  - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
+  - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
+  - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
+  - {fileID: 11400000, guid: 783e63971c9326d46bbbcebb217d35f2, type: 2}
+  _shuffleDeck: 1
+  _reshufleWhenEmpty: 1
+  _cardsPerTurn: 1
+  _reward:
+  - {fileID: 11400000, guid: d8d20aa8cb83e0a438c8e409a817a3b7, type: 2}
+  - {fileID: 11400000, guid: 1f7528277a4c3ed45b04269353f4bd25, type: 2}
+  - {fileID: 11400000, guid: 124631e689f611947aa60554089ef233, type: 2}
+  - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}

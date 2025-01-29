@@ -29,7 +29,7 @@ public class CombatStateMachine : MonoBehaviour
 
     public event Action OnEndTurn;
 
-    public int CardsDrawnPerTurn { get; private set; } = 2;
+    public int CardsDrawnPerTurn { get; private set; } = 1;
     public int PlayerCrystals { get; private set; } = 3;
     public int EnemyCrystals { get; private set; } = 3;
     public int PlayerMana { get; private set; } = 3;
