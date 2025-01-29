@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: 1 Mom
   m_EditorClassIdentifier: 
   _enemyDeck:
-  - {fileID: 11400000, guid: 783e63971c9326d46bbbcebb217d35f2, type: 2}
   - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
+  - {fileID: 11400000, guid: 783e63971c9326d46bbbcebb217d35f2, type: 2}
   _shuffleDeck: 0
   _reshufleWhenEmpty: 1
   _cardsPerTurn: 1
   _reward:
-  - {fileID: 11400000, guid: 01c367d6677e9164980ed254a6cb6488, type: 2}
-  - {fileID: 11400000, guid: 01c367d6677e9164980ed254a6cb6488, type: 2}
   - {fileID: 11400000, guid: 180f9b0843b69c644867a0cbff98ed3b, type: 2}
   - {fileID: 11400000, guid: 180f9b0843b69c644867a0cbff98ed3b, type: 2}
+  - {fileID: 11400000, guid: 01c367d6677e9164980ed254a6cb6488, type: 2}
+  - {fileID: 11400000, guid: 01c367d6677e9164980ed254a6cb6488, type: 2}

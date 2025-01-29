@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: 6 Beekeeper
   m_EditorClassIdentifier: 
   _enemyDeck:
-  - {fileID: 11400000, guid: 2bb4e4326e3bf0b4c9d3115ce49d9c25, type: 2}
-  - {fileID: 11400000, guid: 2bb4e4326e3bf0b4c9d3115ce49d9c25, type: 2}
-  - {fileID: 11400000, guid: 2bb4e4326e3bf0b4c9d3115ce49d9c25, type: 2}
   - {fileID: 11400000, guid: d8d20aa8cb83e0a438c8e409a817a3b7, type: 2}
   - {fileID: 11400000, guid: d8d20aa8cb83e0a438c8e409a817a3b7, type: 2}
+  - {fileID: 11400000, guid: 2bb4e4326e3bf0b4c9d3115ce49d9c25, type: 2}
+  - {fileID: 11400000, guid: 2bb4e4326e3bf0b4c9d3115ce49d9c25, type: 2}
+  - {fileID: 11400000, guid: 2bb4e4326e3bf0b4c9d3115ce49d9c25, type: 2}
   - {fileID: 11400000, guid: 59d95d73542b472449d0f1f155d14172, type: 2}
   _shuffleDeck: 1
   _reshufleWhenEmpty: 1
