@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f95edbd1baf01e45804076c2c34baf2, type: 3}
+  m_Name: 5 Guard
+  m_EditorClassIdentifier: 
+  _enemyDeck:
+  - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
+  - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
+  - {fileID: 11400000, guid: 01c367d6677e9164980ed254a6cb6488, type: 2}
+  - {fileID: 11400000, guid: d8d20aa8cb83e0a438c8e409a817a3b7, type: 2}
+  - {fileID: 11400000, guid: 53932172f5ee33943a6d05beb611ee46, type: 2}
+  - {fileID: 11400000, guid: 92e39c8e50436fd4b8c21f14a1e84f2b, type: 2}
+  - {fileID: 11400000, guid: 7377d6aa45d11694bb40fc53018902f5, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _shuffleDeck: 1
+  _reshufleWhenEmpty: 1
+  _cardsPerTurn: 2
+  _reward:
+  - {fileID: 11400000, guid: 53932172f5ee33943a6d05beb611ee46, type: 2}
+  - {fileID: 11400000, guid: 7c3f4726bc6f302439c3ec16a69a6abd, type: 2}
+  - {fileID: 11400000, guid: 8beb35c4aa4323e4c9b945dadeef7378, type: 2}
+  - {fileID: 11400000, guid: 7377d6aa45d11694bb40fc53018902f5, type: 2}
+  - {fileID: 11400000, guid: 80611f43c1affa940907042da061c694, type: 2}
+  - {fileID: 11400000, guid: e1cb1ff753367c54793fb83e448c2752, type: 2}
+  _crystals: {fileID: 11400000, guid: e5d2ce0ddd2f02740b706f1581dc6903, type: 2}

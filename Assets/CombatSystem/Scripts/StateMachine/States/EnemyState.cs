@@ -21,20 +21,23 @@ public class EnemyState : CombatState
             }
         }
 
-        var nextCard = _initializer.GetNextCard(StateMachine.EnemyOwner);
+        yield return new WaitForSeconds(0.5f);
 
-        if (nextCard == null)
+        var nextCards = _initializer.GetNextCards(StateMachine.EnemyOwner);
+        foreach (var card in nextCards)
         {
-            Debug.LogWarning("Enemy is out of cards!");
-            yield return null;
+            if (card == null)
+            {
+                yield return null;
+            }
+            else
+            {
+                yield return new WaitForSeconds(0.5f);
+                StateMachine.AddCardOnEnemyTable(card);
+            }
         }
-        else
-        {
-            yield return new WaitForSeconds(0.5f);
-            StateMachine.AddCardOnEnemyTable(nextCard);
 
-            StateMachine.ChangeTurn();
-            yield return null;
-        }
+        StateMachine.ChangeTurn();
+        yield return null;
     }
 }

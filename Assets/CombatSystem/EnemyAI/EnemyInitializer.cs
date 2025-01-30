@@ -1,34 +1,56 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EnemyInitializer : MonoBehaviour
 {
     [SerializeField] private GameObject cardSlotPrefab;
     [SerializeField] private CardVisual visualPrefab;
-    [SerializeField] private CombatCard[] enemyDeck;
+    [SerializeField] private LifeCrystalPanel crystalPanel;
+    [SerializeField] private Enemy enemy;
     [SerializeField] private RectTransform playedCardsEnemy;
-
     private Stack<CombatCard> _shuffledDeck;
 
     public void OnEnable()
     {
-        _shuffledDeck = new(Utility.Shuffle(enemyDeck));
+        ResetDeck();
+        crystalPanel.Initialize(enemy.Crystals);
     }
 
-    public Card GetNextCard(CardOwner owner)
+    public IEnumerable<Card> GetNextCards(CardOwner owner)
     {
-        if (_shuffledDeck.Count == 0)
+        List<Card> cards = new List<Card>();
+
+        for (int i = 0; i < enemy.CardsPerTurn; i++)
         {
-            return null;
+            if (_shuffledDeck.Count == 0)
+            {
+                if (enemy.ReshufleWhenEmpty)
+                    ResetDeck();
+                else
+                    return cards;
+            }
+
+            var nextCard = _shuffledDeck.Pop();
+
+            if (nextCard == null)
+                continue;
+
+            var cardSlot = Instantiate(cardSlotPrefab, playedCardsEnemy.transform);
+            var card = cardSlot.GetComponentInChildren<Card>();
+            card.Initialize(nextCard, owner);
+            card.DisableCard();
+            cards.Add(card);
         }
 
-        var nextCard = _shuffledDeck.Pop();
+        return cards;
+    }
 
-        var cardSlot = Instantiate(cardSlotPrefab, playedCardsEnemy.transform);
-        var card = cardSlot.GetComponentInChildren<Card>();
-        card.Initialize(nextCard, owner);
-        card.DisableCard();
-
-        return card;
+    private void ResetDeck()
+    {
+        if (enemy.ShuffleDeck)
+            _shuffledDeck = new(Utility.Shuffle(enemy.EnemyDeck));
+        else
+            _shuffledDeck = new(enemy.EnemyDeck.Reverse());
     }
 }
