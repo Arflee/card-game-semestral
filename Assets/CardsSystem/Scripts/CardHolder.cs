@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class CardHolder : MonoBehaviour
 {
@@ -15,6 +16,12 @@ public class CardHolder : MonoBehaviour
     private bool _isCrossing = false;
     [SerializeField] private bool tweenCardReturn = true;
 
+    [Header("Drag Visualization")]
+    [SerializeField] private Image dragArea;
+    [SerializeField] private Color activeColor;
+    [SerializeField] private Color selectedColor;
+    private Color normalColor;
+
     private List<UnityAction<Card>> _externalOnDragEndActions = new();
 
     public List<Card> CardsInHand => _cards;
@@ -22,15 +29,19 @@ public class CardHolder : MonoBehaviour
     private void Start()
     {
         _rect = (RectTransform)transform;
+        normalColor = dragArea.color;
     }
 
     private void BeginDrag(Card card)
     {
         _selectedCard = card;
+        dragArea.color = activeColor;
     }
 
     private void EndDrag(Card card)
     {
+        dragArea.color = normalColor;
+
         if (_selectedCard == null)
             return;
 
@@ -56,6 +67,15 @@ public class CardHolder : MonoBehaviour
 
         if (_selectedCard == null)
             return;
+
+        if (RectTransformUtility.RectangleContainsScreenPoint((RectTransform)dragArea.transform, (Vector2)_selectedCard.transform.position))
+        {
+            dragArea.color = selectedColor;
+        }
+        else
+        {
+            dragArea.color = activeColor;
+        }
 
         if (_isCrossing)
             return;
