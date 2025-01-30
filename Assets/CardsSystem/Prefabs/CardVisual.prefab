@@ -165,7 +165,7 @@ MonoBehaviour:
   swapTransition: 0.2
   swapVibrato: 5
   curve: {fileID: 11400000, guid: 56c8edf429bd4df47aa61cc8dd92d940, type: 2}
-  effectColor: {r: 1, g: 0.88235295, b: 0.5176471, a: 1}
+  effectColor: {r: 1, g: 0.84313726, b: 0.39215687, a: 1}
 --- !u!223 &6930167636189593843
 Canvas:
   m_ObjectHideFlags: 0
@@ -1124,11 +1124,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7556503461241642029, guid: 2c4fdc0e1047c4b49ab90dd876b386e4, type: 3}
       propertyPath: m_fontColor.g
-      value: 0.8352941
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7556503461241642029, guid: 2c4fdc0e1047c4b49ab90dd876b386e4, type: 3}
       propertyPath: m_fontColor.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7556503461241642029, guid: 2c4fdc0e1047c4b49ab90dd876b386e4, type: 3}
       propertyPath: m_fontSizeBase
@@ -1136,7 +1136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7556503461241642029, guid: 2c4fdc0e1047c4b49ab90dd876b386e4, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4294956288
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7556503461241642029, guid: 2c4fdc0e1047c4b49ab90dd876b386e4, type: 3}
       propertyPath: m_HorizontalAlignment

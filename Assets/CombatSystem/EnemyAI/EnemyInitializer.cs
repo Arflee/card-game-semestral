@@ -53,4 +53,12 @@ public class EnemyInitializer : MonoBehaviour
         else
             _shuffledDeck = new(enemy.EnemyDeck.Reverse());
     }
+
+    public int CardCount()
+    {
+        if (enemy.ReshufleWhenEmpty)
+            return int.MaxValue;
+
+        return _shuffledDeck.Count;
+    }
 }
