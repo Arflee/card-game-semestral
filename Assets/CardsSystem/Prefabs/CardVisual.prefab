@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5e90b618bf693504898b035e20d2bdd0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: edfdf9e5fdca42049ac8b35257876e9d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -137,7 +137,10 @@ MonoBehaviour:
   visualShadow: {fileID: 6082652067484827347}
   shakeParent: {fileID: 3270148851755564651}
   tiltParent: {fileID: 5037521101954701801}
-  cardImage: {fileID: 7352998936812655986}
+  cardTemplate: {fileID: 7352998936812655986}
+  cardImage: {fileID: 2209829496816888438}
+  describtionTemplate: {fileID: 21300000, guid: 6bfeb306b73298d498ee2641d3365618, type: 3}
+  textlessTemplate: {fileID: 21300000, guid: 3a517475af779c648b0da2d2fa6bc653, type: 3}
   cardName: {fileID: 5287797195728747682}
   cardDescription: {fileID: 2699762686176027836}
   healthText: {fileID: 8794958655390194561}
@@ -162,8 +165,7 @@ MonoBehaviour:
   swapTransition: 0.2
   swapVibrato: 5
   curve: {fileID: 11400000, guid: 56c8edf429bd4df47aa61cc8dd92d940, type: 2}
-  effectDescribtionColor: {r: 1, g: 0.43541235, b: 0, a: 1}
-  normalDescribtionColor: {r: 1, g: 1, b: 1, a: 1}
+  effectColor: {r: 1, g: 0.88235295, b: 0.5176471, a: 1}
 --- !u!223 &6930167636189593843
 Canvas:
   m_ObjectHideFlags: 0
@@ -261,8 +263,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -438,8 +440,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -510,7 +512,7 @@ GameObject:
   - component: {fileID: 3283002900995605867}
   - component: {fileID: 7352998936812655986}
   m_Layer: 5
-  m_Name: Sprite
+  m_Name: Template
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -556,7 +558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3551086, g: 0.38354504, b: 0.4716981, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -877,7 +879,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6943716138547220424, guid: 2c4fdc0e1047c4b49ab90dd876b386e4, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 30
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 6943716138547220424, guid: 2c4fdc0e1047c4b49ab90dd876b386e4, type: 3}
       propertyPath: m_SizeDelta.y

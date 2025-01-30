@@ -33,11 +33,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 5319436337358068572}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 750, y: 160}
-  m_SizeDelta: {x: 219.65, y: 196.17}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 100, y: 115}
+  m_SizeDelta: {x: 200, y: 200}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &4096630488336007596
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_PressedColor: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.6603774, g: 0.6566394, b: 0.6566394, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -115,7 +115,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 3174530226359813279}
   m_OnClick:
     m_PersistentCalls:
@@ -226,7 +226,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 10
+  m_Spacing: 0
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -380,6 +380,7 @@ GameObject:
   - component: {fileID: 4856618359307001588}
   - component: {fileID: 5909131920227923323}
   - component: {fileID: 8419102875562939753}
+  - component: {fileID: 4174661444743624284}
   m_Layer: 5
   m_Name: CardsDeck
   m_TagString: Untagged
@@ -402,11 +403,11 @@ RectTransform:
   - {fileID: 6208494028042548888}
   m_Father: {fileID: 5319436337358068572}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 750, y: -60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 100, y: 100}
   m_SizeDelta: {x: 200, y: 280}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
 --- !u!222 &4856618359307001588
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -459,6 +460,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   combatManager: {fileID: 59931786920857578}
   cardCountTMP: {fileID: 762583934259683632}
+--- !u!114 &4174661444743624284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5066154278949298507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.39215687}
+  m_EffectDistance: {x: -5, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &5071491245822387687
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,8 +549,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281617739
-  m_fontColor: {r: 0.29411766, g: 0.3019608, b: 0.20392159, a: 1}
+    rgba: 4280370798
+  m_fontColor: {r: 0.43137255, g: 0.27413714, b: 0.1294118, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -687,7 +703,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 10
+  m_Spacing: 0
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -824,6 +840,7 @@ MonoBehaviour:
   manaPanel: {fileID: 8755816289357457381}
   lifeCrystalPanel: {fileID: 8923363031845210179}
   enemyCrystalPanel: {fileID: 1080757137795088241}
+  endTurnButton: {fileID: 1109240194875351221}
 --- !u!1 &6855377553708383237
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,7 +851,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2008196738640687587}
   - component: {fileID: 1080757137795088241}
-  - component: {fileID: 8575068536211820858}
+  - component: {fileID: 494183651099268274}
   m_Layer: 5
   m_Name: EnemyCrystalsPanel
   m_TagString: Untagged
@@ -858,8 +875,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 650, y: 366}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 750, y: 280}
+  m_SizeDelta: {x: 300, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1080757137795088241
 MonoBehaviour:
@@ -874,7 +891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeCrystalPrefab: {fileID: 1101803612430905105, guid: 49e00c18b3b5e984c8d10dd26a39acb9, type: 3}
---- !u!114 &8575068536211820858
+--- !u!114 &494183651099268274
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -883,7 +900,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6855377553708383237}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
@@ -891,7 +908,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 3
   m_Spacing: 0
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
@@ -899,7 +916,7 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
-  m_ReverseArrangement: 1
+  m_ReverseArrangement: 0
 --- !u!1 &6936285375468318665
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,7 +953,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -725, y: -240}
+  m_AnchoredPosition: {x: -760, y: -50}
   m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7744632315329799247
@@ -1163,7 +1180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6161913259605414892}
   - component: {fileID: 8923363031845210179}
-  - component: {fileID: 7760414152881851987}
+  - component: {fileID: 2530272756063097354}
   m_Layer: 5
   m_Name: LifeCrystalsPanel
   m_TagString: PlayerCrystals
@@ -1187,8 +1204,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -650, y: 89}
-  m_SizeDelta: {x: 100, y: 500}
+  m_AnchoredPosition: {x: 750, y: -60}
+  m_SizeDelta: {x: 300, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8923363031845210179
 MonoBehaviour:
@@ -1203,7 +1220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeCrystalPrefab: {fileID: 1101803612430905105, guid: 49e00c18b3b5e984c8d10dd26a39acb9, type: 3}
---- !u!114 &7760414152881851987
+--- !u!114 &2530272756063097354
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1212,7 +1229,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8898616085137033805}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
@@ -1220,7 +1237,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 7
+  m_ChildAlignment: 3
   m_Spacing: 0
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0

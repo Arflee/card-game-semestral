@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CombatStateMachine : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class CombatStateMachine : MonoBehaviour
     [SerializeField] private ManaPanel manaPanel;
     [SerializeField] private LifeCrystalPanel lifeCrystalPanel;
     [SerializeField] private LifeCrystalPanel enemyCrystalPanel;
+    [SerializeField] private Button endTurnButton;
 
     private bool _isPlayerTurn = false;
     private PlayerState _playerState;
@@ -118,7 +120,6 @@ public class CombatStateMachine : MonoBehaviour
     public void OnTurnEndButtonClicked()
     {
         OnEndTurn?.Invoke();
-
         StartCoroutine(CleanBoardAfterTurn());
     }
 
@@ -142,6 +143,8 @@ public class CombatStateMachine : MonoBehaviour
 
     public void ChangeTurn()
     {
+        endTurnButton.interactable = _isPlayerTurn;
+
         if (_isPlayerTurn)
         {
             _isPlayerTurn = !_isPlayerTurn;
