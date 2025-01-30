@@ -845,6 +845,7 @@ MonoBehaviour:
   lifeCrystalPanel: {fileID: 8923363031845210179}
   enemyCrystalPanel: {fileID: 1080757137795088241}
   endTurnButton: {fileID: 1109240194875351221}
+  maxCardsOnBoard: 5
 --- !u!1 &6855377553708383237
 GameObject:
   m_ObjectHideFlags: 0

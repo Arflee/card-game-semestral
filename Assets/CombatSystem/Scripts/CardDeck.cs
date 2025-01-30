@@ -1,9 +1,11 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CardDeck : MonoBehaviour
 {
+    [SerializeField, Range(1, 10)] private int initialCardsInHand = 2;
     [SerializeField, Range(1, 10)] private int maxCardsInHand = 7;
     [SerializeField] private CombatCard[] playerCards;
     [SerializeField] private LifeCrystalParameters crystals;
@@ -12,7 +14,7 @@ public class CardDeck : MonoBehaviour
     private CardHolder _cardHolder;
 
     public int MaxCrystals => crystals.CrystalAmount;
-    public int MaxCardsInHand => maxCardsInHand;
+    public int InitialCardsInHand => initialCardsInHand;
 
     private void Awake()
     {
@@ -35,6 +37,13 @@ public class CardDeck : MonoBehaviour
         }
 
         var takenCard = _cardDeck.Dequeue();
+
+        if (_cardHolder.CardsInHand.Count == maxCardsInHand)
+        {
+            // TODO: Discard card
+            return null;
+        }
+
         _cardHolder.AddCard(takenCard, owner);
 
         return takenCard;

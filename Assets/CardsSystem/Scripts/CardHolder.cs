@@ -140,7 +140,7 @@ public class CardHolder : MonoBehaviour
         card.CardVisual.PutOnBackgrond();
     }
 
-    public void AddCard(CombatCard combatCard, CardOwner owner)
+    public Card AddCard(CombatCard combatCard, CardOwner owner)
     {
         var createdSlot = Instantiate(slotPrefab, transform);
         var createdCard = createdSlot.GetComponentInChildren<Card>();
@@ -155,8 +155,9 @@ public class CardHolder : MonoBehaviour
             createdCard.EndDragEvent.AddListener(action);
         }
 
-        createdCard.name = combatCard.Name; 
+        createdCard.name = combatCard.Name;
 
         _cards.Add(createdCard);
+        return createdCard;
     }
 }

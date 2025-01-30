@@ -13,6 +13,7 @@ public class CombatStateMachine : MonoBehaviour
     [SerializeField] private LifeCrystalPanel lifeCrystalPanel;
     [SerializeField] private LifeCrystalPanel enemyCrystalPanel;
     [SerializeField] private Button endTurnButton;
+    [SerializeField, Range(0, 10)] private int maxCardsOnBoard;
 
     private bool _isPlayerTurn = false;
     private PlayerState _playerState;
@@ -35,6 +36,7 @@ public class CombatStateMachine : MonoBehaviour
     public int PlayerCrystals => lifeCrystalPanel.Amount;
     public int EnemyCrystals => enemyCrystalPanel.Amount;
     public int PlayerMana { get; private set; } = 3;
+    public int MaxCardsOnBoard => maxCardsOnBoard;
     public GameEndingHandler GameHandler => _gameStateHandler;
 
 
@@ -67,7 +69,7 @@ public class CombatStateMachine : MonoBehaviour
 
     private bool OnCardDragEnd(Card card)
     {
-        if (card.CombatDTO.ManaCost > PlayerMana) return false;
+        if (card.CombatDTO.ManaCost > PlayerMana || PlayerCardsOnTable.Count == MaxCardsOnBoard) return false;
 
         PlayerCardsOnTable.Add(card);
         PlayerMana -= card.CombatDTO.ManaCost;
@@ -78,6 +80,8 @@ public class CombatStateMachine : MonoBehaviour
 
     public void AddCardOnEnemyTable(Card card)
     {
+        if (EnemyCardsOnTable.Count == MaxCardsOnBoard)
+            return;
         EnemyCardsOnTable.Add(card);
         StartCoroutine(AddCard(card));
     }
