@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class CardDeck : MonoBehaviour
 {
     [SerializeField, Range(1, 10)] private int maxCardsInHand = 7;
-    [SerializeField] private CombatCard[] playerCards;
+    [SerializeField] private List<CombatCard> playerCards;
     [SerializeField] private LifeCrystalParameters crystals;
 
     private Queue<CombatCard> _cardDeck;
@@ -52,6 +52,11 @@ public class CardDeck : MonoBehaviour
         _cardHolder.AddCard(takenCard, owner);
 
         return takenCard;
+    }
+
+    public void AddNewCard(CombatCard newCard)
+    {
+        playerCards.Add(newCard);
     }
 
     public CombatCard TakeCardWithoutAddingToHolder()

@@ -53,4 +53,9 @@ public class EnemyInitializer : MonoBehaviour
         else
             _shuffledDeck = new(enemy.EnemyDeck.Reverse());
     }
+
+    public CombatCard[] GetRewardCards()
+    {
+        return enemy.Reward;
+    }
 }

@@ -48,6 +48,14 @@ public class GameEndingHandler : MonoBehaviour
 
     public void PlayerWonGame(string gameId)
     {
+        var playersDeck = FindAnyObjectByType<CardDeck>();
+        var enemy = FindAnyObjectByType<EnemyInitializer>();
+
+        foreach (var card in enemy.GetRewardCards())
+        {
+            playersDeck.AddNewCard(card);
+        }
+
         _gameEndings[gameId] = Ending.Win;
         ReturnToLastScene();
     }
