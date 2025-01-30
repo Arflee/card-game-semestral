@@ -472,10 +472,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CardsCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 8022909054426538955, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -756
-      objectReference: {fileID: 0}
     - target: {fileID: 8173195852239707900, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: playerDeck
       value: 
