@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DialogueTrigger : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private SlidingDialogueText dialogueBubblePrefab;
 
     [SerializeField] private bool skipInEditor = false;
+
+    [SerializeField] private UnityEvent[] choiceEvents;
 
     public event Action OnDialogueEnd;
 
@@ -39,10 +42,16 @@ public class DialogueTrigger : MonoBehaviour
         _createdBubble.Init(_dialogueSequence);
 
         _createdBubble.OnDialogueSequenceEnd += OnDialogueSequenceEnd;
+        _createdBubble.OnChoiceMade += OnChoiceMade;
         _createdBubble.OnDialogueSequenceEnd += OnDialogueEnd;
         _createdBubble.gameObject.transform.localScale = new Vector2(0.1f, 0.1f);
 
         _createdBubble.gameObject.transform.DOScale(1f, 0.5f).SetEase(Ease.OutCubic);
+    }
+
+    private void OnChoiceMade(int choiceIndex)
+    {
+        choiceEvents[choiceIndex]?.Invoke();
     }
 
     private void OnDialogueSequenceEnd()

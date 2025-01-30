@@ -969,6 +969,7 @@ MonoBehaviour:
   dialogueCanvas: {fileID: 995863022}
   dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
   skipInEditor: 1
+  choiceEvents: []
 --- !u!1001 &95690059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1156,6 +1157,7 @@ MonoBehaviour:
   dialogueCanvas: {fileID: 995863022}
   dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
   skipInEditor: 0
+  choiceEvents: []
 --- !u!1001 &111202460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3797,6 +3799,7 @@ MonoBehaviour:
   dialogueCanvas: {fileID: 995863022}
   dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
   skipInEditor: 1
+  choiceEvents: []
 --- !u!4 &445453502
 Transform:
   m_ObjectHideFlags: 0
@@ -7630,11 +7633,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.8393269
+      value: 4.4595795
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.49834728
+      value: 0.49808025
       objectReference: {fileID: 0}
     - target: {fileID: 4379666920158019866, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9945,6 +9948,7 @@ MonoBehaviour:
   dialogueCanvas: {fileID: 995863022}
   dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
   skipInEditor: 0
+  choiceEvents: []
 --- !u!1001 &1263244277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10558,6 +10562,35 @@ MonoBehaviour:
   dialogueCanvas: {fileID: 995863022}
   dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
   skipInEditor: 0
+  choiceEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 880324602}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 880324602}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1345270736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11803,7 +11836,7 @@ MonoBehaviour:
   dialogueOnLose: {fileID: 1260753597}
   onWinNextState: {fileID: 0}
   onLoseNextState: {fileID: 1519588411}
-  onDidntFightNextState: {fileID: 1519588411}
+  onDidntFightNextState: {fileID: 0}
 --- !u!114 &1519588411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15473,6 +15506,7 @@ MonoBehaviour:
   dialogueCanvas: {fileID: 995863022}
   dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
   skipInEditor: 0
+  choiceEvents: []
 --- !u!4 &2069353503
 Transform:
   m_ObjectHideFlags: 0

@@ -10,21 +10,35 @@ public class CardDeck : MonoBehaviour
 
     private Queue<CombatCard> _cardDeck;
     private CardHolder _cardHolder;
+    private static CardDeck _instance;
 
     public int MaxCrystals => crystals.CrystalAmount;
     public int MaxCardsInHand => maxCardsInHand;
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         SceneManager.activeSceneChanged += OnNewSceneAdded;
     }
 
-    private void OnNewSceneAdded(Scene arg0, Scene arg1)
+    private void OnNewSceneAdded(Scene current, Scene next)
     {
         _cardDeck = new(Utility.Shuffle(playerCards));
         _cardHolder = FindObjectOfType<CardHolder>();
-        GameObject.FindWithTag("PlayerCrystals").GetComponent<LifeCrystalPanel>().Initialize(crystals);
+
+        if (next.name.ToLower().Contains("fight"))
+        {
+            GameObject.FindWithTag("PlayerCrystals").GetComponent<LifeCrystalPanel>().Initialize(crystals);
+        }
     }
 
     public CombatCard TakeCard(CardOwner owner)
