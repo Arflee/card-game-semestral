@@ -158,18 +158,31 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
   - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
   - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
-  - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
+  - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
   - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
   - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
   - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
   - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
   - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
   - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
-  - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
-  - {fileID: 11400000, guid: 80611f43c1affa940907042da061c694, type: 2}
-  - {fileID: 11400000, guid: 80611f43c1affa940907042da061c694, type: 2}
-  - {fileID: 11400000, guid: 80611f43c1affa940907042da061c694, type: 2}
-  - {fileID: 11400000, guid: 80611f43c1affa940907042da061c694, type: 2}
+  - {fileID: 11400000, guid: 783e63971c9326d46bbbcebb217d35f2, type: 2}
+  - {fileID: 11400000, guid: 783e63971c9326d46bbbcebb217d35f2, type: 2}
+  - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
+  - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
+  - {fileID: 11400000, guid: 180f9b0843b69c644867a0cbff98ed3b, type: 2}
+  - {fileID: 11400000, guid: 180f9b0843b69c644867a0cbff98ed3b, type: 2}
+  - {fileID: 11400000, guid: 01c367d6677e9164980ed254a6cb6488, type: 2}
+  - {fileID: 11400000, guid: 01c367d6677e9164980ed254a6cb6488, type: 2}
+  - {fileID: 11400000, guid: d8d20aa8cb83e0a438c8e409a817a3b7, type: 2}
+  - {fileID: 11400000, guid: 1f7528277a4c3ed45b04269353f4bd25, type: 2}
+  - {fileID: 11400000, guid: 124631e689f611947aa60554089ef233, type: 2}
+  - {fileID: 11400000, guid: 124631e689f611947aa60554089ef233, type: 2}
+  - {fileID: 11400000, guid: 124631e689f611947aa60554089ef233, type: 2}
+  - {fileID: 11400000, guid: 53932172f5ee33943a6d05beb611ee46, type: 2}
+  - {fileID: 11400000, guid: 53932172f5ee33943a6d05beb611ee46, type: 2}
+  - {fileID: 11400000, guid: 53932172f5ee33943a6d05beb611ee46, type: 2}
+  - {fileID: 11400000, guid: ccc2a248fa5fa8a41951265777b2e277, type: 2}
+  crystals: {fileID: 11400000, guid: d78e464f40b9fc447b9131578fcf716b, type: 2}
 --- !u!222 &135602146
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -338,11 +351,7 @@ PrefabInstance:
       objectReference: {fileID: 1992420335}
     - target: {fileID: 1313891998123825775, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1797303138662103213, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -400
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2917390742140386515, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_Camera
@@ -356,21 +365,13 @@ PrefabInstance:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
-    - target: {fileID: 4331358670412824144, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4733221832035886830, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
-      propertyPath: m_ChildAlignment
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 5319436337358068572, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5319436337358068572, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5319436337358068572, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_AnchorMax.x
@@ -390,11 +391,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5319436337358068572, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1920
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5319436337358068572, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1080
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5319436337358068572, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5319436337358068572, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5319436337358068572, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5319436337358068572, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_LocalPosition.x
@@ -406,7 +419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5319436337358068572, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5319436337358068572, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_LocalRotation.w
@@ -453,10 +466,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8173195852239707900, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
-      propertyPath: tweenCardReturn
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8173195852239707900, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: OnEndCardDrag.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -490,6 +499,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7066263516747352777, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
   m_PrefabInstance: {fileID: 1494971079}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1494971081 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1080757137795088241, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
+  m_PrefabInstance: {fileID: 1494971079}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dfa7abb2ea7d8548a6d38cf8275e2bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1649581544
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,18 +634,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardSlotPrefab: {fileID: 575835118737254313, guid: a86ada4f9b399784cb9af4003a4421b9, type: 3}
   visualPrefab: {fileID: 3700769039360204207, guid: 45bb3addbb980044283664edf8de3c34, type: 3}
-  enemyDeck:
-  - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
-  - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
-  - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
-  - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
-  - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
-  - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
-  - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
-  - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
-  - {fileID: 11400000, guid: 01c367d6677e9164980ed254a6cb6488, type: 2}
-  - {fileID: 11400000, guid: 01c367d6677e9164980ed254a6cb6488, type: 2}
-  - {fileID: 11400000, guid: 01c367d6677e9164980ed254a6cb6488, type: 2}
+  crystalPanel: {fileID: 1494971081}
+  enemy: {fileID: 11400000, guid: 09bcefe30a2791a4e9261d0058e5f049, type: 2}
   playedCardsEnemy: {fileID: 1494971080}
 --- !u!20 &2084828445 stripped
 Camera:
