@@ -40,13 +40,21 @@ public class CardDeck : MonoBehaviour
 
         if (_cardHolder.CardsInHand.Count == maxCardsInHand)
         {
-            // TODO: Discard card
+            var card = _cardHolder.CreateTempCard(takenCard, owner, _cardHolder.transform.parent);
+            StartCoroutine(DiscardCard(card));
             return null;
         }
 
         _cardHolder.AddCard(takenCard, owner);
 
         return takenCard;
+    }
+
+    private IEnumerator DiscardCard(Card card)
+    {
+        yield return new WaitForSeconds(1.5f);
+        Destroy(card.CardVisual.gameObject);
+        Destroy(card.transform.parent.gameObject);
     }
 
     public CombatCard TakeCardWithoutAddingToHolder()

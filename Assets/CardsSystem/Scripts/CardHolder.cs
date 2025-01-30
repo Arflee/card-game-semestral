@@ -15,6 +15,7 @@ public class CardHolder : MonoBehaviour
 
     private bool _isCrossing = false;
     [SerializeField] private bool tweenCardReturn = true;
+    [SerializeField] private Transform startingPosition;
 
     [Header("Drag Visualization")]
     [SerializeField] private Image dragArea;
@@ -140,12 +141,22 @@ public class CardHolder : MonoBehaviour
         card.CardVisual.PutOnBackgrond();
     }
 
-    public Card AddCard(CombatCard combatCard, CardOwner owner)
+    public Card CreateTempCard(CombatCard combatCard, CardOwner owner, Transform parent)
+    {
+        var createdSlot = Instantiate(slotPrefab, parent);
+        var createdCard = createdSlot.GetComponentInChildren<Card>();
+
+        createdCard.Initialize(combatCard, owner, startingPosition.position);
+        createdCard.DisableCard();
+        return createdCard;
+    }
+
+    public void AddCard(CombatCard combatCard, CardOwner owner)
     {
         var createdSlot = Instantiate(slotPrefab, transform);
         var createdCard = createdSlot.GetComponentInChildren<Card>();
 
-        createdCard.Initialize(combatCard, owner);
+        createdCard.Initialize(combatCard, owner, startingPosition.position);
 
         createdCard.BeginDragEvent.AddListener(BeginDrag);
         createdCard.EndDragEvent.AddListener(EndDrag);
@@ -158,6 +169,5 @@ public class CardHolder : MonoBehaviour
         createdCard.name = combatCard.Name;
 
         _cards.Add(createdCard);
-        return createdCard;
     }
 }

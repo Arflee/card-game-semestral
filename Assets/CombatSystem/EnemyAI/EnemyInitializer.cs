@@ -38,7 +38,7 @@ public class EnemyInitializer : MonoBehaviour
 
             var cardSlot = Instantiate(cardSlotPrefab, playedCardsEnemy.transform);
             var card = cardSlot.GetComponentInChildren<Card>();
-            card.Initialize(nextCard, owner);
+            card.Initialize(nextCard, owner, transform.position);
             card.DisableCard();
             cards.Add(card);
         }

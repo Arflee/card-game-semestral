@@ -57,11 +57,11 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
         _selectableComponent = GetComponent<Selectable>();
     }
 
-    public void Initialize(CombatCard combatProperties, CardOwner owner)
+    public void Initialize(CombatCard combatProperties, CardOwner owner, Vector2 startingPosition)
     {
         Owner = owner;
         CombatDTO = new(combatProperties);
-        CardVisual = Instantiate(cardVisualPrefab, _canvas.transform);
+        CardVisual = Instantiate(cardVisualPrefab, startingPosition, Quaternion.identity, _canvas.transform);
         CardVisual.Initialize(this, CombatDTO);
     }
 

@@ -727,6 +727,7 @@ GameObject:
   - component: {fileID: 1313891998123825775}
   - component: {fileID: 5831186698571860802}
   - component: {fileID: 59931786920857578}
+  - component: {fileID: 85991432280431147}
   m_Layer: 5
   m_Name: Combat Canvas
   m_TagString: Untagged
@@ -746,7 +747,6 @@ RectTransform:
   m_LocalScale: {x: 0.4463252, y: 0.4463252, z: 0.4463252}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 3990937133501101024}
   - {fileID: 5803708598664963776}
   - {fileID: 2008196738640687587}
   - {fileID: 6161913259605414892}
@@ -840,12 +840,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   table: {fileID: 787610648896858950}
-  enemyInitializer: {fileID: 5741830286549350590}
+  enemyInitializer: {fileID: 85991432280431147}
   manaPanel: {fileID: 8755816289357457381}
   lifeCrystalPanel: {fileID: 8923363031845210179}
   enemyCrystalPanel: {fileID: 1080757137795088241}
   endTurnButton: {fileID: 1109240194875351221}
   maxCardsOnBoard: 5
+--- !u!114 &85991432280431147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6338338075660732472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb9319f71659c14cbc54e3c4e114176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardSlotPrefab: {fileID: 575835118737254313, guid: a86ada4f9b399784cb9af4003a4421b9, type: 3}
+  visualPrefab: {fileID: 3700769039360204207, guid: 45bb3addbb980044283664edf8de3c34, type: 3}
+  crystalPanel: {fileID: 1080757137795088241}
+  enemy: {fileID: 11400000, guid: 4544f71cac1424647b422eca947d0811, type: 2}
+  playedCardsEnemy: {fileID: 7066263516747352777}
 --- !u!1 &6855377553708383237
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,59 +1133,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 778738bd8ac631348938c81ecc868420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initializer: {fileID: 5741830286549350590}
+  initializer: {fileID: 85991432280431147}
   shadow: {fileID: 8553979956340681810}
   maxShadow: 10
   maxCardsForShadow: 20
---- !u!1 &7658020728304507379
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3990937133501101024}
-  - component: {fileID: 5741830286549350590}
-  m_Layer: 0
-  m_Name: EnemyAI
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3990937133501101024
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7658020728304507379}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10262.044}
-  m_LocalScale: {x: 108.021515, y: 108.021515, z: 108.021515}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5319436337358068572}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5741830286549350590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7658020728304507379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bb9319f71659c14cbc54e3c4e114176, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardSlotPrefab: {fileID: 575835118737254313, guid: a86ada4f9b399784cb9af4003a4421b9, type: 3}
-  visualPrefab: {fileID: 3700769039360204207, guid: 45bb3addbb980044283664edf8de3c34, type: 3}
-  crystalPanel: {fileID: 1080757137795088241}
-  enemy: {fileID: 11400000, guid: 4544f71cac1424647b422eca947d0811, type: 2}
-  playedCardsEnemy: {fileID: 7066263516747352777}
 --- !u!1 &8774696216381171482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1371,6 +1339,10 @@ PrefabInstance:
       propertyPath: dragArea
       value: 
       objectReference: {fileID: 7618026325904615987}
+    - target: {fileID: 545779915872098103, guid: 5c6d5fb127915684caba23fd0f28d13a, type: 3}
+      propertyPath: startingPosition
+      value: 
+      objectReference: {fileID: 3228329972579565480}
     - target: {fileID: 4540989879301692855, guid: 5c6d5fb127915684caba23fd0f28d13a, type: 3}
       propertyPath: m_Name
       value: PlayingCardsGroup
