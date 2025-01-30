@@ -6,10 +6,12 @@ public class CardDeck : MonoBehaviour
 {
     [SerializeField, Range(1, 10)] private int maxCardsInHand = 7;
     [SerializeField] private CombatCard[] playerCards;
+    [SerializeField] private LifeCrystalParameters crystals;
 
     private Queue<CombatCard> _cardDeck;
     private CardHolder _cardHolder;
 
+    public int MaxCrystals => crystals.CrystalAmount;
     public int MaxCardsInHand => maxCardsInHand;
 
     private void Awake()
@@ -22,6 +24,7 @@ public class CardDeck : MonoBehaviour
     {
         _cardDeck = new(Utility.Shuffle(playerCards));
         _cardHolder = FindObjectOfType<CardHolder>();
+        GameObject.FindWithTag("PlayerCrystals").GetComponent<LifeCrystalPanel>().Initialize(crystals);
     }
 
     public CombatCard TakeCard(CardOwner owner)

@@ -23,3 +23,4 @@ MonoBehaviour:
   _reshufleWhenEmpty: 1
   _cardsPerTurn: 1
   _reward: []
+  _crystals: {fileID: 11400000, guid: e5d2ce0ddd2f02740b706f1581dc6903, type: 2}

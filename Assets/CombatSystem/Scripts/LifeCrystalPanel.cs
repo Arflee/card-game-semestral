@@ -4,12 +4,12 @@ using UnityEngine.UI;
 
 public class LifeCrystalPanel : MonoBehaviour
 {
-    [SerializeField] private LifeCrystalParameters crystalParameters;
     [SerializeField] private LifeCrystal lifeCrystalPrefab;
 
     private Queue<LifeCrystal> spawnedCrystals = new();
+    public int Amount => spawnedCrystals.Count;
 
-    private void Start()
+    public void Initialize(LifeCrystalParameters crystalParameters)
     {
         for (int i = 0; i < crystalParameters.CrystalAmount; i++)
         {
@@ -26,7 +26,10 @@ public class LifeCrystalPanel : MonoBehaviour
 
         var lastCrystal = spawnedCrystals.Peek();
         if (lastCrystal == null)
+        {
+            spawnedCrystals.Dequeue();
             return 0;
+        }
 
         if (lastCrystal.Health <= damage)
         {

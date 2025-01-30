@@ -34,3 +34,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7377d6aa45d11694bb40fc53018902f5, type: 2}
   - {fileID: 11400000, guid: 80611f43c1affa940907042da061c694, type: 2}
   - {fileID: 11400000, guid: e1cb1ff753367c54793fb83e448c2752, type: 2}
+  _crystals: {fileID: 11400000, guid: e5d2ce0ddd2f02740b706f1581dc6903, type: 2}

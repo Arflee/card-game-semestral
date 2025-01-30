@@ -738,7 +738,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dfa7abb2ea7d8548a6d38cf8275e2bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crystalParameters: {fileID: 11400000, guid: e5d2ce0ddd2f02740b706f1581dc6903, type: 2}
   lifeCrystalPrefab: {fileID: 1101803612430905105, guid: 49e00c18b3b5e984c8d10dd26a39acb9, type: 3}
 --- !u!114 &8575068536211820858
 MonoBehaviour:
@@ -978,7 +977,7 @@ GameObject:
   - component: {fileID: 7760414152881851987}
   m_Layer: 5
   m_Name: LifeCrystalsPanel
-  m_TagString: Untagged
+  m_TagString: PlayerCrystals
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1014,7 +1013,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dfa7abb2ea7d8548a6d38cf8275e2bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crystalParameters: {fileID: 11400000, guid: e5d2ce0ddd2f02740b706f1581dc6903, type: 2}
   lifeCrystalPrefab: {fileID: 1101803612430905105, guid: 49e00c18b3b5e984c8d10dd26a39acb9, type: 3}
 --- !u!114 &7760414152881851987
 MonoBehaviour:

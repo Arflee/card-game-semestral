@@ -30,8 +30,8 @@ public class CombatStateMachine : MonoBehaviour
     public event Action OnEndTurn;
 
     public int CardsDrawnPerTurn { get; private set; } = 1;
-    public int PlayerCrystals { get; private set; } = 3;
-    public int EnemyCrystals { get; private set; } = 3;
+    public int PlayerCrystals => lifeCrystalPanel.Amount;
+    public int EnemyCrystals => enemyCrystalPanel.Amount;
     public int PlayerMana { get; private set; } = 3;
     public GameEndingHandler GameHandler => _gameStateHandler;
 
@@ -145,8 +145,7 @@ public class CombatStateMachine : MonoBehaviour
         if (_isPlayerTurn)
         {
             _isPlayerTurn = !_isPlayerTurn;
-            PlayerMana = 6 - PlayerCrystals;
-            //PlayerManaNextTurn = Math.Clamp(PlayerManaNextTurn + 1, 0, MaxPlayerMana);
+            PlayerMana = PlayerDeck.MaxCrystals + 3 - PlayerCrystals;
             SetState(_playerState);
         }
         else
@@ -158,13 +157,13 @@ public class CombatStateMachine : MonoBehaviour
 
     public bool TryAttackEnemyCrystal(int damage)
     {
-        EnemyCrystals = enemyCrystalPanel.AttackCrystal(damage);
+        enemyCrystalPanel.AttackCrystal(damage);
         return EnemyCrystals > 0;
     }
 
     public bool TryAttackPlayerCrystal(int damage)
     {
-        PlayerCrystals = lifeCrystalPanel.AttackCrystal(damage);
+        lifeCrystalPanel.AttackCrystal(damage);
         return PlayerCrystals > 0;
     }
 }

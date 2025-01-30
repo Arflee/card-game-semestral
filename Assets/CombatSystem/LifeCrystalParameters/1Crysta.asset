@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc600433c57ee94439e44507c9781e81, type: 3}
-  m_Name: LifeCrystalParameters
+  m_Name: 1Crysta
   m_EditorClassIdentifier: 
   health: 3
-  crystalAmount: 3
+  crystalAmount: 1

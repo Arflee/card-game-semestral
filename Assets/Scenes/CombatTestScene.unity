@@ -122,6 +122,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &869769660 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1080757137795088241, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
+  m_PrefabInstance: {fileID: 1494971079}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dfa7abb2ea7d8548a6d38cf8275e2bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &878273921
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,6 +173,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
   - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
   - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
+  crystals: {fileID: 11400000, guid: 386514ff408145b4eabec281a7f6cd09, type: 2}
 --- !u!4 &878273923
 Transform:
   m_ObjectHideFlags: 0
@@ -727,6 +739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardSlotPrefab: {fileID: 575835118737254313, guid: a86ada4f9b399784cb9af4003a4421b9, type: 3}
   visualPrefab: {fileID: 3700769039360204207, guid: 45bb3addbb980044283664edf8de3c34, type: 3}
+  crystalPanel: {fileID: 869769660}
   enemy: {fileID: 11400000, guid: 4544f71cac1424647b422eca947d0811, type: 2}
   playedCardsEnemy: {fileID: 1204193607}
 --- !u!20 &2084828445 stripped

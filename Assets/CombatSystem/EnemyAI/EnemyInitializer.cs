@@ -6,6 +6,7 @@ public class EnemyInitializer : MonoBehaviour
 {
     [SerializeField] private GameObject cardSlotPrefab;
     [SerializeField] private CardVisual visualPrefab;
+    [SerializeField] private LifeCrystalPanel crystalPanel;
     [SerializeField] private Enemy enemy;
     [SerializeField] private RectTransform playedCardsEnemy;
     private Stack<CombatCard> _shuffledDeck;
@@ -13,6 +14,7 @@ public class EnemyInitializer : MonoBehaviour
     public void OnEnable()
     {
         ResetDeck();
+        crystalPanel.Initialize(enemy.Crystals);
     }
 
     public IEnumerable<Card> GetNextCards(CardOwner owner)
