@@ -122,17 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &869769660 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1080757137795088241, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
-  m_PrefabInstance: {fileID: 1494971079}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dfa7abb2ea7d8548a6d38cf8275e2bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &878273921
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,11 +246,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9881f00bfeeb555408f25316e8c99934, type: 3}
---- !u!224 &1204193607 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7066263516747352777, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
-  m_PrefabInstance: {fileID: 1494971079}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1494971079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -274,10 +258,6 @@ PrefabInstance:
       propertyPath: playerDeck
       value: 
       objectReference: {fileID: 878273922}
-    - target: {fileID: 59931786920857578, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
-      propertyPath: enemyInitializer
-      value: 
-      objectReference: {fileID: 1992420335}
     - target: {fileID: 335710607516951477, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 6.200012
@@ -693,55 +673,6 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
---- !u!1 &1992420333
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1992420334}
-  - component: {fileID: 1992420335}
-  m_Layer: 0
-  m_Name: EnemyAI
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1992420334
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1992420333}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1992420335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1992420333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bb9319f71659c14cbc54e3c4e114176, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardSlotPrefab: {fileID: 575835118737254313, guid: a86ada4f9b399784cb9af4003a4421b9, type: 3}
-  visualPrefab: {fileID: 3700769039360204207, guid: 45bb3addbb980044283664edf8de3c34, type: 3}
-  crystalPanel: {fileID: 869769660}
-  enemy: {fileID: 11400000, guid: 4544f71cac1424647b422eca947d0811, type: 2}
-  playedCardsEnemy: {fileID: 1204193607}
 --- !u!20 &2084828445 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 8518969864090515055, guid: 9881f00bfeeb555408f25316e8c99934, type: 3}
@@ -754,5 +685,4 @@ SceneRoots:
   - {fileID: 1000579556}
   - {fileID: 1494971079}
   - {fileID: 1649581547}
-  - {fileID: 1992420334}
   - {fileID: 878273923}

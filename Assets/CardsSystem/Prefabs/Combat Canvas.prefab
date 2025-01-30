@@ -593,6 +593,7 @@ RectTransform:
   m_LocalScale: {x: 0.4463252, y: 0.4463252, z: 0.4463252}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 3990937133501101024}
   - {fileID: 5803708598664963776}
   - {fileID: 2008196738640687587}
   - {fileID: 6161913259605414892}
@@ -685,7 +686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   table: {fileID: 787610648896858950}
-  enemyInitializer: {fileID: 0}
+  enemyInitializer: {fileID: 5741830286549350590}
   manaPanel: {fileID: 8755816289357457381}
   lifeCrystalPanel: {fileID: 8923363031845210179}
   enemyCrystalPanel: {fileID: 1080757137795088241}
@@ -850,6 +851,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manaCrystalPrefab: {fileID: 2866424532597365551, guid: 42895063f541527489726ae9c9595fbe, type: 3}
+--- !u!1 &7658020728304507379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3990937133501101024}
+  - component: {fileID: 5741830286549350590}
+  m_Layer: 0
+  m_Name: EnemyAI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3990937133501101024
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7658020728304507379}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10262.044}
+  m_LocalScale: {x: 108.021515, y: 108.021515, z: 108.021515}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5319436337358068572}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5741830286549350590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7658020728304507379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb9319f71659c14cbc54e3c4e114176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardSlotPrefab: {fileID: 575835118737254313, guid: a86ada4f9b399784cb9af4003a4421b9, type: 3}
+  visualPrefab: {fileID: 3700769039360204207, guid: 45bb3addbb980044283664edf8de3c34, type: 3}
+  crystalPanel: {fileID: 1080757137795088241}
+  enemy: {fileID: 11400000, guid: 4544f71cac1424647b422eca947d0811, type: 2}
+  playedCardsEnemy: {fileID: 7066263516747352777}
 --- !u!1 &8774696216381171482
 GameObject:
   m_ObjectHideFlags: 0
