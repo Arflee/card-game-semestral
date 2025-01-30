@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 public class CombatCardDTO
 {
@@ -7,6 +8,7 @@ public class CombatCardDTO
     {
         Name = card.Name;
         Description = card.Description;
+        Sprite = card.CardSprite;
         Health = card.Health;
         Damage = card.Damage;
         ManaCost = card.ManaCost;
@@ -17,6 +19,7 @@ public class CombatCardDTO
 
     public string Name { get; }
     public string Description { get; }
+    public Sprite Sprite { get; }
     public int Health { get; set; }
     public int Damage { get; set; }
     public int ManaCost { get; }

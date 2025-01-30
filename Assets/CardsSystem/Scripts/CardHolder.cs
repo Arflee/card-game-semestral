@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class CardHolder : MonoBehaviour
 {
@@ -14,6 +15,13 @@ public class CardHolder : MonoBehaviour
 
     private bool _isCrossing = false;
     [SerializeField] private bool tweenCardReturn = true;
+    [SerializeField] private Transform startingPosition;
+
+    [Header("Drag Visualization")]
+    [SerializeField] private Image dragArea;
+    [SerializeField] private Color activeColor;
+    [SerializeField] private Color selectedColor;
+    private Color normalColor;
 
     private List<UnityAction<Card>> _externalOnDragEndActions = new();
 
@@ -22,15 +30,19 @@ public class CardHolder : MonoBehaviour
     private void Start()
     {
         _rect = (RectTransform)transform;
+        normalColor = dragArea.color;
     }
 
     private void BeginDrag(Card card)
     {
         _selectedCard = card;
+        dragArea.color = activeColor;
     }
 
     private void EndDrag(Card card)
     {
+        dragArea.color = normalColor;
+
         if (_selectedCard == null)
             return;
 
@@ -56,6 +68,15 @@ public class CardHolder : MonoBehaviour
 
         if (_selectedCard == null)
             return;
+
+        if (RectTransformUtility.RectangleContainsScreenPoint((RectTransform)dragArea.transform, (Vector2)_selectedCard.transform.position))
+        {
+            dragArea.color = selectedColor;
+        }
+        else
+        {
+            dragArea.color = activeColor;
+        }
 
         if (_isCrossing)
             return;
@@ -120,12 +141,22 @@ public class CardHolder : MonoBehaviour
         card.CardVisual.PutOnBackgrond();
     }
 
+    public Card CreateTempCard(CombatCard combatCard, CardOwner owner, Transform parent)
+    {
+        var createdSlot = Instantiate(slotPrefab, parent);
+        var createdCard = createdSlot.GetComponentInChildren<Card>();
+
+        createdCard.Initialize(combatCard, owner, startingPosition.position);
+        createdCard.DisableCard();
+        return createdCard;
+    }
+
     public void AddCard(CombatCard combatCard, CardOwner owner)
     {
         var createdSlot = Instantiate(slotPrefab, transform);
         var createdCard = createdSlot.GetComponentInChildren<Card>();
 
-        createdCard.Initialize(combatCard, owner);
+        createdCard.Initialize(combatCard, owner, startingPosition.position);
 
         createdCard.BeginDragEvent.AddListener(BeginDrag);
         createdCard.EndDragEvent.AddListener(EndDrag);
@@ -135,7 +166,7 @@ public class CardHolder : MonoBehaviour
             createdCard.EndDragEvent.AddListener(action);
         }
 
-        createdCard.name = combatCard.Name; 
+        createdCard.name = combatCard.Name;
 
         _cards.Add(createdCard);
     }

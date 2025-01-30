@@ -25,7 +25,10 @@ public class CardVisual : MonoBehaviour
     [SerializeField] private Transform tiltParent;
 
     [Header("Card info parameters")]
+    [SerializeField] private Image cardTemplate;
     [SerializeField] private Image cardImage;
+    [SerializeField] private Sprite describtionTemplate;
+    [SerializeField] private Sprite textlessTemplate;
     [SerializeField] private TMP_Text cardName;
     [SerializeField] private TMP_Text cardDescription;
     [SerializeField] private TMP_Text healthText;
@@ -66,8 +69,8 @@ public class CardVisual : MonoBehaviour
     [SerializeField] private CurveParameters curve;
 
     [Header("Effects")]
-    [SerializeField] private Color effectDescribtionColor;
-    [SerializeField] private Color normalDescribtionColor;
+    [SerializeField] private Color effectColor;
+    private Color normalColor;
 
     private float curveYOffset;
     private float curveRotationOffset;
@@ -80,6 +83,7 @@ public class CardVisual : MonoBehaviour
     public void Initialize(Card target, CombatCardDTO combatProperties)
     {
         //Declarations
+        normalColor = cardTemplate.color;
         parentCard = target;
         cardTransform = target.transform;
         _globalCanvas = GetComponentInParent<Canvas>();
@@ -108,6 +112,9 @@ public class CardVisual : MonoBehaviour
     {
         cardName.text = combatProperties.Name;
         cardDescription.text = combatProperties.Description;
+        cardTemplate.sprite = string.IsNullOrEmpty(combatProperties.Description) ? textlessTemplate : describtionTemplate;
+        if (combatProperties.Sprite != null)
+            cardImage.sprite = combatProperties.Sprite;
         healthText.text = combatProperties.Health.ToString();
         damageText.text = combatProperties.Damage.ToString();
         manaText.text = combatProperties.ManaCost.ToString();
@@ -254,11 +261,11 @@ public class CardVisual : MonoBehaviour
 
     public void ShowEffect()
     {
-        cardDescription.color = effectDescribtionColor;
+        cardTemplate.color = effectColor;
     }
 
     public void HideEffect()
     {
-        cardDescription.color = normalDescribtionColor;
+        cardTemplate.color = normalColor;
     }
 }

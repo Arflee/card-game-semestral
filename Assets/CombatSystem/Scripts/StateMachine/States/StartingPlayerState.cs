@@ -16,8 +16,6 @@ public class StartingPlayerState : CombatState
 
     protected void OnEndTurn()
     {
-        int cardsDifference = StateMachine.EnemyCardsOnTable.Count - StateMachine.PlayerCardsOnTable.Count;
-
         for (int i = 0; i < StateMachine.PlayerCardsOnTable.Count; i++)
         {
             var playerCard = StateMachine.PlayerCardsOnTable[i];

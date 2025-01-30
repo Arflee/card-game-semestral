@@ -13,7 +13,7 @@ public class PreCombatState : CombatState
 
     public override IEnumerator EnterState()
     {
-        for (int i = 0; i < _playerDeck.MaxCardsInHand; i++)
+        for (int i = 0; i < _playerDeck.InitialCardsInHand; i++)
         {
             yield return new WaitForSeconds(0.5f);
             _playerDeck.TakeCard(StateMachine.PlayerOwner);

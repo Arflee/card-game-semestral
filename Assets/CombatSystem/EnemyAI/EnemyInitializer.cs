@@ -38,7 +38,7 @@ public class EnemyInitializer : MonoBehaviour
 
             var cardSlot = Instantiate(cardSlotPrefab, playedCardsEnemy.transform);
             var card = cardSlot.GetComponentInChildren<Card>();
-            card.Initialize(nextCard, owner);
+            card.Initialize(nextCard, owner, transform.position);
             card.DisableCard();
             cards.Add(card);
         }
@@ -52,5 +52,13 @@ public class EnemyInitializer : MonoBehaviour
             _shuffledDeck = new(Utility.Shuffle(enemy.EnemyDeck));
         else
             _shuffledDeck = new(enemy.EnemyDeck.Reverse());
+    }
+
+    public int CardCount()
+    {
+        if (enemy.ReshufleWhenEmpty)
+            return int.MaxValue;
+
+        return _shuffledDeck.Count;
     }
 }

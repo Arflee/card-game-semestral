@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79c9c8a8609bbb4591197163e73c2f8, type: 3}
   m_Name: "\u017Draso"
   m_EditorClassIdentifier: 
-  manaCost: 4
+  manaCost: 2
   cardName: "\u017Draso"
   cardDescription: "P\u0159i vylo\u017Een\xED zni\u010D\xED v\u0161echny svoje karty
     na boji\u0161ti, za ka\u017Edou takhle zni\u010Denou kartu m\xE1 +2/2"
