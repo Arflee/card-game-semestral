@@ -9,6 +9,7 @@ public class EnemyInitializer : MonoBehaviour
     [SerializeField] private LifeCrystalPanel crystalPanel;
     [SerializeField] private Enemy enemy;
     [SerializeField] private RectTransform playedCardsEnemy;
+    [SerializeField] private RectTransform spawnLocation;
     private Stack<CombatCard> _shuffledDeck;
 
     public void OnEnable()
@@ -38,7 +39,7 @@ public class EnemyInitializer : MonoBehaviour
 
             var cardSlot = Instantiate(cardSlotPrefab, playedCardsEnemy.transform);
             var card = cardSlot.GetComponentInChildren<Card>();
-            card.Initialize(nextCard, owner, transform.position);
+            card.Initialize(nextCard, owner, spawnLocation.position);
             card.DisableCard();
             cards.Add(card);
         }
