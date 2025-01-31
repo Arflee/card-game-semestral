@@ -16,8 +16,8 @@ MonoBehaviour:
   cardName: "Sbohem a \u0161\xE1te\u010Dek"
   cardDescription: "P\u0159i vylo\u017Een\xED zabije v\u0161echny karty v boji\u0161ti"
   cardSprite: {fileID: 0}
-  health: 5
-  damage: 5
+  health: 2
+  damage: 2
   onUseEffects:
   - {fileID: 11400000, guid: 1f9eaf253262c994a8c12f7a9a60c708, type: 2}
   onStartTurnEffects: []

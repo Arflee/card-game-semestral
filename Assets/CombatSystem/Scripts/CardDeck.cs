@@ -16,7 +16,7 @@ public class CardDeck : MonoBehaviour
     private Queue<CombatCard> _cardDeck;
     private CardHolder _cardHolder;
 
-    public LifeCrystalParameters Crystals;
+    public LifeCrystalParameters Crystals => crystals;
     public int MaxCrystals => crystals.CrystalAmount;
     public int InitialCardsInHand => initialCardsInHand;
 

@@ -158,15 +158,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
   - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
   - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
-  - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
   - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
   - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
   - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
+  - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
   - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
   - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
   - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
   crystals: {fileID: 11400000, guid: 386514ff408145b4eabec281a7f6cd09, type: 2}
-  Crystals: {fileID: 0}
 --- !u!222 &135602146
 CanvasRenderer:
   m_ObjectHideFlags: 0

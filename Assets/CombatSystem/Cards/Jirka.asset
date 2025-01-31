@@ -17,8 +17,8 @@ MonoBehaviour:
   cardDescription: "P\u0159i vylo\u017Een\xED, zm\u011Bn\xED v\u0161echny tvoje karty
     na 5/5 bez schopnost\xED"
   cardSprite: {fileID: 0}
-  health: 5
-  damage: 5
+  health: 7
+  damage: 7
   onUseEffects:
   - {fileID: 11400000, guid: 99942201a3a32a744b91e5228bb786b2, type: 2}
   onStartTurnEffects: []
