@@ -40,7 +40,7 @@ public class CombatStateMachine : MonoBehaviour
     public GameEndingHandler GameHandler => _gameStateHandler;
 
 
-    private void Start()
+    private void OnEnable()
     {
         _playerDeck = FindObjectOfType<CardDeck>();
         _playerState = new PlayerState(this);
@@ -53,6 +53,7 @@ public class CombatStateMachine : MonoBehaviour
         PlayerOwner = new CardOwner(_playerDeck, PlayerCardsOnTable, EnemyCardsOnTable);
         EnemyOwner = new CardOwner(null, EnemyCardsOnTable, PlayerCardsOnTable);
 
+        lifeCrystalPanel.Initialize(PlayerDeck.Crystals);
         SetState(new PreCombatState(this));
     }
 

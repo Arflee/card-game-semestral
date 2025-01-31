@@ -10,9 +10,13 @@ public class CardDeck : MonoBehaviour
     [SerializeField] private CombatCard[] playerCards;
     [SerializeField] private LifeCrystalParameters crystals;
 
+    public IList<CombatCard> AllCards => playerCards;
+    public HashSet<int> Deck { get; private set; } = new HashSet<int>();
+
     private Queue<CombatCard> _cardDeck;
     private CardHolder _cardHolder;
 
+    public LifeCrystalParameters Crystals;
     public int MaxCrystals => crystals.CrystalAmount;
     public int InitialCardsInHand => initialCardsInHand;
 
@@ -24,9 +28,16 @@ public class CardDeck : MonoBehaviour
 
     private void OnNewSceneAdded(Scene arg0, Scene arg1)
     {
-        _cardDeck = new(Utility.Shuffle(playerCards));
-        _cardHolder = FindObjectOfType<CardHolder>();
-        GameObject.FindWithTag("PlayerCrystals").GetComponent<LifeCrystalPanel>().Initialize(crystals);
+        ApplyDeck();
+    }
+
+    public void ApplyDeck()
+    {
+        List<CombatCard> cards = new List<CombatCard>();
+        foreach (var cardId in Deck)
+            cards.Add(playerCards[cardId]);
+
+        _cardDeck = new(Utility.Shuffle(cards));
     }
 
     public CombatCard TakeCard(CardOwner owner)
@@ -35,6 +46,9 @@ public class CardDeck : MonoBehaviour
         {
             return null;
         }
+
+        if (_cardHolder == null)
+            _cardHolder = FindObjectOfType<CardHolder>();
 
         var takenCard = _cardDeck.Dequeue();
 
