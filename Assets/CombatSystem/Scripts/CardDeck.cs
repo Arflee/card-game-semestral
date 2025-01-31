@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -86,5 +87,12 @@ public class CardDeck : MonoBehaviour
     public int CardCount()
     {
         return _cardDeck.Count;
+    }
+
+    public void ReturnCard(Card card)
+    {
+        _cardDeck.Enqueue(card.CombatDTO.CardPrefab);
+        Destroy(card.CardVisual.gameObject);
+        Destroy(card.transform.parent.gameObject);
     }
 }

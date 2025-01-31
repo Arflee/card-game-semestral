@@ -217,7 +217,7 @@ public class CardVisual : MonoBehaviour
     {
         _globalCanvas.overrideSorting = false;
 
-        transform.DOScale(1, scaleTransition).SetEase(scaleEase);
+        //transform.DOScale(1, scaleTransition).SetEase(scaleEase);
     }
 
     private void PointerEnter(Card card)

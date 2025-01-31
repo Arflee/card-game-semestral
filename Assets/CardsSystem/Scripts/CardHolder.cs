@@ -36,7 +36,6 @@ public class CardHolder : MonoBehaviour
     private void BeginDrag(Card card)
     {
         _selectedCard = card;
-        dragArea.color = activeColor;
     }
 
     private void EndDrag(Card card)
@@ -56,6 +55,13 @@ public class CardHolder : MonoBehaviour
         _selectedCard = null;
     }
 
+    public Vector2? DraggedCardPosition()
+    {
+        if (_selectedCard == null)
+            return null;
+        return _selectedCard.transform.position;
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(1))
@@ -66,17 +72,13 @@ public class CardHolder : MonoBehaviour
             }
         }
 
-        if (_selectedCard == null)
+        if (_selectedCard == null || _selectedCard.OnBoard)
             return;
 
         if (RectTransformUtility.RectangleContainsScreenPoint((RectTransform)dragArea.transform, (Vector2)_selectedCard.transform.position))
-        {
             dragArea.color = selectedColor;
-        }
         else
-        {
             dragArea.color = activeColor;
-        }
 
         if (_isCrossing)
             return;
@@ -136,7 +138,7 @@ public class CardHolder : MonoBehaviour
 
     public void UseCardFromHand(Card card)
     {
-        card.DisableCard();
+        card.PlaceOnBoard();
         _cards.Remove(card);
         card.CardVisual.PutOnBackgrond();
     }

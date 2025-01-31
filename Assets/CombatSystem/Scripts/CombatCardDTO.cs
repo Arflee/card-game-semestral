@@ -15,6 +15,7 @@ public class CombatCardDTO
         OnUseEffects = new(card.OnUseEffects ?? Enumerable.Empty<CardEffect>());
         OnStartTurnEffects = new(card.OnStartTurnEffects ?? Enumerable.Empty<CardEffect>());
         OnDeathEffects = new(card.OnDeathEffects ?? Enumerable.Empty<CardEffect>());
+        CardPrefab = card;
     }
 
     public string Name { get; }
@@ -27,4 +28,5 @@ public class CombatCardDTO
     public List<CardEffect> OnUseEffects { get; private set; }
     public List<CardEffect> OnStartTurnEffects { get; private set; }
     public List<CardEffect> OnDeathEffects { get; private set; }
+    public CombatCard CardPrefab { get; private set; }
 }
