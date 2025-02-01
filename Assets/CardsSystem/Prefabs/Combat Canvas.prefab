@@ -1004,6 +1004,7 @@ MonoBehaviour:
   enemy: {fileID: 11400000, guid: 4544f71cac1424647b422eca947d0811, type: 2}
   playedCardsEnemy: {fileID: 7066263516747352777}
   spawnLocation: {fileID: 2821080890077797304}
+  manager: {fileID: 59931786920857578}
 --- !u!1 &6855377553708383237
 GameObject:
   m_ObjectHideFlags: 0

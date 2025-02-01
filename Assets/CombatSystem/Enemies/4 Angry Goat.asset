@@ -12,16 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f95edbd1baf01e45804076c2c34baf2, type: 3}
   m_Name: 4 Angry Goat
   m_EditorClassIdentifier: 
-  _enemyDeck:
-  - {fileID: 11400000, guid: e22efca93976d5c438ad0d9f38c0ddcd, type: 2}
-  - {fileID: 11400000, guid: e22efca93976d5c438ad0d9f38c0ddcd, type: 2}
-  - {fileID: 11400000, guid: e22efca93976d5c438ad0d9f38c0ddcd, type: 2}
-  - {fileID: 11400000, guid: e22efca93976d5c438ad0d9f38c0ddcd, type: 2}
-  - {fileID: 11400000, guid: e22efca93976d5c438ad0d9f38c0ddcd, type: 2}
-  - {fileID: 0}
-  _shuffleDeck: 1
-  _reshufleWhenEmpty: 1
-  _cardsPerTurn: 1
+  _enemyDeckPerCrystalsDestroyed:
+  - _cards:
+    - {fileID: 11400000, guid: e22efca93976d5c438ad0d9f38c0ddcd, type: 2}
+    - {fileID: 11400000, guid: e22efca93976d5c438ad0d9f38c0ddcd, type: 2}
+    - {fileID: 11400000, guid: 01c367d6677e9164980ed254a6cb6488, type: 2}
+    - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
+    - {fileID: 0}
+    - {fileID: 0}
+    _shuffleDeck: 1
+    _reshufleWhenEmpty: 1
+    _cardsPerTurn: 1
+  - _cards:
+    - {fileID: 11400000, guid: 01c367d6677e9164980ed254a6cb6488, type: 2}
+    - {fileID: 11400000, guid: e22efca93976d5c438ad0d9f38c0ddcd, type: 2}
+    _shuffleDeck: 0
+    _reshufleWhenEmpty: 1
+    _cardsPerTurn: 2
   _reward:
   - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
   - {fileID: 11400000, guid: 01c367d6677e9164980ed254a6cb6488, type: 2}
