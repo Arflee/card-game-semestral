@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e67427177ff404b9518241ca3ed9b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialCardsInHand: 2
+  initialCardsInHand: 3
   maxCardsInHand: 5
   playerCards:
   - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}

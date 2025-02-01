@@ -15,12 +15,11 @@ MonoBehaviour:
   _enemyDeckPerCrystalsDestroyed:
   - _cards:
     - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
+    - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
     - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
     - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
     - {fileID: 11400000, guid: 7377d6aa45d11694bb40fc53018902f5, type: 2}
     - {fileID: 11400000, guid: 7377d6aa45d11694bb40fc53018902f5, type: 2}
-    - {fileID: 0}
-    - {fileID: 0}
     - {fileID: 0}
     _shuffleDeck: 1
     _reshufleWhenEmpty: 1
@@ -28,6 +27,7 @@ MonoBehaviour:
   - _cards:
     - {fileID: 11400000, guid: 53932172f5ee33943a6d05beb611ee46, type: 2}
     - {fileID: 11400000, guid: 92e39c8e50436fd4b8c21f14a1e84f2b, type: 2}
+    - {fileID: 11400000, guid: c542fec8e90bd1345937f58a9ade5ea8, type: 2}
     _shuffleDeck: 0
     _reshufleWhenEmpty: 1
     _cardsPerTurn: 1
@@ -36,7 +36,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: d8d20aa8cb83e0a438c8e409a817a3b7, type: 2}
     - {fileID: 11400000, guid: d8d20aa8cb83e0a438c8e409a817a3b7, type: 2}
     - {fileID: 11400000, guid: d8d20aa8cb83e0a438c8e409a817a3b7, type: 2}
-    - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
+    - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
     - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
     _shuffleDeck: 0
     _reshufleWhenEmpty: 1

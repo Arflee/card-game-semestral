@@ -17,9 +17,9 @@ public class CombatStateMachine : MonoBehaviour
 
     public static bool GameActive { get; private set; } = false;
 
-    private bool _isPlayerTurn = false;
     private PlayerState _playerState;
     private EnemyState _enemyState;
+    private AttackState _combatState;
     private CardDeck _playerDeck;
     private GameEndingHandler _gameStateHandler;
 
@@ -50,6 +50,7 @@ public class CombatStateMachine : MonoBehaviour
         _playerDeck = FindObjectOfType<CardDeck>();
         _playerState = new PlayerState(this);
         _enemyState = new EnemyState(this);
+        _combatState = new AttackState(this);
 
         _gameStateHandler = FindObjectOfType<GameEndingHandler>();
 
@@ -141,11 +142,11 @@ public class CombatStateMachine : MonoBehaviour
 
     public void OnTurnEndButtonClicked()
     {
-        OnEndTurn?.Invoke();
-        StartCoroutine(CleanBoardAfterTurn());
+        endTurnButton.interactable = false;
+        SetState(_combatState);
     }
 
-    private IEnumerator CleanBoardAfterTurn()
+    public IEnumerator CleanBoardAfterTurn()
     {
         var deadCards = PlayerCardsOnTable.Where(card => !card.CombatDTO.IsAlive).ToList();
         foreach (var card in deadCards)
@@ -160,23 +161,19 @@ public class CombatStateMachine : MonoBehaviour
         }
 
         ChangeTurn();
-
     }
 
     public void ChangeTurn()
     {
-        endTurnButton.interactable = _isPlayerTurn;
-
-        if (_isPlayerTurn)
+        if (State == _enemyState)
         {
             CurrentTurn++;
-            _isPlayerTurn = !_isPlayerTurn;
+            endTurnButton.interactable = true;
             PlayerMana = PlayerDeck.MaxCrystals + 3 - PlayerCrystals;
             SetState(_playerState);
         }
         else
         {
-            _isPlayerTurn = !_isPlayerTurn;
             SetState(_enemyState);
         }
     }

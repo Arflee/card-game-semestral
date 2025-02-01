@@ -55,11 +55,12 @@ public class CardHolder : MonoBehaviour
         _selectedCard = null;
     }
 
-    public Vector2? DraggedCardPosition()
+    public bool IsDragging() => _selectedCard != null;
+
+    public bool IsOverlapping(RectTransform rect)
     {
-        if (_selectedCard == null)
-            return null;
-        return _selectedCard.transform.position;
+        return RectTransformUtility.RectangleContainsScreenPoint(rect, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        //return RectTransformUtility.RectangleContainsScreenPoint(rect, (Vector2)_selectedCard.transform.position);
     }
 
     private void Update()
@@ -75,7 +76,7 @@ public class CardHolder : MonoBehaviour
         if (_selectedCard == null || _selectedCard.OnBoard)
             return;
 
-        if (RectTransformUtility.RectangleContainsScreenPoint((RectTransform)dragArea.transform, (Vector2)_selectedCard.transform.position))
+        if (IsOverlapping(dragArea.rectTransform))
             dragArea.color = selectedColor;
         else
             dragArea.color = activeColor;

@@ -1,8 +1,6 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -94,5 +92,15 @@ public class DeckEditorManger : MonoBehaviour
             cardDeck.ApplyDeck();
             gameObject.SetActive(false);
         }
+    }
+
+    public void ClearDeck()
+    {
+        var toDelete = cardDeck.Deck.ToList();
+        foreach (var cardId in toDelete)
+            RemoveFromDeck(cardId);
+
+        for (int i = deckPanel.childCount - 1; i >= 0; i--)
+            Destroy(deckPanel.GetChild(i).gameObject);
     }
 }

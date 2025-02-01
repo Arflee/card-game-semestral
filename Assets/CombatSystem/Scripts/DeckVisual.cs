@@ -52,11 +52,10 @@ public class DeckVisual : MonoBehaviour
             shadow.effectDistance = -Vector2.one * Mathf.Clamp(cardCount * (maxShadow / maxCardsForShadow), 0, maxShadow);
         }
 
-        var pos = cardHolder.DraggedCardPosition();
-        if (pos != null)
+        if (cardHolder.IsDragging())
         {
             cardCountTMP.text = "Vrátit";
-            if (RectTransformUtility.RectangleContainsScreenPoint((RectTransform)transform, (Vector2)pos))
+            if (cardHolder.IsOverlapping(image.rectTransform))
                 image.color = cardCount == 0 ? emptyDragSelected : dragSelected;
             else
                 image.color = cardCount == 0 ? emptyDragActive : dragActive;
@@ -66,7 +65,7 @@ public class DeckVisual : MonoBehaviour
 
     private void OnCardDragEnd(Card card)
     {
-        if (RectTransformUtility.RectangleContainsScreenPoint((RectTransform)transform, (Vector2)card.transform.position))
+        if (cardHolder.IsOverlapping(image.rectTransform))
         {
             combatManager.PlayerCardsOnTable.Remove(card);
             cardHolder.UseCardFromHand(card);

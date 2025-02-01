@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class CardCharsSO : ScriptableObject
 {
     [Header("Card parameters")]
-    [SerializeField, Min(0)] private int manaCost;
+    [SerializeField] private int manaCost;
 
     [Header("Card information")]
     [SerializeField] private string cardName;

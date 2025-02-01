@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79c9c8a8609bbb4591197163e73c2f8, type: 3}
   m_Name: Knihomol
   m_EditorClassIdentifier: 
-  manaCost: 2
+  manaCost: 1
   cardName: Knihomol
   cardDescription: "P\u0159i vylo\u017Een\xED +2 karty"
   cardSprite: {fileID: 0}
   health: 1
-  damage: 1
+  damage: 0
   onUseEffects:
   - {fileID: 11400000, guid: 68199c3f2f341ce4db7abec0925e4964, type: 2}
   onStartTurnEffects: []
   onDeathEffects: []
+  afterTurnEffects: []

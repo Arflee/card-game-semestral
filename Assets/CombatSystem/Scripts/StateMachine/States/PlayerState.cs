@@ -5,7 +5,6 @@ public class PlayerState : StartingPlayerState
 {
     public PlayerState(CombatStateMachine machine) : base(machine)
     {
-        StateMachine.OnEndTurn += OnEndTurn;
     }
 
     public override IEnumerator EnterState()

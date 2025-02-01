@@ -158,6 +158,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8beb35c4aa4323e4c9b945dadeef7378, type: 2}
   - {fileID: 11400000, guid: 8beb35c4aa4323e4c9b945dadeef7378, type: 2}
   - {fileID: 11400000, guid: 8beb35c4aa4323e4c9b945dadeef7378, type: 2}
+  - {fileID: 11400000, guid: 8beb35c4aa4323e4c9b945dadeef7378, type: 2}
   crystals: {fileID: 11400000, guid: 386514ff408145b4eabec281a7f6cd09, type: 2}
 --- !u!4 &878273923
 Transform:
