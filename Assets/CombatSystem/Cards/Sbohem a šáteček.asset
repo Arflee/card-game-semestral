@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79c9c8a8609bbb4591197163e73c2f8, type: 3}
   m_Name: "Sbohem a \u0161\xE1te\u010Dek"
   m_EditorClassIdentifier: 
-  manaCost: 5
+  manaCost: 4
   cardName: "Sbohem a \u0161\xE1te\u010Dek"
   cardDescription: "P\u0159i vylo\u017Een\xED zabije v\u0161echny karty v boji\u0161ti"
   cardSprite: {fileID: 0}

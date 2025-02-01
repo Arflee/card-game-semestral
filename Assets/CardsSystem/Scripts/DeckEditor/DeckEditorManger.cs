@@ -18,6 +18,7 @@ public class DeckEditorManger : MonoBehaviour
 
     private List<CardEditView> cardViews = new List<CardEditView>();
     private CardDeck cardDeck;
+    public int MinCards => minCards;
 
     private void OnEnable()
     {
@@ -42,7 +43,7 @@ public class DeckEditorManger : MonoBehaviour
         {
             var view = Instantiate(namePrefab, deckPanel);
             view.Initialize(allCards[cardId], this, cardId);
-            cardViews[cardId].DisableCard();
+            cardViews[cardId].DisableCard(view.gameObject);
         }
         UpdateConfirmButton();
     }

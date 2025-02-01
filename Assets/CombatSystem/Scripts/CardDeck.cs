@@ -25,6 +25,8 @@ public class CardDeck : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
         SceneManager.activeSceneChanged += OnNewSceneAdded;
+        for (int i = 0; i < playerCards.Length; i++)
+            Deck.Add(i);
     }
 
     private void OnNewSceneAdded(Scene arg0, Scene arg1)
@@ -109,4 +111,6 @@ public class CardDeck : MonoBehaviour
         });
         return cards;
     }
+
+    public int AllCardsCount() => playerCards.Length;
 }

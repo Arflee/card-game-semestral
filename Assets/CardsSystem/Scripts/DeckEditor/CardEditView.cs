@@ -53,14 +53,14 @@ public class CardEditView : MonoBehaviour
             }
             else
             {
-                DisableCard();
-                inDeck = manager.AddToDeck(card, id);
+                DisableCard(manager.AddToDeck(card, id));
             }
         });
     }
 
-    public void DisableCard()
+    public void DisableCard(GameObject view)
     {
+        inDeck = view;
         image.color *= disabledColor;
         template.color *= disabledColor;
         cardName.color *= disabledColor;

@@ -15,6 +15,8 @@ public class CombatStateMachine : MonoBehaviour
     [SerializeField] private Button endTurnButton;
     [SerializeField, Range(0, 10)] private int maxCardsOnBoard;
 
+    public static bool GameActive { get; private set; } = false;
+
     private bool _isPlayerTurn = false;
     private PlayerState _playerState;
     private EnemyState _enemyState;
@@ -42,6 +44,7 @@ public class CombatStateMachine : MonoBehaviour
 
     private void OnEnable()
     {
+        GameActive = true;
         _playerDeck = FindObjectOfType<CardDeck>();
         _playerState = new PlayerState(this);
         _enemyState = new EnemyState(this);
@@ -59,6 +62,7 @@ public class CombatStateMachine : MonoBehaviour
 
     private void OnDisable()
     {
+        GameActive = false;
         table.OnTableSlotSnapped -= OnCardDragEnd;
     }
 

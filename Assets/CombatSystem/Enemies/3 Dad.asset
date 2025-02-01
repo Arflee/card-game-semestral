@@ -16,7 +16,7 @@ MonoBehaviour:
   - _cards:
     - {fileID: 11400000, guid: 783e63971c9326d46bbbcebb217d35f2, type: 2}
     - {fileID: 11400000, guid: 783e63971c9326d46bbbcebb217d35f2, type: 2}
-    - {fileID: 11400000, guid: 783e63971c9326d46bbbcebb217d35f2, type: 2}
+    - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
     - {fileID: 0}
     - {fileID: 11400000, guid: 783e63971c9326d46bbbcebb217d35f2, type: 2}
     - {fileID: 0}
@@ -31,10 +31,6 @@ MonoBehaviour:
   - _cards:
     - {fileID: 11400000, guid: 783e63971c9326d46bbbcebb217d35f2, type: 2}
     - {fileID: 11400000, guid: 783e63971c9326d46bbbcebb217d35f2, type: 2}
-    - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
-    - {fileID: 0}
-    - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
-    - {fileID: 0}
     _shuffleDeck: 0
     _reshufleWhenEmpty: 1
     _cardsPerTurn: 2

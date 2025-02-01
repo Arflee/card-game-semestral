@@ -14,17 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyDeckPerCrystalsDestroyed:
   - _cards:
-    - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
+    - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
     - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
     _shuffleDeck: 0
     _reshufleWhenEmpty: 1
     _cardsPerTurn: 2
   - _cards:
-    - {fileID: 11400000, guid: 01c367d6677e9164980ed254a6cb6488, type: 2}
-    - {fileID: 11400000, guid: e22efca93976d5c438ad0d9f38c0ddcd, type: 2}
+    - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
+    - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
+    - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
     _shuffleDeck: 0
     _reshufleWhenEmpty: 1
-    _cardsPerTurn: 2
+    _cardsPerTurn: 3
   _reward:
   - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
   - {fileID: 11400000, guid: 01c367d6677e9164980ed254a6cb6488, type: 2}
