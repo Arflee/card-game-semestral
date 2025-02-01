@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -66,16 +68,31 @@ public class DeckEditorManger : MonoBehaviour
 
     private void UpdateConfirmButton()
     {
-        confirmButton.interactable = cardDeck.Deck.Count >= minCards;
-        if (confirmButton.interactable)
+        if (cardDeck.Deck.Count >= minCards)
             confirmText.text = $"Potvrdit\n({cardDeck.Deck.Count}/{minCards})";
         else
-            confirmText.text = $"Málo karet\n({cardDeck.Deck.Count}/{minCards})";
+            confirmText.text = $"Doplnit\n({cardDeck.Deck.Count}/{minCards})";
     }
 
     public void ApplyDeck()
     {
-        cardDeck.ApplyDeck();
-        gameObject.SetActive(false);
+        int cardsLeft = minCards - cardDeck.Deck.Count;
+        if (cardsLeft > 0)
+        {
+            var allCards = cardDeck.GetAllCards();
+            List<int> unusedCards = Enumerable.Range(0, allCards.Count).Except(cardDeck.Deck).ToList();
+            unusedCards = Utility.Shuffle(unusedCards);
+
+            for (int i = 0; i < cardsLeft; i++)
+            {
+                int cardId = unusedCards[i];
+                cardViews[cardId].DisableCard(AddToDeck(allCards[cardId], cardId));
+            }
+        }
+        else
+        {
+            cardDeck.ApplyDeck();
+            gameObject.SetActive(false);
+        }
     }
 }

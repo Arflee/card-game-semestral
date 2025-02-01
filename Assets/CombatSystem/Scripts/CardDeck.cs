@@ -25,8 +25,7 @@ public class CardDeck : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
         SceneManager.activeSceneChanged += OnNewSceneAdded;
-        for (int i = 0; i < playerCards.Length; i++)
-            Deck.Add(i);
+        Deck = new HashSet<int>(Enumerable.Range(0, playerCards.Length));
     }
 
     private void OnNewSceneAdded(Scene arg0, Scene arg1)
