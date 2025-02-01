@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,9 +12,12 @@ public class CardDeck : MonoBehaviour
     [SerializeField] private CombatCard[] playerCards;
     [SerializeField] private LifeCrystalParameters crystals;
 
+    public HashSet<int> Deck { get; private set; } = new HashSet<int>();
+
     private Queue<CombatCard> _cardDeck;
     private CardHolder _cardHolder;
 
+    public LifeCrystalParameters Crystals => crystals;
     public int MaxCrystals => crystals.CrystalAmount;
     public int InitialCardsInHand => initialCardsInHand;
 
@@ -24,9 +29,17 @@ public class CardDeck : MonoBehaviour
 
     private void OnNewSceneAdded(Scene arg0, Scene arg1)
     {
-        _cardDeck = new(Utility.Shuffle(playerCards));
-        _cardHolder = FindObjectOfType<CardHolder>();
-        GameObject.FindWithTag("PlayerCrystals").GetComponent<LifeCrystalPanel>().Initialize(crystals);
+        ApplyDeck();
+    }
+
+    public void ApplyDeck()
+    {
+        List<CombatCard> cards = new List<CombatCard>();
+        var allCards = GetAllCards();
+        foreach (var cardId in Deck)
+            cards.Add(allCards[cardId]);
+
+        _cardDeck = new(Utility.Shuffle(cards));
     }
 
     public CombatCard TakeCard(CardOwner owner)
@@ -35,6 +48,9 @@ public class CardDeck : MonoBehaviour
         {
             return null;
         }
+
+        if (_cardHolder == null)
+            _cardHolder = FindObjectOfType<CardHolder>();
 
         var takenCard = _cardDeck.Dequeue();
 
@@ -72,5 +88,25 @@ public class CardDeck : MonoBehaviour
     public int CardCount()
     {
         return _cardDeck.Count;
+    }
+
+    public void ReturnCard(Card card)
+    {
+        _cardDeck.Enqueue(card.CombatDTO.CardPrefab);
+        Destroy(card.CardVisual.gameObject);
+        Destroy(card.transform.parent.gameObject);
+    }
+
+    public IList<CombatCard> GetAllCards()
+    {
+        var cards = new List<CombatCard>(playerCards);
+        cards.Sort((a, b) =>
+        {
+            int res = a.ManaCost.CompareTo(b.ManaCost);
+            if (res != 0)
+                return res;
+            return a.Name.CompareTo(b.Name);
+        });
+        return cards;
     }
 }

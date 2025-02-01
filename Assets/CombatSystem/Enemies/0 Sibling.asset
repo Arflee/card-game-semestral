@@ -12,14 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f95edbd1baf01e45804076c2c34baf2, type: 3}
   m_Name: 0 Sibling
   m_EditorClassIdentifier: 
-  _enemyDeck:
-  - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
-  _shuffleDeck: 0
-  _reshufleWhenEmpty: 0
-  _cardsPerTurn: 1
+  _enemyDeckPerCrystalsDestroyed:
+  - _cards:
+    - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
+    - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
+    _shuffleDeck: 0
+    _reshufleWhenEmpty: 0
+    _cardsPerTurn: 1
   _reward:
   - {fileID: 11400000, guid: 783e63971c9326d46bbbcebb217d35f2, type: 2}
   - {fileID: 11400000, guid: 783e63971c9326d46bbbcebb217d35f2, type: 2}
+  - {fileID: 11400000, guid: 783e63971c9326d46bbbcebb217d35f2, type: 2}
+  - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
   - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
   - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
   _crystals: {fileID: 11400000, guid: 386514ff408145b4eabec281a7f6cd09, type: 2}

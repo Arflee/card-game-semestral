@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79c9c8a8609bbb4591197163e73c2f8, type: 3}
   m_Name: "Hrdlo\u0159ez"
   m_EditorClassIdentifier: 
-  manaCost: 4
+  manaCost: 2
   cardName: "Hrdlo\u0159ez"
   cardDescription: "Na za\u010D\xE1tku kola m\xE1 +2/+2"
   cardSprite: {fileID: 0}

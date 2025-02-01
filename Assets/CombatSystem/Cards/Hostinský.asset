@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79c9c8a8609bbb4591197163e73c2f8, type: 3}
   m_Name: "Hostinsk\xFD"
   m_EditorClassIdentifier: 
-  manaCost: 2
+  manaCost: 1
   cardName: "Hostinsk\xFD"
   cardDescription: "P\u0159i vylo\u017Een\xED, +1/2 veldej\u0161\xED kart\u011B"
   cardSprite: {fileID: 0}
-  health: 2
+  health: 1
   damage: 0
   onUseEffects:
   - {fileID: 11400000, guid: ab5db09a4fb7e2748b6bde8be1cf883a, type: 2}

@@ -40,6 +40,7 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     public bool IsDragging => _isDragging;
     public bool WasDragged => _wasDragged;
     public bool IsDestroyed = false;
+    public bool OnBoard = false;
 
     [SerializeField] private CardVisual cardVisualPrefab;
     public CardVisual CardVisual { get; private set; }
@@ -214,6 +215,17 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 
         _selectableComponent.enabled = false;
         enabled = false;
+    }
+
+    public void PlaceOnBoard()
+    {
+        PointerEnterEvent.RemoveAllListeners();
+        PointerExitEvent.RemoveAllListeners();
+        PointerUpEvent.RemoveAllListeners();
+        PointerDownEvent.RemoveAllListeners();
+        SelectEvent.RemoveAllListeners();
+
+        OnBoard = true;
     }
 
     public void TakeDamageFrom(Card source)

@@ -40,7 +40,7 @@ public class CombatStateMachine : MonoBehaviour
     public GameEndingHandler GameHandler => _gameStateHandler;
 
 
-    private void Start()
+    private void OnEnable()
     {
         _playerDeck = FindObjectOfType<CardDeck>();
         _playerState = new PlayerState(this);
@@ -53,6 +53,7 @@ public class CombatStateMachine : MonoBehaviour
         PlayerOwner = new CardOwner(_playerDeck, PlayerCardsOnTable, EnemyCardsOnTable);
         EnemyOwner = new CardOwner(null, EnemyCardsOnTable, PlayerCardsOnTable);
 
+        lifeCrystalPanel.Initialize(PlayerDeck.Crystals);
         SetState(new PreCombatState(this));
     }
 
@@ -69,7 +70,7 @@ public class CombatStateMachine : MonoBehaviour
 
     private bool OnCardDragEnd(Card card)
     {
-        if (card.CombatDTO.ManaCost > PlayerMana || PlayerCardsOnTable.Count == MaxCardsOnBoard) return false;
+        if (card.CombatDTO.ManaCost > PlayerMana || PlayerCardsOnTable.Count >= MaxCardsOnBoard || State != _playerState) return false;
 
         PlayerCardsOnTable.Add(card);
         PlayerMana -= card.CombatDTO.ManaCost;
@@ -80,8 +81,11 @@ public class CombatStateMachine : MonoBehaviour
 
     public void AddCardOnEnemyTable(Card card)
     {
-        if (EnemyCardsOnTable.Count == MaxCardsOnBoard)
+        if (EnemyCardsOnTable.Count >= MaxCardsOnBoard)
+        {
+            RemoveCardFromTable(card);
             return;
+        }
         EnemyCardsOnTable.Add(card);
         StartCoroutine(AddCard(card));
     }

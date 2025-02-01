@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79c9c8a8609bbb4591197163e73c2f8, type: 3}
   m_Name: Karel
   m_EditorClassIdentifier: 
-  manaCost: 2
+  manaCost: 3
   cardName: Karel
-  cardDescription: "P\u0159i vylo\u017Een\xED, zm\u011Bn\xED v\u0161echny karty na
-    2/2 bez schopnost\xED"
+  cardDescription: "P\u0159i vylo\u017Een\xED, zm\u011Bn\xED v\u0161echny tvoje karty
+    na 2/2 bez schopnost\xED"
   cardSprite: {fileID: 0}
-  health: 2
-  damage: 2
+  health: 3
+  damage: 3
   onUseEffects:
   - {fileID: 11400000, guid: 140ef88b837b56c46af5176bcbad453d, type: 2}
   onStartTurnEffects: []

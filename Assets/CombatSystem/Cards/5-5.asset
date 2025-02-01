@@ -16,6 +16,8 @@ MonoBehaviour:
   cardName: "Bezejm\xE9na"
   cardDescription: 
   cardSprite: {fileID: 0}
-  health: 5
-  damage: 5
-  combatEffects: []
+  health: 7
+  damage: 7
+  onUseEffects: []
+  onStartTurnEffects: []
+  onDeathEffects: []
