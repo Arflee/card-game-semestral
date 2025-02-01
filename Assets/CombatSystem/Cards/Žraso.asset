@@ -15,10 +15,10 @@ MonoBehaviour:
   manaCost: 2
   cardName: "\u017Draso"
   cardDescription: "P\u0159i vylo\u017Een\xED zni\u010D\xED v\u0161echny svoje karty
-    na boji\u0161ti, za ka\u017Edou takhle zni\u010Denou kartu m\xE1 +2/2"
+    na boji\u0161ti, za ka\u017Edou takhle zni\u010Denou kartu m\xE1 +3/3"
   cardSprite: {fileID: 0}
-  health: 2
-  damage: 2
+  health: 3
+  damage: 3
   onUseEffects:
   - {fileID: 11400000, guid: 0e9e3bebe7834f140b081f4a7d51d468, type: 2}
   onStartTurnEffects: []

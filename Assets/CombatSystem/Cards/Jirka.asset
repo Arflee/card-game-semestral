@@ -15,7 +15,7 @@ MonoBehaviour:
   manaCost: 5
   cardName: Jirka
   cardDescription: "P\u0159i vylo\u017Een\xED, zm\u011Bn\xED v\u0161echny tvoje karty
-    na 5/5 bez schopnost\xED"
+    na 7/7 bez schopnost\xED"
   cardSprite: {fileID: 0}
   health: 7
   damage: 7
