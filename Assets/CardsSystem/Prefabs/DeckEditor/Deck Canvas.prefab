@@ -498,7 +498,7 @@ MonoBehaviour:
   namePrefab: {fileID: 2203931826779438013, guid: 3ff0f182a6f0ef047a0b43fe6cf7a619, type: 3}
   confirmButton: {fileID: 1405569664762923270}
   confirmText: {fileID: 2551041633366029016}
-  minCards: 12
+  minCards: 16
 --- !u!1 &1614694511791573182
 GameObject:
   m_ObjectHideFlags: 0
