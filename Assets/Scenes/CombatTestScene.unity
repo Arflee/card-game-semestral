@@ -151,17 +151,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e67427177ff404b9518241ca3ed9b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCardsInHand: 2
+  initialCardsInHand: 2
+  maxCardsInHand: 5
   playerCards:
-  - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
-  - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
-  - {fileID: 11400000, guid: 108894f58bdf09e429c137ed375df45d, type: 2}
-  - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
-  - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
-  - {fileID: 11400000, guid: 8443eec4a88503d46bda510b7ca81c11, type: 2}
-  - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
-  - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
-  - {fileID: 11400000, guid: 38339a26a506c4c448836700a5b5b4e4, type: 2}
+  - {fileID: 11400000, guid: 8beb35c4aa4323e4c9b945dadeef7378, type: 2}
+  - {fileID: 11400000, guid: 8beb35c4aa4323e4c9b945dadeef7378, type: 2}
+  - {fileID: 11400000, guid: 8beb35c4aa4323e4c9b945dadeef7378, type: 2}
+  - {fileID: 11400000, guid: 8beb35c4aa4323e4c9b945dadeef7378, type: 2}
   crystals: {fileID: 11400000, guid: 386514ff408145b4eabec281a7f6cd09, type: 2}
 --- !u!4 &878273923
 Transform:
@@ -306,6 +302,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2847694753046001111, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 11400000, guid: 3d165f0b230347b4ea6e5972475e6146, type: 2}
     - target: {fileID: 2917390742140386515, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_Camera
       value: 

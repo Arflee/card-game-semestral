@@ -24,6 +24,25 @@ public class PlayerState : StartingPlayerState
             {
                 yield return effect.StartEffect(StateMachine, card);
             }
+
+            if (card.TurnPlayed + 2 == StateMachine.CurrentTurn)
+            {
+                foreach (var effect in card.CombatDTO.AfterTurnEffect)
+                {
+                    yield return effect.StartEffect(StateMachine, card);
+                }
+            }
+        }
+
+        foreach (var card in StateMachine.EnemyCardsOnTable)
+        {
+            if (card.TurnPlayed + 2 == StateMachine.CurrentTurn)
+            {
+                foreach (var effect in card.CombatDTO.AfterTurnEffect)
+                {
+                    yield return effect.StartEffect(StateMachine, card);
+                }
+            }
         }
 
         yield return null;

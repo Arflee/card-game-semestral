@@ -41,6 +41,8 @@ public class CombatStateMachine : MonoBehaviour
     public int MaxCardsOnBoard => maxCardsOnBoard;
     public GameEndingHandler GameHandler => _gameStateHandler;
 
+    public int CurrentTurn { get; set; } = 0;
+
 
     private void OnEnable()
     {
@@ -103,6 +105,7 @@ public class CombatStateMachine : MonoBehaviour
 
     private IEnumerator AddCard(Card card)
     {
+        card.TurnPlayed = CurrentTurn;
         foreach (var effect in card.CombatDTO.OnUseEffects)
         {
             yield return effect.StartEffect(this, card);
@@ -166,6 +169,7 @@ public class CombatStateMachine : MonoBehaviour
 
         if (_isPlayerTurn)
         {
+            CurrentTurn++;
             _isPlayerTurn = !_isPlayerTurn;
             PlayerMana = PlayerDeck.MaxCrystals + 3 - PlayerCrystals;
             SetState(_playerState);

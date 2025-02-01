@@ -16,6 +16,7 @@ public class StartingPlayerState : CombatState
 
     protected void OnEndTurn()
     {
+        StateMachine.CurrentTurn++;
         for (int i = 0; i < StateMachine.PlayerCardsOnTable.Count; i++)
         {
             var playerCard = StateMachine.PlayerCardsOnTable[i];

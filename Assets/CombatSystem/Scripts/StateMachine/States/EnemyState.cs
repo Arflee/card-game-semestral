@@ -19,9 +19,28 @@ public class EnemyState : CombatState
             {
                 yield return effect.StartEffect(StateMachine, card);
             }
+
+            if (card.TurnPlayed + 2 == StateMachine.CurrentTurn)
+            {
+                foreach (var effect in card.CombatDTO.AfterTurnEffect)
+                {
+                    yield return effect.StartEffect(StateMachine, card);
+                }
+            }
         }
 
-        yield return new WaitForSeconds(0.5f);
+        foreach (var card in StateMachine.PlayerCardsOnTable)
+        {
+            if (card.TurnPlayed + 2 == StateMachine.CurrentTurn)
+            {
+                foreach (var effect in card.CombatDTO.AfterTurnEffect)
+                {
+                    yield return effect.StartEffect(StateMachine, card);
+                }
+            }
+        }
+
+        yield return new WaitForSeconds(1f);
 
         var nextCards = _initializer.GetNextCards(StateMachine.EnemyOwner);
         foreach (var card in nextCards)

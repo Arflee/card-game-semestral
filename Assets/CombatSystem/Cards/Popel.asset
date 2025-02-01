@@ -19,6 +19,7 @@ MonoBehaviour:
   health: 1
   damage: 0
   onUseEffects: []
-  onStartTurnEffects:
-  - {fileID: 11400000, guid: 0014633d8a4782f4384ad872418e1811, type: 2}
+  onStartTurnEffects: []
   onDeathEffects: []
+  afterTurnEffects:
+  - {fileID: 11400000, guid: 0014633d8a4782f4384ad872418e1811, type: 2}

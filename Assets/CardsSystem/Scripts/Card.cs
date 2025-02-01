@@ -41,6 +41,7 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     public bool WasDragged => _wasDragged;
     public bool IsDestroyed = false;
     public bool OnBoard = false;
+    public int TurnPlayed = -1;
 
     [SerializeField] private CardVisual cardVisualPrefab;
     public CardVisual CardVisual { get; private set; }

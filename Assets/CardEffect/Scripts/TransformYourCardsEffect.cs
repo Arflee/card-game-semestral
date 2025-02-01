@@ -14,6 +14,11 @@ public class TransformYourCardsEffect : CardEffect
             if (c == card)
                 continue;
             c.Reinitialize(_changeCard);
+            c.TurnPlayed = manager.CurrentTurn;
+            foreach (var eff in c.CombatDTO.OnUseEffects)
+            {
+                yield return eff.StartEffect(manager, c);
+            }
         }
     }
 }
