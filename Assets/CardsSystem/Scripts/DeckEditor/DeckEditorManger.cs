@@ -27,7 +27,7 @@ public class DeckEditorManger : MonoBehaviour
             Destroy(cardPanel.GetChild(i).gameObject);
 
         cardViews.Clear();
-        var allCards = cardDeck.AllCards;
+        var allCards = cardDeck.GetAllCards();
         for (int i = 0; i < allCards.Count; i++)
         {
             var view = Instantiate(cardPrefab, cardPanel);

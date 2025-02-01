@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,7 +12,6 @@ public class CardDeck : MonoBehaviour
     [SerializeField] private CombatCard[] playerCards;
     [SerializeField] private LifeCrystalParameters crystals;
 
-    public IList<CombatCard> AllCards => playerCards;
     public HashSet<int> Deck { get; private set; } = new HashSet<int>();
 
     private Queue<CombatCard> _cardDeck;
@@ -35,8 +35,9 @@ public class CardDeck : MonoBehaviour
     public void ApplyDeck()
     {
         List<CombatCard> cards = new List<CombatCard>();
+        var allCards = GetAllCards();
         foreach (var cardId in Deck)
-            cards.Add(playerCards[cardId]);
+            cards.Add(allCards[cardId]);
 
         _cardDeck = new(Utility.Shuffle(cards));
     }
@@ -94,5 +95,18 @@ public class CardDeck : MonoBehaviour
         _cardDeck.Enqueue(card.CombatDTO.CardPrefab);
         Destroy(card.CardVisual.gameObject);
         Destroy(card.transform.parent.gameObject);
+    }
+
+    public IList<CombatCard> GetAllCards()
+    {
+        var cards = new List<CombatCard>(playerCards);
+        cards.Sort((a, b) =>
+        {
+            int res = a.ManaCost.CompareTo(b.ManaCost);
+            if (res != 0)
+                return res;
+            return a.Name.CompareTo(b.Name);
+        });
+        return cards;
     }
 }
