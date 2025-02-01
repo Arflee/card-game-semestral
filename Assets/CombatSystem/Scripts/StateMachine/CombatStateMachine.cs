@@ -74,7 +74,14 @@ public class CombatStateMachine : MonoBehaviour
 
     private bool OnCardDragEnd(Card card)
     {
-        if (card.CombatDTO.ManaCost > PlayerMana || PlayerCardsOnTable.Count >= MaxCardsOnBoard || State != _playerState) return false;
+        if (PlayerCardsOnTable.Count >= MaxCardsOnBoard || State != _playerState)
+            return false;
+
+        if (card.CombatDTO.ManaCost > PlayerMana)
+        {
+            manaPanel.NotEnoughManaAnimation();
+            return false;
+        }
 
         PlayerCardsOnTable.Add(card);
         PlayerMana -= card.CombatDTO.ManaCost;

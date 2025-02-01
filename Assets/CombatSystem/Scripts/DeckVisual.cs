@@ -7,44 +7,61 @@ public class DeckVisual : MonoBehaviour
 {
     [SerializeField] private CombatStateMachine combatManager;
     [SerializeField] private TextMeshProUGUI cardCountTMP;
+    [SerializeField] private CardHolder cardHolder;
+    [SerializeField] private Image image;
+
+    [Header("Shadow")]
     [SerializeField] private Shadow shadow;
     [SerializeField] private float maxShadow = 10;
     [SerializeField] private int maxCardsForShadow = 20;
 
-    [Header("Discard")]
-    [SerializeField] private Image image;
+    [Header("Full Deck")]
+    [SerializeField] private Color deckColor;
+    [SerializeField] private Color deckTextColor;
     [SerializeField] private Color dragActive;
     [SerializeField] private Color dragSelected;
-    [SerializeField] private CardHolder cardHolder;
 
-    private Color normalColor;
+    [Header("Empty Deck")]
+    [SerializeField] private Color emptyColor;
+    [SerializeField] private Color emptyTextColor;
+    [SerializeField] private Color emptyDragActive;
+    [SerializeField] private Color emptyDragSelected;
 
     private void Start()
     {
-        normalColor = image.color;
         cardHolder.RegisterNewOnDragEndAction(OnCardDragEnd);
     }
 
     private void Update()
     {
+        int cardCount = combatManager.PlayerDeck.CardCount();
+
+        if (cardCount == 0)
+        {
+            image.color = emptyColor;
+            cardCountTMP.text = "";
+            cardCountTMP.color = emptyTextColor;
+            shadow.enabled = false;
+        }
+        else
+        {
+            image.color = deckColor;
+            cardCountTMP.text = cardCount.ToString();
+            cardCountTMP.color = deckTextColor;
+            shadow.enabled = true;
+            shadow.effectDistance = -Vector2.one * Mathf.Clamp(cardCount * (maxShadow / maxCardsForShadow), 0, maxShadow);
+        }
+
         var pos = cardHolder.DraggedCardPosition();
         if (pos != null)
         {
             cardCountTMP.text = "Vrátit";
             if (RectTransformUtility.RectangleContainsScreenPoint((RectTransform)transform, (Vector2)pos))
-                image.color = dragSelected;
+                image.color = cardCount == 0 ? emptyDragSelected : dragSelected;
             else
-                image.color = dragActive;
+                image.color = cardCount == 0 ? emptyDragActive : dragActive;
             return;
         }
-        image.color = normalColor;
-
-        int cardCount = combatManager.PlayerDeck.CardCount();
-        if (cardCount == 0)
-            gameObject.SetActive(false);
-
-        cardCountTMP.text = cardCount.ToString();
-        shadow.effectDistance = -Vector2.one * Mathf.Clamp(cardCount * (maxShadow /  maxCardsForShadow), 0, maxShadow);
     }
 
     private void OnCardDragEnd(Card card)

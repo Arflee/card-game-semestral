@@ -42,6 +42,7 @@ public class CardEditView : MonoBehaviour
         damageColor = damageText.color;
         healthColor = healthText.color;
         manaColor = manaText.color;
+        EnableCard();
 
         button.onClick.AddListener(() =>
         {
@@ -61,17 +62,6 @@ public class CardEditView : MonoBehaviour
     public void DisableCard(GameObject view)
     {
         inDeck = view;
-        image.color *= disabledColor;
-        template.color *= disabledColor;
-        cardName.color *= disabledColor;
-        cardDescription.color *= disabledColor;
-        damageText.color *= disabledColor;
-        healthText.color *= disabledColor;
-        manaText.color *= disabledColor;
-    }
-
-    public void EnableCard()
-    {
         image.color = imageColor;
         template.color = templateColor;
         cardName.color = nameColor;
@@ -79,6 +69,16 @@ public class CardEditView : MonoBehaviour
         damageText.color = damageColor;
         healthText.color = healthColor;
         manaText.color = manaColor;
-        button.interactable = true;
+    }
+
+    public void EnableCard()
+    {
+        image.color *= disabledColor;
+        template.color *= disabledColor;
+        cardName.color *= disabledColor;
+        cardDescription.color *= disabledColor;
+        damageText.color *= disabledColor;
+        healthText.color *= disabledColor;
+        manaText.color *= disabledColor;
     }
 }
