@@ -15,7 +15,7 @@ MonoBehaviour:
   manaCost: 2
   cardName: "Hrdlo\u0159ez"
   cardDescription: "Na za\u010D\xE1tku kola m\xE1 +2/+2"
-  cardSprite: {fileID: 0}
+  cardSprite: {fileID: 21300000, guid: ff6114882d2a19c48b052f99d25f0875, type: 3}
   health: 2
   damage: 2
   onUseEffects: []
