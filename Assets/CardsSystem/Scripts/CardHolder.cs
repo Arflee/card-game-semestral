@@ -57,10 +57,12 @@ public class CardHolder : MonoBehaviour
 
     public bool IsDragging() => _selectedCard != null;
 
-    public bool IsOverlapping(RectTransform rect)
+    public bool IsOverlapping(RectTransform rect, Card card = null)
     {
-        return RectTransformUtility.RectangleContainsScreenPoint(rect, Camera.main.ScreenToWorldPoint(Input.mousePosition));
-        //return RectTransformUtility.RectangleContainsScreenPoint(rect, (Vector2)_selectedCard.transform.position);
+        if (card == null)
+            card = _selectedCard;
+        //return RectTransformUtility.RectangleContainsScreenPoint(rect, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        return RectTransformUtility.RectangleContainsScreenPoint(rect, (Vector2)card.transform.position);
     }
 
     private void Update()

@@ -186,6 +186,9 @@ public class CardVisual : MonoBehaviour
 
     private void Select(Card card, bool state)
     {
+        if (card.SelectionOffset == 0)
+            return;
+
         DOTween.Kill(2, true);
         float dir = state ? 1 : 0;
         shakeParent.DOPunchPosition(dir * selectPunchAmount * shakeParent.up, scaleTransition, 10, 1);
@@ -193,7 +196,6 @@ public class CardVisual : MonoBehaviour
 
         if (scaleAnimations)
             transform.DOScale(scaleOnHover, scaleTransition).SetEase(scaleEase);
-
     }
 
     public void Swap(float dir = 1)

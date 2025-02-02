@@ -65,7 +65,7 @@ public class DeckVisual : MonoBehaviour
 
     private void OnCardDragEnd(Card card)
     {
-        if (cardHolder.IsOverlapping(image.rectTransform))
+        if (cardHolder.IsOverlapping(image.rectTransform, card))
         {
             combatManager.PlayerCardsOnTable.Remove(card);
             cardHolder.UseCardFromHand(card);

@@ -147,12 +147,15 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 
         _pointerDownTime = Time.time;
         PointerDownEvent.Invoke(this);
+        OnBeginDrag(eventData);
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         if (eventData.button != PointerEventData.InputButton.Left)
             return;
+
+        OnEndDrag(eventData);
 
         _pointerUpTime = Time.time;
 
