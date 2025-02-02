@@ -22,6 +22,11 @@ public class EnemyInitializer : MonoBehaviour
         ResetDeck();
     }
 
+    public CombatState StartingCombatState(CombatStateMachine machine)
+    {
+        return enemy.StartingCombatState(machine);
+    }
+
     public IEnumerable<Card> GetNextCards(CardOwner owner)
     {
         if (currentDeck == null || crystalsDestroyed != enemy.Crystals.CrystalAmount - manager.EnemyCrystals)

@@ -5,10 +5,12 @@ using UnityEngine;
 public class PreCombatState : CombatState
 {
     private CardDeck _playerDeck;
+    private readonly CombatState nextState;
 
-    public PreCombatState(CombatStateMachine machine) : base(machine)
+    public PreCombatState(CombatStateMachine machine, CombatState nextState) : base(machine)
     {
         _playerDeck = machine.PlayerDeck;
+        this.nextState = nextState;
     }
 
     public override IEnumerator EnterState()
@@ -19,6 +21,11 @@ public class PreCombatState : CombatState
             _playerDeck.TakeCard(StateMachine.PlayerOwner);
         }
 
-        StateMachine.SetState(new StartingPlayerState(StateMachine));
+        StateMachine.SetState(nextState);
+    }
+
+    public override CombatState NextState()
+    {
+        return nextState;
     }
 }

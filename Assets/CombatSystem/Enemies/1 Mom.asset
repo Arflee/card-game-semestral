@@ -33,3 +33,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 01c367d6677e9164980ed254a6cb6488, type: 2}
   - {fileID: 11400000, guid: 01c367d6677e9164980ed254a6cb6488, type: 2}
   _crystals: {fileID: 11400000, guid: d78e464f40b9fc447b9131578fcf716b, type: 2}
+  inGameDialogues:
+  - {fileID: 11400000, guid: 1ada3b1230467594b894d80416a6d9ca, type: 2}
+  tutorial: 2

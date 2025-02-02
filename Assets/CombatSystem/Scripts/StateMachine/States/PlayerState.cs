@@ -1,14 +1,18 @@
 ﻿using System.Collections;
+using UnityEditorInternal;
 using UnityEngine;
 
-public class PlayerState : StartingPlayerState
+public class PlayerState : CombatState
 {
     public PlayerState(CombatStateMachine machine) : base(machine)
     {
+        machine.OnEndTurn += () => machine.CanPlayCard = false;
     }
 
     public override IEnumerator EnterState()
     {
+        StateMachine.CurrentTurn++;
+        StateMachine.PlayerMana = StateMachine.PlayerDeck.MaxCrystals + 3 - StateMachine.PlayerCrystals;
         StateMachine.ManaPanel.ResetManaCrystals(StateMachine.PlayerMana);
 
         for (int i = 0; i < StateMachine.CardsDrawnPerTurn; i++)
@@ -44,6 +48,12 @@ public class PlayerState : StartingPlayerState
             }
         }
 
-        yield return null;
+        StateMachine.CanPlayCard = true;
+        StateMachine.EndTurnButton.interactable = true;
+    }
+
+    public override CombatState NextState()
+    {
+        return new AttackState(StateMachine);
     }
 }

@@ -26,7 +26,7 @@ public class DialogueTrigger : MonoBehaviour
         _inputActions.Player.Interact.Enable();
     }
 
-    public void EnableDialogue()
+    public void EnableDialogue(DialogueSequence seq = null)
     {
 #if UNITY_EDITOR
         if (skipInEditor && OnDialogueEnd != null)
@@ -35,11 +35,13 @@ public class DialogueTrigger : MonoBehaviour
             return;
         }
 #endif
+        if (seq == null)
+            seq = _dialogueSequence;
 
         _inputActions.Player.Move.Disable();
 
         _createdBubble = Instantiate(dialogueBubblePrefab, dialogueCanvas.transform);
-        _createdBubble.Init(_dialogueSequence);
+        _createdBubble.Init(seq);
 
         _createdBubble.OnDialogueSequenceEnd += OnDialogueSequenceEnd;
         _createdBubble.OnChoiceMade += OnChoiceMade;

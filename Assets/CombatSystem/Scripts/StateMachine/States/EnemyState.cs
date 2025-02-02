@@ -56,7 +56,11 @@ public class EnemyState : CombatState
             }
         }
 
-        StateMachine.ChangeTurn();
-        yield return null;
+        StateMachine.SetState(NextState());
+    }
+
+    public override CombatState NextState()
+    {
+        return new PlayerState(StateMachine);
     }
 }

@@ -15,4 +15,10 @@ public abstract class CombatState
     {
         throw new NotImplementedException();
     }
+
+    public virtual void CardAdded(Card card)
+    {
+    }
+
+    public abstract CombatState NextState();
 }
