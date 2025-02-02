@@ -795,7 +795,7 @@ MonoBehaviour:
   points:
   - {x: -1.2806292, y: -9.400195}
   gizmosColor: {r: 0, g: 0, b: 1, a: 1}
-  nextState: {fileID: 60487297}
+  nextState: {fileID: 0}
 --- !u!114 &60487301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7765,11 +7765,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.8371906
+      value: 3.8298807
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.49834728
+      value: 0.4983511
       objectReference: {fileID: 0}
     - target: {fileID: 4379666920158019866, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10694,35 +10694,7 @@ MonoBehaviour:
   dialogueCanvas: {fileID: 995863022}
   dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
   skipInEditor: 0
-  choiceEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 880324602}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 880324602}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  choiceEvents: []
 --- !u!1001 &1345270736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11949,7 +11921,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 1024
-  nextState: {fileID: 1519588410}
+  nextState: {fileID: 0}
 --- !u!114 &1519588410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12542,6 +12514,8 @@ GameObject:
   - component: {fileID: 1601592898}
   - component: {fileID: 1601592897}
   - component: {fileID: 1601592896}
+  - component: {fileID: 1601592906}
+  - component: {fileID: 1601592907}
   m_Layer: 0
   m_Name: Orel
   m_TagString: Untagged
@@ -12871,6 +12845,39 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a58f43446f287814fa837a724d8c53ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1601592906
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601592893}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 315b739c6137f094c9b6a468b5519a51, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1601592907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601592893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e049a6dbd48e7e43a15730d6769006e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1608070558
