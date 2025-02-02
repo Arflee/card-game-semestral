@@ -14,12 +14,10 @@ public class CombatStateMachine : MonoBehaviour
     [SerializeField] private LifeCrystalPanel enemyCrystalPanel;
     [SerializeField] private Button endTurnButton;
     [SerializeField, Range(0, 10)] private int maxCardsOnBoard;
+    [SerializeField] private DialogueTrigger dialogue;
 
     public static bool GameActive { get; private set; } = false;
 
-    private PlayerState _playerState;
-    private EnemyState _enemyState;
-    private AttackState _combatState;
     private CardDeck _playerDeck;
     private GameEndingHandler _gameStateHandler;
 
@@ -37,9 +35,11 @@ public class CombatStateMachine : MonoBehaviour
     public int CardsDrawnPerTurn { get; private set; } = 1;
     public int PlayerCrystals => lifeCrystalPanel.Amount;
     public int EnemyCrystals => enemyCrystalPanel.Amount;
-    public int PlayerMana { get; private set; } = 3;
+    public int PlayerMana { get; set; } = 3;
     public int MaxCardsOnBoard => maxCardsOnBoard;
     public GameEndingHandler GameHandler => _gameStateHandler;
+    public Button EndTurnButton => endTurnButton;
+    public bool CanPlayCard { get; set; }
 
     public int CurrentTurn { get; set; } = 0;
 
@@ -48,10 +48,6 @@ public class CombatStateMachine : MonoBehaviour
     {
         GameActive = true;
         _playerDeck = FindObjectOfType<CardDeck>();
-        _playerState = new PlayerState(this);
-        _enemyState = new EnemyState(this);
-        _combatState = new AttackState(this);
-
         _gameStateHandler = FindObjectOfType<GameEndingHandler>();
 
         table.OnTableSlotSnapped += OnCardDragEnd;
@@ -60,7 +56,8 @@ public class CombatStateMachine : MonoBehaviour
         EnemyOwner = new CardOwner(null, EnemyCardsOnTable, PlayerCardsOnTable);
 
         lifeCrystalPanel.Initialize(PlayerDeck.Crystals);
-        SetState(new PreCombatState(this));
+
+        SetState(new PreCombatState(this, enemyInitializer.StartingCombatState(this)));
     }
 
     private void OnDisable()
@@ -77,7 +74,7 @@ public class CombatStateMachine : MonoBehaviour
 
     private bool OnCardDragEnd(Card card)
     {
-        if (PlayerCardsOnTable.Count >= MaxCardsOnBoard || State != _playerState)
+        if (PlayerCardsOnTable.Count >= MaxCardsOnBoard || !CanPlayCard)
             return false;
 
         if (card.CombatDTO.ManaCost > PlayerMana)
@@ -111,6 +108,8 @@ public class CombatStateMachine : MonoBehaviour
         {
             yield return effect.StartEffect(this, card);
         }
+
+        State.CardAdded(card);
     }
 
     public IEnumerator DestroyCard(Card card)
@@ -143,7 +142,7 @@ public class CombatStateMachine : MonoBehaviour
     public void OnTurnEndButtonClicked()
     {
         endTurnButton.interactable = false;
-        SetState(_combatState);
+        SetState(State.NextState());
     }
 
     public IEnumerator CleanBoardAfterTurn()
@@ -159,23 +158,6 @@ public class CombatStateMachine : MonoBehaviour
         {
             yield return DestroyCard(card);
         }
-
-        ChangeTurn();
-    }
-
-    public void ChangeTurn()
-    {
-        if (State == _enemyState)
-        {
-            CurrentTurn++;
-            endTurnButton.interactable = true;
-            PlayerMana = PlayerDeck.MaxCrystals + 3 - PlayerCrystals;
-            SetState(_playerState);
-        }
-        else
-        {
-            SetState(_enemyState);
-        }
     }
 
     public bool TryAttackEnemyCrystal(int damage)
@@ -188,5 +170,22 @@ public class CombatStateMachine : MonoBehaviour
     {
         lifeCrystalPanel.AttackCrystal(damage);
         return PlayerCrystals > 0;
+    }
+
+    public IEnumerator DialogueCoroutine(DialogueSequence seq)
+    {
+        bool dialogueFinished = false;
+
+        dialogue.OnDialogueEnd += () => dialogueFinished = true;
+        dialogue.EnableDialogue(seq);
+
+        while (!dialogueFinished)
+            yield return 0;
+    }
+
+    public void Dialogue(DialogueSequence seq, Action onDialogueEnd)
+    {
+        dialogue.OnDialogueEnd += onDialogueEnd;
+        dialogue.EnableDialogue(seq);
     }
 }

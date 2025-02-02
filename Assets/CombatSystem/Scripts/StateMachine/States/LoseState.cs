@@ -16,4 +16,9 @@ public class LoseState : CombatState
         
         yield return null;
     }
+
+    public override CombatState NextState()
+    {
+        throw new System.NotImplementedException();
+    }
 }

@@ -27,3 +27,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
   - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
   _crystals: {fileID: 11400000, guid: 386514ff408145b4eabec281a7f6cd09, type: 2}
+  inGameDialogues:
+  - {fileID: 11400000, guid: dc1a2ef10e077df4fa048d7c1423487a, type: 2}
+  - {fileID: 11400000, guid: c1c7a4bed492061429760b1ff44ae7ac, type: 2}
+  - {fileID: 11400000, guid: eb890ac490d5c0c45afa35d85b48c6ea, type: 2}
+  - {fileID: 11400000, guid: 2c0dda4af5d04e74b869822c32558bf1, type: 2}
+  tutorial: 1

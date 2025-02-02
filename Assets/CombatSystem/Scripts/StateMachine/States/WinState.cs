@@ -15,4 +15,9 @@ public class WinState : CombatState
         _gameHandler.PlayerWonGame(SceneManager.GetActiveScene().name);
         yield return null;
     }
+
+    public override CombatState NextState()
+    {
+        throw new System.NotImplementedException();
+    }
 }

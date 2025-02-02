@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0268bdc1baf48b429d0a02764a4c2ab, type: 3}
+  m_Name: AttackingCrystalsIntro
+  m_EditorClassIdentifier: 
+  monologues:
+  - speakerName: "M\xE1ma"
+    sequence: "koukej, m\xE1m v\xEDc krystal\u016F, mus\xED\u0161 zni\u010Dit oba
+      dva"
+  - speakerName: "M\xE1ma"
+    sequence: "v\u017Edy se \xFAto\u010D\xED do nejlev\u011Bj\u0161\xEDho, a\u017E
+      se zni\u010D\xED, pak do druh\xE9ho"
+  delayPerSymbol: 0
+  availableChoices: []
