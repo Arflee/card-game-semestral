@@ -16,6 +16,12 @@ public class CardDeck : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
         SceneManager.activeSceneChanged += OnNewSceneAdded;
+        Deck = new HashSet<int>(Enumerable.Range(0, playerCards.Count));
+    }
+
+    private void OnNewSceneAdded(Scene current, Scene next)
+    {
+        ApplyDeck();
     }
 
     private void OnNewSceneAdded(Scene arg0, Scene arg1)
@@ -53,4 +59,32 @@ public class CardDeck : MonoBehaviour
     {
         return _cardDeck.Count;
     }
+
+    public void ReturnCard(Card card)
+    {
+        _cardDeck.Enqueue(card.CombatDTO.CardPrefab);
+        Destroy(card.CardVisual.gameObject);
+        Destroy(card.transform.parent.gameObject);
+    }
+
+    public IList<CombatCard> GetAllCards()
+    {
+        var cards = new List<CombatCard>(playerCards);
+        cards.Sort((a, b) =>
+        {
+            int res = a.ManaCost.CompareTo(b.ManaCost);
+            if (res != 0)
+                return res;
+            return a.Name.CompareTo(b.Name);
+        });
+        return cards;
+    }
+
+    public void AddNewCard(CombatCard newCard)
+    {
+        playerCards.Add(newCard);
+    }
+
+
+    public int AllCardsCount() => playerCards.Count;
 }

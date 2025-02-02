@@ -5,12 +5,11 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     [SerializeField] private DialogueSequence _dialogueSequence;
-
     [SerializeField] private GameObject dialogueCanvas;
-
     [SerializeField] private SlidingDialogueText dialogueBubblePrefab;
-
     [SerializeField] private bool skipInEditor = false;
+
+    [SerializeField] private UnityEvent[] choiceEvents;
 
     public event Action OnDialogueEnd;
 
