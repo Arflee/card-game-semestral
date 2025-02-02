@@ -18,6 +18,7 @@ public class TransformToTopCardEffect : CardEffect
         }
 
         card.Reinitialize(takenCard);
+        card.TurnPlayed = manager.CurrentTurn;
         foreach (var eff in card.CombatDTO.OnUseEffects)
         {
             yield return eff.StartEffect(manager, card);

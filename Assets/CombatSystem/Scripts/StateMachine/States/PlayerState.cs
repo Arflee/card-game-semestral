@@ -5,7 +5,6 @@ public class PlayerState : StartingPlayerState
 {
     public PlayerState(CombatStateMachine machine) : base(machine)
     {
-        StateMachine.OnEndTurn += OnEndTurn;
     }
 
     public override IEnumerator EnterState()
@@ -23,6 +22,25 @@ public class PlayerState : StartingPlayerState
             foreach (var effect in card.CombatDTO.OnStartTurnEffects)
             {
                 yield return effect.StartEffect(StateMachine, card);
+            }
+
+            if (card.TurnPlayed + 2 == StateMachine.CurrentTurn)
+            {
+                foreach (var effect in card.CombatDTO.AfterTurnEffect)
+                {
+                    yield return effect.StartEffect(StateMachine, card);
+                }
+            }
+        }
+
+        foreach (var card in StateMachine.EnemyCardsOnTable)
+        {
+            if (card.TurnPlayed + 2 == StateMachine.CurrentTurn)
+            {
+                foreach (var effect in card.CombatDTO.AfterTurnEffect)
+                {
+                    yield return effect.StartEffect(StateMachine, card);
+                }
             }
         }
 

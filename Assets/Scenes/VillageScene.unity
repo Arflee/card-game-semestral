@@ -282,7 +282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dialogueSequence: {fileID: 11400000, guid: a6159a581218f4048934dc0d29d24407, type: 2}
   dialogueCanvas: {fileID: 1547922503}
-  dialogueBubblePrefab: {fileID: 0}
+  dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
   skipInEditor: 0
   choiceEvents: []
 --- !u!1001 &81108459
@@ -5703,9 +5703,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 776008d1a78a36645b0f7a603bdf4ad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueSequence: {fileID: 11400000, guid: a6159a581218f4048934dc0d29d24407, type: 2}
-  dialogueCanvas: {fileID: 0}
-  dialogueBubblePrefab: {fileID: 0}
+  _dialogueSequence: {fileID: 11400000, guid: bf3a5a9c8b8b68048933f16daac7b56a, type: 2}
+  dialogueCanvas: {fileID: 1547922503}
+  dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
   skipInEditor: 0
   choiceEvents: []
 --- !u!1001 &1312069782

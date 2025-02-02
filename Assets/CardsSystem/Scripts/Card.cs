@@ -40,6 +40,8 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     public bool IsDragging => _isDragging;
     public bool WasDragged => _wasDragged;
     public bool IsDestroyed = false;
+    public bool OnBoard = false;
+    public int TurnPlayed = -1;
 
     [SerializeField] private CardVisual cardVisualPrefab;
     public CardVisual CardVisual { get; private set; }
@@ -57,11 +59,11 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
         _selectableComponent = GetComponent<Selectable>();
     }
 
-    public void Initialize(CombatCard combatProperties, CardOwner owner)
+    public void Initialize(CombatCard combatProperties, CardOwner owner, Vector2 startingPosition)
     {
         Owner = owner;
         CombatDTO = new(combatProperties);
-        CardVisual = Instantiate(cardVisualPrefab, _canvas.transform);
+        CardVisual = Instantiate(cardVisualPrefab, startingPosition, Quaternion.identity, _canvas.transform);
         CardVisual.Initialize(this, CombatDTO);
     }
 
@@ -111,6 +113,9 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (!_isDragging)
+            return;
+
         EndDragEvent.Invoke(this);
 
         _isDragging = false;
@@ -145,6 +150,7 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 
         _pointerDownTime = Time.time;
         PointerDownEvent.Invoke(this);
+        OnBeginDrag(eventData);
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -156,6 +162,7 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 
         PointerUpEvent.Invoke(this, _pointerUpTime - _pointerDownTime > .2f);
 
+        OnEndDrag(eventData);
         if (_pointerUpTime - _pointerDownTime > .2f)
             return;
 
@@ -214,6 +221,17 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 
         _selectableComponent.enabled = false;
         enabled = false;
+    }
+
+    public void PlaceOnBoard()
+    {
+        PointerEnterEvent.RemoveAllListeners();
+        PointerExitEvent.RemoveAllListeners();
+        PointerUpEvent.RemoveAllListeners();
+        PointerDownEvent.RemoveAllListeners();
+        SelectEvent.RemoveAllListeners();
+
+        OnBoard = true;
     }
 
     public void TakeDamageFrom(Card source)

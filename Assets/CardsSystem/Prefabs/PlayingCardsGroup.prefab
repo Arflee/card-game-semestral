@@ -117,3 +117,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotPrefab: {fileID: 575835118737254313, guid: c0d4e34a9a66d7541bd65f41c690c26a, type: 3}
   tweenCardReturn: 0
+  dragArea: {fileID: 0}
+  activeColor: {r: 0, g: 0, b: 0, a: 0.39215687}
+  selectedColor: {r: 0, g: 0, b: 0, a: 0.78431374}

@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5e90b618bf693504898b035e20d2bdd0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: edfdf9e5fdca42049ac8b35257876e9d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -137,7 +137,10 @@ MonoBehaviour:
   visualShadow: {fileID: 6082652067484827347}
   shakeParent: {fileID: 3270148851755564651}
   tiltParent: {fileID: 5037521101954701801}
-  cardImage: {fileID: 7352998936812655986}
+  cardTemplate: {fileID: 7352998936812655986}
+  cardImage: {fileID: 2209829496816888438}
+  describtionTemplate: {fileID: 21300000, guid: 6bfeb306b73298d498ee2641d3365618, type: 3}
+  textlessTemplate: {fileID: 21300000, guid: 3a517475af779c648b0da2d2fa6bc653, type: 3}
   cardName: {fileID: 5287797195728747682}
   cardDescription: {fileID: 2699762686176027836}
   healthText: {fileID: 8794958655390194561}
@@ -162,8 +165,7 @@ MonoBehaviour:
   swapTransition: 0.2
   swapVibrato: 5
   curve: {fileID: 11400000, guid: 56c8edf429bd4df47aa61cc8dd92d940, type: 2}
-  effectDescribtionColor: {r: 1, g: 0.43541235, b: 0, a: 1}
-  normalDescribtionColor: {r: 1, g: 1, b: 1, a: 1}
+  effectColor: {r: 1, g: 0.84313726, b: 0.39215687, a: 1}
 --- !u!223 &6930167636189593843
 Canvas:
   m_ObjectHideFlags: 0
@@ -221,8 +223,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 65, y: -38}
-  m_SizeDelta: {x: 200, y: 60}
+  m_AnchoredPosition: {x: 70, y: -40}
+  m_SizeDelta: {x: 150, y: 30}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &851161247851724444
 CanvasRenderer:
@@ -252,17 +254,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Card Name
+  m_text: Card
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6e78bf5ec7f63f3498b07f3d4d44696c, type: 2}
-  m_sharedMaterial: {fileID: 1995132830503087281, guid: 6e78bf5ec7f63f3498b07f3d4d44696c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b39c59ef4a995394db4172ef524bb0d7, type: 2}
+  m_sharedMaterial: {fileID: 2156354529425012716, guid: b39c59ef4a995394db4172ef524bb0d7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -279,12 +281,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 24
   m_fontSizeBase: 18
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 15
+  m_fontSizeMax: 24
   m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
@@ -315,7 +317,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 5, y: 5, z: 5, w: 5}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -428,18 +430,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: sample text sample text sample text sample text sample text sample text
-    sample text sample text
+  m_text: sample text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6e78bf5ec7f63f3498b07f3d4d44696c, type: 2}
-  m_sharedMaterial: {fileID: 1995132830503087281, guid: 6e78bf5ec7f63f3498b07f3d4d44696c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b39c59ef4a995394db4172ef524bb0d7, type: 2}
+  m_sharedMaterial: {fileID: 2156354529425012716, guid: b39c59ef4a995394db4172ef524bb0d7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -456,12 +457,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
+  m_fontSize: 22
   m_fontSizeBase: 15
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 15
+  m_fontSizeMax: 22
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -510,7 +511,7 @@ GameObject:
   - component: {fileID: 3283002900995605867}
   - component: {fileID: 7352998936812655986}
   m_Layer: 5
-  m_Name: Sprite
+  m_Name: Template
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -556,7 +557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3551086, g: 0.38354504, b: 0.4716981, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -877,7 +878,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6943716138547220424, guid: 2c4fdc0e1047c4b49ab90dd876b386e4, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 30
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 6943716138547220424, guid: 2c4fdc0e1047c4b49ab90dd876b386e4, type: 3}
       propertyPath: m_SizeDelta.y
@@ -974,6 +975,10 @@ PrefabInstance:
     - target: {fileID: 7556503461241642029, guid: 2c4fdc0e1047c4b49ab90dd876b386e4, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7556503461241642029, guid: 2c4fdc0e1047c4b49ab90dd876b386e4, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8340944720910601132, guid: 2c4fdc0e1047c4b49ab90dd876b386e4, type: 3}
       propertyPath: m_Name
@@ -1122,11 +1127,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7556503461241642029, guid: 2c4fdc0e1047c4b49ab90dd876b386e4, type: 3}
       propertyPath: m_fontColor.g
-      value: 0.8352941
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7556503461241642029, guid: 2c4fdc0e1047c4b49ab90dd876b386e4, type: 3}
       propertyPath: m_fontColor.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7556503461241642029, guid: 2c4fdc0e1047c4b49ab90dd876b386e4, type: 3}
       propertyPath: m_fontSizeBase
@@ -1134,7 +1139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7556503461241642029, guid: 2c4fdc0e1047c4b49ab90dd876b386e4, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4294956288
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7556503461241642029, guid: 2c4fdc0e1047c4b49ab90dd876b386e4, type: 3}
       propertyPath: m_HorizontalAlignment

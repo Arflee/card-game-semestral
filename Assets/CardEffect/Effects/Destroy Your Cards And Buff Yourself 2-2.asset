@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b55f40b4205d744a83bfdb166a813d, type: 3}
   m_Name: Destroy Your Cards And Buff Yourself 2-2
   m_EditorClassIdentifier: 
-  healthBuffPerCard: 2
-  damageBuffPerCard: 2
+  healthBuffPerCard: 3
+  damageBuffPerCard: 3

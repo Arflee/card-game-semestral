@@ -1,39 +1,36 @@
+using DG.Tweening;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class ManaPanel : MonoBehaviour
 {
-    [SerializeField] private GameObject manaCrystalPrefab;
-    private List<GameObject> manaCrystals = new();
+    [SerializeField] private TextMeshProUGUI manaText;
+    [SerializeField] private float shakeStrength = 5;
 
-    public void SpawnCrystalPrefabs(int amount)
-    {
-        for (int i = 0; i < amount; i++)
-        {
-            var crystal = Instantiate(manaCrystalPrefab, transform);
-            crystal.SetActive(false);
-            manaCrystals.Add(crystal);
-        }
-    }
+    private int _maxAmount, _currentAmount;
 
     public void UseManaCrystals(int amount)
     {
-        var activeCrystals = manaCrystals.Where(c => c.activeInHierarchy).Take(amount);
-
-        foreach (var crystal in activeCrystals)
-        {
-            crystal.SetActive(false);
-        }
+        _currentAmount -= amount;
+        UpdateText();
     }
 
     public void ResetManaCrystals(int newCrystalAmount)
     {
-        manaCrystals.ForEach(c => c.SetActive(false));
+        _maxAmount = newCrystalAmount;
+        _currentAmount = newCrystalAmount;
+        UpdateText();
+    }
 
-        for (int i = 0; i < newCrystalAmount; i++)
-        {
-            manaCrystals[i].SetActive(true);
-        }
+    private void UpdateText()
+    {
+        manaText.text = $"{_currentAmount}/{_maxAmount}";
+    }
+
+    public void NotEnoughManaAnimation()
+    {
+        transform.DOShakePosition(1f, strength: shakeStrength);
     }
 }

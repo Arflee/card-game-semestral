@@ -11,6 +11,7 @@ public class TransformToCardEffect : CardEffect
     {
         yield return new WaitForSeconds(0.5f);
         card.Reinitialize(_combatPreset);
+        card.TurnPlayed = manager.CurrentTurn;
         foreach (var eff in card.CombatDTO.OnUseEffects)
         {
             yield return eff.StartEffect(manager, card);
