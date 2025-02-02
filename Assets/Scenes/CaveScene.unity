@@ -1428,11 +1428,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 5.6127806
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.49999976
+      value: 2.4036195
       objectReference: {fileID: 0}
     - target: {fileID: 4032457668068773792, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_Name
@@ -1473,7 +1473,7 @@ PrefabInstance:
     - target: {fileID: 4888430626122968112, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_BoundingShape2D
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 920000904}
     - target: {fileID: 6491433514912796936, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_VertexColorAlwaysGammaSpace
       value: 1

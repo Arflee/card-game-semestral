@@ -35,7 +35,7 @@ public class CardDeck : MonoBehaviour
         }
 
         SceneManager.activeSceneChanged += OnNewSceneAdded;
-        Deck = new HashSet<int>(Enumerable.Range(0, playerCards.Length));
+        Deck = new HashSet<int>(Enumerable.Range(0, playerCards.Count));
     }
 
     private void OnNewSceneAdded(Scene current, Scene next)
@@ -101,6 +101,11 @@ public class CardDeck : MonoBehaviour
         return _cardDeck.Count;
     }
 
+    public void AddNewCard(CombatCard card)
+    {
+        playerCards.Add(card);
+    }
+
     public void ReturnCard(Card card)
     {
         _cardDeck.Enqueue(card.CombatDTO.CardPrefab);
@@ -121,5 +126,5 @@ public class CardDeck : MonoBehaviour
         return cards;
     }
 
-    public int AllCardsCount() => playerCards.Length;
+    public int AllCardsCount() => playerCards.Count;
 }
