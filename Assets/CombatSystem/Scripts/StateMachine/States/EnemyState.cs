@@ -19,22 +19,44 @@ public class EnemyState : CombatState
             {
                 yield return effect.StartEffect(StateMachine, card);
             }
+
+            if (card.TurnPlayed + 2 == StateMachine.CurrentTurn)
+            {
+                foreach (var effect in card.CombatDTO.AfterTurnEffect)
+                {
+                    yield return effect.StartEffect(StateMachine, card);
+                }
+            }
         }
 
-        var nextCard = _initializer.GetNextCard(StateMachine.EnemyOwner);
-
-        if (nextCard == null)
+        foreach (var card in StateMachine.PlayerCardsOnTable)
         {
-            Debug.LogWarning("Enemy is out of cards!");
-            yield return null;
+            if (card.TurnPlayed + 2 == StateMachine.CurrentTurn)
+            {
+                foreach (var effect in card.CombatDTO.AfterTurnEffect)
+                {
+                    yield return effect.StartEffect(StateMachine, card);
+                }
+            }
         }
-        else
-        {
-            yield return new WaitForSeconds(0.5f);
-            StateMachine.AddCardOnEnemyTable(nextCard);
 
-            StateMachine.ChangeTurn();
-            yield return null;
+        yield return new WaitForSeconds(1f);
+
+        var nextCards = _initializer.GetNextCards(StateMachine.EnemyOwner);
+        foreach (var card in nextCards)
+        {
+            if (card == null)
+            {
+                yield return null;
+            }
+            else
+            {
+                yield return new WaitForSeconds(0.5f);
+                StateMachine.AddCardOnEnemyTable(card);
+            }
         }
+
+        StateMachine.ChangeTurn();
+        yield return null;
     }
 }

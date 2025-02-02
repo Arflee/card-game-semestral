@@ -17,7 +17,7 @@ public class DragNDropTable : MonoBehaviour
 
     private void OnCardDragEnd(Card card)
     {
-        if (RectTransformUtility.RectangleContainsScreenPoint((RectTransform)playedCardsPlayer.transform, (Vector2)card.transform.position))
+        if (cardHolder.IsOverlapping(playedCardsPlayer, card) && !card.OnBoard)
         {
             if (OnTableSlotSnapped?.Invoke(card) ?? false)
             {

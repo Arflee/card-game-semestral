@@ -15,7 +15,7 @@ MonoBehaviour:
   manaCost: 3
   cardName: "Matrjo\u0161ka"
   cardDescription: "Po smrti vylo\u017E\xED 2/2 Trjo\u0161ku"
-  cardSprite: {fileID: 0}
+  cardSprite: {fileID: 21300000, guid: 1f431602263e7a54e8e0378ab7d73901, type: 3}
   health: 3
   damage: 3
   onUseEffects: []

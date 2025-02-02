@@ -5,13 +5,14 @@ using UnityEngine;
 public abstract class CardCharsSO : ScriptableObject
 {
     [Header("Card parameters")]
-    [SerializeField, Min(0)] private int manaCost;
+    [SerializeField] private int manaCost;
 
     [Header("Card information")]
     [SerializeField] private string cardName;
     [SerializeField, TextArea(3, 7)] private string cardDescription;
     [SerializeField] private Sprite cardSprite;
 
+    public Sprite CardSprite => cardSprite;
     public string Name => cardName;
     public string Description => cardDescription;
 

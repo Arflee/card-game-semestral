@@ -1,22 +1,41 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CardDeck : MonoBehaviour
 {
+    [SerializeField, Range(1, 10)] private int initialCardsInHand = 2;
     [SerializeField, Range(1, 10)] private int maxCardsInHand = 7;
-    [SerializeField] private CombatCard[] playerCards;
+    [SerializeField] private List<CombatCard> playerCards;
+    [SerializeField] private LifeCrystalParameters crystals;
+
+    public HashSet<int> Deck { get; private set; } = new HashSet<int>();
 
     private Queue<CombatCard> _cardDeck;
     private CardHolder _cardHolder;
+    private static CardDeck _instance;
 
-    public int MaxCardsInHand => maxCardsInHand;
+    public LifeCrystalParameters Crystals => crystals;
+    public int MaxCrystals => crystals.CrystalAmount;
+    public int InitialCardsInHand => initialCardsInHand;
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         SceneManager.activeSceneChanged += OnNewSceneAdded;
-        Deck = new HashSet<int>(Enumerable.Range(0, playerCards.Count));
+        Deck = new HashSet<int>(Enumerable.Range(0, playerCards.Length));
     }
 
     private void OnNewSceneAdded(Scene current, Scene next)
@@ -24,10 +43,14 @@ public class CardDeck : MonoBehaviour
         ApplyDeck();
     }
 
-    private void OnNewSceneAdded(Scene arg0, Scene arg1)
+    public void ApplyDeck()
     {
-        _cardDeck = new(Utility.Shuffle(playerCards));
-        _cardHolder = FindObjectOfType<CardHolder>();
+        List<CombatCard> cards = new List<CombatCard>();
+        var allCards = GetAllCards();
+        foreach (var cardId in Deck)
+            cards.Add(allCards[cardId]);
+
+        _cardDeck = new(Utility.Shuffle(cards));
     }
 
     public CombatCard TakeCard(CardOwner owner)
@@ -37,10 +60,28 @@ public class CardDeck : MonoBehaviour
             return null;
         }
 
+        if (_cardHolder == null)
+            _cardHolder = FindObjectOfType<CardHolder>();
+
         var takenCard = _cardDeck.Dequeue();
+
+        if (_cardHolder.CardsInHand.Count == maxCardsInHand)
+        {
+            var card = _cardHolder.CreateTempCard(takenCard, owner, _cardHolder.transform.parent);
+            StartCoroutine(DiscardCard(card));
+            return null;
+        }
+
         _cardHolder.AddCard(takenCard, owner);
 
         return takenCard;
+    }
+
+    private IEnumerator DiscardCard(Card card)
+    {
+        yield return new WaitForSeconds(1.5f);
+        Destroy(card.CardVisual.gameObject);
+        Destroy(card.transform.parent.gameObject);
     }
 
     public CombatCard TakeCardWithoutAddingToHolder()
@@ -80,11 +121,5 @@ public class CardDeck : MonoBehaviour
         return cards;
     }
 
-    public void AddNewCard(CombatCard newCard)
-    {
-        playerCards.Add(newCard);
-    }
-
-
-    public int AllCardsCount() => playerCards.Count;
+    public int AllCardsCount() => playerCards.Length;
 }

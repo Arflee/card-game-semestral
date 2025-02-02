@@ -15,7 +15,7 @@ MonoBehaviour:
   manaCost: 2
   cardName: "Trjo\u0161ka"
   cardDescription: "P\u0159i smrti vylo\u017E\xED 1/1 Jo\u0161ku"
-  cardSprite: {fileID: 0}
+  cardSprite: {fileID: 21300000, guid: cee0bd4afa68f634e858c6ef09331855, type: 3}
   health: 2
   damage: 2
   onUseEffects: []

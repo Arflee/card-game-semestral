@@ -16,9 +16,10 @@ MonoBehaviour:
   cardName: "Pt\xE1k Ohniv\xE1k"
   cardDescription: "Kdy\u017E um\u0159e, prom\u011Bn\xED se na 0/1 Popel"
   cardSprite: {fileID: 0}
-  health: 4
-  damage: 2
+  health: 2
+  damage: 4
   onUseEffects: []
   onStartTurnEffects: []
   onDeathEffects:
   - {fileID: 11400000, guid: 370e4e0e69cce2a4dbf80fa14ffbc5bb, type: 2}
+  afterTurnEffects: []

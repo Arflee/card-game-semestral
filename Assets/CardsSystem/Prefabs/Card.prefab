@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeedLimit: 100
-  selectionOffset: 50
+  selectionOffset: 0
   PointerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -153,4 +153,7 @@ MonoBehaviour:
   SelectEvent:
     m_PersistentCalls:
       m_Calls: []
+  IsDestroyed: 0
+  OnBoard: 0
+  TurnPlayed: -1
   cardVisualPrefab: {fileID: 3700769039360204207, guid: 45bb3addbb980044283664edf8de3c34, type: 3}

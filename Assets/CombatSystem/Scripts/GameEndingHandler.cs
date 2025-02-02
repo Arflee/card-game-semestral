@@ -48,14 +48,22 @@ public class GameEndingHandler : MonoBehaviour
 
     public void PlayerWonGame(string gameId)
     {
+        var playersDeck = FindAnyObjectByType<CardDeck>();
+        var enemy = FindAnyObjectByType<EnemyInitializer>();
+
+        foreach (var card in enemy.GetRewardCards())
+        {
+            playersDeck.AddNewCard(card);
+        }
+
         _gameEndings[gameId] = Ending.Win;
         ReturnToLastScene();
     }
 
     private void ReturnToLastScene()
     {
-        var sceneLoad = SceneManager.LoadSceneAsync(CrossScenePlayerState.Instance.SceneName);
-        sceneLoad.completed += SceneLoadCompleted;
+        var levelLoader = FindObjectOfType<LevelLoader>();
+        //levelLoader.OnLoadFinish += SceneLoadCompleted;
     }
 
     private void SceneLoadCompleted(AsyncOperation obj)

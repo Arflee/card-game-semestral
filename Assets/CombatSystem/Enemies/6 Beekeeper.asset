@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f95edbd1baf01e45804076c2c34baf2, type: 3}
+  m_Name: 6 Beekeeper
+  m_EditorClassIdentifier: 
+  _enemyDeckPerCrystalsDestroyed:
+  - _cards:
+    - {fileID: 11400000, guid: d8d20aa8cb83e0a438c8e409a817a3b7, type: 2}
+    _shuffleDeck: 0
+    _reshufleWhenEmpty: 1
+    _cardsPerTurn: 1
+  - _cards:
+    - {fileID: 11400000, guid: 2bb4e4326e3bf0b4c9d3115ce49d9c25, type: 2}
+    _shuffleDeck: 0
+    _reshufleWhenEmpty: 1
+    _cardsPerTurn: 1
+  - _cards:
+    - {fileID: 11400000, guid: 59d95d73542b472449d0f1f155d14172, type: 2}
+    _shuffleDeck: 0
+    _reshufleWhenEmpty: 1
+    _cardsPerTurn: 1
+  _reward: []
+  _crystals: {fileID: 11400000, guid: e5d2ce0ddd2f02740b706f1581dc6903, type: 2}

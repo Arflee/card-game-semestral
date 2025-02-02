@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "Dialogue Sequence", menuName = "Dialogues/Create New Dialogue Sequence", order = 1)]
 public class DialogueSequence : ScriptableObject

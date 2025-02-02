@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class CardHolder : MonoBehaviour
 {
@@ -14,6 +15,13 @@ public class CardHolder : MonoBehaviour
 
     private bool _isCrossing = false;
     [SerializeField] private bool tweenCardReturn = true;
+    [SerializeField] private Transform startingPosition;
+
+    [Header("Drag Visualization")]
+    [SerializeField] private Image dragArea;
+    [SerializeField] private Color activeColor;
+    [SerializeField] private Color selectedColor;
+    private Color normalColor;
 
     private List<UnityAction<Card>> _externalOnDragEndActions = new();
 
@@ -22,6 +30,7 @@ public class CardHolder : MonoBehaviour
     private void Start()
     {
         _rect = (RectTransform)transform;
+        normalColor = dragArea.color;
     }
 
     private void BeginDrag(Card card)
@@ -31,6 +40,8 @@ public class CardHolder : MonoBehaviour
 
     private void EndDrag(Card card)
     {
+        dragArea.color = normalColor;
+
         if (_selectedCard == null)
             return;
 
@@ -44,6 +55,16 @@ public class CardHolder : MonoBehaviour
         _selectedCard = null;
     }
 
+    public bool IsDragging() => _selectedCard != null;
+
+    public bool IsOverlapping(RectTransform rect, Card card = null)
+    {
+        if (card == null)
+            card = _selectedCard;
+        //return RectTransformUtility.RectangleContainsScreenPoint(rect, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        return RectTransformUtility.RectangleContainsScreenPoint(rect, (Vector2)card.transform.position);
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(1))
@@ -54,8 +75,13 @@ public class CardHolder : MonoBehaviour
             }
         }
 
-        if (_selectedCard == null)
+        if (_selectedCard == null || _selectedCard.OnBoard)
             return;
+
+        if (IsOverlapping(dragArea.rectTransform))
+            dragArea.color = selectedColor;
+        else
+            dragArea.color = activeColor;
 
         if (_isCrossing)
             return;
@@ -115,9 +141,19 @@ public class CardHolder : MonoBehaviour
 
     public void UseCardFromHand(Card card)
     {
-        card.DisableCard();
+        card.PlaceOnBoard();
         _cards.Remove(card);
         card.CardVisual.PutOnBackgrond();
+    }
+
+    public Card CreateTempCard(CombatCard combatCard, CardOwner owner, Transform parent)
+    {
+        var createdSlot = Instantiate(slotPrefab, parent);
+        var createdCard = createdSlot.GetComponentInChildren<Card>();
+
+        createdCard.Initialize(combatCard, owner, startingPosition.position);
+        createdCard.DisableCard();
+        return createdCard;
     }
 
     public void AddCard(CombatCard combatCard, CardOwner owner)
@@ -125,7 +161,7 @@ public class CardHolder : MonoBehaviour
         var createdSlot = Instantiate(slotPrefab, transform);
         var createdCard = createdSlot.GetComponentInChildren<Card>();
 
-        createdCard.Initialize(combatCard, owner);
+        createdCard.Initialize(combatCard, owner, startingPosition.position);
 
         createdCard.BeginDragEvent.AddListener(BeginDrag);
         createdCard.EndDragEvent.AddListener(EndDrag);
@@ -135,7 +171,7 @@ public class CardHolder : MonoBehaviour
             createdCard.EndDragEvent.AddListener(action);
         }
 
-        createdCard.name = combatCard.Name; 
+        createdCard.name = combatCard.Name;
 
         _cards.Add(createdCard);
     }
