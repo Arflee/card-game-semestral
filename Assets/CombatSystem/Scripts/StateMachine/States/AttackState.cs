@@ -50,5 +50,11 @@ public class AttackState : CombatState
         }
 
         yield return StateMachine.CleanBoardAfterTurn();
+        StateMachine.SetState(NextState());
+    }
+
+    public override CombatState NextState()
+    {
+        return new EnemyState(StateMachine);
     }
 }

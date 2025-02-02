@@ -235,6 +235,58 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &4088223192160849866
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7884457524248186529}
+  - component: {fileID: 8406326318023556999}
+  m_Layer: 5
+  m_Name: Dialogues
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7884457524248186529
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4088223192160849866}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5319436337358068572}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8406326318023556999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4088223192160849866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776008d1a78a36645b0f7a603bdf4ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogueSequence: {fileID: 11400000, guid: a3a9ad74f949b4f4e83f833370b7f116, type: 2}
+  dialogueCanvas: {fileID: 4088223192160849866}
+  dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
+  skipInEditor: 0
 --- !u!1 &4468317207604050633
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,6 +955,7 @@ RectTransform:
   - {fileID: 1215606594090364743}
   - {fileID: 1797303138662103213}
   - {fileID: 4737937262690929976}
+  - {fileID: 7884457524248186529}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -992,6 +1045,7 @@ MonoBehaviour:
   enemyCrystalPanel: {fileID: 1080757137795088241}
   endTurnButton: {fileID: 1109240194875351221}
   maxCardsOnBoard: 5
+  dialogue: {fileID: 8406326318023556999}
 --- !u!114 &2847694753046001111
 MonoBehaviour:
   m_ObjectHideFlags: 0

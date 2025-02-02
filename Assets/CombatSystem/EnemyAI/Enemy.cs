@@ -8,11 +8,28 @@ public class Enemy : ScriptableObject
     [SerializeField] private List<EnemyDeck> _enemyDeckPerCrystalsDestroyed;
     [SerializeField] private CombatCard[] _reward;
     [SerializeField] private LifeCrystalParameters _crystals;
+    [SerializeField] private DialogueSequence[] inGameDialogues;
+    [SerializeField] private Tutorial tutorial;
 
     public List<EnemyDeck> EnemyDeckPerCrystalsDestroyed => _enemyDeckPerCrystalsDestroyed;
     public CombatCard[] Reward => _reward;
     public LifeCrystalParameters Crystals => _crystals;
+    
+    public CombatState StartingCombatState(CombatStateMachine machine)
+    {
+        Queue<DialogueSequence> dialogues = new Queue<DialogueSequence>(inGameDialogues);
+
+        switch (tutorial)
+        {
+            case Tutorial.TotalIntro:
+                return new Tutorial1BegginingState(machine, dialogues);
+            default:
+                return new EnemyState(machine);
+        }
+    }
 }
+
+public enum Tutorial { None, TotalIntro, AdvancedTechniques, Crystals };
 
 [System.Serializable]
 public class EnemyDeck : IEnumerable<CombatCard>
