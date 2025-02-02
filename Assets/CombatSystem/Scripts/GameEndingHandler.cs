@@ -62,8 +62,8 @@ public class GameEndingHandler : MonoBehaviour
 
     private void ReturnToLastScene()
     {
-        var sceneLoad = SceneManager.LoadSceneAsync(CrossScenePlayerState.Instance.SceneName);
-        sceneLoad.completed += SceneLoadCompleted;
+        var levelLoader = FindObjectOfType<LevelLoader>();
+        //levelLoader.OnLoadFinish += SceneLoadCompleted;
     }
 
     private void SceneLoadCompleted(AsyncOperation obj)

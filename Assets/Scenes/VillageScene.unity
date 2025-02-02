@@ -284,6 +284,7 @@ MonoBehaviour:
   dialogueCanvas: {fileID: 1547922503}
   dialogueBubblePrefab: {fileID: 0}
   skipInEditor: 0
+  choiceEvents: []
 --- !u!1001 &81108459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5702,10 +5703,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 776008d1a78a36645b0f7a603bdf4ad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueSequence: {fileID: 0}
+  _dialogueSequence: {fileID: 11400000, guid: a6159a581218f4048934dc0d29d24407, type: 2}
   dialogueCanvas: {fileID: 0}
   dialogueBubblePrefab: {fileID: 0}
   skipInEditor: 0
+  choiceEvents: []
 --- !u!1001 &1312069782
 PrefabInstance:
   m_ObjectHideFlags: 0

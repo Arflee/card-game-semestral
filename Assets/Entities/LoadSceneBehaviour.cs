@@ -15,7 +15,7 @@ public class LoadSceneBehaviour : BehaviourState
         CrossScenePlayerState.Instance.SavePosition(playerPosition);
         CrossScenePlayerState.Instance.SaveSceneName(SceneManager.GetActiveScene().name);
 
-        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+        LevelLoader.Instance.LoadScene(sceneName);
     }
 
     public override BehaviourState NextState()
