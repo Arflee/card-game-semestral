@@ -113,6 +113,9 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (!_isDragging)
+            return;
+
         EndDragEvent.Invoke(this);
 
         _isDragging = false;
@@ -159,10 +162,10 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 
         PointerUpEvent.Invoke(this, _pointerUpTime - _pointerDownTime > .2f);
 
+        OnEndDrag(eventData);
         if (_pointerUpTime - _pointerDownTime > .2f)
             return;
 
-        OnEndDrag(eventData);
         if (_wasDragged)
             return;
 
