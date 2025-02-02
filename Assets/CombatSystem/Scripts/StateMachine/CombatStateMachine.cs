@@ -29,9 +29,7 @@ public class CombatStateMachine : MonoBehaviour
     public CardOwner PlayerOwner { get; private set; }
     public CardOwner EnemyOwner { get; private set; }
     public ManaPanel ManaPanel => manaPanel;
-
     public event Action OnEndTurn;
-
     public int CardsDrawnPerTurn { get; private set; } = 1;
     public int PlayerCrystals => lifeCrystalPanel.Amount;
     public int EnemyCrystals => enemyCrystalPanel.Amount;
@@ -40,7 +38,6 @@ public class CombatStateMachine : MonoBehaviour
     public GameEndingHandler GameHandler => _gameStateHandler;
     public Button EndTurnButton => endTurnButton;
     public bool CanPlayCard { get; set; }
-
     public int CurrentTurn { get; set; } = 0;
 
 

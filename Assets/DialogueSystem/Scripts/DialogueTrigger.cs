@@ -8,8 +8,9 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private DialogueSequence _dialogueSequence;
     [SerializeField] private GameObject dialogueCanvas;
     [SerializeField] private SlidingDialogueText dialogueBubblePrefab;
+#if UNITY_EDITOR
     [SerializeField] private bool skipInEditor = false;
-
+#endif
     [SerializeField] private UnityEvent[] choiceEvents;
 
     public event Action OnDialogueEnd;

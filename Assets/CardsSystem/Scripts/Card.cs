@@ -27,6 +27,8 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     private float _pointerUpTime;
     private float _pointerDownTime;
 
+    private int _originalSortingOrder;
+
     [HideInInspector] public UnityEvent<Card> PointerEnterEvent;
     [HideInInspector] public UnityEvent<Card> PointerExitEvent;
     [HideInInspector] public UnityEvent<Card, bool> PointerUpEvent;
@@ -106,6 +108,9 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
         _imageComponent.raycastTarget = false;
 
         _wasDragged = true;
+
+        _originalSortingOrder = CardVisual.LocalCanvas.sortingOrder;
+        CardVisual.LocalCanvas.sortingOrder = 100;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -171,6 +176,7 @@ public class Card : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 
         IsSelected = !IsSelected;
         SelectEvent.Invoke(this, IsSelected);
+        CardVisual.LocalCanvas.sortingOrder = _originalSortingOrder;
 
         if (IsSelected)
             transform.localPosition += (CardVisual.transform.up * selectionOffset);

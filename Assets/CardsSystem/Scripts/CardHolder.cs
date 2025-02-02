@@ -163,6 +163,7 @@ public class CardHolder : MonoBehaviour
 
         createdCard.Initialize(combatCard, owner, startingPosition.position);
 
+        createdCard.CardVisual.LocalCanvas.sortingLayerName = "Foreground";
         createdCard.BeginDragEvent.AddListener(BeginDrag);
         createdCard.EndDragEvent.AddListener(EndDrag);
 

@@ -17,6 +17,6 @@ public class CombatCard : CardCharsSO
     public IEnumerable<CardEffect> OnUseEffects => onUseEffects;
     public IEnumerable<CardEffect> OnStartTurnEffects => onStartTurnEffects;
     public IEnumerable<CardEffect> OnDeathEffects => onDeathEffects;
-    public IEnumerable<CardEffect> AfterTrunEffects => afterTurnEffects;
+    public IEnumerable<CardEffect> AfterTurnEffects => afterTurnEffects;
 
 }

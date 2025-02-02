@@ -75,6 +75,8 @@ public class CardVisual : MonoBehaviour
     private float curveYOffset;
     private float curveRotationOffset;
 
+    public Canvas LocalCanvas => _localCanvas;
+
     private void Start()
     {
         shadowDistance = visualShadow.localPosition;
@@ -257,8 +259,8 @@ public class CardVisual : MonoBehaviour
     public void PutOnBackgrond()
     {
         _localCanvas.overrideSorting = true;
-        _localCanvas.sortingOrder = 1;
-        _localCanvas.sortingLayerName = "Background";
+        _localCanvas.sortingOrder = 10;
+        _localCanvas.sortingLayerName = "Default";
     }
 
     public void ShowEffect()
