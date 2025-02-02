@@ -23,6 +23,10 @@ public class Enemy : ScriptableObject
         {
             case Tutorial.TotalIntro:
                 return new Tutorial1BegginingState(machine, dialogues);
+            case Tutorial.AdvancedTechniques:
+                return new Tutorial2BegginingState(machine, dialogues);
+            case Tutorial.Crystals:
+                return new Tutorial3BegginingState(machine, dialogues);
             default:
                 return new EnemyState(machine);
         }

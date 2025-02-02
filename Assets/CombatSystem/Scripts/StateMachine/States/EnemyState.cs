@@ -57,7 +57,6 @@ public class EnemyState : CombatState
         }
 
         StateMachine.SetState(NextState());
-        yield return null;
     }
 
     public override CombatState NextState()

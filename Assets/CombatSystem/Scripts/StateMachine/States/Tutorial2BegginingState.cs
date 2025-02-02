@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tutorial1BegginingState : EnemyState
+public class Tutorial2BegginingState : EnemyState
 {
     private readonly Queue<DialogueSequence> dialogues;
 
-    public Tutorial1BegginingState(CombatStateMachine machine, Queue<DialogueSequence> dialogues) : base(machine)
+    public Tutorial2BegginingState(CombatStateMachine machine, Queue<DialogueSequence> dialogues) : base(machine)
     {
         this.dialogues = dialogues;
     }
@@ -15,10 +15,5 @@ public class Tutorial1BegginingState : EnemyState
     {
         yield return StateMachine.DialogueCoroutine(dialogues.Dequeue());
         yield return base.EnterState();
-    }
-
-    public override CombatState NextState()
-    {
-        return new Tutorial1PlayerTurnState(StateMachine, dialogues);
     }
 }
