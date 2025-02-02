@@ -9,13 +9,14 @@ public class CardDeck : MonoBehaviour
 {
     [SerializeField, Range(1, 10)] private int initialCardsInHand = 2;
     [SerializeField, Range(1, 10)] private int maxCardsInHand = 7;
-    [SerializeField] private CombatCard[] playerCards;
+    [SerializeField] private List<CombatCard> playerCards;
     [SerializeField] private LifeCrystalParameters crystals;
 
     public HashSet<int> Deck { get; private set; } = new HashSet<int>();
 
     private Queue<CombatCard> _cardDeck;
     private CardHolder _cardHolder;
+    private static CardDeck _instance;
 
     public LifeCrystalParameters Crystals => crystals;
     public int MaxCrystals => crystals.CrystalAmount;
@@ -23,12 +24,21 @@ public class CardDeck : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         SceneManager.activeSceneChanged += OnNewSceneAdded;
         Deck = new HashSet<int>(Enumerable.Range(0, playerCards.Length));
     }
 
-    private void OnNewSceneAdded(Scene arg0, Scene arg1)
+    private void OnNewSceneAdded(Scene current, Scene next)
     {
         ApplyDeck();
     }

@@ -284,6 +284,7 @@ MonoBehaviour:
   dialogueCanvas: {fileID: 1547922503}
   dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
   skipInEditor: 0
+  choiceEvents: []
 --- !u!1001 &81108459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5706,6 +5707,7 @@ MonoBehaviour:
   dialogueCanvas: {fileID: 1547922503}
   dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
   skipInEditor: 0
+  choiceEvents: []
 --- !u!1001 &1312069782
 PrefabInstance:
   m_ObjectHideFlags: 0

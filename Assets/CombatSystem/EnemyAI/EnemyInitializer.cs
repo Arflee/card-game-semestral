@@ -79,4 +79,9 @@ public class EnemyInitializer : MonoBehaviour
 
         return _shuffledDeck.Count;
     }
+
+    public CombatCard[] GetRewardCards()
+    {
+        return enemy.Reward;
+    }
 }

@@ -22,7 +22,7 @@ public class SlidingDialogueText : MonoBehaviour
     private List<Button> _createdButtons = new();
     
     public event Action OnDialogueSequenceEnd;
-
+    public event Action<int> OnChoiceMade;
 
     private void OnEnable()
     {
@@ -47,34 +47,33 @@ public class SlidingDialogueText : MonoBehaviour
     {
         if (_dialogueIndex == _dialogueSequence.Monologues.Count)
         {
-            if (_dialogueSequence.AvailableChoices.Count != 0)
+            if (_dialogueSequence.AvailableChoices.Count == 0)
             {
-                if (_choicePanel.activeSelf)
-                    return;
-
-                _choicePanel.SetActive(true);
-                _scrollRect.gameObject.SetActive(false);
-                for (int i = 0; i < _dialogueSequence.AvailableChoices.Count; i++)
-                {
-                    DialogueChoice choice = _dialogueSequence.AvailableChoices[i];
-                    var button = Instantiate(_choiceButton, _choicePanel.transform);
-                    _createdButtons.Add(button);
-                    int temp = i;
-                    button.onClick.AddListener(() =>
-                    {
-                        ChooseDialogueSequenceOnClick(temp);
-                        _createdButtons.ForEach(b => Destroy(b.gameObject));
-                        _createdButtons.Clear();
-                    });
-                    button.GetComponentInChildren<TextMeshProUGUI>().text = choice.choiceDescription;
-                }
-
+                OnDialogueSequenceEnd();
+                inputActions.Player.Interact.performed -= OnMouseClick;
                 return;
             }
 
+            if (_choicePanel.activeSelf)
+                return;
 
-            OnDialogueSequenceEnd();
-            inputActions.Player.Interact.performed -= OnMouseClick;
+            _choicePanel.SetActive(true);
+            _scrollRect.gameObject.SetActive(false);
+            for (int i = 0; i < _dialogueSequence.AvailableChoices.Count; i++)
+            {
+                DialogueChoice choice = _dialogueSequence.AvailableChoices[i];
+                var button = Instantiate(_choiceButton, _choicePanel.transform);
+                _createdButtons.Add(button);
+                int temp = i;
+                button.onClick.AddListener(() =>
+                {
+                    ChooseDialogueSequenceOnClick(temp);
+                    _createdButtons.ForEach(b => Destroy(b.gameObject));
+                    _createdButtons.Clear();
+                });
+                button.GetComponentInChildren<TextMeshProUGUI>().text = choice.choiceDescription;
+            }
+
             return;
         }
 
@@ -94,6 +93,8 @@ public class SlidingDialogueText : MonoBehaviour
         _dialogueSequence = _dialogueSequence.AvailableChoices[buttonIndex].avalableChoice;
         _scrollRect.gameObject.SetActive(true);
         _choicePanel.SetActive(false);
+
+        OnChoiceMade(buttonIndex);
 
         StartCoroutine(TypeSymbols(_dialogueSequence.Monologues[_dialogueIndex]));
     }
