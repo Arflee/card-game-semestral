@@ -533,6 +533,7 @@ GameObject:
   - component: {fileID: 3056088566734355122}
   - component: {fileID: 8896034102884625930}
   - component: {fileID: 5005831631892458415}
+  - component: {fileID: 1636220393526381958}
   m_Layer: 5
   m_Name: Deck Editor
   m_TagString: Untagged
@@ -601,6 +602,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 2
+--- !u!114 &1636220393526381958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593281665255302880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b87e8e9c77fc249869590de96ac183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardPanel: {fileID: 2693444840486783248}
+  deckPanel: {fileID: 7040018482992065009}
+  cardPrefab: {fileID: 6465301416783540824, guid: 22bd94e49ece6b941a886b42bc7ad54b, type: 3}
+  namePrefab: {fileID: 2203931826779438013, guid: 3ff0f182a6f0ef047a0b43fe6cf7a619, type: 3}
+  confirmButton: {fileID: 1405569664762923270}
+  confirmText: {fileID: 2551041633366029016}
+  minCards: 16
 --- !u!1 &1614694511791573182
 GameObject:
   m_ObjectHideFlags: 0
@@ -1360,6 +1380,7 @@ GameObject:
   - component: {fileID: 673223157841434582}
   - component: {fileID: 1887787765114973016}
   - component: {fileID: 6396864854040317016}
+  - component: {fileID: 6723632813484568976}
   m_Layer: 5
   m_Name: Deck Canvas
   m_TagString: Untagged
@@ -1451,6 +1472,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6723632813484568976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5725827620655845768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a76e46bd4ec12d04ca74a9ccf1985496, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deckEditorPanel: {fileID: 1636220393526381958}
+  infoText: {fileID: 719105658878377089}
 --- !u!1 &6078390038419795102
 GameObject:
   m_ObjectHideFlags: 0
