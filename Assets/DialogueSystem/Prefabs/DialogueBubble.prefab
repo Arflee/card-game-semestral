@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 8739868334914867508}
   - component: {fileID: 5732501455354126277}
   - component: {fileID: 3184751573435302533}
+  - component: {fileID: 7202398341712847101}
   m_Layer: 5
   m_Name: DialogueBubble
   m_TagString: Untagged
@@ -245,21 +246,29 @@ MonoBehaviour:
   _scrollRect: {fileID: 5407359389292932807}
   _speakersName: {fileID: 8182398302947340175}
   _slidingText: {fileID: 8338448891109589092}
-  evten:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+--- !u!223 &7202398341712847101
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309854110405630130}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 20
+  m_TargetDisplay: 0
 --- !u!1 &2161527578144042842
 GameObject:
   m_ObjectHideFlags: 0

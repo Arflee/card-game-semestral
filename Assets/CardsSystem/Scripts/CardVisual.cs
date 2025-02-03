@@ -259,8 +259,8 @@ public class CardVisual : MonoBehaviour
     public void PutOnBackgrond()
     {
         _localCanvas.overrideSorting = true;
-        _localCanvas.sortingOrder = 10;
-        _localCanvas.sortingLayerName = "Default";
+        _localCanvas.sortingOrder = 1;
+        _localCanvas.sortingLayerName = "Background";
     }
 
     public void ShowEffect()

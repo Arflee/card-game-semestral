@@ -29,7 +29,6 @@ public class UIFunctions : MonoBehaviour
     {
         _menuOn = !_menuOn;
         menu.SetActive(_menuOn);
-        Time.timeScale = _menuOn ? 0f : 1f;
     }
 
     private void Update()
