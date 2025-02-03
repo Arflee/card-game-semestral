@@ -521,7 +521,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7197711151829177482}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1636220393526381958}
+        m_TargetAssemblyTypeName: DeckEditorManger, Assembly-CSharp
+        m_MethodName: ClearDeck
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1593281665255302880
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,7 +628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardPanel: {fileID: 2693444840486783248}
   deckPanel: {fileID: 7040018482992065009}
-  cardPrefab: {fileID: 6465301416783540824, guid: 22bd94e49ece6b941a886b42bc7ad54b, type: 3}
+  cardPrefab: {fileID: 970119391911413788, guid: 22bd94e49ece6b941a886b42bc7ad54b, type: 3}
   namePrefab: {fileID: 2203931826779438013, guid: 3ff0f182a6f0ef047a0b43fe6cf7a619, type: 3}
   confirmButton: {fileID: 1405569664762923270}
   confirmText: {fileID: 2551041633366029016}
@@ -2066,4 +2078,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2552975651517115358}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1636220393526381958}
+        m_TargetAssemblyTypeName: DeckEditorManger, Assembly-CSharp
+        m_MethodName: ApplyDeck
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
