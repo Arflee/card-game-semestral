@@ -14,6 +14,7 @@ public class PreCombatState : CombatState
 
     public override IEnumerator EnterState()
     {
+        StateMachine.SetEndTurnButtonActive(false);
         for (int i = 0; i < _playerDeck.InitialCardsInHand; i++)
         {
             yield return new WaitForSeconds(0.5f);

@@ -16,7 +16,7 @@ public class Tutorial1PlayerTurnState : PlayerState
     {
         yield return base.EnterState();
         StateMachine.CanPlayCard = false;
-        StateMachine.EndTurnButton.interactable = false;
+        StateMachine.SetEndTurnButtonActive(false);
         yield return StateMachine.DialogueCoroutine(dialogues.Dequeue());
         StateMachine.CanPlayCard = true;
     }
@@ -24,7 +24,7 @@ public class Tutorial1PlayerTurnState : PlayerState
     public override void CardAdded(Card card)
     {
         if (addedCards == 0)
-            StateMachine.Dialogue(dialogues.Dequeue(), () => StateMachine.EndTurnButton.interactable = true);
+            StateMachine.Dialogue(dialogues.Dequeue(), () => StateMachine.SetEndTurnButtonActive(true));
         addedCards++;
     }
 

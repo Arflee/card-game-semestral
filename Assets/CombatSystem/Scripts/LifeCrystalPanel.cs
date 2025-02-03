@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -40,5 +41,21 @@ public class LifeCrystalPanel : MonoBehaviour
 
         lastCrystal.TakeDamage(damage);
         return spawnedCrystals.Count;
+    }
+
+    public bool TryGetCrystalPos(out Vector3 position)
+    {
+        position = new Vector3();
+        if (spawnedCrystals.Count == 0)
+            return false;
+
+        var lastCrystal = spawnedCrystals.Peek();
+        if (lastCrystal == null)
+        {
+            return false;
+        }
+
+        position = lastCrystal.transform.position;
+        return true;
     }
 }
