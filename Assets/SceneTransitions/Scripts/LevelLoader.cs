@@ -50,6 +50,8 @@ public class LevelLoader : MonoBehaviour
     {
         transitionAnimator.SetTrigger("Start");
 
+        yield return new WaitForSeconds(1f);
+
         var asyncLoading = SceneManager.LoadSceneAsync(sceneName);
         asyncLoading.completed += OnLoadFinish;
 

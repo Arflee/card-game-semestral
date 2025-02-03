@@ -94,6 +94,9 @@ public class CombatStateMachine : MonoBehaviour
             RemoveCardFromTable(card);
             return;
         }
+
+        card.CardVisual.LocalCanvas.sortingLayerName = "Background";
+
         EnemyCardsOnTable.Add(card);
         StartCoroutine(AddCard(card));
     }
