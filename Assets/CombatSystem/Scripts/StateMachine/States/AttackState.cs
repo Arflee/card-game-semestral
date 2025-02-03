@@ -27,6 +27,7 @@ public class AttackState : CombatState
         {
             var playerCard = StateMachine.PlayerCardsOnTable[i];
             var originalPosition = playerCard.CardVisual.transform.position;
+            Vector3 halfPos;
 
             if (PlayerHasMoreCards(i))
             {
@@ -39,7 +40,8 @@ public class AttackState : CombatState
 
                 attacking++;
                 bool attackingCrystal = true;
-                playerCard.CardVisual.transform.DOMove(crystal, _attackDuration)
+                halfPos = (crystal - originalPosition) * 0.5f + originalPosition;
+                playerCard.CardVisual.transform.DOMove(halfPos, _attackDuration)
                     .SetEase(Ease.OutExpo)
                     .OnComplete(() =>
                     {
@@ -65,9 +67,9 @@ public class AttackState : CombatState
             }
 
             var enemyCard = StateMachine.EnemyCardsOnTable[i];
-
+            halfPos = (enemyCard.CardVisual.transform.position - originalPosition) * 0.5f + originalPosition;
             attacking++;
-            playerCard.CardVisual.transform.DOMove(enemyCard.CardVisual.transform.position, _attackDuration)
+            playerCard.CardVisual.transform.DOMove(halfPos, _attackDuration)
                 .SetEase(Ease.OutExpo)
                 .OnComplete(() =>
                 {
@@ -99,7 +101,8 @@ public class AttackState : CombatState
 
             attacking++;
             bool attackingCrystal = true;
-            enemyCard.CardVisual.transform.DOMove(crystal, _attackDuration)
+            Vector3 halfPos = (crystal - originalPosition) * 0.5f + originalPosition;
+            enemyCard.CardVisual.transform.DOMove(halfPos, _attackDuration)
                 .SetEase(Ease.OutExpo)
                 .OnComplete(() =>
                 {
