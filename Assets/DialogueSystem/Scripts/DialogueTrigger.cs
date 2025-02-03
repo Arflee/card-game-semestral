@@ -51,7 +51,10 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnChoiceMade(int choiceIndex)
     {
-        choiceEvents[choiceIndex]?.Invoke();
+        if (choiceEvents.Length > 0)
+        {
+            choiceEvents[choiceIndex]?.Invoke();
+        }
     }
 
     private void OnDialogueSequenceEnd()

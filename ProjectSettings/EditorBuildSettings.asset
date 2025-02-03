@@ -18,6 +18,30 @@ EditorBuildSettings:
     path: Assets/Scenes/Fights/0 SiblingFight.unity
     guid: 67adde7f06ca75c45a027faecedc9082
   - enabled: 1
+    path: Assets/Scenes/Fights/1 MomFight.unity
+    guid: a65391e33143016449af1795bd00f4f2
+  - enabled: 1
+    path: Assets/Scenes/Fights/2 BeekeeperFight.unity
+    guid: 341b2bf5eccafdb4ab2e1137566ab7e4
+  - enabled: 1
+    path: Assets/Scenes/Fights/2 EagleFight.unity
+    guid: b908a6116f8385e4db08a25fdf2bf0ff
+  - enabled: 1
+    path: Assets/Scenes/Fights/3 DadFight.unity
+    guid: 964623eafd12b954090530be1292488a
+  - enabled: 1
+    path: Assets/Scenes/Fights/4 AngryGoatFight.unity
+    guid: 37cc6c108c0af3d4790314c22aa124a4
+  - enabled: 1
+    path: Assets/Scenes/Fights/4 GoatFight.unity
+    guid: 00d00336d208e43499d26c556018a1e8
+  - enabled: 1
+    path: Assets/Scenes/Fights/5 GuardFight.unity
+    guid: d32995366d2fe1c4c94c7996088e90d8
+  - enabled: 1
+    path: Assets/Scenes/Fights/6 BeekeeperFight.unity
+    guid: 87aa7efc57d77a244be5816983c40f8b
+  - enabled: 1
     path: Assets/Scenes/VillageScene.unity
     guid: 73a5e463e6e5c1243910109251529011
   m_configObjects: {}

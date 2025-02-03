@@ -28,9 +28,9 @@ public class AttackState : CombatState
             {
                 if (!StateMachine.TryAttackEnemyCrystal(playerCard.CombatDTO.Damage))
                 {
+                    Debug.Log("player wins");
                     StateMachine.SetState(new WinState(StateMachine));
                 }
-                Debug.Log("Player attacks crystal");
                 yield return new WaitForSeconds(0.5f);
                 continue;
             }
@@ -61,6 +61,7 @@ public class AttackState : CombatState
             var enemyCard = StateMachine.EnemyCardsOnTable[i];
             if (!StateMachine.TryAttackPlayerCrystal(enemyCard.CombatDTO.Damage))
             {
+                Debug.Log("player loses");
                 StateMachine.SetState(new LoseState(StateMachine));
             }
             yield return new WaitForSeconds(0.5f);

@@ -21,18 +21,33 @@ public class BranchDialogueBehaviour : BehaviourState
         switch (_gameEnding.GetGameEnding(gameId))
         {
             case GameEndingHandler.Ending.Win:
-                dialogueOnWin.OnDialogueEnd += Finished;
-                dialogueOnWin.EnableDialogue();
+                if (dialogueOnWin != null)
+                {
+                    dialogueOnWin.OnDialogueEnd += Finished;
+                    dialogueOnWin.EnableDialogue();
+                }
+                else if (onWinNextState != null)
+                    onWinNextState.enabled = true;
                 break;
 
             case GameEndingHandler.Ending.Lose:
-                dialogueOnLose.OnDialogueEnd += Finished;
-                dialogueOnLose.EnableDialogue();
+                if (dialogueOnLose != null)
+                {
+                    dialogueOnLose.OnDialogueEnd += Finished;
+                    dialogueOnLose.EnableDialogue();
+                }
+                else if (onLoseNextState != null)
+                    onLoseNextState.enabled = true;
                 break;
 
             case GameEndingHandler.Ending.DidntFight:
-                dialogueOnDidntFight.OnDialogueEnd += Finished;
-                dialogueOnDidntFight.EnableDialogue();
+                if (dialogueOnDidntFight != null)
+                {
+                    dialogueOnDidntFight.OnDialogueEnd += Finished;
+                    dialogueOnDidntFight.EnableDialogue();
+                }
+                else if (onDidntFightNextState != null)
+                    onDidntFightNextState.enabled = true;
                 break;
 
             default:

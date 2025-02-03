@@ -12,6 +12,7 @@ public class GameEndingHandler : MonoBehaviour
     }
 
     private Dictionary<string, Ending> _gameEndings = new();
+    private LevelLoader levelLoader;
 
     public Ending GetGameEnding(string gameId)
     {
@@ -33,11 +34,15 @@ public class GameEndingHandler : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
+            levelLoader = FindObjectOfType<LevelLoader>();
+            levelLoader.OnLoadFinish += SceneLoadCompleted;
         }
         else
         {
             Destroy(gameObject);
         }
+
     }
 
     public void PlayerLostGame(string gameId)
@@ -62,8 +67,7 @@ public class GameEndingHandler : MonoBehaviour
 
     private void ReturnToLastScene()
     {
-        var levelLoader = FindObjectOfType<LevelLoader>();
-        //levelLoader.OnLoadFinish += SceneLoadCompleted;
+        levelLoader.LoadScene(CrossScenePlayerState.Instance.SceneName);
     }
 
     private void SceneLoadCompleted(AsyncOperation obj)

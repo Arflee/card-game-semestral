@@ -1,5 +1,4 @@
-using DG.Tweening;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -54,7 +53,7 @@ public class DeckVisual : MonoBehaviour
 
         if (cardHolder.IsDragging())
         {
-            cardCountTMP.text = "Vr�tit";
+            cardCountTMP.text = "Vrátit";
             if (cardHolder.IsOverlapping(image.rectTransform))
                 image.color = cardCount == 0 ? emptyDragSelected : dragSelected;
             else

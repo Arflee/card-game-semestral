@@ -521,19 +521,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7197711151829177482}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3676100961504708749}
-        m_TargetAssemblyTypeName: DeckEditorManger, Assembly-CSharp
-        m_MethodName: ClearDeck
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1593281665255302880
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,7 +533,6 @@ GameObject:
   - component: {fileID: 3056088566734355122}
   - component: {fileID: 8896034102884625930}
   - component: {fileID: 5005831631892458415}
-  - component: {fileID: 3676100961504708749}
   m_Layer: 5
   m_Name: Deck Editor
   m_TagString: Untagged
@@ -614,25 +601,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 2
---- !u!114 &3676100961504708749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1593281665255302880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06b87e8e9c77fc249869590de96ac183, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardPanel: {fileID: 2693444840486783248}
-  deckPanel: {fileID: 7040018482992065009}
-  cardPrefab: {fileID: 6465301416783540824, guid: 22bd94e49ece6b941a886b42bc7ad54b, type: 3}
-  namePrefab: {fileID: 2203931826779438013, guid: 3ff0f182a6f0ef047a0b43fe6cf7a619, type: 3}
-  confirmButton: {fileID: 1405569664762923270}
-  confirmText: {fileID: 2551041633366029016}
-  minCards: 16
 --- !u!1 &1614694511791573182
 GameObject:
   m_ObjectHideFlags: 0
@@ -1392,7 +1360,6 @@ GameObject:
   - component: {fileID: 673223157841434582}
   - component: {fileID: 1887787765114973016}
   - component: {fileID: 6396864854040317016}
-  - component: {fileID: 604011294757738881}
   m_Layer: 5
   m_Name: Deck Canvas
   m_TagString: Untagged
@@ -1484,20 +1451,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &604011294757738881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5725827620655845768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a76e46bd4ec12d04ca74a9ccf1985496, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deckEditorPanel: {fileID: 3676100961504708749}
-  infoText: {fileID: 719105658878377089}
 --- !u!1 &6078390038419795102
 GameObject:
   m_ObjectHideFlags: 0
@@ -2078,16 +2031,4 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2552975651517115358}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3676100961504708749}
-        m_TargetAssemblyTypeName: DeckEditorManger, Assembly-CSharp
-        m_MethodName: ApplyDeck
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
