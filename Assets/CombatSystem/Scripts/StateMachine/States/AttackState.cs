@@ -26,7 +26,6 @@ public class AttackState : CombatState
         for (int i = 0; i < StateMachine.PlayerCardsOnTable.Count; i++)
         {
             var playerCard = StateMachine.PlayerCardsOnTable[i];
-            Sequence attackSequence = DOTween.Sequence();
             var originalPosition = playerCard.CardVisual.transform.position;
 
             if (PlayerHasMoreCards(i))
@@ -38,22 +37,25 @@ public class AttackState : CombatState
                     break;
                 }
 
-                attackSequence.Append(playerCard.CardVisual.transform.DOMove(crystal, _attackDuration)
-                    .SetEase(Ease.OutExpo));
-                attackSequence.AppendInterval(_pauseDuration);
-                attackSequence.Append(playerCard.CardVisual.transform.DOMove(originalPosition, _returnDuration)
-                    .SetEase(Ease.OutQuint));
-
+                attacking++;
                 bool attackingCrystal = true;
-                attackSequence.OnComplete(() =>
-                {
-                    attackingCrystal = false;
-                    if (!StateMachine.TryAttackEnemyCrystal(playerCard.CombatDTO.Damage))
+                playerCard.CardVisual.transform.DOMove(crystal, _attackDuration)
+                    .SetEase(Ease.OutExpo)
+                    .OnComplete(() =>
                     {
-                        Debug.Log("player wins");
-                        StateMachine.SetState(new WinState(StateMachine));
-                    }
-                });
+                        attackingCrystal = false;
+                        if (!StateMachine.TryAttackEnemyCrystal(playerCard.CombatDTO.Damage))
+                        {
+                            Debug.Log("player wins");
+                            StateMachine.SetState(new WinState(StateMachine));
+                        }
+
+                        Sequence returnSequence = DOTween.Sequence();
+                        returnSequence.AppendInterval(_pauseDuration);
+                        returnSequence.Append(playerCard.CardVisual.transform.DOMove(originalPosition, _returnDuration)
+                            .SetEase(Ease.OutQuint));
+                        returnSequence.OnComplete(() => attacking--);
+                    });
 
                 while (attackingCrystal)
                 {
@@ -64,19 +66,21 @@ public class AttackState : CombatState
 
             var enemyCard = StateMachine.EnemyCardsOnTable[i];
 
-            attackSequence.Append(playerCard.CardVisual.transform.DOMove(enemyCard.CardVisual.transform.position, _attackDuration)
-                .SetEase(Ease.OutExpo));
-            attackSequence.AppendInterval(_pauseDuration);
-            attackSequence.Append(playerCard.CardVisual.transform.DOMove(originalPosition, _returnDuration)
-                .SetEase(Ease.OutQuint));
-
             attacking++;
-            attackSequence.OnComplete(() =>
-            {
-                attacking--;
-                enemyCard.TakeDamageFrom(playerCard);
-                playerCard.TakeDamageFrom(enemyCard);
-            });
+            playerCard.CardVisual.transform.DOMove(enemyCard.CardVisual.transform.position, _attackDuration)
+                .SetEase(Ease.OutExpo)
+                .OnComplete(() =>
+                {
+                    enemyCard.TakeDamageFrom(playerCard);
+                    playerCard.TakeDamageFrom(enemyCard);
+
+                    Sequence returnSequence = DOTween.Sequence();
+                    returnSequence.AppendInterval(_pauseDuration);
+                    returnSequence.Append(playerCard.CardVisual.transform.DOMove(originalPosition, _returnDuration)
+                        .SetEase(Ease.OutQuint));
+
+                    returnSequence.OnComplete(() => attacking--);
+                });
 
             yield return new WaitForSeconds(_betweenAttackDuration);
         }
@@ -84,7 +88,6 @@ public class AttackState : CombatState
         for (int i = StateMachine.PlayerCardsOnTable.Count; i < StateMachine.EnemyCardsOnTable.Count; i++)
         {
             var enemyCard = StateMachine.EnemyCardsOnTable[i];
-            Sequence attackSequence = DOTween.Sequence();
             var originalPosition = enemyCard.CardVisual.transform.position;
 
             if (!StateMachine.TryGetPlayerCrystalPos(out var crystal))
@@ -94,22 +97,25 @@ public class AttackState : CombatState
                 break;
             }
 
-            attackSequence.Append(enemyCard.CardVisual.transform.DOMove(crystal, _attackDuration)
-                .SetEase(Ease.OutExpo));
-            attackSequence.AppendInterval(_pauseDuration);
-            attackSequence.Append(enemyCard.CardVisual.transform.DOMove(originalPosition, _returnDuration)
-                .SetEase(Ease.OutQuint));
-
+            attacking++;
             bool attackingCrystal = true;
-            attackSequence.OnComplete(() =>
-            {
-                attackingCrystal = false;
-                if (!StateMachine.TryAttackPlayerCrystal(enemyCard.CombatDTO.Damage))
+            enemyCard.CardVisual.transform.DOMove(crystal, _attackDuration)
+                .SetEase(Ease.OutExpo)
+                .OnComplete(() =>
                 {
-                    Debug.Log("player loses");
-                    StateMachine.SetState(new LoseState(StateMachine));
-                }
-            });
+                    attackingCrystal = false;
+                    if (!StateMachine.TryAttackPlayerCrystal(enemyCard.CombatDTO.Damage))
+                    {
+                        Debug.Log("player loses");
+                        StateMachine.SetState(new LoseState(StateMachine));
+                    }
+
+                    Sequence returnSequence = DOTween.Sequence();
+                    returnSequence.AppendInterval(_pauseDuration);
+                    returnSequence.Append(enemyCard.CardVisual.transform.DOMove(originalPosition, _returnDuration)
+                        .SetEase(Ease.OutQuint));
+                    returnSequence.OnComplete(() => attacking--);
+                });
 
             while (attackingCrystal)
             {
