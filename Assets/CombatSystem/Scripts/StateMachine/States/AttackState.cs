@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Pospec.Helper.Audio;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -49,9 +50,12 @@ public class AttackState : CombatState
                         attackingCrystal = false;
                         if (!StateMachine.TryAttackEnemyCrystal(playerCard.CombatDTO.Damage))
                         {
+                            SoundManager.Instance.Play(StateMachine.CrystalBreaksSound);
                             Debug.Log("player wins");
                             StateMachine.SetState(new WinState(StateMachine));
                         }
+                        else
+                            SoundManager.Instance.Play(StateMachine.AttackToCrystalSound);
 
                         Sequence returnSequence = DOTween.Sequence();
                         returnSequence.AppendInterval(_pauseDuration);
@@ -76,6 +80,7 @@ public class AttackState : CombatState
                 .SetEase(Ease.OutExpo)
                 .OnComplete(() =>
                 {
+                    SoundManager.Instance.Play(StateMachine.CardsColideSound);
                     enemyCard.TakeDamageFrom(playerCard);
                     playerCard.TakeDamageFrom(enemyCard);
 
@@ -121,9 +126,12 @@ public class AttackState : CombatState
                     attackingCrystal = false;
                     if (!StateMachine.TryAttackPlayerCrystal(enemyCard.CombatDTO.Damage))
                     {
+                        SoundManager.Instance.Play(StateMachine.CrystalBreaksSound);
                         Debug.Log("player loses");
                         StateMachine.SetState(new LoseState(StateMachine));
                     }
+                    else
+                        SoundManager.Instance.Play(StateMachine.AttackToCrystalSound);
 
                     Sequence returnSequence = DOTween.Sequence();
                     returnSequence.AppendInterval(_pauseDuration);

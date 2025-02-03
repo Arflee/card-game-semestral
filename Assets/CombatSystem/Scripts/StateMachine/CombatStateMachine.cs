@@ -6,6 +6,7 @@ using TMPro;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
+using Pospec.Helper.Audio;
 
 public class CombatStateMachine : MonoBehaviour
 {
@@ -18,6 +19,14 @@ public class CombatStateMachine : MonoBehaviour
     [SerializeField] private TextMeshProUGUI endTurnText;
     [SerializeField, Range(0, 10)] private int maxCardsOnBoard;
     [SerializeField] private DialogueTrigger dialogue;
+
+    [Header("Sounds")]
+    [SerializeField] private Sound playCardSound;
+    [SerializeField] private Sound notEnoughtManaSound;
+    [SerializeField] private Sound cardsColideSound;
+    [SerializeField] private Sound attackToCrystalSound;
+    [SerializeField] private Sound crystalBreaksSound;
+    [SerializeField] private Sound cardDestroyedSound;
 
     public static bool GameActive { get; private set; } = false;
 
@@ -41,7 +50,9 @@ public class CombatStateMachine : MonoBehaviour
     public GameEndingHandler GameHandler => _gameStateHandler;
     public bool CanPlayCard { get; set; }
     public int CurrentTurn { get; set; } = 0;
-
+    public Sound CardsColideSound => cardsColideSound;
+    public Sound AttackToCrystalSound => attackToCrystalSound;
+    public Sound CrystalBreaksSound => crystalBreaksSound;
 
     private void OnEnable()
     {
@@ -78,6 +89,7 @@ public class CombatStateMachine : MonoBehaviour
 
         if (card.CombatDTO.ManaCost > PlayerMana)
         {
+            SoundManager.Instance.Play(notEnoughtManaSound);
             manaPanel.NotEnoughManaAnimation();
             return false;
         }
@@ -86,6 +98,7 @@ public class CombatStateMachine : MonoBehaviour
         PlayerMana -= card.CombatDTO.ManaCost;
         manaPanel.UseManaCrystals(card.CombatDTO.ManaCost);
         StartCoroutine(AddCard(card));
+        SoundManager.Instance.Play(playCardSound);
         return true;
     }
 
@@ -106,6 +119,7 @@ public class CombatStateMachine : MonoBehaviour
     private IEnumerator AddCard(Card card)
     {
         card.TurnPlayed = CurrentTurn;
+        SoundManager.Instance.Play(playCardSound);
         foreach (var effect in card.CombatDTO.OnUseEffects)
         {
             yield return effect.StartEffect(this, card);
@@ -133,6 +147,8 @@ public class CombatStateMachine : MonoBehaviour
             EnemyCardsOnTable.Remove(card);
             RemoveCardFromTable(card);
         }
+
+        SoundManager.Instance.Play(cardDestroyedSound);
     }
 
     private void RemoveCardFromTable(Card card)

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4096630488336007596}
   - component: {fileID: 3174530226359813279}
   - component: {fileID: 1109240194875351221}
+  - component: {fileID: 6505402656477807010}
   m_Layer: 5
   m_Name: EndTurnButton
   m_TagString: Untagged
@@ -133,6 +134,114 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6505402656477807010}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!82 &6505402656477807010
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2227600860252815353}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 8279014095907905710, guid: 88c393e949d63e44d9b56723d84968a7, type: 2}
+  m_audioClip: {fileID: 8300000, guid: a92d4aeb11920a94f9ac7d9bfc7352a4, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2592123044666731150
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,6 +1059,7 @@ GameObject:
   - component: {fileID: 5831186698571860802}
   - component: {fileID: 59931786920857578}
   - component: {fileID: 2847694753046001111}
+  - component: {fileID: 1720589931762369538}
   m_Layer: 5
   m_Name: Combat Canvas
   m_TagString: Untagged
@@ -1072,6 +1182,48 @@ MonoBehaviour:
   endTurnText: {fileID: 3830256884134435048}
   maxCardsOnBoard: 5
   dialogue: {fileID: 8406326318023556999}
+  playCardSound:
+    clips:
+    - {fileID: 8300000, guid: dcdf84f73974f0d4eb7352ebf462f2d3, type: 3}
+    minPitch: 0.95
+    maxPitch: 1.05
+    volume: 0.8
+    looping: 0
+  notEnoughtManaSound:
+    clips:
+    - {fileID: 8300000, guid: 699f877501d74904baad4a1e4e91f070, type: 3}
+    minPitch: 0.95
+    maxPitch: 1.05
+    volume: 1
+    looping: 0
+  cardsColideSound:
+    clips:
+    - {fileID: 8300000, guid: fd3e949257d33834baf06fefba8d899f, type: 3}
+    minPitch: 0.95
+    maxPitch: 1.05
+    volume: 1
+    looping: 0
+  attackToCrystalSound:
+    clips:
+    - {fileID: 8300000, guid: 9cc36216f4bda354d88b92164d1cee4c, type: 3}
+    minPitch: 0.85
+    maxPitch: 1.15
+    volume: 1
+    looping: 0
+  crystalBreaksSound:
+    clips:
+    - {fileID: 8300000, guid: 0ff2681f72f3f2840bf59fc507036026, type: 3}
+    minPitch: 0.85
+    maxPitch: 1.15
+    volume: 1
+    looping: 0
+  cardDestroyedSound:
+    clips:
+    - {fileID: 8300000, guid: ebd82ee040df67a4b9a895a05477b76a, type: 3}
+    minPitch: 0.95
+    maxPitch: 1.05
+    volume: 1
+    looping: 0
 --- !u!114 &2847694753046001111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1091,6 +1243,19 @@ MonoBehaviour:
   playedCardsEnemy: {fileID: 7066263516747352777}
   spawnLocation: {fileID: 2821080890077797304}
   manager: {fileID: 59931786920857578}
+--- !u!114 &1720589931762369538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6338338075660732472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d7d1e5fc58dbd446a7682c87b143e29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sourcePrefab: {fileID: 4267719979210161950, guid: 902c127d287d4ba4b882d8aee894774d, type: 3}
 --- !u!1 &6855377553708383237
 GameObject:
   m_ObjectHideFlags: 0
