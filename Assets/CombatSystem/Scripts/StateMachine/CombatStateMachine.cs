@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +15,7 @@ public class CombatStateMachine : MonoBehaviour
     [SerializeField] private LifeCrystalPanel lifeCrystalPanel;
     [SerializeField] private LifeCrystalPanel enemyCrystalPanel;
     [SerializeField] private Button endTurnButton;
+    [SerializeField] private TextMeshProUGUI endTurnText;
     [SerializeField, Range(0, 10)] private int maxCardsOnBoard;
     [SerializeField] private DialogueTrigger dialogue;
 
@@ -36,7 +39,6 @@ public class CombatStateMachine : MonoBehaviour
     public int PlayerMana { get; set; } = 3;
     public int MaxCardsOnBoard => maxCardsOnBoard;
     public GameEndingHandler GameHandler => _gameStateHandler;
-    public Button EndTurnButton => endTurnButton;
     public bool CanPlayCard { get; set; }
     public int CurrentTurn { get; set; } = 0;
 
@@ -138,7 +140,7 @@ public class CombatStateMachine : MonoBehaviour
 
     public void OnTurnEndButtonClicked()
     {
-        endTurnButton.interactable = false;
+        SetEndTurnButtonActive(false);
         SetState(State.NextState());
     }
 
@@ -163,10 +165,20 @@ public class CombatStateMachine : MonoBehaviour
         return EnemyCrystals > 0;
     }
 
+    public bool TryGetEnemyCrystalPos(out Vector3 position)
+    {
+        return enemyCrystalPanel.TryGetCrystalPos(out position);
+    }
+
     public bool TryAttackPlayerCrystal(int damage)
     {
         lifeCrystalPanel.AttackCrystal(damage);
         return PlayerCrystals > 0;
+    }
+
+    public bool TryGetPlayerCrystalPos(out Vector3 position)
+    {
+        return lifeCrystalPanel.TryGetCrystalPos(out position);
     }
 
     public IEnumerator DialogueCoroutine(DialogueSequence seq)
@@ -184,5 +196,11 @@ public class CombatStateMachine : MonoBehaviour
     {
         dialogue.OnDialogueEnd += onDialogueEnd;
         dialogue.EnableDialogue(seq);
+    }
+
+    public void SetEndTurnButtonActive(bool isActive)
+    {
+        endTurnButton.interactable = isActive;
+        endTurnText.text = isActive ? "Ukonèit tak" : "Nejsi na tahu";
     }
 }

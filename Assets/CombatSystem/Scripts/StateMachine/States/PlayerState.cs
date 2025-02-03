@@ -48,7 +48,7 @@ public class PlayerState : CombatState
         }
 
         StateMachine.CanPlayCard = true;
-        StateMachine.EndTurnButton.interactable = true;
+        StateMachine.SetEndTurnButtonActive(true);
     }
 
     public override CombatState NextState()
