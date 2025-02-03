@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -66,8 +67,10 @@ public class AttackState : CombatState
                 continue;
             }
 
+
             var enemyCard = StateMachine.EnemyCardsOnTable[i];
-            halfPos = (enemyCard.CardVisual.transform.position - originalPosition) * 0.5f + originalPosition;
+            var enemyPosition = enemyCard.CardVisual.transform.position;
+            halfPos = (enemyPosition - originalPosition) * 0.25f + originalPosition;
             attacking++;
             playerCard.CardVisual.transform.DOMove(halfPos, _attackDuration)
                 .SetEase(Ease.OutExpo)
@@ -83,6 +86,15 @@ public class AttackState : CombatState
 
                     returnSequence.OnComplete(() => attacking--);
                 });
+
+            Sequence enemySequence = DOTween.Sequence();
+            halfPos = (originalPosition - enemyPosition) * 0.25f + enemyPosition;
+            enemySequence.Append(enemyCard.CardVisual.transform.DOMove(halfPos, _attackDuration)
+                .SetEase(Ease.OutExpo));
+            enemySequence.AppendInterval(_pauseDuration);
+            enemySequence.Append(enemyCard.CardVisual.transform.DOMove(enemyPosition, _returnDuration)
+                .SetEase(Ease.OutQuint));
+            enemySequence.OnComplete(() => { });
 
             yield return new WaitForSeconds(_betweenAttackDuration);
         }
