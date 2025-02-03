@@ -15,7 +15,7 @@ public class CombatCardDTO
         OnUseEffects = new(card.OnUseEffects ?? Enumerable.Empty<CardEffect>());
         OnStartTurnEffects = new(card.OnStartTurnEffects ?? Enumerable.Empty<CardEffect>());
         OnDeathEffects = new(card.OnDeathEffects ?? Enumerable.Empty<CardEffect>());
-        AfterTurnEffect = new(card.AfterTrunEffects ?? Enumerable.Empty<CardEffect>());
+        AfterTurnEffect = new(card.AfterTurnEffects ?? Enumerable.Empty<CardEffect>());
         CardPrefab = card;
     }
 

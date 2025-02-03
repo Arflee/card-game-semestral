@@ -10,7 +10,6 @@ public class ScenePortal : MonoBehaviour
         if (collision.TryGetComponent<PlayerMovement>(out var player))
         {
             LevelLoader.Instance.LoadSceneWithSpawnPoint(sceneName, spawnPointName);
-            //SceneLoader.Instance.LoadScene(sceneName, spawnPointName);
         }
     }
 }

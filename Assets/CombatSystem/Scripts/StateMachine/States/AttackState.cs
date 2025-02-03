@@ -1,10 +1,13 @@
+using DG.Tweening;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditorInternal;
 using UnityEngine;
 
 public class AttackState : CombatState
 {
+    private float _attackDuration = 0.3f;
+    private float _pauseDuration = 0.5f;
+    private float _returnDuration = 0.1f;
+
     public AttackState(CombatStateMachine machine) : base(machine)
     {
     }
@@ -34,8 +37,22 @@ public class AttackState : CombatState
 
             var enemyCard = StateMachine.EnemyCardsOnTable[i];
 
-            enemyCard.TakeDamageFrom(playerCard);
-            playerCard.TakeDamageFrom(enemyCard);
+            Sequence attackSequence = DOTween.Sequence();
+
+            var originalPosition = playerCard.CardVisual.transform.position;
+
+            attackSequence.Append(playerCard.CardVisual.transform.DOMove(enemyCard.CardVisual.transform.position, _attackDuration)
+                .SetEase(Ease.OutExpo));
+            attackSequence.AppendInterval(_pauseDuration);
+            attackSequence.Append(playerCard.CardVisual.transform.DOMove(originalPosition, _returnDuration)
+                .SetEase(Ease.OutQuint));
+
+            attackSequence.OnComplete(() =>
+            {
+                enemyCard.TakeDamageFrom(playerCard);
+                playerCard.TakeDamageFrom(enemyCard);
+            });
+
             yield return new WaitForSeconds(0.5f);
         }
 

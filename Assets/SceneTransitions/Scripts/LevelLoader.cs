@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class LevelLoader : MonoBehaviour
 {
     [SerializeField] private Animator transitionAnimator;
-    [SerializeField] private float transitionDuration = 1f;
 
     public event Action<AsyncOperation> OnLoadFinish;
 
@@ -38,7 +37,7 @@ public class LevelLoader : MonoBehaviour
 
     private IEnumerator LoadCoroutineWithSpawnPoint(string sceneName, string spawnPointName)
     {
-        LoadScene(sceneName);
+        yield return LoadCoroutine(sceneName);
 
         GameObject spawnPoint = GameObject.Find(spawnPointName);
         if (spawnPoint == null)
