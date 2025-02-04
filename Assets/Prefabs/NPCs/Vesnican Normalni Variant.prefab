@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 768425568, guid: 0b8adc26649fd2d4a8f4c09e714a44f1, type: 3}
+    - target: {fileID: 3263083173838138818, guid: 6a88d87e70d1eb7489489113556822f6, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -2015702617
+      objectReference: {fileID: 0}
     - target: {fileID: 3342485102768467381, guid: 6a88d87e70d1eb7489489113556822f6, type: 3}
       propertyPath: m_Name
       value: Vesnican Normalni Variant
