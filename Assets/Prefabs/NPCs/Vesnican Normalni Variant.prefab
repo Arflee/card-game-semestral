@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3263083173838138818, guid: 6a88d87e70d1eb7489489113556822f6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 768425568, guid: 0b8adc26649fd2d4a8f4c09e714a44f1, type: 3}
+    - target: {fileID: 3263083173838138818, guid: 6a88d87e70d1eb7489489113556822f6, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -2015702617
+      objectReference: {fileID: 0}
     - target: {fileID: 3342485102768467381, guid: 6a88d87e70d1eb7489489113556822f6, type: 3}
       propertyPath: m_Name
       value: Vesnican Normalni Variant
@@ -71,6 +79,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3342485102768467381, guid: 6a88d87e70d1eb7489489113556822f6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5409227008128048089}
+    - targetCorrespondingSourceObject: {fileID: 3342485102768467381, guid: 6a88d87e70d1eb7489489113556822f6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5791831510221805765}
+    - targetCorrespondingSourceObject: {fileID: 3342485102768467381, guid: 6a88d87e70d1eb7489489113556822f6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2648897345996357326}
   m_SourcePrefab: {fileID: 100100000, guid: 6a88d87e70d1eb7489489113556822f6, type: 3}
 --- !u!1 &4796147213872222523 stripped
 GameObject:
@@ -210,3 +224,36 @@ MonoBehaviour:
   nextState: {fileID: 8529846061384974131}
   minTimeActive: 1
   maxTimeActive: 5
+--- !u!95 &5791831510221805765
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4796147213872222523}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 28de20de65fc1be4bb7fffe5f9d7452e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2648897345996357326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4796147213872222523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e049a6dbd48e7e43a15730d6769006e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
