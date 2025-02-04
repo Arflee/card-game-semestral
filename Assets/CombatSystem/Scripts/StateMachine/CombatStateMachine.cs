@@ -203,6 +203,6 @@ public class CombatStateMachine : MonoBehaviour
     public void SetEndTurnButtonActive(bool isActive)
     {
         endTurnButton.interactable = isActive;
-        endTurnText.text = isActive ? "Ukončit tak" : "Nejsi na tahu";
+        endTurnText.text = isActive ? "Ukončit tah" : "Nejsi na tahu";
     }
 }
