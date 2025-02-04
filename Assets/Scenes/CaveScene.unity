@@ -680,6 +680,7 @@ GameObject:
   - component: {fileID: 528551035}
   - component: {fileID: 528551037}
   - component: {fileID: 528551036}
+  - component: {fileID: 528551038}
   m_Layer: 0
   m_Name: Beart Sibling
   m_TagString: Untagged
@@ -801,9 +802,24 @@ MonoBehaviour:
   dialogueOnDidntFight: {fileID: 511029155}
   dialogueOnWin: {fileID: 0}
   dialogueOnLose: {fileID: 0}
-  onWinNextState: {fileID: 0}
-  onLoseNextState: {fileID: 0}
+  onWinNextState: {fileID: 528551038}
+  onLoseNextState: {fileID: 528551038}
   onDidntFightNextState: {fileID: 528551036}
+--- !u!114 &528551038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528551031}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33a859a40d123b940953f7abfa4accb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  componentsToDisable:
+  - {fileID: 1847920921}
+  nextState: {fileID: 0}
 --- !u!4 &575946643 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3809558349348202522, guid: e0f15690813642f46ab6199ed3d76732, type: 3}
@@ -1490,7 +1506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.6146193
+      value: 5.6110706
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1912,159 +1928,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1546346062
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1546346064}
-  - component: {fileID: 1546346063}
-  - component: {fileID: 1546346066}
-  - component: {fileID: 1546346067}
-  - component: {fileID: 1546346069}
-  - component: {fileID: 1546346068}
-  m_Layer: 0
-  m_Name: Bear Mother
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &1546346063
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1546346062}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -2015702617
-  m_SortingLayer: 1
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b5dbe74edf952e14fb7691b8aef167b9, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 1
---- !u!4 &1546346064
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1546346062}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.31, y: -1.96, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1546346066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1546346062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 274bcd6630a83344cb6a66bdfb5ea307, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerArea: {fileID: 720060303}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 1024
-  nextState: {fileID: 1546346067}
---- !u!114 &1546346067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1546346062}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 577fbf8a5ca89344b8aeb1cb56822c61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameId: 1 MomFight
-  dialogueOnDidntFight: {fileID: 1814984501}
-  dialogueOnWin: {fileID: 0}
-  dialogueOnLose: {fileID: 0}
-  onWinNextState: {fileID: 1546346068}
-  onLoseNextState: {fileID: 0}
-  onDidntFightNextState: {fileID: 1546346069}
---- !u!114 &1546346068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1546346062}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33a859a40d123b940953f7abfa4accb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  componentsToDisable:
-  - {fileID: 1847920921}
-  nextState: {fileID: 0}
---- !u!114 &1546346069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1546346062}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31fca91b69a4a844287408af506b0fca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: 1 MomFight
-  nextState: {fileID: 0}
 --- !u!1 &1560796350 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 31092569981166217, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
@@ -2951,7 +2814,6 @@ SceneRoots:
   - {fileID: 1426618143}
   - {fileID: 1516379214}
   - {fileID: 974154908}
-  - {fileID: 1546346064}
   - {fileID: 528551033}
   - {fileID: 1515672501}
   - {fileID: 720060304}
