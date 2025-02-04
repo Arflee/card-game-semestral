@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2478475836710518005}
   - component: {fileID: 4159219580459464347}
   - component: {fileID: 1087028153261321420}
+  - component: {fileID: 4926770517131221982}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -131,6 +132,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3.2
+  stepSound:
+    clips:
+    - {fileID: 8300000, guid: b54828171590c1f49b30440abd6177b3, type: 3}
+    minPitch: 0.85
+    maxPitch: 1.15
+    volume: 1
+    looping: 0
 --- !u!70 &4159219580459464347
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -187,6 +195,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4926770517131221982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31092569981166217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d7d1e5fc58dbd446a7682c87b143e29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sourcePrefab: {fileID: 4267719979210161950, guid: 902c127d287d4ba4b882d8aee894774d, type: 3}
 --- !u!1 &122974854963857408
 GameObject:
   m_ObjectHideFlags: 0
@@ -3883,11 +3904,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5694084037315167549, guid: 9881f00bfeeb555408f25316e8c99934, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.6146193
+      value: 3.840641
       objectReference: {fileID: 0}
     - target: {fileID: 5694084037315167549, guid: 9881f00bfeeb555408f25316e8c99934, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.4036198
+      value: 0.49834633
       objectReference: {fileID: 0}
     - target: {fileID: 5694084037315167549, guid: 9881f00bfeeb555408f25316e8c99934, type: 3}
       propertyPath: m_LocalPosition.z
