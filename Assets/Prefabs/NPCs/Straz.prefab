@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4674418461197179240}
   - component: {fileID: 3481957556665638815}
   - component: {fileID: 3320474587028490872}
+  - component: {fileID: 49905247186502358}
   m_Layer: 0
   m_Name: Straz
   m_TagString: Untagged
@@ -71,10 +72,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2015702617
+  m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 768425568, guid: 0b8adc26649fd2d4a8f4c09e714a44f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -106,4 +107,29 @@ MonoBehaviour:
   gizmosColor: {r: 0, g: 0, b: 1, a: 1}
   pause: 0
   mode: 2
+  obstacles:
+    serializedVersion: 2
+    m_Bits: 0
   nextState: {fileID: 0}
+  whenPathBlockedState: {fileID: 0}
+--- !u!95 &49905247186502358
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5835810558243609770}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 28de20de65fc1be4bb7fffe5f9d7452e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
