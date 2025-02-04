@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -203,6 +203,6 @@ public class CombatStateMachine : MonoBehaviour
     public void SetEndTurnButtonActive(bool isActive)
     {
         endTurnButton.interactable = isActive;
-        endTurnText.text = isActive ? "Ukon�it tak" : "Nejsi na tahu";
+        endTurnText.text = isActive ? "Ukončit tak" : "Nejsi na tahu";
     }
 }
