@@ -57,6 +57,8 @@ public class LevelLoader : MonoBehaviour
 
         yield return new WaitUntil(() => asyncLoading.isDone);
 
+        asyncLoading.completed -= OnLoadFinish;
+
         transitionAnimator.SetTrigger("End");
     }
 

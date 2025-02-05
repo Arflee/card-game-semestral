@@ -26,7 +26,6 @@ public abstract class BehaviourState : MonoBehaviour
             }
         }
         _id = $"{name}_{script}_{index}";
-        Debug.Log("ID: " + _id, this);
     }
 
     protected virtual void OnEnable()
