@@ -5,6 +5,13 @@ using UnityEngine;
 
 public static class AudioExtensions
 {
+    public static void Play(this Sound sound)
+    {
+        var sm = SoundManager.Instance;
+        if (sm != null)
+            sm.Play(sound);
+    }
+
     public static void PlaySound(this AudioSource source, Sound sound)
     {
         if (source == null || sound.clips == null || sound.clips.Count == 0)

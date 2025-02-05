@@ -1,3 +1,4 @@
+using Pospec.Helper.Audio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -9,6 +10,7 @@ public class Bridge : MonoBehaviour
     public Vector2[] points;
     public LayerMask obstacleLayers;
     public Collider2D riverCollider;
+    public Sound sound;
     
     private DestroyBridgeBehaviour[] villagers = new DestroyBridgeBehaviour[0];
 
@@ -55,6 +57,7 @@ public class Bridge : MonoBehaviour
 
     public void Colapase()
     {
+        SoundManager.Instance.Play(sound);
         gameObject.SetActive(false);
         riverCollider.enabled = true;
         foreach (var item in villagers)

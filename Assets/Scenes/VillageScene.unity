@@ -363,6 +363,7 @@ GameObject:
   - component: {fileID: 89607958}
   - component: {fileID: 89607957}
   - component: {fileID: 89607956}
+  - component: {fileID: 89607959}
   m_Layer: 0
   m_Name: Koza
   m_TagString: Untagged
@@ -455,6 +456,14 @@ MonoBehaviour:
   wheatDestroyed: 0.5
   field: {fileID: 681240439}
   nextState: {fileID: 89607955}
+  eatingSound:
+    clips:
+    - {fileID: 8300000, guid: 6bd58a5ceb6cb96458b4e2707536e7d9, type: 3}
+    minPitch: 0.95
+    maxPitch: 1.05
+    volume: 1
+    looping: 0
+  source: {fileID: 89607959}
 --- !u!114 &89607946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -638,6 +647,120 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   nextState: {fileID: 89607957}
+--- !u!82 &89607959
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89607941}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 8279014095907905710, guid: 88c393e949d63e44d9b56723d84968a7, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 6bd58a5ceb6cb96458b4e2707536e7d9, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 25
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.9896698
+      inSlope: 0.06311395
+      outSlope: 0.06311395
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.57333827
+    - serializedVersion: 3
+      time: 0.23202947
+      value: 0.7165909
+      inSlope: -2.0808706
+      outSlope: -2.0808706
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.30018237
+    - serializedVersion: 3
+      time: 0.4584127
+      value: 0.0625
+      inSlope: -0.40660787
+      outSlope: -0.40660787
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.5484668
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.9902344
+      value: 0
+      inSlope: -0.033346657
+      outSlope: -0.033346657
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &113228493
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1653,9 +1776,9 @@ AudioSource:
   m_GameObject: {fileID: 270839877}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  OutputAudioMixerGroup: {fileID: 8279014095907905710, guid: 88c393e949d63e44d9b56723d84968a7, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 6c1212c51b6c9ad4094f390bde4b0d19, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -9768,6 +9891,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   riverCollider: {fileID: 892350062}
+  sound:
+    clips:
+    - {fileID: 8300000, guid: b1ed0e0efad792d4da81234f75acd5c5, type: 3}
+    minPitch: 0.95
+    maxPitch: 1
+    volume: 1
+    looping: 0
 --- !u!1001 &2021134056
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10793,6 +10923,7 @@ MonoBehaviour:
     volume: 1
     looping: 0
   nextState: {fileID: 6192976992499682144}
+  waitForSoundEnd: 0
 --- !u!82 &6192976992499682150 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 6594969597358792218, guid: 6a88d87e70d1eb7489489113556822f6, type: 3}

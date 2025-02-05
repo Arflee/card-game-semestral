@@ -84,7 +84,7 @@ namespace Pospec.Helper.Audio
     {
         public List<AudioClip> clips;
 
-        [Range(.1f, 3f)] public float minPitch = 0.85f;
+        [Range(.1f, 3f)] public float minPitch = 0.85f; // pitchVariance
         [Range(.1f, 3f)] public float maxPitch = 1.15f;
         [Range(0, 1)] public float volume = 1f;
         public bool looping = false;
