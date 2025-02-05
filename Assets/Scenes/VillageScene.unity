@@ -353,11 +353,16 @@ GameObject:
   - component: {fileID: 89607943}
   - component: {fileID: 89607942}
   - component: {fileID: 89607944}
+  - component: {fileID: 89607955}
+  - component: {fileID: 89607954}
+  - component: {fileID: 89607948}
   - component: {fileID: 89607947}
   - component: {fileID: 89607946}
-  - component: {fileID: 89607945}
-  - component: {fileID: 89607948}
-  - component: {fileID: 89607949}
+  - component: {fileID: 89607953}
+  - component: {fileID: 89607952}
+  - component: {fileID: 89607958}
+  - component: {fileID: 89607957}
+  - component: {fileID: 89607956}
   m_Layer: 0
   m_Name: Koza
   m_TagString: Untagged
@@ -447,23 +452,9 @@ MonoBehaviour:
   speed: 2
   distanceThreshold: 0.2
   eatTime: 2
-  wheatDestroyed: 0.9
+  wheatDestroyed: 0.5
   field: {fileID: 681240439}
-  nextState: {fileID: 89607948}
---- !u!114 &89607945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 89607941}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 347f2993a4182f04e91fe9012722bb2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onWinNextState: {fileID: 0}
-  onLooseNextState: {fileID: 0}
+  nextState: {fileID: 89607955}
 --- !u!114 &89607946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,7 +471,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 1024
-  nextState: {fileID: 89607949}
+  nextState: {fileID: 89607953}
 --- !u!58 &89607947
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -532,7 +523,7 @@ MonoBehaviour:
   distanceThreshold: 0.1
   targetsTag: Player
   nextState: {fileID: 0}
---- !u!114 &89607949
+--- !u!114 &89607952
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -541,11 +532,112 @@ MonoBehaviour:
   m_GameObject: {fileID: 89607941}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1670148a1d7ec0449d38992a78e81a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 31fca91b69a4a844287408af506b0fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 1308711518}
-  nextState: {fileID: 89607945}
+  sceneName: 4 GoatFight
+  playerPosition: {x: 3.4886904, y: -10.254635}
+  nextState: {fileID: 0}
+--- !u!114 &89607953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89607941}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 577fbf8a5ca89344b8aeb1cb56822c61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameId: 4 GoatFight
+  dialogueOnDidntFight: {fileID: 1308711518}
+  dialogueOnWin: {fileID: 0}
+  dialogueOnLose: {fileID: 0}
+  onWinNextState: {fileID: 0}
+  onLoseNextState: {fileID: 0}
+  onDidntFightNextState: {fileID: 89607952}
+--- !u!114 &89607954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89607941}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 214829a97f2754d4cba5a82e25543ab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  componentsToEnable:
+  - {fileID: 89607958}
+  nextState: {fileID: 89607948}
+--- !u!114 &89607955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89607941}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33a859a40d123b940953f7abfa4accb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  componentsToDisable:
+  - {fileID: 89607946}
+  nextState: {fileID: 89607954}
+--- !u!114 &89607956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89607941}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31fca91b69a4a844287408af506b0fca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: 4 AngryGoatFight
+  playerPosition: {x: 3.624125, y: -10.992039}
+  nextState: {fileID: 0}
+--- !u!114 &89607957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89607941}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 577fbf8a5ca89344b8aeb1cb56822c61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameId: 4 AngryGoatFight
+  dialogueOnDidntFight: {fileID: 64676642}
+  dialogueOnWin: {fileID: 0}
+  dialogueOnLose: {fileID: 0}
+  onWinNextState: {fileID: 0}
+  onLoseNextState: {fileID: 0}
+  onDidntFightNextState: {fileID: 89607956}
+--- !u!114 &89607958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89607941}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274bcd6630a83344cb6a66bdfb5ea307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerArea: {fileID: 89607947}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  nextState: {fileID: 89607957}
 --- !u!1001 &113228493
 PrefabInstance:
   m_ObjectHideFlags: 0
