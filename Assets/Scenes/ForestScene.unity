@@ -802,6 +802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: 1 MomFight
+  playerPosition: {x: -3.5331395, y: -9.8707075}
   nextState: {fileID: 0}
 --- !u!1001 &64595709
 PrefabInstance:
@@ -1217,7 +1218,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 13, y: 2}
+  m_Size: {x: 13, y: 1}
   m_EdgeRadius: 0
 --- !u!4 &99946596
 Transform:
@@ -1228,7 +1229,7 @@ Transform:
   m_GameObject: {fileID: 99946593}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.56, y: -21.71, z: -0.038879573}
+  m_LocalPosition: {x: 38.56, y: -21.44, z: -0.038879573}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7271,9 +7272,9 @@ GameObject:
   m_Component:
   - component: {fileID: 975658899}
   - component: {fileID: 975658898}
-  - component: {fileID: 975658903}
   - component: {fileID: 975658906}
-  - component: {fileID: 975658904}
+  - component: {fileID: 975658908}
+  - component: {fileID: 975658907}
   - component: {fileID: 975658905}
   m_Layer: 0
   m_Name: Bear Father
@@ -7343,61 +7344,12 @@ Transform:
   m_GameObject: {fileID: 975658897}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.26, y: -20.83, z: 0}
+  m_LocalPosition: {x: 39.36, y: -21.91, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &975658903
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 975658897}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 5
---- !u!114 &975658904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 975658897}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 347f2993a4182f04e91fe9012722bb2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onWinNextState: {fileID: 975658905}
-  onLooseNextState: {fileID: 0}
 --- !u!114 &975658905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7428,7 +7380,41 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 1024
-  nextState: {fileID: 975658904}
+  nextState: {fileID: 975658908}
+--- !u!114 &975658907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975658897}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31fca91b69a4a844287408af506b0fca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: 3 DadFight
+  playerPosition: {x: 38.636147, y: -19.922403}
+  nextState: {fileID: 0}
+--- !u!114 &975658908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975658897}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 577fbf8a5ca89344b8aeb1cb56822c61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameId: 3 DadFight
+  dialogueOnDidntFight: {fileID: 0}
+  dialogueOnWin: {fileID: 0}
+  dialogueOnLose: {fileID: 0}
+  onWinNextState: {fileID: 975658905}
+  onLoseNextState: {fileID: 975658907}
+  onDidntFightNextState: {fileID: 975658907}
 --- !u!1001 &978420277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7702,11 +7688,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1575349430772088567, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.05
+      value: 35.2
       objectReference: {fileID: 0}
     - target: {fileID: 1575349430772088567, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.85
+      value: -10.14
       objectReference: {fileID: 0}
     - target: {fileID: 1575349430772088567, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7758,11 +7744,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.3865576
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.49768066
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2684559008331962717, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_AnchorMax.y
@@ -8143,6 +8129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: 2 BeekeeperFight
+  playerPosition: {x: 1.2255585, y: -9.49207}
   nextState: {fileID: 1020789517}
 --- !u!114 &1020789531
 MonoBehaviour:
@@ -11990,7 +11977,7 @@ MonoBehaviour:
   dialogueOnWin: {fileID: 106322974}
   dialogueOnLose: {fileID: 1260753597}
   onWinNextState: {fileID: 0}
-  onLoseNextState: {fileID: 1519588411}
+  onLoseNextState: {fileID: 0}
   onDidntFightNextState: {fileID: 1519588411}
 --- !u!114 &1519588411
 MonoBehaviour:
@@ -12633,13 +12620,13 @@ GameObject:
   - component: {fileID: 1601592895}
   - component: {fileID: 1601592894}
   - component: {fileID: 1601592902}
-  - component: {fileID: 1601592901}
-  - component: {fileID: 1601592900}
-  - component: {fileID: 1601592899}
+  - component: {fileID: 1601592908}
   - component: {fileID: 1601592903}
-  - component: {fileID: 1601592905}
   - component: {fileID: 1601592898}
   - component: {fileID: 1601592897}
+  - component: {fileID: 1601592900}
+  - component: {fileID: 1601592899}
+  - component: {fileID: 1601592905}
   - component: {fileID: 1601592896}
   - component: {fileID: 1601592906}
   - component: {fileID: 1601592907}
@@ -12903,20 +12890,6 @@ MonoBehaviour:
   - {x: 33.443554, y: -1.8309386}
   gizmosColor: {r: 0, g: 0, b: 1, a: 1}
   nextState: {fileID: 1601592899}
---- !u!114 &1601592901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1601592893}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1670148a1d7ec0449d38992a78e81a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue: {fileID: 445453501}
-  nextState: {fileID: 1601592903}
 --- !u!114 &1601592902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12933,7 +12906,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 1024
-  nextState: {fileID: 1601592901}
+  nextState: {fileID: 1601592908}
 --- !u!114 &1601592903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12947,6 +12920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: 2 EagleFight
+  playerPosition: {x: 36.678185, y: -4.5949306}
   nextState: {fileID: 0}
 --- !u!114 &1601592905
 MonoBehaviour:
@@ -12993,6 +12967,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e049a6dbd48e7e43a15730d6769006e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1601592908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601592893}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 577fbf8a5ca89344b8aeb1cb56822c61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameId: 2 EagleFight
+  dialogueOnDidntFight: {fileID: 445453501}
+  dialogueOnWin: {fileID: 0}
+  dialogueOnLose: {fileID: 0}
+  onWinNextState: {fileID: 0}
+  onLoseNextState: {fileID: 0}
+  onDidntFightNextState: {fileID: 1601592903}
 --- !u!1001 &1608070558
 PrefabInstance:
   m_ObjectHideFlags: 0
