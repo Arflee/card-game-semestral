@@ -296,9 +296,6 @@ namespace Pospec.EnvironmentSettings
 
         private void SetResolution(int detailLevel)
         {
-            if (resolutionsDropdown == null || Resolutions.Count == 0 || ignoreResolutionsPlatforms.Contains(Application.platform))
-                return;
-
             Debug.Log("changing resolution to " + detailLevel.ToString());
 
             Resolution current = GetResolution(detailLevel);
