@@ -1427,7 +1427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.6127806
+      value: 5.6165085
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1930,9 +1930,9 @@ MonoBehaviour:
   gameId: 1 MomFight
   dialogueOnDidntFight: {fileID: 1814984501}
   dialogueOnWin: {fileID: 0}
-  dialogueOnLose: {fileID: 0}
+  dialogueOnLose: {fileID: 1814984501}
   onWinNextState: {fileID: 1546346068}
-  onLoseNextState: {fileID: 0}
+  onLoseNextState: {fileID: 1546346069}
   onDidntFightNextState: {fileID: 1546346069}
 --- !u!114 &1546346068
 MonoBehaviour:
