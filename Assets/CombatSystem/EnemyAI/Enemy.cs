@@ -17,7 +17,11 @@ public class Enemy : ScriptableObject
     
     public CombatState StartingCombatState(CombatStateMachine machine)
     {
-        Queue<DialogueSequence> dialogues = new Queue<DialogueSequence>(inGameDialogues);
+            Queue<DialogueSequence> dialogues;
+        if (inGameDialogues == null)
+            dialogues = null;
+        else
+            dialogues = new Queue<DialogueSequence>(inGameDialogues);
 
         switch (tutorial)
         {
