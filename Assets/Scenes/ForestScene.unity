@@ -7841,11 +7841,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.1889935
+      value: 5.200735
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.49776745
+      value: 0.49776077
       objectReference: {fileID: 0}
     - target: {fileID: 2684559008331962717, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_AnchorMax.y
@@ -12929,6 +12929,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 1601592896}
+  sound:
+    clips:
+    - {fileID: 8300000, guid: 01076c31e6ed669438344e6bbde60751, type: 3}
+    minPitch: 0.95
+    maxPitch: 1.05
+    volume: 1
+    looping: 0
   nextState: {fileID: 1601592898}
 --- !u!114 &1601592898
 MonoBehaviour:
@@ -13736,10 +13743,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 8279014095907905710, guid: 88c393e949d63e44d9b56723d84968a7, type: 2}
   m_audioClip: {fileID: 8300000, guid: 6f3ed714c21520a4aba6bf7ac1afad4f, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
