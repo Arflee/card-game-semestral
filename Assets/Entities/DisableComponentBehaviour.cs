@@ -13,10 +13,11 @@ public class DisableComponentBehaviour : BehaviourState
     {
         base.OnEnable();
         componentsToDisable.ForEach(c => c.enabled = false);
+        Finished();
     }
 
     public override BehaviourState NextState()
     {
-        throw new System.NotImplementedException();
+        return nextState;
     }
 }

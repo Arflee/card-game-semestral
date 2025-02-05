@@ -111,8 +111,8 @@ public class AttackState : CombatState
 
             if (!StateMachine.TryGetPlayerCrystalPos(out var crystal))
             {
-                Debug.Log("player wins");
-                StateMachine.SetState(new WinState(StateMachine));
+                Debug.Log("player loses");
+                StateMachine.SetState(new LoseState(StateMachine));
                 break;
             }
 

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
@@ -12,6 +13,7 @@ public class WinState : CombatState
 
     public override IEnumerator EnterState()
     {
+        DOTween.Clear(true);
         _gameHandler.PlayerWonGame(SceneManager.GetActiveScene().name);
         yield return null;
     }

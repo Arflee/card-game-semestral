@@ -37,7 +37,9 @@ public class LevelLoader : MonoBehaviour
 
     private IEnumerator LoadCoroutineWithSpawnPoint(string sceneName, string spawnPointName)
     {
+        StateManager.Instance.SaveStates();
         yield return LoadCoroutine(sceneName);
+        StateManager.Instance.LoadStates();
 
         GameObject spawnPoint = GameObject.Find(spawnPointName);
         if (spawnPoint == null)
@@ -56,6 +58,8 @@ public class LevelLoader : MonoBehaviour
         asyncLoading.completed += OnLoadFinish;
 
         yield return new WaitUntil(() => asyncLoading.isDone);
+
+        asyncLoading.completed -= OnLoadFinish;
 
         transitionAnimator.SetTrigger("End");
     }

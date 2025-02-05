@@ -26,25 +26,15 @@ public abstract class BehaviourState : MonoBehaviour
             }
         }
         _id = $"{name}_{script}_{index}";
-        Debug.Log("ID: " + _id, this);
     }
 
-    protected virtual void OnEnable()
+    public string GetId()
     {
-        //Debug.Log("Enabled: " + ToString(), this);
-
-        //// Load state if it was previously saved
-        //if (StateManager.Instance.HasState(_id))
-        //{
-        //    enabled = StateManager.Instance.GetState(_id);
-        //}
+        return _id;
     }
 
-    protected virtual void OnDisable()
-    {
-        //// Save state
-        //StateManager.Instance.SetState(_id, enabled);
-    }
+    protected virtual void OnEnable() { }
+    protected virtual void OnDisable() { }
 
     public void Finished()
     {
