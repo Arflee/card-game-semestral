@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Pospec.Helper.Audio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,8 @@ public class GoatBehvaiour : BehaviourState
 
     [SerializeField] private Field field;
     [SerializeField] BehaviourState nextState;
+    [SerializeField] private Sound eatingSound;
+    [SerializeField] private AudioSource source;
 
     bool isWaiting = false;
     EatabeWheat target = null;
@@ -59,6 +62,7 @@ public class GoatBehvaiour : BehaviourState
             isWaiting = true;
             DOVirtual.DelayedCall(eatTime, () =>
             {
+                source.PlaySound(eatingSound);
                 if (target != null)
                     target.Eat();
                 SearchNextTarget();

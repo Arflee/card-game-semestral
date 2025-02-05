@@ -104,6 +104,18 @@ MonoBehaviour:
   bearLayer:
     serializedVersion: 2
     m_Bits: 1024
+  destroyedSound:
+    clips:
+    - {fileID: 8300000, guid: e0115cf660974b344acc8fafcd27b052, type: 3}
+    - {fileID: 8300000, guid: ffeccac8ff0914744bdfd7f46b50fdd1, type: 3}
+    - {fileID: 8300000, guid: f1892958864170e43a0b8279b848828e, type: 3}
+    - {fileID: 8300000, guid: 128c85eea76aa984faddd8ffba414962, type: 3}
+    - {fileID: 8300000, guid: 573c92a0dd3dfaa46944e5c3ab050481, type: 3}
+    - {fileID: 8300000, guid: d943c60f75cd726488ebdd5b25e046a1, type: 3}
+    minPitch: 0.95
+    maxPitch: 1.05
+    volume: 1
+    looping: 0
   field: {fileID: 0}
 --- !u!58 &328276719982259636
 CircleCollider2D:

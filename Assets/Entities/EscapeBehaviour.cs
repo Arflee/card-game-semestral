@@ -1,3 +1,4 @@
+using Pospec.Helper.Audio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,8 @@ public class EscapeBehaviour : PointBehaviour
 {
     [SerializeField] private Transform player;
     [SerializeField] private LayerMask obstacleLayers;
+    [SerializeField] private Sound screamSound;
+    [SerializeField] private AudioSource source;
 
     public override BehaviourState NextState()
     {
@@ -18,6 +21,7 @@ public class EscapeBehaviour : PointBehaviour
         foreach (var item in GetComponents<BehaviourState>())
             if (item != this)
                 item.enabled = false;
+        source.PlaySound(screamSound);
     }
 
     private void Update()
