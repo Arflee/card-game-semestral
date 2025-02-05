@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 public class LoadSceneBehaviour : BehaviourState
 {
     [SerializeField] private string sceneName;
-    [SerializeField] private BehaviourState nextState; 
+    public Vector2 playerPosition;
+    [SerializeField] private BehaviourState nextState;
 
     protected override void OnEnable()
     {
         DOTween.Clear(true);
-        var playerPosition = FindObjectOfType<PlayerMovement>().gameObject.transform.position;
+        //var playerPosition = FindObjectOfType<PlayerMovement>().gameObject.transform.position;
 
         CrossScenePlayerState.Instance.SavePosition(playerPosition);
         CrossScenePlayerState.Instance.SaveSceneName(SceneManager.GetActiveScene().name);
@@ -23,3 +24,4 @@ public class LoadSceneBehaviour : BehaviourState
         return nextState;
     }
 }
+    

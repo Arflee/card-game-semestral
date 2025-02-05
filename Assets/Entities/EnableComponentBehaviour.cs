@@ -12,10 +12,11 @@ public class EnableComponentBehaviour : BehaviourState
     {
         base.OnEnable();
         componentsToEnable.ForEach(c => c.enabled = true);
+        Finished();
     }
 
     public override BehaviourState NextState()
     {
-        throw new System.NotImplementedException();
+        return nextState;
     }
 }

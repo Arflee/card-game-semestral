@@ -21,18 +21,24 @@ public class StateManager : MonoBehaviour
         }
     }
 
-    public void SetState(string objectId, bool state)
+    public void SaveStates()
     {
-        _states[objectId] = state;
+        BehaviourState[] states = FindObjectsOfType<BehaviourState>();
+        foreach (BehaviourState state in states)
+        {
+            _states[state.GetId()] = state.enabled;
+        }
     }
 
-    public bool GetState(string objectId)
+    public void LoadStates()
     {
-        return _states[objectId];
-    }
-
-    public bool HasState(string objectId)
-    {
-        return _states.ContainsKey(objectId);
+        BehaviourState[] states = FindObjectsOfType<BehaviourState>();
+        foreach (BehaviourState state in states)
+        {
+            if (_states.ContainsKey(state.GetId()))
+            {
+                state.enabled = _states[state.GetId()];
+            }
+        }
     }
 }
