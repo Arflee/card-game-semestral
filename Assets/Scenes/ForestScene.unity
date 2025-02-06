@@ -655,7 +655,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &60487294
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3569,7 +3569,7 @@ AudioSource:
   m_GameObject: {fileID: 349300284}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8279014095907905710, guid: 88c393e949d63e44d9b56723d84968a7, type: 2}
   m_audioClip: {fileID: 8300000, guid: ec0bce7372310d044906d4e129a539fb, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.4
@@ -6805,7 +6805,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &880324601
 Transform:
   m_ObjectHideFlags: 0
@@ -6828,7 +6828,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880324600}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -7841,11 +7841,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.200735
+      value: 5.1947594
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.49776077
+      value: 0.4977646
       objectReference: {fileID: 0}
     - target: {fileID: 2684559008331962717, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_AnchorMax.y
@@ -7906,6 +7906,10 @@ PrefabInstance:
     - target: {fileID: 6271951685841480299, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -670.70746
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491433514912796936, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
+      propertyPath: m_SortingOrder
+      value: 999
       objectReference: {fileID: 0}
     - target: {fileID: 6675722057914440158, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_Enabled
@@ -10828,7 +10832,35 @@ MonoBehaviour:
   dialogueCanvas: {fileID: 995863022}
   dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
   skipInEditor: 0
-  choiceEvents: []
+  choiceEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 880324600}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 880324600}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1345270736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11965,7 +11997,6 @@ GameObject:
   - component: {fileID: 1519588406}
   - component: {fileID: 1519588409}
   - component: {fileID: 1519588410}
-  - component: {fileID: 1519588411}
   m_Layer: 0
   m_Name: Liska
   m_TagString: Untagged
@@ -12075,22 +12106,7 @@ MonoBehaviour:
   dialogueOnLose: {fileID: 1260753597}
   onWinNextState: {fileID: 0}
   onLoseNextState: {fileID: 0}
-  onDidntFightNextState: {fileID: 1519588411}
---- !u!114 &1519588411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1519588405}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 214829a97f2754d4cba5a82e25543ab4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  componentsToEnable:
-  - {fileID: 880324602}
-  nextState: {fileID: 0}
+  onDidntFightNextState: {fileID: 0}
 --- !u!1001 &1521588843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12937,6 +12953,7 @@ MonoBehaviour:
     volume: 1
     looping: 0
   nextState: {fileID: 1601592898}
+  waitForSoundEnd: 0
 --- !u!114 &1601592898
 MonoBehaviour:
   m_ObjectHideFlags: 0
