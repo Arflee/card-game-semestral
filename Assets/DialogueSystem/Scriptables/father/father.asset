@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0268bdc1baf48b429d0a02764a4c2ab, type: 3}
+  m_Name: father
+  m_EditorClassIdentifier: 
+  monologues:
+  - speakerName: "T\xE1ta"
+    sequence: "KAM SI MYSL\xCD\u0160 \u017DE DE\u0160?!\r"
+  - speakerName: "Medv\u011Bd"
+    sequence: "Du zachr\xE1nit na\u0161e v\u010Dely, tati.\r"
+  - speakerName: "T\xE1ta"
+    sequence: "TO ANI OMYLEM, Z\u016ESTANE\u0160 TADY!\r\r"
+  - speakerName: "Medv\u011Bd"
+    sequence: "Mus\xEDm je zachr\xE1nit, jinak tot\xE1ln\u011B um\u0159eme!\r"
+  - speakerName: "T\xE1ta"
+    sequence: "Toho v\u010Dela\u0159e zn\xE1m, ras\xED medv\u011Bda za medv\u011Bdem.
+      P\u0159ed p\xE1r rokama dostal tv\xFDho medv\u011Bd\xEDho strejdu! Kdy\u017E
+      ho bude\u0161 pron\xE1sledovat, royhodn\u011B t\u011B zamorduje! Nikam t\u011B
+      nepust\xEDm.\r\r"
+  - speakerName: "Medv\u011Bd"
+    sequence: "M\xE1m na to! P\u016Fjdu za n\xEDm za ka\u017Edou cenu.\r\r\r"
+  - speakerName: "T\xE1ta"
+    sequence: "\u2026\r\r"
+  - speakerName: "T\xE1ta"
+    sequence: "TAK TO SE NEJD\u0158\xCDV BUDE\u0160 MUSET DOSTAT P\u0158EZEM\u011A!\r\r\r"
+  - speakerName: "Vyprav\u011B\u010D"
+    sequence: "I kdy\u017E n\xE1\u0161 hrdina necht\u011Bl bojovat se sv\xFDm otcem,
+      nic jin\xE9ho mu nezb\xFDvalo\r\r\r\r"
+  delayPerSymbol: 0.01
+  availableChoices: []

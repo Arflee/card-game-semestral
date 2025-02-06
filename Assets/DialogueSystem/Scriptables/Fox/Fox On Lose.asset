@@ -13,7 +13,16 @@ MonoBehaviour:
   m_Name: Fox On Lose
   m_EditorClassIdentifier: 
   monologues:
-  - speakerName: Liska
-    sequence: ahahahahaah you lost
+  - speakerName: "Li\u0161ka"
+    sequence: "U\u0161i m\xE9 sly\u0161\xED, \u017Ee orla sly\u0161\xED. A ty nevypad\xE1\u0161
+      nejl\xEDp.\r"
+  - speakerName: "Medv\u011Bd"
+    sequence: "Nojo, dostal sem.\r"
+  - speakerName: "Li\u0161ka"
+    sequence: "Mysl\xEDm, \u017Ee bys to m\u011Bl j\xEDt zkusit znovu.\r"
   delayPerSymbol: 0.01
-  availableChoices: []
+  availableChoices:
+  - choiceDescription: Ok...
+    avalableChoice: {fileID: 11400000, guid: 4310c1e5707adb1428d2f02c711e637c, type: 2}
+  - choiceDescription: "S t\xEDm bambul\xE1kem u\u017E nechci m\xEDt nic spole\u010Dn\xFDho!"
+    avalableChoice: {fileID: 11400000, guid: 7b785b5f999173645927786a38bb2421, type: 2}
