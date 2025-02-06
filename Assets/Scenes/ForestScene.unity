@@ -784,10 +784,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameId: 1 MomFight
   dialogueOnDidntFight: {fileID: 2069353502}
-  dialogueOnWin: {fileID: 0}
-  dialogueOnLose: {fileID: 0}
+  dialogueOnWin: {fileID: 800046538}
+  dialogueOnLose: {fileID: 993424457}
   onWinNextState: {fileID: 60487299}
-  onLoseNextState: {fileID: 60487299}
+  onLoseNextState: {fileID: 60487303}
   onDidntFightNextState: {fileID: 60487303}
 --- !u!114 &60487303
 MonoBehaviour:
@@ -802,7 +802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: 1 MomFight
-  playerPosition: {x: -3.5331395, y: -9.8707075}
+  playerPosition: {x: -5.8011465, y: -9.8707075}
   nextState: {fileID: 0}
 --- !u!1001 &64595709
 PrefabInstance:
@@ -6283,6 +6283,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5814306210668437139, guid: a6150520261b024478798fb446e0a83f, type: 3}
   m_PrefabInstance: {fileID: 1297844485}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &800046536
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 800046537}
+  - component: {fileID: 800046538}
+  m_Layer: 0
+  m_Name: MotherDialogue-win
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &800046537
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800046536}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.0842514, y: -10.941146, z: -4.0269046}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1818846953}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &800046538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800046536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776008d1a78a36645b0f7a603bdf4ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogueSequence: {fileID: 11400000, guid: 88ee8dc8cbd875d42aead428a4d53e6f, type: 2}
+  dialogueCanvas: {fileID: 995863022}
+  dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
+  skipInEditor: 0
+  choiceEvents: []
 --- !u!1001 &817599195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8303,6 +8352,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2477882521445282075, guid: 1e46c9b4a1f48ba4396582062cb3b055, type: 3}
   m_PrefabInstance: {fileID: 985957981}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &993424455
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 993424456}
+  - component: {fileID: 993424457}
+  m_Layer: 0
+  m_Name: MotherDialogue-lost
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &993424456
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993424455}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.0842514, y: -10.941146, z: -4.0269046}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1818846953}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &993424457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993424455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776008d1a78a36645b0f7a603bdf4ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogueSequence: {fileID: 11400000, guid: dc64ef37845b26c44ad2e9235db689f0, type: 2}
+  dialogueCanvas: {fileID: 995863022}
+  dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
+  skipInEditor: 0
+  choiceEvents: []
 --- !u!1001 &995863021
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8425,11 +8523,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.1972847
+      value: 6.6019077
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.49776173
+      value: 0.49715996
       objectReference: {fileID: 0}
     - target: {fileID: 2684559008331962717, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_AnchorMax.y
@@ -15105,6 +15203,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2069353503}
+  - {fileID: 800046537}
+  - {fileID: 993424456}
   - {fileID: 88047381}
   - {fileID: 445453502}
   - {fileID: 1334161688}
