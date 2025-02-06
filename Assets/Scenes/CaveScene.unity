@@ -679,6 +679,7 @@ GameObject:
   - component: {fileID: 528551032}
   - component: {fileID: 528551035}
   - component: {fileID: 528551037}
+  - component: {fileID: 528551039}
   - component: {fileID: 528551036}
   - component: {fileID: 528551038}
   m_Layer: 0
@@ -801,9 +802,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameId: 0 SiblingFight
   dialogueOnDidntFight: {fileID: 511029155}
-  dialogueOnWin: {fileID: 0}
+  dialogueOnWin: {fileID: 1219770864}
   dialogueOnLose: {fileID: 0}
-  onWinNextState: {fileID: 528551038}
+  onWinNextState: {fileID: 528551039}
   onLoseNextState: {fileID: 528551038}
   onDidntFightNextState: {fileID: 528551036}
 --- !u!114 &528551038
@@ -821,6 +822,20 @@ MonoBehaviour:
   componentsToDisable:
   - {fileID: 1847920921}
   nextState: {fileID: 0}
+--- !u!114 &528551039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528551031}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1670148a1d7ec0449d38992a78e81a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 1219770864}
+  nextState: {fileID: 528551039}
 --- !u!4 &575946643 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3809558349348202522, guid: e0f15690813642f46ab6199ed3d76732, type: 3}
@@ -1507,11 +1522,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.6127806
+      value: 4.4537954
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.4036198
+      value: 2.4964538
       objectReference: {fileID: 0}
     - target: {fileID: 2684559008331962717, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1719,6 +1734,55 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 1789922227619831095, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
   m_PrefabInstance: {fileID: 974154908}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1219770862
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1219770863}
+  - component: {fileID: 1219770864}
+  m_Layer: 0
+  m_Name: BrotherDialogue-win
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1219770863
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219770862}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.0842514, y: -10.941146, z: -4.0269046}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1668042305}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1219770864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219770862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776008d1a78a36645b0f7a603bdf4ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogueSequence: {fileID: 11400000, guid: 1c95cd917ddfeb448be379977afc67ca, type: 2}
+  dialogueCanvas: {fileID: 493938339}
+  dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
+  skipInEditor: 0
+  choiceEvents: []
 --- !u!4 &1225799803 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5036861095795135201, guid: b35b020f6c9528e49afbe3030611f352, type: 3}
@@ -2227,6 +2291,7 @@ Transform:
   m_Children:
   - {fileID: 1814984500}
   - {fileID: 511029154}
+  - {fileID: 1219770863}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1750274085
