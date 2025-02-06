@@ -20,6 +20,8 @@ public class DeckEditorManger : MonoBehaviour
     private CardDeck cardDeck;
     public int MinCards => minCards;
 
+    private IList<CombatCard> allCards;
+
     private void OnEnable()
     {
         cardDeck = FindObjectOfType<CardDeck>();
@@ -28,65 +30,62 @@ public class DeckEditorManger : MonoBehaviour
             Destroy(cardPanel.GetChild(i).gameObject);
 
         cardViews.Clear();
-        var allCards = cardDeck.GetAllCards();
-        for (int i = 0; i < allCards.Count; i++)
+        allCards = cardDeck.GetAllCards();
+        for (int pos = 0; pos < allCards.Count; pos++)
         {
-            var transformedIndex = cardDeck.CardIdToUIPosId(i);
-
             var view = Instantiate(cardPrefab, cardPanel);
-            view.Initialize(allCards[i], transformedIndex, this);
+            view.Initialize(allCards[pos], pos, this);
             cardViews.Add(view);
         }
 
         for (int i = deckPanel.childCount - 1; i >= 0; i--)
             Destroy(deckPanel.GetChild(i).gameObject);
 
-        foreach (var cardId in cardDeck.Deck)
+        foreach (var pos in cardDeck.GetDeckOfPos())
         {
             var view = Instantiate(namePrefab, deckPanel);
-            view.Initialize(allCards[cardId], this, cardId);
-            cardViews[cardId].DisableCard(view.gameObject);
+            view.Initialize(allCards[pos], this, pos);
+            cardViews[pos].DisableCard(view.gameObject);
         }
         UpdateConfirmButton();
     }
 
-    public GameObject AddToDeck(CombatCard card, int id)
+    public GameObject AddToDeck(int pos)
     {
         var view = Instantiate(namePrefab, deckPanel);
-        view.Initialize(card, this, id);
-        cardDeck.Deck.Add(id);
+        view.Initialize(allCards[pos], this, pos);
+        cardDeck.AddToDeck(pos);
         UpdateConfirmButton();
         return view.gameObject;
     }
 
-    public void RemoveFromDeck(int id)
+    public void RemoveFromDeck(int pos)
     {
-        cardDeck.Deck.Remove(id);
-        cardViews[id].EnableCard();
+        cardDeck.RemoveFromDeck(pos);
+        cardViews[pos].EnableCard();
         UpdateConfirmButton();
     }
 
     private void UpdateConfirmButton()
     {
-        if (cardDeck.Deck.Count >= minCards)
-            confirmText.text = $"Potvrdit\n({cardDeck.Deck.Count}/{minCards})";
+        if (cardDeck.GetDeckLength() >= minCards)
+            confirmText.text = $"Potvrdit\n({cardDeck.GetDeckLength()}/{minCards})";
         else
-            confirmText.text = $"Doplnit\n({cardDeck.Deck.Count}/{minCards})";
+            confirmText.text = $"Doplnit\n({cardDeck.GetDeckLength()}/{minCards})";
     }
 
     public void ApplyDeck()
     {
-        int cardsLeft = minCards - cardDeck.Deck.Count;
+        int cardsLeft = minCards - cardDeck.GetDeckLength();
         if (cardsLeft > 0)
         {
-            var allCards = cardDeck.GetAllCards();
-            List<int> unusedCards = Enumerable.Range(0, allCards.Count).Except(cardDeck.Deck).ToList();
-            unusedCards = Utility.Shuffle(unusedCards);
+            List<int> unusedPos = Enumerable.Range(0, cardDeck.AllCardsCount()).Except(cardDeck.GetDeckOfPos()).ToList();
+            unusedPos = Utility.Shuffle(unusedPos);
 
             for (int i = 0; i < cardsLeft; i++)
             {
-                int cardId = unusedCards[i];
-                cardViews[cardId].DisableCard(AddToDeck(allCards[cardId], cardId));
+                int pos = unusedPos[i];
+                cardViews[pos].DisableCard(AddToDeck(pos));
             }
         }
         else
@@ -98,7 +97,7 @@ public class DeckEditorManger : MonoBehaviour
 
     public void ClearDeck()
     {
-        var toDelete = cardDeck.Deck.ToList();
+        var toDelete = cardDeck.GetDeckOfPos();
         foreach (var cardId in toDelete)
             RemoveFromDeck(cardId);
 

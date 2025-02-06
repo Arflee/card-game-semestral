@@ -18,6 +18,7 @@ public class CombatStateMachine : MonoBehaviour
     [SerializeField] private TextMeshProUGUI endTurnText;
     [SerializeField, Range(0, 10)] private int maxCardsOnBoard;
     [SerializeField] private DialogueTrigger dialogue;
+    [SerializeField] private RewardPanel rewardPanel;
 
     [Header("Sounds")]
     [SerializeField] private Sound playCardSound;
@@ -52,6 +53,7 @@ public class CombatStateMachine : MonoBehaviour
     public Sound CardsColideSound => cardsColideSound;
     public Sound AttackToCrystalSound => attackToCrystalSound;
     public Sound CrystalBreaksSound => crystalBreaksSound;
+    public RewardPanel RewardPanel => rewardPanel;
 
     private void OnEnable()
     {

@@ -16,6 +16,8 @@ public class EnemyInitializer : MonoBehaviour
     private Stack<CombatCard> _shuffledDeck;
     private int crystalsDestroyed = -1;
 
+    public Enemy Enemy => enemy;
+
     public void OnEnable()
     {
         crystalPanel.Initialize(enemy.Crystals);
