@@ -680,6 +680,7 @@ GameObject:
   - component: {fileID: 528551035}
   - component: {fileID: 528551037}
   - component: {fileID: 528551039}
+  - component: {fileID: 528551040}
   - component: {fileID: 528551036}
   - component: {fileID: 528551038}
   m_Layer: 0
@@ -803,9 +804,9 @@ MonoBehaviour:
   gameId: 0 SiblingFight
   dialogueOnDidntFight: {fileID: 511029155}
   dialogueOnWin: {fileID: 1219770864}
-  dialogueOnLose: {fileID: 0}
+  dialogueOnLose: {fileID: 888714069}
   onWinNextState: {fileID: 528551039}
-  onLoseNextState: {fileID: 528551038}
+  onLoseNextState: {fileID: 528551040}
   onDidntFightNextState: {fileID: 528551036}
 --- !u!114 &528551038
 MonoBehaviour:
@@ -836,6 +837,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue: {fileID: 1219770864}
   nextState: {fileID: 528551039}
+--- !u!114 &528551040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528551031}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1670148a1d7ec0449d38992a78e81a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 888714069}
+  nextState: {fileID: 528551037}
 --- !u!4 &575946643 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3809558349348202522, guid: e0f15690813642f46ab6199ed3d76732, type: 3}
@@ -1260,6 +1275,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &888714067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 888714068}
+  - component: {fileID: 888714069}
+  m_Layer: 0
+  m_Name: BrotherDialogue-lost
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &888714068
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888714067}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.0842514, y: -10.941146, z: -4.0269046}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1668042305}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &888714069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888714067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776008d1a78a36645b0f7a603bdf4ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogueSequence: {fileID: 11400000, guid: 928a2a5530b08bb47aadb0038a01b6f6, type: 2}
+  dialogueCanvas: {fileID: 493938339}
+  dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
+  skipInEditor: 0
+  choiceEvents: []
 --- !u!4 &894160031 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6642431064650837467, guid: 8c96585d3a79bd146a3a0483abf59608, type: 3}
@@ -1522,11 +1586,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.4537954
+      value: 5.4940233
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.4964538
+      value: 2.4428635
       objectReference: {fileID: 0}
     - target: {fileID: 2684559008331962717, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2292,6 +2356,7 @@ Transform:
   - {fileID: 1814984500}
   - {fileID: 511029154}
   - {fileID: 1219770863}
+  - {fileID: 888714068}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1750274085
