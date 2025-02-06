@@ -14,10 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monologues:
   - speakerName: "M\xE1ma"
-    sequence: "koukej, m\xE1m v\xEDc krystal\u016F, mus\xED\u0161 zni\u010Dit oba
-      dva"
+    sequence: "Pod\xEDvej, m\xE1m v\xEDce krystal\u016F. Ur\u010Dit\u011B se ti n\u011Bjak\xE9
+      v budoucnu poda\u0159\xED sehnat. Z\xEDsk\xE1\u0161 tak velkou v\xFDhodu. To
+      je d\u016Fle\u017Eit\xE9 pro tvoje bezpe\u010D\xED!"
   - speakerName: "M\xE1ma"
-    sequence: "v\u017Edy se \xFAto\u010D\xED do nejlev\u011Bj\u0161\xEDho, a\u017E
-      se zni\u010D\xED, pak do druh\xE9ho"
+    sequence: "Maxim\xE1ln\u011B m\u016F\u017Ee\u0161 dr\u017Eet po p\u011Bti bytostech,
+      to sam\xE9 plat\xED i pro povolan\xE9. Ka\u017Ed\xE9 kolo n\xE1hodn\u011B dostane\u0161
+      mo\u017Enost povolat novou bytost. "
+  - speakerName: "M\xE1ma"
+    sequence: "Ale pozor! Kdy\u017E p\u0159es\xE1hne\u0161 maxim\xE1ln\xED po\u010Det
+      dr\u017Een\xFDch, o novou p\u0159ijde\u0161! Na to d\xE1vej pozor."
+  - speakerName: "M\xE1ma"
+    sequence: "A nezapome\u0148, karty reprezentuj\xEDc\xED bytosti m\u016F\u017Ee\u0161
+      z pole i ruky vracet do bal\xED\u010Dku. D\xE1vej si pozor, aby jsi nep\u0159i\u0161el
+      o v\u0161echny sv\xE9 bytosti!\r\n"
+  - speakerName: "Medv\u011Bd"
+    sequence: "Uffffff\u2026 to je stra\u0161n\u011B informac\xED najednou, cejtim
+      se jako v medv\u011Bd\xED \u0161kole. \r\n\n"
   delayPerSymbol: 0
   availableChoices: []
