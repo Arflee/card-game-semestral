@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,7 +25,7 @@ public class CardEditView : MonoBehaviour
     private Color healthColor;
     private Color manaColor;
 
-    public void Initialize(CombatCard card, int id, DeckEditorManger manager)
+    public void Initialize(CombatCard card, int pos, DeckEditorManger manager)
     {
         cardName.text = card.Name;
         cardDescription.text = card.Description;
@@ -48,13 +49,13 @@ public class CardEditView : MonoBehaviour
         {
             if (inDeck)
             {
-                manager.RemoveFromDeck(id);
+                manager.RemoveFromDeck(pos);
                 Destroy(inDeck);
                 inDeck = null;
             }
             else
             {
-                DisableCard(manager.AddToDeck(card, id));
+                DisableCard(manager.AddToDeck(pos));
             }
         });
     }
