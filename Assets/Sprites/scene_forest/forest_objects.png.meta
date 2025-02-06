@@ -269,6 +269,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: forest_objects_7
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 615
+        width: 26
+        height: 27
+      alignment: 9
+      pivot: {x: 0.4753465, y: 0.19132939}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa8ec064c2488044db829467ad1d5dba
+      internalID: -423693060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -287,6 +308,7 @@ TextureImporter:
       forest_objects_4: -1097198312
       forest_objects_5: -981514537
       forest_objects_6: 1593472334
+      forest_objects_7: -423693060
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

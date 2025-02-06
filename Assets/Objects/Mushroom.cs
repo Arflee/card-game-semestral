@@ -1,26 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
-public class Bell : MonoBehaviour
+public class Mushroom : MonoBehaviour
 {
-    [SerializeField] private AudioSource source;
-    [SerializeField] private GameObject soldier;
-    [SerializeField] private LayerMask bearLayer;
-
     bool close = false;
+    [SerializeField] private LayerMask bearLayer;
+    [SerializeField] private CombatCard card;
 
-    public void Ring()
+    private void OnValidate()
     {
-        source.Play();
-        Instantiate(soldier);
+        if (card == null)
+            return;
+        name = "mushroom " + card.name;
+    }
+
+    private void Eat()
+    {
+        var playersDeck = FindObjectOfType<CardDeck>();
+        playersDeck.AddNewCard(card);
+        Destroy(gameObject);
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && close)
-            Ring();
+            Eat();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,7 +33,7 @@ public class Bell : MonoBehaviour
         if ((bearLayer.value & (1 << collision.gameObject.layer)) > 0)
         {
             close = true;
-            InteractText.Instance.Use(this, "zazvoò");
+            InteractText.Instance.Use(this, "snìz");
         }
     }
 
@@ -40,4 +45,5 @@ public class Bell : MonoBehaviour
             InteractText.Instance.Disable(this);
         }
     }
+
 }
