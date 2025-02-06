@@ -13,8 +13,17 @@ MonoBehaviour:
   m_Name: AttackIntro
   m_EditorClassIdentifier: 
   monologues:
-  - speakerName: Sourozenec
-    sequence: "karty \xFAto\u010D\xED na prot\u011Bj\u0161\xED kartu, kdy\u017E nen\xED
-      \u017E\xE1dn\xE1 karta proti n\xED \xFAto\u010D\xED na krystaly"
+  - speakerName: Bratr
+    sequence: "No a samoz\u0159ejm\u011B po ukon\u010Den\xED tahu na sebe povolan\xE9
+      bytosti naproti sob\u011B \xFAto\u010D\xED. Ale to ur\u010Dit\u011B v\xED\u0161,
+      kdy\u017E m\u011B tak p\u0159eru\u0161uje\u0161\u2026\r"
+  - speakerName: "Medv\u011Bd"
+    sequence: "Samoz\u0159ejm\u011B. Stejn\u011B tak vim, \u017Ee krystal ti zni\u010D\xEDm
+      bytostma, kter\xFD proti sob\u011B nemaj protivn\xEDka a uberou tv\xFDmu krystalu
+      p\u0159\xEDslu\u0161nej po\u010Det \u017Eivot\u016F.\r"
+  - speakerName: Bratr
+    sequence: "T\u011B\u0161 se, zni\u010D\xEDm t\u011B! \r"
+  - speakerName: "Medv\u011Bd"
+    sequence: "Leda bobek!\r"
   delayPerSymbol: 0
   availableChoices: []

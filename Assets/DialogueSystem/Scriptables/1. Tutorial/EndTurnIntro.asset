@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: EndTurnIntro
   m_EditorClassIdentifier: 
   monologues:
-  - speakerName: Sourozenec
-    sequence: "pokud nechce\u0161/nem\u016F\u017Ee\u0161 u\u017E nic vylo\u017Eit,
-      ukon\u010Di svoje kolo"
+  - speakerName: Bratr
+    sequence: "Kdy\u017E u\u017E si total vy\u0161\u0165avenej, nebo prost\u011B
+      nechce\u0161 pokra\u010Dovat, ukon\u010Di sv\u016Fj tah. Pak budu na tahu zase
+      j\xE1, pak zase ty, pak zase j\xE1, pak zase ty\u2026\r\n"
+  - speakerName: "Medv\u011Bd"
+    sequence: "CH\xC1PU!"
   delayPerSymbol: 0
   availableChoices: []
