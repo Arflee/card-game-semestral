@@ -767,9 +767,9 @@ MonoBehaviour:
   speed: 4
   distanceThreshold: 0.1
   points:
-  - {x: -5.8621745, y: -10.049942}
+  - {x: -7.7936954, y: -9.16466}
   gizmosColor: {r: 0, g: 0, b: 1, a: 1}
-  nextState: {fileID: 0}
+  nextState: {fileID: 60487297}
 --- !u!114 &60487302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6230,6 +6230,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7588910618308089547, guid: 3109bf92acf2f494dafe00963a51535e, type: 3}
   m_PrefabInstance: {fileID: 1475415648}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &770571644
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 770571645}
+  - component: {fileID: 770571646}
+  m_Layer: 0
+  m_Name: FatherDialogue-win
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &770571645
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770571644}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.0842514, y: -10.941146, z: -4.0269046}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1818846953}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &770571646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770571644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776008d1a78a36645b0f7a603bdf4ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogueSequence: {fileID: 11400000, guid: 54b8cb2455cad0d45a2f12048c53d7a7, type: 2}
+  dialogueCanvas: {fileID: 995863022}
+  dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
+  skipInEditor: 0
+  choiceEvents: []
 --- !u!1 &772378838
 GameObject:
   m_ObjectHideFlags: 0
@@ -7669,6 +7718,55 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c85d5f30d9053343a0bd9cbc8dc2f01, type: 3}
+--- !u!1 &906386199
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 906386200}
+  - component: {fileID: 906386201}
+  m_Layer: 0
+  m_Name: FatherDialogue-lost
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &906386200
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906386199}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.0842514, y: -10.941146, z: -4.0269046}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1818846953}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &906386201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906386199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776008d1a78a36645b0f7a603bdf4ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogueSequence: {fileID: 11400000, guid: 0d12ab07354538e438085bbb01268c64, type: 2}
+  dialogueCanvas: {fileID: 995863022}
+  dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
+  skipInEditor: 0
+  choiceEvents: []
 --- !u!1001 &916347793
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7960,6 +8058,55 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c85d5f30d9053343a0bd9cbc8dc2f01, type: 3}
+--- !u!1 &950659997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 950659998}
+  - component: {fileID: 950659999}
+  m_Layer: 0
+  m_Name: EagleDialogueManager-lost
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &950659998
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950659997}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.0842514, y: -10.941146, z: -4.0269046}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1818846953}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &950659999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950659997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776008d1a78a36645b0f7a603bdf4ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogueSequence: {fileID: 11400000, guid: 786ed22d691503840b653fa240113e96, type: 2}
+  dialogueCanvas: {fileID: 995863022}
+  dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
+  skipInEditor: 0
+  choiceEvents: []
 --- !u!1001 &957132669
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8222,7 +8369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: 3 DadFight
-  playerPosition: {x: 38.636147, y: -19.922403}
+  playerPosition: {x: 38.57567, y: -19.861925}
   nextState: {fileID: 0}
 --- !u!114 &975658908
 MonoBehaviour:
@@ -8237,9 +8384,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameId: 3 DadFight
-  dialogueOnDidntFight: {fileID: 0}
-  dialogueOnWin: {fileID: 0}
-  dialogueOnLose: {fileID: 0}
+  dialogueOnDidntFight: {fileID: 1575068746}
+  dialogueOnWin: {fileID: 770571646}
+  dialogueOnLose: {fileID: 906386201}
   onWinNextState: {fileID: 975658905}
   onLoseNextState: {fileID: 975658907}
   onDidntFightNextState: {fileID: 975658907}
@@ -11153,7 +11300,33 @@ MonoBehaviour:
   dialogueCanvas: {fileID: 995863022}
   dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
   skipInEditor: 0
-  choiceEvents: []
+  choiceEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 880324600}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 880324600}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1001 &1263244277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11794,7 +11967,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1001 &1345270736
 PrefabInstance:
@@ -13739,6 +13912,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5814306210668437139, guid: a6150520261b024478798fb446e0a83f, type: 3}
   m_PrefabInstance: {fileID: 1573324274}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1575068744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1575068745}
+  - component: {fileID: 1575068746}
+  m_Layer: 0
+  m_Name: FatherDialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1575068745
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575068744}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.0842514, y: -10.941146, z: -4.0269046}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1818846953}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1575068746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575068744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776008d1a78a36645b0f7a603bdf4ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogueSequence: {fileID: 11400000, guid: abc0a330ff5a47d4b9c20d399890b0b0, type: 2}
+  dialogueCanvas: {fileID: 995863022}
+  dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
+  skipInEditor: 0
+  choiceEvents: []
 --- !u!1001 &1579435020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13946,6 +14168,7 @@ GameObject:
   - component: {fileID: 1601592896}
   - component: {fileID: 1601592906}
   - component: {fileID: 1601592907}
+  - component: {fileID: 1601592909}
   m_Layer: 0
   m_Name: Orel
   m_TagString: Untagged
@@ -14306,10 +14529,22 @@ MonoBehaviour:
   gameId: 2 EagleFight
   dialogueOnDidntFight: {fileID: 445453501}
   dialogueOnWin: {fileID: 0}
-  dialogueOnLose: {fileID: 0}
-  onWinNextState: {fileID: 0}
-  onLoseNextState: {fileID: 0}
+  dialogueOnLose: {fileID: 950659999}
+  onWinNextState: {fileID: 1601592909}
+  onLoseNextState: {fileID: 1601592903}
   onDidntFightNextState: {fileID: 1601592903}
+--- !u!114 &1601592909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601592893}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a58f43446f287814fa837a724d8c53ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1608070558
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15450,12 +15685,16 @@ Transform:
   - {fileID: 2069353503}
   - {fileID: 800046537}
   - {fileID: 993424456}
+  - {fileID: 1575068745}
+  - {fileID: 906386200}
+  - {fileID: 770571645}
   - {fileID: 1567604837}
   - {fileID: 226308045}
   - {fileID: 88047381}
   - {fileID: 95889752}
   - {fileID: 1185685035}
   - {fileID: 445453502}
+  - {fileID: 950659998}
   - {fileID: 1334161688}
   - {fileID: 1260753596}
   - {fileID: 106322973}

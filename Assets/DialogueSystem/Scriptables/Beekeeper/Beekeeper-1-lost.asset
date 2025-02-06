@@ -15,7 +15,5 @@ MonoBehaviour:
   monologues:
   - speakerName: "Medv\u011Bd"
     sequence: Au!
-  - speakerName: "Medv\u011Bd"
-    sequence: "Hej, no tak po\u010Dkat, co to d\u011Bl\xE1\u0161?\r"
   delayPerSymbol: 0
   availableChoices: []
