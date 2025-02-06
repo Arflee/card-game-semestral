@@ -1,3 +1,4 @@
+using Pospec.Helper.Audio;
 using UnityEngine;
 
 public class EatabeWheat : MonoBehaviour
@@ -6,6 +7,7 @@ public class EatabeWheat : MonoBehaviour
     [SerializeField] private float seedTime;
     [SerializeField] private SpriteRenderer sprite;
     [SerializeField] private LayerMask bearLayer;
+    [SerializeField] private Sound destroyedSound;
 
     public float Freshness { get; private set; }
     public Field field;
@@ -43,6 +45,7 @@ public class EatabeWheat : MonoBehaviour
         {
             field.DestroyWheat(this);
             Destroy(gameObject);
+            SoundManager.Instance.Play(destroyedSound);
         }
     }
 }

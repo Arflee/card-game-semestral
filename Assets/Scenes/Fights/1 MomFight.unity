@@ -174,6 +174,27 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
   - {fileID: 11400000, guid: 806466a8414aa594ab979997693c7bf3, type: 2}
   crystals: {fileID: 11400000, guid: 386514ff408145b4eabec281a7f6cd09, type: 2}
+  takeCardSound:
+    clips:
+    - {fileID: 8300000, guid: 05fc6e34237be8b4c95db100e3c35519, type: 3}
+    minPitch: 0.95
+    maxPitch: 1.05
+    volume: 1
+    looping: 0
+  returnCardSound:
+    clips:
+    - {fileID: 8300000, guid: 6e3d63073f24ae644b4057348267f6fd, type: 3}
+    minPitch: 0.95
+    maxPitch: 1.05
+    volume: 1
+    looping: 0
+  destroyCardSound:
+    clips:
+    - {fileID: 8300000, guid: ebd82ee040df67a4b9a895a05477b76a, type: 3}
+    minPitch: 0.95
+    maxPitch: 1.05
+    volume: 1
+    looping: 0
 --- !u!222 &135602146
 CanvasRenderer:
   m_ObjectHideFlags: 0

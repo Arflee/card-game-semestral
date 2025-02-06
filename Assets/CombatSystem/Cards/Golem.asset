@@ -15,10 +15,11 @@ MonoBehaviour:
   manaCost: 6
   cardName: Golem
   cardDescription: "Na za\u010D\xE1tku kola si regeneruje s\xEDlu a \u017Eivoty"
-  cardSprite: {fileID: 0}
-  health: 6
-  damage: 6
+  cardSprite: {fileID: 21300000, guid: a1106eddd0e907e4e876be8a82cc9f3a, type: 3}
+  health: 7
+  damage: 5
   onUseEffects: []
   onStartTurnEffects:
   - {fileID: 11400000, guid: aa8a86e6bcc6fec43be471d8e78a8ad4, type: 2}
   onDeathEffects: []
+  afterTurnEffects: []

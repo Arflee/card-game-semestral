@@ -15,9 +15,10 @@ MonoBehaviour:
   manaCost: 3
   cardName: "Sil\xE1k"
   cardDescription: 
-  cardSprite: {fileID: 0}
+  cardSprite: {fileID: 21300000, guid: edfdf9e5fdca42049ac8b35257876e9d, type: 3}
   health: 1
   damage: 5
   onUseEffects: []
   onStartTurnEffects: []
   onDeathEffects: []
+  afterTurnEffects: []

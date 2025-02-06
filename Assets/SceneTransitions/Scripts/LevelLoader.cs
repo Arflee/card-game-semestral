@@ -46,7 +46,9 @@ public class LevelLoader : MonoBehaviour
 
     private IEnumerator LoadCoroutineWithSpawnPoint(string sceneName, string spawnPointName)
     {
+        StateManager.Instance.SaveStates();
         yield return LoadCoroutine(sceneName);
+        StateManager.Instance.LoadStates();
 
         GameObject spawnPoint = GameObject.Find(spawnPointName);
         if (spawnPoint == null)

@@ -1,3 +1,4 @@
+using Pospec.Helper.Audio;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,6 +13,10 @@ public class CardDeck : MonoBehaviour
     [SerializeField] private List<CombatCard> playerCards;
     [SerializeField] private LifeCrystalParameters crystals;
 
+    [Header("Sounds")]
+    [SerializeField] private Sound takeCardSound;
+    [SerializeField] private Sound returnCardSound;
+    [SerializeField] private Sound destroyCardSound;
     public HashSet<int> Deck { get; private set; } = new HashSet<int>();
 
     private Queue<CombatCard> _cardDeck;
@@ -65,6 +70,8 @@ public class CardDeck : MonoBehaviour
 
         var takenCard = _cardDeck.Dequeue();
 
+        SoundManager.Instance.Play(takeCardSound);
+
         if (_cardHolder.CardsInHand.Count == maxCardsInHand)
         {
             var card = _cardHolder.CreateTempCard(takenCard, owner, _cardHolder.transform.parent);
@@ -80,6 +87,7 @@ public class CardDeck : MonoBehaviour
     private IEnumerator DiscardCard(Card card)
     {
         yield return new WaitForSeconds(1.5f);
+        SoundManager.Instance.Play(destroyCardSound);
         Destroy(card.CardVisual.gameObject);
         Destroy(card.transform.parent.gameObject);
     }
@@ -111,6 +119,7 @@ public class CardDeck : MonoBehaviour
         _cardDeck.Enqueue(card.CombatDTO.CardPrefab);
         Destroy(card.CardVisual.gameObject);
         Destroy(card.transform.parent.gameObject);
+        SoundManager.Instance.Play(returnCardSound);
     }
 
     public IList<CombatCard> GetAllCards()

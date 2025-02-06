@@ -1,3 +1,4 @@
+using Pospec.Helper.Audio;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
@@ -10,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     private static StandardControls _controls;
     private int _lastDirection = 0;
     private Animator _animator;
+
+    [SerializeField]
+    private Sound stepSound;
 
     public static StandardControls Controls
     {
@@ -57,5 +61,10 @@ public class PlayerMovement : MonoBehaviour
             direction = _lastDirection;
 
         _animator.SetInteger("Direction", direction);
+    }
+
+    public void Step()
+    {
+        SoundManager.Instance.Play(stepSound);
     }
 }

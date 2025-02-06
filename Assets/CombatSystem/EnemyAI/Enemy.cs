@@ -17,7 +17,11 @@ public class Enemy : ScriptableObject
     
     public CombatState StartingCombatState(CombatStateMachine machine)
     {
-        Queue<DialogueSequence> dialogues = new Queue<DialogueSequence>(inGameDialogues);
+            Queue<DialogueSequence> dialogues;
+        if (inGameDialogues == null)
+            dialogues = null;
+        else
+            dialogues = new Queue<DialogueSequence>(inGameDialogues);
 
         switch (tutorial)
         {
@@ -27,13 +31,15 @@ public class Enemy : ScriptableObject
                 return new Tutorial2BegginingState(machine, dialogues);
             case Tutorial.Crystals:
                 return new Tutorial3BegginingState(machine, dialogues);
+            case Tutorial.Credits:
+                return new EndcreditsPlayerState(machine);
             default:
                 return new EnemyState(machine);
         }
     }
 }
 
-public enum Tutorial { None, TotalIntro, AdvancedTechniques, Crystals };
+public enum Tutorial { None, TotalIntro, AdvancedTechniques, Crystals, Credits };
 
 [System.Serializable]
 public class EnemyDeck : IEnumerable<CombatCard>

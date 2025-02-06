@@ -140,7 +140,7 @@ MonoBehaviour:
   cardTemplate: {fileID: 7352998936812655986}
   cardImage: {fileID: 2209829496816888438}
   describtionTemplate: {fileID: 21300000, guid: 6bfeb306b73298d498ee2641d3365618, type: 3}
-  textlessTemplate: {fileID: 21300000, guid: 3a517475af779c648b0da2d2fa6bc653, type: 3}
+  textlessTemplate: {fileID: 21300000, guid: 6bfeb306b73298d498ee2641d3365618, type: 3}
   cardName: {fileID: 5287797195728747682}
   cardDescription: {fileID: 2699762686176027836}
   healthText: {fileID: 8794958655390194561}
