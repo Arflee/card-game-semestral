@@ -76,7 +76,10 @@ public class GameEndingHandler : MonoBehaviour
     private void SceneLoadCompleted(AsyncOperation obj)
     {
         var player = FindObjectOfType<PlayerMovement>();
-        player.transform.position = CrossScenePlayerState.Instance.Position;
+        if (player != null)
+        {
+            player.transform.position = CrossScenePlayerState.Instance.Position;
+        }
         LevelLoader.Instance.OnLoadFinish -= SceneLoadCompleted;
     }
 }
