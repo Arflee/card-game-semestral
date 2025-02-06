@@ -18357,6 +18357,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vcelar
       objectReference: {fileID: 0}
+    - target: {fileID: 5414330540327196691, guid: af3b7c9253229c34aa21b8d0d298fe2b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
