@@ -35,8 +35,6 @@ public class AttackState : CombatState
             {
                 if (!StateMachine.TryGetEnemyCrystalPos(out var crystal))
                 {
-                    Debug.Log("player wins");
-                    StateMachine.SetState(new WinState(StateMachine));
                     break;
                 }
 
