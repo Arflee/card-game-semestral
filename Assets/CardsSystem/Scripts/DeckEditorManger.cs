@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class DeckEditorManger : MonoBehaviour
@@ -21,6 +22,14 @@ public class DeckEditorManger : MonoBehaviour
     public int MinCards => minCards;
 
     private IList<CombatCard> allCards;
+    private UnityAction onCompleted;
+
+    public void Open(UnityAction onCompleted)
+    {
+        this.onCompleted = onCompleted;
+        transform.parent.gameObject.SetActive(true);
+        gameObject.SetActive(true);
+    }
 
     private void OnEnable()
     {
@@ -91,6 +100,8 @@ public class DeckEditorManger : MonoBehaviour
         else
         {
             cardDeck.ApplyDeck();
+            onCompleted?.Invoke();
+            onCompleted = null;
             gameObject.SetActive(false);
         }
     }

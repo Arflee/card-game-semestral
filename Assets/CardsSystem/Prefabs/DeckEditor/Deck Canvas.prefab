@@ -958,7 +958,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '[i] to open inventory'
+  m_text: "[i] otev\u0159\xEDt invent\xE1\u0159"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b39c59ef4a995394db4172ef524bb0d7, type: 2}
   m_sharedMaterial: {fileID: 2156354529425012716, guid: b39c59ef4a995394db4172ef524bb0d7, type: 2}
@@ -1576,8 +1576,8 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 1523037853
-  m_SortingOrder: 1
+  m_SortingLayerID: -2015702617
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &1887787765114973016
 MonoBehaviour:

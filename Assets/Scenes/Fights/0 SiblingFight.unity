@@ -398,6 +398,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Deck Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5725827620655845768, guid: 01b0e481a72898b43b47a507bc944b11, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5916474796625194924, guid: 01b0e481a72898b43b47a507bc944b11, type: 3}
       propertyPath: crystalPanel
       value: 
@@ -555,6 +559,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7091546516616137420, guid: 01b0e481a72898b43b47a507bc944b11, type: 3}
   m_PrefabInstance: {fileID: 380875848}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &380875850 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1636220393526381958, guid: 01b0e481a72898b43b47a507bc944b11, type: 3}
+  m_PrefabInstance: {fileID: 380875848}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b87e8e9c77fc249869590de96ac183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &393825907
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,6 +869,10 @@ PrefabInstance:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 3508546788471018822, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
+      propertyPath: manger
+      value: 
+      objectReference: {fileID: 380875850}
     - target: {fileID: 3830256884134435048, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
@@ -957,10 +976,6 @@ PrefabInstance:
     - target: {fileID: 6338338075660732472, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_Name
       value: CardsCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 6338338075660732472, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8173195852239707900, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: playerDeck

@@ -638,7 +638,7 @@ PrefabInstance:
     - target: {fileID: 673223157841434582, guid: 01b0e481a72898b43b47a507bc944b11, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2084828445}
     - target: {fileID: 1648589917663718966, guid: 01b0e481a72898b43b47a507bc944b11, type: 3}
       propertyPath: m_Size
       value: 0
@@ -824,6 +824,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7091546516616137420, guid: 01b0e481a72898b43b47a507bc944b11, type: 3}
   m_PrefabInstance: {fileID: 1137143150}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1137143152 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1636220393526381958, guid: 01b0e481a72898b43b47a507bc944b11, type: 3}
+  m_PrefabInstance: {fileID: 1137143150}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b87e8e9c77fc249869590de96ac183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1494971079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -940,6 +951,10 @@ PrefabInstance:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 3508546788471018822, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
+      propertyPath: manger
+      value: 
+      objectReference: {fileID: 1137143152}
     - target: {fileID: 3638473152986740369, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1171,10 +1186,6 @@ PrefabInstance:
     - target: {fileID: 6338338075660732472, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_Name
       value: CardsCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 6338338075660732472, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7257295900136668091, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_AnchorMax.y
