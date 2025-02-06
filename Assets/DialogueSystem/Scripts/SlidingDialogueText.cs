@@ -36,6 +36,7 @@ public class SlidingDialogueText : MonoBehaviour
     {
         _speakersName.text = sequence.Monologues[0].speakerName;
         _dialogueSequence = sequence;
+        StartCoroutine(TypeSymbols(_dialogueSequence.Monologues[_dialogueIndex]));
     }
 
     private void OnDisable()
