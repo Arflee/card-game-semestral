@@ -10,10 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0268bdc1baf48b429d0a02764a4c2ab, type: 3}
-  m_Name: father
+  m_Name: father-lost
   m_EditorClassIdentifier: 
-  monologues:
-  - speakerName: father
-    sequence: huhuhuhuhuhhuhu
-  delayPerSymbol: 0.01
+  monologues: []
+  delayPerSymbol: 0
   availableChoices: []

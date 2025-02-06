@@ -10,11 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0268bdc1baf48b429d0a02764a4c2ab, type: 3}
-  m_Name: Fox BEL
+  m_Name: postfigteagle
   m_EditorClassIdentifier: 
   monologues:
-  - speakerName: "Li\u0161ka"
-    sequence: "Kdyby sis to n\xE1hodou rozmyslel, m\xE9\u010Fo, tak orla najde\u0161
-      kousek za mnou v horn\xED \u010D\xE1sti lesa. A nezapome\u0148 se vr\xE1tit!"
+  - speakerName: "Medv\u011Bd"
+    sequence: "Poj\u010F na bytku ty dobytku!"
+  - speakerName: Orel
+    sequence: AAAAAAAAAAAAAA
+  - speakerName: "Vyprav\u011B\u010D"
+    sequence: "A s h\u0159motn\xFDm k\u0159ikem se orel snesl na medv\u011Bda"
   delayPerSymbol: 0
   availableChoices: []

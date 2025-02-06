@@ -13,7 +13,13 @@ MonoBehaviour:
   m_Name: Fox On Win
   m_EditorClassIdentifier: 
   monologues:
-  - speakerName: Liska
-    sequence: Good boy! You won!!!!!111!1!1!1
+  - speakerName: "Li\u0161ka"
+    sequence: "U\u0161i m\xE9 sly\u0161\xED, \u017Ee orla nesly\u0161\xED. To znamen\xE1,
+      \u017Ee jsi ho \xFAsp\u011B\u0161n\u011B uklidnil.\r\n"
+  - speakerName: "Medv\u011Bd"
+    sequence: "Supr. Jak mi teda pom\u016F\u017Ee\u0161 se v\u010Dela\u0159em?"
+  - speakerName: "Li\u0161ka"
+    sequence: "Neboj m\xE9\u010Fo, v\u0161echno bude. Tady m\xE1\u0161 jeden krystal
+      - to se ti ur\u010Dit\u011B bude hodit."
   delayPerSymbol: 0.01
   availableChoices: []
