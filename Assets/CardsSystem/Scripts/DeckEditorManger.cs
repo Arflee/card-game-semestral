@@ -31,8 +31,10 @@ public class DeckEditorManger : MonoBehaviour
         var allCards = cardDeck.GetAllCards();
         for (int i = 0; i < allCards.Count; i++)
         {
+            var transformedIndex = cardDeck.CardIdToUIPosId(i);
+
             var view = Instantiate(cardPrefab, cardPanel);
-            view.Initialize(allCards[i], i, this);
+            view.Initialize(allCards[i], transformedIndex, this);
             cardViews.Add(view);
         }
 

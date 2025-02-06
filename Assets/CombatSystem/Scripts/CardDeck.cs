@@ -22,6 +22,7 @@ public class CardDeck : MonoBehaviour
     private Queue<CombatCard> _cardDeck;
     private CardHolder _cardHolder;
     private static CardDeck _instance;
+    private List<KeyValuePair<int, CombatCard>> sortedCardsWithIndices;
 
     public LifeCrystalParameters Crystals => crystals;
     public int MaxCrystals => crystals.CrystalAmount;
@@ -124,15 +125,12 @@ public class CardDeck : MonoBehaviour
 
     public IList<CombatCard> GetAllCards()
     {
-        var cards = new List<CombatCard>(playerCards);
-        cards.Sort((a, b) =>
-        {
-            int res = a.ManaCost.CompareTo(b.ManaCost);
-            if (res != 0)
-                return res;
-            return a.Name.CompareTo(b.Name);
-        });
-        return cards;
+        sortedCardsWithIndices = playerCards.Select((el, i) => new KeyValuePair<int, CombatCard>(i, el))
+            .OrderBy(el => el.Value.ManaCost)
+            .ThenBy(el => el.Value.Name)
+            .ToList();
+
+        return sortedCardsWithIndices.Select(el => el.Value).ToList();
     }
 
     public int AllCardsCount() => playerCards.Count;
@@ -140,5 +138,10 @@ public class CardDeck : MonoBehaviour
     public void SetCrystals(LifeCrystalParameters newCrystals)
     {
         crystals = newCrystals;
+    }
+
+    public int CardIdToUIPosId(int index)
+    {
+        return sortedCardsWithIndices[index].Key;
     }
 }
