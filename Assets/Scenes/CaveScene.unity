@@ -532,14 +532,13 @@ GameObject:
   m_Component:
   - component: {fileID: 324294185}
   - component: {fileID: 324294184}
-  - component: {fileID: 324294188}
   - component: {fileID: 324294182}
   - component: {fileID: 324294187}
   - component: {fileID: 324294181}
   - component: {fileID: 324294183}
   - component: {fileID: 324294186}
   m_Layer: 0
-  m_Name: Matka
+  m_Name: Mother
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -702,25 +701,6 @@ MonoBehaviour:
   componentsToEnable:
   - {fileID: 324294183}
   nextState: {fileID: 324294181}
---- !u!114 &324294188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 324294180}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 577fbf8a5ca89344b8aeb1cb56822c61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameId: 1 MomFight
-  dialogueOnDidntFight: {fileID: 0}
-  dialogueOnWin: {fileID: 0}
-  dialogueOnLose: {fileID: 0}
-  onWinNextState: {fileID: 0}
-  onLoseNextState: {fileID: 0}
-  onDidntFightNextState: {fileID: 324294182}
 --- !u!4 &411728407 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5812938669424334679, guid: 8f00a89535fcbb04fa9584a094389f86, type: 3}
