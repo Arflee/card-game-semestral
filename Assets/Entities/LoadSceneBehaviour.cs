@@ -11,8 +11,6 @@ public class LoadSceneBehaviour : BehaviourState
     protected override void OnEnable()
     {
         DOTween.Clear(true);
-        //var playerPosition = FindObjectOfType<PlayerMovement>().gameObject.transform.position;
-
         CrossScenePlayerState.Instance.SavePosition(playerPosition);
         CrossScenePlayerState.Instance.SaveSceneName(SceneManager.GetActiveScene().name);
 

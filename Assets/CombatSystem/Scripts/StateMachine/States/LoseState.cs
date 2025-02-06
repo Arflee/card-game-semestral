@@ -1,4 +1,3 @@
-using DG.Tweening;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
@@ -13,7 +12,6 @@ public class LoseState : CombatState
 
     public override IEnumerator EnterState()
     {
-        DOTween.Clear(true);
         _gameHandler.PlayerLostGame(SceneManager.GetActiveScene().name);
         
         yield return null;

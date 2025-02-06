@@ -30,6 +30,6 @@ public class EndcreditsPlayerState : CombatState
     public override CombatState NextState()
     {
         LevelLoader.Instance.LoadScene("Credits");
-        return new AttackState(StateMachine);
+        return null;
     }
 }

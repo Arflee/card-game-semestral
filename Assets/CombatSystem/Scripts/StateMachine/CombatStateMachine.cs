@@ -78,7 +78,8 @@ public class CombatStateMachine : MonoBehaviour
     public void SetState(CombatState state)
     {
         State = state;
-        StartCoroutine(State.EnterState());
+        if (State != null)
+            StartCoroutine(State.EnterState());
     }
 
     private bool OnCardDragEnd(Card card)
@@ -219,6 +220,6 @@ public class CombatStateMachine : MonoBehaviour
     public void SetEndTurnButtonActive(bool isActive)
     {
         endTurnButton.interactable = isActive;
-        endTurnText.text = isActive ? "Ukon�it tah" : "Nejsi na tahu";
+        endTurnText.text = isActive ? "Ukončit tah" : "Nejsi na tahu";
     }
 }

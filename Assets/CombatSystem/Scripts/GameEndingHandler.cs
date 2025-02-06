@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameEndingHandler : MonoBehaviour
 {
@@ -49,8 +48,15 @@ public class GameEndingHandler : MonoBehaviour
 
     public void PlayerWonGame(string gameId)
     {
-        var playersDeck = FindAnyObjectByType<CardDeck>();
-        var enemy = FindAnyObjectByType<EnemyInitializer>();
+        var playersDeck = FindObjectOfType<CardDeck>();
+        var enemy = FindObjectOfType<EnemyInitializer>();
+
+        var newCrystal = FindObjectOfType<AddCrystal>();
+
+        if (newCrystal != null)
+        {
+            playersDeck.SetCrystals(newCrystal.NewCrystal);
+        }
 
         foreach (var card in enemy.GetRewardCards())
         {
@@ -70,7 +76,10 @@ public class GameEndingHandler : MonoBehaviour
     private void SceneLoadCompleted(AsyncOperation obj)
     {
         var player = FindObjectOfType<PlayerMovement>();
-        player.transform.position = CrossScenePlayerState.Instance.Position;
+        if (player != null)
+        {
+            player.transform.position = CrossScenePlayerState.Instance.Position;
+        }
         LevelLoader.Instance.OnLoadFinish -= SceneLoadCompleted;
     }
 }
