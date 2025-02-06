@@ -32,6 +32,6 @@ MonoBehaviour:
   - speakerName: "Medv\u011Bd"
     sequence: "V\xE1\u017En\u011B?!"
   - speakerName: Mamka
-    sequence: " Poj\u010F za mnou."
+    sequence: "Potk\xE1me se venku."
   delayPerSymbol: 0
   availableChoices: []
