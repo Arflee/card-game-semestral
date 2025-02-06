@@ -13,12 +13,23 @@ public class WinState : CombatState
 
     public override IEnumerator EnterState()
     {
-        _gameHandler.PlayerWonGame(SceneManager.GetActiveScene().name);
+
+        if (StateMachine.EnemyInitializer.Enemy.Reward.Length > 0)
+        {
+            StateMachine.RewardPanel.gameObject.SetActive(true);
+            StateMachine.RewardPanel.SetRewardCard(StateMachine.EnemyInitializer.Enemy.Reward);
+        }
+
+        StateMachine.RewardPanel.PanelButton.onClick.AddListener(() =>
+        {
+            _gameHandler.PlayerWonGame(SceneManager.GetActiveScene().name);
+        });
+
         yield return null;
     }
 
     public override CombatState NextState()
     {
-        throw new System.NotImplementedException();
+        return null;
     }
 }
