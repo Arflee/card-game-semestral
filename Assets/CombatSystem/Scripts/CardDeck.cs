@@ -17,7 +17,7 @@ public class CardDeck : MonoBehaviour
     [SerializeField] private Sound takeCardSound;
     [SerializeField] private Sound returnCardSound;
     [SerializeField] private Sound destroyCardSound;
-    public HashSet<int> Deck { get; private set; } = new HashSet<int>();
+    private HashSet<int> deck = new HashSet<int>();
 
     private Queue<CombatCard> _cardDeck;
     private CardHolder _cardHolder;
@@ -41,7 +41,7 @@ public class CardDeck : MonoBehaviour
         }
 
         SceneManager.activeSceneChanged += OnNewSceneAdded;
-        Deck = new HashSet<int>(Enumerable.Range(0, playerCards.Count));
+        deck = new HashSet<int>(Enumerable.Range(0, playerCards.Count));
     }
 
     private void OnNewSceneAdded(Scene current, Scene next)
@@ -52,9 +52,8 @@ public class CardDeck : MonoBehaviour
     public void ApplyDeck()
     {
         List<CombatCard> cards = new List<CombatCard>();
-        var allCards = GetAllCards();
-        foreach (var cardId in Deck)
-            cards.Add(allCards[cardId]);
+        foreach (var cardId in deck)
+            cards.Add(playerCards[cardId]);
 
         _cardDeck = new(Utility.Shuffle(cards));
     }
@@ -140,8 +139,24 @@ public class CardDeck : MonoBehaviour
         crystals = newCrystals;
     }
 
-    public int CardIdToUIPosId(int index)
+    public void AddToDeck(int posInSorted)
     {
-        return sortedCardsWithIndices[index].Key;
+        deck.Add(sortedCardsWithIndices[posInSorted].Key);
     }
+
+    public void RemoveFromDeck(int posInSorted)
+    {
+        deck.Remove(sortedCardsWithIndices[posInSorted].Key);
+    }
+
+    public IList<int> GetDeckOfPos()
+    {
+        var pos = new List<int>();
+        for (int i = 0; i < sortedCardsWithIndices.Count; i++)
+            if (deck.Contains(sortedCardsWithIndices[i].Key))
+                pos.Add(i);
+        return pos;
+    }
+
+    public int GetDeckLength() => deck.Count;
 }
