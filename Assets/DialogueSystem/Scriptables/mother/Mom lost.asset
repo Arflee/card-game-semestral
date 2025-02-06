@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0268bdc1baf48b429d0a02764a4c2ab, type: 3}
-  m_Name: Mom 1. fight
+  m_Name: Mom lost
   m_EditorClassIdentifier: 
   monologues:
   - speakerName: "M\xE1ma"
-    sequence: "Jsi p\u0159ipraven\xFD? Nechce\u0161 se je\u0161t\u011B nap\xEDt?
-      Hlavn\u011B v\u010Das \u0159ekni, kdyby t\u011B n\u011Bco bolelo.\r"
+    sequence: "\rNen\xED ti nic? Neubl\xED\u017Eila jsem ti."
   - speakerName: "Medv\u011Bd"
-    sequence: "Klid, v\u0161ecko dobr\xFD.\r"
+    sequence: "Ale prd, chci bojovat znovu!\r"
+  - speakerName: "M\xE1ma"
+    sequence: Hmmm...
   - speakerName: "Vyprav\u011B\u010D"
-    sequence: "Matka medv\u011Bda se laskav\u011B pousm\xE1la a zaujala bojov\xFD
-      postoj."
+    sequence: "Tvrdohlav\xFD medv\u011Bd se nehodlal vzd\xE1t a na svou matku nel\xEDtostn\u011B
+      za\u016Fto\u010Dil."
   delayPerSymbol: 0.01
   availableChoices: []

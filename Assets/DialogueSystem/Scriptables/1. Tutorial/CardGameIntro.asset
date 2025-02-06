@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: CardGameIntro
   m_EditorClassIdentifier: 
   monologues:
-  - speakerName: Sourozenec
-    sequence: "abys vyhr\xE1l, mus\xED\u0161 mi zni\u010Dit krystal"
+  - speakerName: Bratr
+    sequence: "Pravidla zn\xE1\u0161, kdo bude prvn\xED bez krystal\u016F, je pora\u017Een!\r"
+  - speakerName: "Medv\u011Bd"
+    sequence: "Bla bla bla\u2026\r"
   delayPerSymbol: 0
   availableChoices: []
