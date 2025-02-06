@@ -13,14 +13,13 @@ public class WinState : CombatState
 
     public override IEnumerator EnterState()
     {
-
         if (StateMachine.EnemyInitializer.Enemy.Reward.Length > 0)
         {
-            StateMachine.RewardPanel.gameObject.SetActive(true);
-            StateMachine.RewardPanel.SetRewardCard(StateMachine.EnemyInitializer.Enemy.Reward);
+            RewardPanel.Instance.gameObject.SetActive(true);
+            RewardPanel.Instance.SetRewardCard(StateMachine.EnemyInitializer.Enemy.Reward);
         }
 
-        StateMachine.RewardPanel.AddCallback(() =>
+        RewardPanel.Instance.AddCallback(() =>
         {
             _gameHandler.PlayerWonGame(SceneManager.GetActiveScene().name);
         });

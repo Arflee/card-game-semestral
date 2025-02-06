@@ -11,6 +11,14 @@ public class RewardPanel : MonoBehaviour
     [SerializeField] private Button deckEditButton;
     [SerializeField] private DeckEditorManger manger;
 
+    public static RewardPanel Instance { get; private set; }
+
+    void Awake()
+    {
+        Instance = this;
+        gameObject.SetActive(false);
+    }
+
     public void AddCallback(UnityAction onContinue)
     {
         continueButton.onClick.AddListener(onContinue);
