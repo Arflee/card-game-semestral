@@ -20,7 +20,7 @@ public class Mushroom : MonoBehaviour
     {
         var reward = RewardPanel.Instance;
         reward.gameObject.SetActive(true);
-        reward.SetRewardCard(new [] { card });
+        reward.SetRewardCard(new [] { card }, "Cože, nová karta!");
         reward.AddCallback(() => reward.ClearBoard());
         Destroy(gameObject);
     }

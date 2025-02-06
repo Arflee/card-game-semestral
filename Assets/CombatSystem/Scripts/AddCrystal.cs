@@ -2,7 +2,17 @@ using UnityEngine;
 
 public class AddCrystal : MonoBehaviour
 {
-    [SerializeField] private LifeCrystalParameters newCrystal;
+    private void Eat()
+    {
+        var reward = RewardPanel.Instance;
+        reward.gameObject.SetActive(true);
+        reward.SetRewardCrystal("Máte další krystal!");
+        reward.AddCallback(() => reward.ClearBoard());
+        Destroy(gameObject);
+    }
 
-    public LifeCrystalParameters NewCrystal => newCrystal;
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Eat();
+    }
 }
