@@ -802,7 +802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: 1 MomFight
-  playerPosition: {x: -5.8011465, y: -9.8707075}
+  playerPosition: {x: -4.617176, y: -9.725503}
   nextState: {fileID: 0}
 --- !u!1001 &64595709
 PrefabInstance:
@@ -1158,6 +1158,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2765501920064257925, guid: f8e0ee9a914009d458c1c39bcf458f36, type: 3}
   m_PrefabInstance: {fileID: 95690059}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &95889751
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 95889752}
+  - component: {fileID: 95889753}
+  m_Layer: 0
+  m_Name: BeekeeperDialogue-lost
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &95889752
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95889751}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.0842514, y: -10.941146, z: -4.0269046}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1818846953}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &95889753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95889751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776008d1a78a36645b0f7a603bdf4ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogueSequence: {fileID: 11400000, guid: 29ada3398700b5e429b3de64d23743f8, type: 2}
+  dialogueCanvas: {fileID: 995863022}
+  dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
+  skipInEditor: 0
+  choiceEvents: []
 --- !u!1 &99946593
 GameObject:
   m_ObjectHideFlags: 0
@@ -8772,7 +8821,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020789508}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 274bcd6630a83344cb6a66bdfb5ea307, type: 3}
   m_Name: 
@@ -8834,7 +8883,7 @@ MonoBehaviour:
   points:
   - {x: 3.6003122, y: -8.519721}
   gizmosColor: {r: 1, g: 0, b: 0.2639537, a: 1}
-  nextState: {fileID: 1020789518}
+  nextState: {fileID: 1020789532}
 --- !u!114 &1020789517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8924,11 +8973,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameId: 2 BeekeeperFight
   dialogueOnDidntFight: {fileID: 88047382}
-  dialogueOnWin: {fileID: 0}
-  dialogueOnLose: {fileID: 0}
+  dialogueOnWin: {fileID: 1185685036}
+  dialogueOnLose: {fileID: 95889753}
   onWinNextState: {fileID: 1020789517}
   onLoseNextState: {fileID: 1020789517}
   onDidntFightNextState: {fileID: 1020789527}
+--- !u!114 &1020789532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020789508}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1670148a1d7ec0449d38992a78e81a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 1567604838}
+  nextState: {fileID: 1020789518}
 --- !u!4 &1023169173 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4515634688797879571, guid: d8787e712e3cb9549a8517b6ef28b24f, type: 3}
@@ -10204,6 +10267,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5814306210668437139, guid: a6150520261b024478798fb446e0a83f, type: 3}
   m_PrefabInstance: {fileID: 249405658}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1185685034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1185685035}
+  - component: {fileID: 1185685036}
+  m_Layer: 0
+  m_Name: BeekeeperDialogue-win
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1185685035
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185685034}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.0842514, y: -10.941146, z: -4.0269046}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1818846953}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1185685036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185685034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776008d1a78a36645b0f7a603bdf4ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogueSequence: {fileID: 11400000, guid: 42f7d5f7526612944964afae24a3c721, type: 2}
+  dialogueCanvas: {fileID: 995863022}
+  dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
+  skipInEditor: 0
+  choiceEvents: []
 --- !u!1001 &1209571014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13355,6 +13467,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2754413547690233697, guid: d06e323b031426649a1fa684fd936a6b, type: 3}
   m_PrefabInstance: {fileID: 1561262999}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1567604836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1567604837}
+  - component: {fileID: 1567604838}
+  m_Layer: 0
+  m_Name: Vcely
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1567604837
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567604836}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.0842514, y: -10.941146, z: -4.0269046}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1818846953}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1567604838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567604836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776008d1a78a36645b0f7a603bdf4ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogueSequence: {fileID: 11400000, guid: fd7b8b453d7d36742b395aa603282d94, type: 2}
+  dialogueCanvas: {fileID: 995863022}
+  dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
+  skipInEditor: 0
+  choiceEvents: []
 --- !u!1 &1569556368
 GameObject:
   m_ObjectHideFlags: 0
@@ -15205,7 +15366,10 @@ Transform:
   - {fileID: 2069353503}
   - {fileID: 800046537}
   - {fileID: 993424456}
+  - {fileID: 1567604837}
   - {fileID: 88047381}
+  - {fileID: 95889752}
+  - {fileID: 1185685035}
   - {fileID: 445453502}
   - {fileID: 1334161688}
   - {fileID: 1260753596}
@@ -18141,6 +18305,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5414330540327196691, guid: af3b7c9253229c34aa21b8d0d298fe2b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1020789516}
+    - targetCorrespondingSourceObject: {fileID: 5414330540327196691, guid: af3b7c9253229c34aa21b8d0d298fe2b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1020789532}
     - targetCorrespondingSourceObject: {fileID: 5414330540327196691, guid: af3b7c9253229c34aa21b8d0d298fe2b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1020789518}
