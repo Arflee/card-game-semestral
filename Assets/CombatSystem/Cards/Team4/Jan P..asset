@@ -12,13 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79c9c8a8609bbb4591197163e73c2f8, type: 3}
   m_Name: Jan P.
   m_EditorClassIdentifier: 
-  manaCost: 0
+  manaCost: 2
   cardName: Jan P.
   cardDescription: Game Design + Zvuky
   cardSprite: {fileID: 21300000, guid: 8c49c11693342d649ab70c82ee2736e9, type: 3}
-  health: 2
-  damage: 2
+  health: 42
+  damage: 42
   onUseEffects: []
-  onStartTurnEffects: []
-  onDeathEffects: []
+  onStartTurnEffects:
+  - {fileID: 11400000, guid: 68199c3f2f341ce4db7abec0925e4964, type: 2}
+  onDeathEffects:
+  - {fileID: 11400000, guid: 68199c3f2f341ce4db7abec0925e4964, type: 2}
+  - {fileID: 11400000, guid: 68199c3f2f341ce4db7abec0925e4964, type: 2}
   afterTurnEffects: []

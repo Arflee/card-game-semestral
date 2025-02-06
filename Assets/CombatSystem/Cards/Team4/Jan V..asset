@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79c9c8a8609bbb4591197163e73c2f8, type: 3}
   m_Name: Jan V.
   m_EditorClassIdentifier: 
-  manaCost: 0
+  manaCost: 2
   cardName: Jan V.
   cardDescription: Grafika
   cardSprite: {fileID: 21300000, guid: 8c49c11693342d649ab70c82ee2736e9, type: 3}
-  health: 2
-  damage: 2
+  health: 42
+  damage: 42
   onUseEffects: []
   onStartTurnEffects: []
-  onDeathEffects: []
+  onDeathEffects:
+  - {fileID: 11400000, guid: ab5db09a4fb7e2748b6bde8be1cf883a, type: 2}
+  - {fileID: 11400000, guid: 0014633d8a4782f4384ad872418e1811, type: 2}
   afterTurnEffects: []
