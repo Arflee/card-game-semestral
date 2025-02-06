@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79c9c8a8609bbb4591197163e73c2f8, type: 3}
-  m_Name: Golem
+  m_Name: Ondra B.
   m_EditorClassIdentifier: 
-  manaCost: 6
-  cardName: Golem
-  cardDescription: "Na za\u010D\xE1tku kola si regeneruje s\xEDlu a \u017Eivoty"
-  cardSprite: {fileID: 21300000, guid: a1106eddd0e907e4e876be8a82cc9f3a, type: 3}
-  health: 7
-  damage: 5
+  manaCost: 0
+  cardName: Ondra B.
+  cardDescription: Dialogy + Mangement
+  cardSprite: {fileID: 21300000, guid: 8c49c11693342d649ab70c82ee2736e9, type: 3}
+  health: 2
+  damage: 2
   onUseEffects: []
-  onStartTurnEffects:
-  - {fileID: 11400000, guid: aa8a86e6bcc6fec43be471d8e78a8ad4, type: 2}
+  onStartTurnEffects: []
   onDeathEffects: []
   afterTurnEffects: []

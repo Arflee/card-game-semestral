@@ -44,4 +44,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fights/6 BeekeeperFight.unity
     guid: 87aa7efc57d77a244be5816983c40f8b
+  - enabled: 1
+    path: Assets/Scenes/Fights/Endcredits Fight.unity
+    guid: 9d1cec0ada503a444b02982b9231608a
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 33905309cd8c6f64b9e7d4bec6cea9d8
   m_configObjects: {}
