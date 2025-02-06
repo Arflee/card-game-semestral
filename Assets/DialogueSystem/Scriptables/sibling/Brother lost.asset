@@ -20,5 +20,8 @@ MonoBehaviour:
   - speakerName: Bratr
     sequence: "Takhle brut\xE1ln\u011B jsem ti nenakopal dlouho! Tak to ti je\u0161t\u011B
       p\u0159id\xE1m!"
+  - speakerName: "Vyprav\u011B\u010D"
+    sequence: "Bratr se \u0161kodolib\u011B pousm\xE1l a za\u010Dal s dal\u0161\xEDm
+      soubojem."
   delayPerSymbol: 0
   availableChoices: []

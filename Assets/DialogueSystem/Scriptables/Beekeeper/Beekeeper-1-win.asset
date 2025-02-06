@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0268bdc1baf48b429d0a02764a4c2ab, type: 3}
-  m_Name: Mom 1. fight
+  m_Name: Beekeeper-1-win
   m_EditorClassIdentifier: 
   monologues:
-  - speakerName: "M\xE1ma"
-    sequence: "Jsi p\u0159ipraven\xFD? Nechce\u0161 se je\u0161t\u011B nap\xEDt?
-      Hlavn\u011B v\u010Das \u0159ekni, kdyby t\u011B n\u011Bco bolelo.\r"
+  - speakerName: "V\u010Dela\u0159"
+    sequence: "Jak si vyhr\xE1l???"
+  - speakerName: "V\u010Dela\u0159"
+    sequence: "Nevad\xED, je\u0161t\u011B se mus\xED st\xE1t zbytek hry, tak si p\u0159edstav,
+      \u017Ee si prohr\xE1l."
   - speakerName: "Medv\u011Bd"
-    sequence: "Klid, v\u0161ecko dobr\xFD.\r"
-  - speakerName: "Vyprav\u011B\u010D"
-    sequence: "Matka medv\u011Bda se laskav\u011B pousm\xE1la a zaujala bojov\xFD
-      postoj."
-  delayPerSymbol: 0.01
+    sequence: "Co to mele\u0161?"
+  delayPerSymbol: 0
   availableChoices: []
