@@ -14159,16 +14159,15 @@ GameObject:
   - component: {fileID: 1601592894}
   - component: {fileID: 1601592902}
   - component: {fileID: 1601592908}
+  - component: {fileID: 1601592905}
   - component: {fileID: 1601592903}
   - component: {fileID: 1601592898}
   - component: {fileID: 1601592897}
   - component: {fileID: 1601592900}
   - component: {fileID: 1601592899}
-  - component: {fileID: 1601592905}
   - component: {fileID: 1601592896}
   - component: {fileID: 1601592906}
   - component: {fileID: 1601592907}
-  - component: {fileID: 1601592909}
   m_Layer: 0
   m_Name: Orel
   m_TagString: Untagged
@@ -14530,21 +14529,9 @@ MonoBehaviour:
   dialogueOnDidntFight: {fileID: 445453501}
   dialogueOnWin: {fileID: 0}
   dialogueOnLose: {fileID: 950659999}
-  onWinNextState: {fileID: 1601592909}
+  onWinNextState: {fileID: 1601592905}
   onLoseNextState: {fileID: 1601592903}
   onDidntFightNextState: {fileID: 1601592903}
---- !u!114 &1601592909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1601592893}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a58f43446f287814fa837a724d8c53ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1608070558
 PrefabInstance:
   m_ObjectHideFlags: 0

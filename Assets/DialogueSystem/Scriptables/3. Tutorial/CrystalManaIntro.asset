@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monologues:
   - speakerName: "T\xE1ta"
-    sequence: "kouk\xE1m, \u017Ee si z\xEDskal dal\u0161\xED krystal, rozbit\xFD
-      krystal ti d\xE1v\xE1 1 manu nav\xEDc"
+    sequence: "PRO\u010C M\xC1\u0160 DAL\u0160\xCD KRYSTAL?! TE\u010EKA KDY\u017D
+      TI JEDEN ZNI\u010C\xCDM, DOSTANE\u0160 PERMANENTN\u011A +1 MANY NA KOLO! ALE
+      I TAK T\u011A NIKAM NEPUST\xCDM!"
   delayPerSymbol: 0
   availableChoices: []
