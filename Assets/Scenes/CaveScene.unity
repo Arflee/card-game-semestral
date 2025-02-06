@@ -679,9 +679,8 @@ GameObject:
   - component: {fileID: 528551032}
   - component: {fileID: 528551035}
   - component: {fileID: 528551037}
-  - component: {fileID: 528551039}
-  - component: {fileID: 528551040}
   - component: {fileID: 528551036}
+  - component: {fileID: 528551039}
   - component: {fileID: 528551038}
   m_Layer: 0
   m_Name: Beart Sibling
@@ -787,7 +786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: 0 SiblingFight
-  playerPosition: {x: -2.0142226, y: 0.24193391}
+  playerPosition: {x: -2.5324826, y: -0.7945862}
   nextState: {fileID: 0}
 --- !u!114 &528551037
 MonoBehaviour:
@@ -805,8 +804,8 @@ MonoBehaviour:
   dialogueOnDidntFight: {fileID: 511029155}
   dialogueOnWin: {fileID: 1219770864}
   dialogueOnLose: {fileID: 888714069}
-  onWinNextState: {fileID: 528551039}
-  onLoseNextState: {fileID: 528551040}
+  onWinNextState: {fileID: 528551035}
+  onLoseNextState: {fileID: 528551036}
   onDidntFightNextState: {fileID: 528551036}
 --- !u!114 &528551038
 MonoBehaviour:
@@ -830,27 +829,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 528551031}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1670148a1d7ec0449d38992a78e81a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 577fbf8a5ca89344b8aeb1cb56822c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 1219770864}
-  nextState: {fileID: 528551039}
---- !u!114 &528551040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 528551031}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1670148a1d7ec0449d38992a78e81a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue: {fileID: 888714069}
-  nextState: {fileID: 528551037}
+  gameId: 0 SiblingFight
+  dialogueOnDidntFight: {fileID: 0}
+  dialogueOnWin: {fileID: 0}
+  dialogueOnLose: {fileID: 0}
+  onWinNextState: {fileID: 528551038}
+  onLoseNextState: {fileID: 0}
+  onDidntFightNextState: {fileID: 0}
 --- !u!4 &575946643 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3809558349348202522, guid: e0f15690813642f46ab6199ed3d76732, type: 3}
@@ -1586,11 +1576,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.4940233
+      value: 5.6044884
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.4428635
+      value: 2.4036198
       objectReference: {fileID: 0}
     - target: {fileID: 2684559008331962717, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_AnchorMax.y
