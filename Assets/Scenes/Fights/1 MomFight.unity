@@ -680,6 +680,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3508546788471018822, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
+      propertyPath: manger
+      value: 
+      objectReference: {fileID: 1826952708}
     - target: {fileID: 3561006744908205306, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_Value
       value: 1
@@ -907,10 +911,6 @@ PrefabInstance:
     - target: {fileID: 6338338075660732472, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_Name
       value: CardsCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 6338338075660732472, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6913087230039927322, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: cardDeck
@@ -1563,7 +1563,7 @@ PrefabInstance:
     - target: {fileID: 673223157841434582, guid: 01b0e481a72898b43b47a507bc944b11, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2084828445}
     - target: {fileID: 1648589917663718966, guid: 01b0e481a72898b43b47a507bc944b11, type: 3}
       propertyPath: m_Size
       value: 0
@@ -1752,6 +1752,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7091546516616137420, guid: 01b0e481a72898b43b47a507bc944b11, type: 3}
   m_PrefabInstance: {fileID: 1826952706}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1826952708 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1636220393526381958, guid: 01b0e481a72898b43b47a507bc944b11, type: 3}
+  m_PrefabInstance: {fileID: 1826952706}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229044221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b87e8e9c77fc249869590de96ac183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1826952711
 MonoBehaviour:
   m_ObjectHideFlags: 0

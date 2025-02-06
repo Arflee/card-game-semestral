@@ -18,6 +18,12 @@ public class OpenDeckEditor : MonoBehaviour
 
     private void Update()
     {
+        if (deck == null)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+
         if (deck.AllCardsCount() < deckEditorPanel.MinCards || CombatStateMachine.GameActive)
         {
             infoText.gameObject.SetActive(false);

@@ -20,7 +20,7 @@ public class WinState : CombatState
             StateMachine.RewardPanel.SetRewardCard(StateMachine.EnemyInitializer.Enemy.Reward);
         }
 
-        StateMachine.RewardPanel.PanelButton.onClick.AddListener(() =>
+        StateMachine.RewardPanel.AddCallback(() =>
         {
             _gameHandler.PlayerWonGame(SceneManager.GetActiveScene().name);
         });

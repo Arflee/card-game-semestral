@@ -6,6 +6,13 @@ public class SkipFight : MonoBehaviour
 {
     public CombatStateMachine manager;
 
+    public void Awake()
+    {
+#if !UNITY_EDITOR
+        gameObject.SetActive(false);
+#endif
+    }
+
     public void Skip()
     {
 #if UNITY_EDITOR

@@ -696,11 +696,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 762583934259683632, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4280431415
+      value: 4280376942
       objectReference: {fileID: 0}
     - target: {fileID: 762583934259683632, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 773210491876630812, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_fontAsset
@@ -840,7 +840,7 @@ PrefabInstance:
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 2845012204578963061, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2847694753046001111, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: enemy
@@ -902,6 +902,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3508546788471018822, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
+      propertyPath: manger
+      value: 
+      objectReference: {fileID: 7159571404201448169}
     - target: {fileID: 3561006744908205306, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_Value
       value: 1
@@ -944,7 +948,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3830256884134435048, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4282750719
+      value: 4287545853
       objectReference: {fileID: 0}
     - target: {fileID: 3830256884134435048, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_hasFontAssetChanged
@@ -1345,10 +1349,6 @@ PrefabInstance:
     - target: {fileID: 6338338075660732472, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_Name
       value: CardsCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 6338338075660732472, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6943272537424876722, guid: 0eb2d20477a2f3240b68ba6b39bacb23, type: 3}
       propertyPath: m_fontAsset
@@ -1867,6 +1867,17 @@ PrefabInstance:
       addedObject: {fileID: 534852208}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01b0e481a72898b43b47a507bc944b11, type: 3}
+--- !u!114 &7159571404201448169 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1636220393526381958, guid: 01b0e481a72898b43b47a507bc944b11, type: 3}
+  m_PrefabInstance: {fileID: 7159571404201448168}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b87e8e9c77fc249869590de96ac183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
