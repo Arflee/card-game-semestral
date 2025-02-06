@@ -21,7 +21,7 @@ public class Mushroom : MonoBehaviour
         var reward = RewardPanel.Instance;
         reward.gameObject.SetActive(true);
         reward.SetRewardCard(new [] { card });
-        reward.AddCallback(() => reward.gameObject.SetActive(false));
+        reward.AddCallback(() => reward.ClearBoard());
         Destroy(gameObject);
     }
 

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -12,6 +13,7 @@ public class RewardPanel : MonoBehaviour
     [SerializeField] private DeckEditorManger manger;
 
     public static RewardPanel Instance { get; private set; }
+    public List<Card> spawnedCards = new List<Card>();
 
     void Awake()
     {
@@ -45,6 +47,18 @@ public class RewardPanel : MonoBehaviour
             card.CardVisual.LocalCanvas.overrideSorting = true;
             card.CardVisual.LocalCanvas.sortingLayerName = "Foreground";
             card.CardVisual.LocalCanvas.sortingOrder = 1;
+            spawnedCards.Add(card);
         }
+    }
+
+    public void ClearBoard()
+    {
+        foreach (var card in spawnedCards)
+        {
+            Destroy(card.CardVisual.gameObject);
+            Destroy(card.transform.parent.gameObject);
+        }
+        spawnedCards.Clear();
+        gameObject.SetActive(false);
     }
 }
