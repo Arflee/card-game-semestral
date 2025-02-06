@@ -13,12 +13,15 @@ MonoBehaviour:
   m_Name: PlayingCardsIntro
   m_EditorClassIdentifier: 
   monologues:
-  - speakerName: Sourozenec
-    sequence: To jsou tvoje karty
-  - speakerName: Sourozenec
-    sequence: "Ka\u017Ed\xE1 n\u011Bco stoj\xED. Dokud na n\u011B m\xE1\u0161, m\u016F\u017Ee\u0161
-      je vylo\u017Eit."
-  - speakerName: Sourozenec
-    sequence: "Na vylo\u017Een\xED p\u0159et\xE1hni kartu na st\u016Fl"
+  - speakerName: Bratr
+    sequence: "Jestli si fakt tak unavenej, \u017Ee si sotva pamatuje\u0161 z kama
+      si, tak ti trochu pom\u016F\u017Eu. P\u0159ed sebou m\xE1\u0161 bytosti, kter\xFD
+      m\u016F\u017Ee\u0161 povolat k boji.\r"
+  - speakerName: Bratr
+    sequence: "Ale bude t\u011B to n\u011Bco st\xE1t!"
+  - speakerName: "Medv\u011Bd"
+    sequence: "Manu si nezapom\xEDn\xE1m kontrolovat nikdy!"
+  - speakerName: Bratr
+    sequence: "Pokud chce\u0161 bytosti povolat, p\u0159et\xE1hni je z ruky na st\u016Fl."
   delayPerSymbol: 0
   availableChoices: []

@@ -10,14 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0268bdc1baf48b429d0a02764a4c2ab, type: 3}
-  m_Name: EndTurnIntro
+  m_Name: Brother win
   m_EditorClassIdentifier: 
   monologues:
   - speakerName: Bratr
-    sequence: "Kdy\u017E u\u017E si total vy\u0161\u0165avenej, nebo prost\u011B
-      nechce\u0161 pokra\u010Dovat, ukon\u010Di sv\u016Fj tah. Pak budu na tahu zase
-      j\xE1, pak zase ty, pak zase j\xE1, pak zase ty\u2026\r\n"
-  - speakerName: "Medv\u011Bd"
-    sequence: "CH\xC1PU!"
+    sequence: "Z\xEDtra ur\u010Dit\u011B vyhraju, uvid\xED\u0161!"
   delayPerSymbol: 0
   availableChoices: []
