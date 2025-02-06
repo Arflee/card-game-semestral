@@ -134,9 +134,9 @@ public class CardDeck : MonoBehaviour
 
     public int AllCardsCount() => playerCards.Count;
 
-    public void SetCrystals(LifeCrystalParameters newCrystals)
+    public void AddCrystal()
     {
-        crystals = newCrystals;
+        crystals = new LifeCrystalParameters(crystals.Health, crystals.CrystalAmount + 1);
     }
 
     public void AddToDeck(int posInSorted)

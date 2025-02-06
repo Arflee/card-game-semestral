@@ -16,7 +16,7 @@ public class WinState : CombatState
         if (StateMachine.EnemyInitializer.Enemy.Reward.Length > 0)
         {
             RewardPanel.Instance.gameObject.SetActive(true);
-            RewardPanel.Instance.SetRewardCard(StateMachine.EnemyInitializer.Enemy.Reward);
+            RewardPanel.Instance.SetRewardCard(StateMachine.EnemyInitializer.Enemy.Reward, "Máte nové karty!");
         }
 
         RewardPanel.Instance.AddCallback(() =>

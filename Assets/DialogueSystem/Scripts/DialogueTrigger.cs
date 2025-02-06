@@ -12,6 +12,7 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private bool skipInEditor = false;
 #endif
     [SerializeField] private UnityEvent[] choiceEvents;
+    [SerializeField] private UnityEvent onDialogueEndEvent;
 
     public event Action OnDialogueEnd;
 
@@ -70,5 +71,8 @@ public class DialogueTrigger : MonoBehaviour
 
             Destroy(_createdBubble.gameObject);
         });
+
+        if (onDialogueEndEvent != null)
+            onDialogueEndEvent.Invoke();
     }
 }

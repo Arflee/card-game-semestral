@@ -1,19 +1,25 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using static System.Net.Mime.MediaTypeNames;
 
 public class RewardPanel : MonoBehaviour
 {
     [SerializeField] private GameObject cardSlotPrefab;
+    [SerializeField] private GameObject crystalPrefab;
     [SerializeField] private GameObject panel;
+    [SerializeField] private TextMeshProUGUI titleText;
     [SerializeField] private Button continueButton;
     [SerializeField] private Button deckEditButton;
+    [SerializeField] private Button crystalButton;
     [SerializeField] private DeckEditorManger manger;
 
     public static RewardPanel Instance { get; private set; }
-    public List<Card> spawnedCards = new List<Card>();
+    private List<Card> spawnedCards = new List<Card>();
+    private List<GameObject> crystals = new List<GameObject>();
 
     void Awake()
     {
@@ -23,20 +29,21 @@ public class RewardPanel : MonoBehaviour
 
     public void AddCallback(UnityAction onContinue)
     {
+        continueButton.onClick.RemoveAllListeners();
         continueButton.onClick.AddListener(onContinue);
+
+        crystalButton.onClick.RemoveAllListeners();
+        crystalButton.onClick.AddListener(onContinue);
+
+        deckEditButton.onClick.RemoveAllListeners();
         deckEditButton.onClick.AddListener(() => manger.Open(onContinue));
     }
 
-    public void SetRewardCard(CombatCard[] combatCards)
+    public void SetRewardCard(CombatCard[] combatCards, string text)
     {
+        var playersDeck = FindObjectOfType<CardDeck>();
         foreach (var combatCard in combatCards)
         {
-            var playersDeck = FindObjectOfType<CardDeck>();
-            var newCrystal = FindObjectOfType<AddCrystal>();
-
-            if (newCrystal != null)
-                playersDeck.SetCrystals(newCrystal.NewCrystal);
-
             playersDeck.AddNewCard(combatCard);
 
             var cardSlot = Instantiate(cardSlotPrefab, panel.transform);
@@ -49,6 +56,25 @@ public class RewardPanel : MonoBehaviour
             card.CardVisual.LocalCanvas.sortingOrder = 1;
             spawnedCards.Add(card);
         }
+        continueButton.gameObject.SetActive(true);
+        deckEditButton.gameObject.SetActive(true);
+        crystalButton.gameObject.SetActive(false);
+
+        titleText.text = text;
+    }
+
+    public void SetRewardCrystal(string text)
+    {
+        var playersDeck = FindObjectOfType<CardDeck>();
+        playersDeck.AddCrystal();
+        var go = Instantiate(crystalPrefab, panel.transform);
+        crystals.Add(go);
+
+        continueButton.gameObject.SetActive(false);
+        deckEditButton.gameObject.SetActive(false);
+        crystalButton.gameObject.SetActive(true);
+
+        titleText.text = text;
     }
 
     public void ClearBoard()
@@ -59,6 +85,12 @@ public class RewardPanel : MonoBehaviour
             Destroy(card.transform.parent.gameObject);
         }
         spawnedCards.Clear();
+
+        foreach (var card in crystals)
+        {
+            Destroy(card);
+        }
+        crystals.Clear();
         gameObject.SetActive(false);
     }
 }

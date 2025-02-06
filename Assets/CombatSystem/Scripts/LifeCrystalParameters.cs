@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "LifeCrystalParameters", menuName = "New Life Crystal")]
@@ -11,4 +9,10 @@ public class LifeCrystalParameters : ScriptableObject
 
     public int Health => health;
     public int CrystalAmount => crystalAmount;
+
+    public LifeCrystalParameters(int health, int crystalAmount)
+    {
+        this.health = health;
+        this.crystalAmount = crystalAmount;
+    }
 }
