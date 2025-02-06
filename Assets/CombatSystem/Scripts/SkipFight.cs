@@ -12,6 +12,7 @@ public class SkipFight : MonoBehaviour
         if (manager == null)
             manager = FindObjectOfType<CombatStateMachine>();
 
+        manager.gameObject.SetActive(true);
         manager.SetState(new WinState(manager));
 #endif
     }
