@@ -686,7 +686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue: {fileID: 1814984501}
-  nextState: {fileID: 324294183}
+  nextState: {fileID: 0}
 --- !u!114 &324294187
 MonoBehaviour:
   m_ObjectHideFlags: 0
