@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0268bdc1baf48b429d0a02764a4c2ab, type: 3}
+  m_Name: Prohra
+  m_EditorClassIdentifier: 
+  monologues:
+  - speakerName: "Medv\u011Bd"
+    sequence: "Coto? Jakto\u017Ee ze m\u011B nen\xED medv\u011Bd\xED gul\xE1\u0161?"
+  - speakerName: "V\u010Dela\u0159"
+    sequence: "Bav\xED m\u011B si s tebou hr\xE1t. Gul\xE1\u0161 z tebe m\u016F\u017Eu
+      ud\u011Blat v\u017Edycky."
+  - speakerName: "V\u010Dela\u0159"
+    sequence: MUHAHAHAHA
+  - speakerName: "Vyprav\u011B\u010D"
+    sequence: "To je v pr\u010Dic\xEDch, ute\u010D medv\u011Bde!"
+  delayPerSymbol: 0
+  availableChoices: []

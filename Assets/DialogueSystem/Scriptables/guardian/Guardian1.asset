@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0268bdc1baf48b429d0a02764a4c2ab, type: 3}
+  m_Name: Guardian1
+  m_EditorClassIdentifier: 
+  monologues:
+  - speakerName: "M\u011Bstsk\xE1 str\xE1\u017E"
+    sequence: "CO SE TO TU D\u011AJE! KDO ZVONIL! CO TU D\u011AL\xC1 TO ZV\xCD\u0158E?!\r"
+  - speakerName: "Medv\u011Bd"
+    sequence: "Uhni, nem\xE1m \u010Das!\r\n\r"
+  - speakerName: "M\u011Bstsk\xE1 str\xE1\u017E"
+    sequence: "ZHY\u0147 B\xCDD\xC1KU!"
+  - speakerName: "Vyprav\u011B\u010D"
+    sequence: "Na\u0161tvan\xFD str\xE1\u017Ece se se v\u0161\xED vervou vrhnul na
+      medv\u011Bda. "
+  delayPerSymbol: 0
+  availableChoices: []
