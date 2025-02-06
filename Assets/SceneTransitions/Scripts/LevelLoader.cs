@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -5,6 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
+    [Serializable]
+    struct SceneSaveElement
+    {
+        public string sceneId;
+        public GameObject[] sceneObjects;
+    }
+
+    [SerializeField] private SceneSaveElement[] elementsToSave;
     [SerializeField] private Animator transitionAnimator;
 
     public event Action<AsyncOperation> OnLoadFinish;

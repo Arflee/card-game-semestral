@@ -13,7 +13,6 @@ public class WinState : CombatState
 
     public override IEnumerator EnterState()
     {
-        DOTween.Clear(true);
         _gameHandler.PlayerWonGame(SceneManager.GetActiveScene().name);
         yield return null;
     }
