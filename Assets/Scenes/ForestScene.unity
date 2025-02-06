@@ -717,7 +717,7 @@ Transform:
   m_GameObject: {fileID: 60487293}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.69, y: -9.68, z: 0}
+  m_LocalPosition: {x: -1.69, y: -9.68, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2169,6 +2169,55 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6150520261b024478798fb446e0a83f, type: 3}
+--- !u!1 &226308044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 226308045}
+  - component: {fileID: 226308046}
+  m_Layer: 0
+  m_Name: PreVcely
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &226308045
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226308044}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.0842514, y: -10.941146, z: -4.0269046}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1818846953}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &226308046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226308044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776008d1a78a36645b0f7a603bdf4ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogueSequence: {fileID: 11400000, guid: 2276bfc45780a6e4cac9d629af99bb49, type: 2}
+  dialogueCanvas: {fileID: 995863022}
+  dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
+  skipInEditor: 0
+  choiceEvents: []
 --- !u!4 &229937339 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6207028001763537462, guid: 5e313c0b0fe55264baad5705d196b1a8, type: 3}
@@ -8808,7 +8857,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020789508}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 274bcd6630a83344cb6a66bdfb5ea307, type: 3}
   m_Name: 
@@ -8887,7 +8936,7 @@ MonoBehaviour:
   points:
   - {x: 3.6003122, y: -8.519721}
   gizmosColor: {r: 1, g: 0, b: 0.2639537, a: 1}
-  nextState: {fileID: 1020789532}
+  nextState: {fileID: 1020789536}
 --- !u!114 &1020789517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8933,7 +8982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fae04ba74595d34c82711b76765fc23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 20
   distanceThreshold: 1
   points:
   - {x: 4.725389, y: -9.176253}
@@ -8946,7 +8995,7 @@ MonoBehaviour:
   obstacles:
     serializedVersion: 2
     m_Bits: 0
-  nextState: {fileID: 0}
+  nextState: {fileID: 1020789532}
   whenPathBlockedState: {fileID: 0}
 --- !u!114 &1020789527
 MonoBehaviour:
@@ -8961,7 +9010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: 2 BeekeeperFight
-  playerPosition: {x: 1.2255585, y: -9.49207}
+  playerPosition: {x: 6.883289, y: -8.817114}
   nextState: {fileID: 1020789517}
 --- !u!114 &1020789531
 MonoBehaviour:
@@ -8995,6 +9044,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue: {fileID: 1567604838}
+  nextState: {fileID: 0}
+--- !u!114 &1020789536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020789508}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1670148a1d7ec0449d38992a78e81a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 226308046}
   nextState: {fileID: 1020789518}
 --- !u!4 &1023169173 stripped
 Transform:
@@ -15383,6 +15446,7 @@ Transform:
   - {fileID: 800046537}
   - {fileID: 993424456}
   - {fileID: 1567604837}
+  - {fileID: 226308045}
   - {fileID: 88047381}
   - {fileID: 95889752}
   - {fileID: 1185685035}
@@ -18323,13 +18387,16 @@ PrefabInstance:
       addedObject: {fileID: 1020789516}
     - targetCorrespondingSourceObject: {fileID: 5414330540327196691, guid: af3b7c9253229c34aa21b8d0d298fe2b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1020789532}
+      addedObject: {fileID: 1020789536}
     - targetCorrespondingSourceObject: {fileID: 5414330540327196691, guid: af3b7c9253229c34aa21b8d0d298fe2b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1020789518}
     - targetCorrespondingSourceObject: {fileID: 5414330540327196691, guid: af3b7c9253229c34aa21b8d0d298fe2b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1020789519}
+    - targetCorrespondingSourceObject: {fileID: 5414330540327196691, guid: af3b7c9253229c34aa21b8d0d298fe2b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1020789532}
   m_SourcePrefab: {fileID: 100100000, guid: af3b7c9253229c34aa21b8d0d298fe2b, type: 3}
 --- !u!1001 &5305305656738996720
 PrefabInstance:

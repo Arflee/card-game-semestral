@@ -10,15 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0268bdc1baf48b429d0a02764a4c2ab, type: 3}
-  m_Name: VcelyGone
+  m_Name: VcelyPregone
   m_EditorClassIdentifier: 
   monologues:
   - speakerName: "Medv\u011Bd"
-    sequence: "VRA\u0164 SE TY \u010C\xD3RKO!"
-  - speakerName: "Medv\u011Bd"
-    sequence: "To ne, co budeme d\u011Blat? V\u017Edy\u0165 tohle existenci\xE1ln\u011B
-      ohro\u017Euje celou na\u0161\xED rodinu! "
-  - speakerName: "Medv\u011Bd"
-    sequence: "Mus\xEDm ty v\u010Dely z\xEDskat zp\u011Bt!"
+    sequence: "Co to d\u011Bl\xE1\u0161?"
   delayPerSymbol: 0
   availableChoices: []
