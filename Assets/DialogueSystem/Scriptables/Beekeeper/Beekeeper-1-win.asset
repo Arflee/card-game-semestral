@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0268bdc1baf48b429d0a02764a4c2ab, type: 3}
+  m_Name: Beekeeper-1-win
+  m_EditorClassIdentifier: 
+  monologues:
+  - speakerName: "V\u010Dela\u0159"
+    sequence: "Jak si vyhr\xE1l???"
+  - speakerName: "V\u010Dela\u0159"
+    sequence: "Nevad\xED, je\u0161t\u011B se mus\xED st\xE1t zbytek hry, tak si p\u0159edstav,
+      \u017Ee si prohr\xE1l."
+  - speakerName: "Medv\u011Bd"
+    sequence: "Co to mele\u0161?"
+  delayPerSymbol: 0
+  availableChoices: []
