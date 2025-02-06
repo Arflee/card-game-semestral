@@ -18,7 +18,6 @@ public class TriggerBehaviour : BehaviourState
 
     protected virtual void Update()
     {
-        Debug.Log("Triggered: " + triggeredThisFrame);
         if (Physics2D.OverlapCollider(triggerArea, contactFilter, new Collider2D[1]) > 0)
         {
             if (triggeredThisFrame)
