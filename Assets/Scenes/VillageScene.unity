@@ -563,10 +563,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameId: 4 GoatFight
   dialogueOnDidntFight: {fileID: 1308711518}
-  dialogueOnWin: {fileID: 0}
-  dialogueOnLose: {fileID: 0}
+  dialogueOnWin: {fileID: 217235674}
+  dialogueOnLose: {fileID: 1972776473}
   onWinNextState: {fileID: 0}
-  onLoseNextState: {fileID: 0}
+  onLoseNextState: {fileID: 89607952}
   onDidntFightNextState: {fileID: 89607952}
 --- !u!114 &89607954
 MonoBehaviour:
@@ -627,10 +627,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameId: 4 AngryGoatFight
   dialogueOnDidntFight: {fileID: 64676642}
-  dialogueOnWin: {fileID: 0}
-  dialogueOnLose: {fileID: 0}
+  dialogueOnWin: {fileID: 217235674}
+  dialogueOnLose: {fileID: 1972776473}
   onWinNextState: {fileID: 0}
-  onLoseNextState: {fileID: 0}
+  onLoseNextState: {fileID: 89607956}
   onDidntFightNextState: {fileID: 89607956}
 --- !u!114 &89607958
 MonoBehaviour:
@@ -1640,6 +1640,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &217235672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 217235673}
+  - component: {fileID: 217235674}
+  m_Layer: 0
+  m_Name: GoatDialogue-win
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &217235673
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217235672}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1213148845}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &217235674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217235672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776008d1a78a36645b0f7a603bdf4ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogueSequence: {fileID: 11400000, guid: 279ea8a57695c1647acec3e142a593b9, type: 2}
+  dialogueCanvas: {fileID: 1547922503}
+  dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
+  skipInEditor: 0
+  choiceEvents: []
 --- !u!1 &270839877
 GameObject:
   m_ObjectHideFlags: 0
@@ -6119,6 +6168,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1308711517}
+  - {fileID: 1972776472}
+  - {fileID: 217235673}
   - {fileID: 429614388}
   - {fileID: 2062428176}
   - {fileID: 1645328779}
@@ -6533,7 +6584,7 @@ MonoBehaviour:
   gameId: 6 BeekeeperFight
   dialogueOnDidntFight: {fileID: 2062428177}
   dialogueOnWin: {fileID: 0}
-  dialogueOnLose: {fileID: 0}
+  dialogueOnLose: {fileID: 1645328780}
   onWinNextState: {fileID: 1329931047}
   onLoseNextState: {fileID: 1329931048}
   onDidntFightNextState: {fileID: 1329931048}
@@ -10070,6 +10121,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1972776471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1972776472}
+  - component: {fileID: 1972776473}
+  m_Layer: 0
+  m_Name: GoatDialogue-lost
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1972776472
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972776471}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1213148845}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1972776473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972776471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776008d1a78a36645b0f7a603bdf4ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogueSequence: {fileID: 11400000, guid: 4c046dcfc492e864d8208fec6a16edb6, type: 2}
+  dialogueCanvas: {fileID: 1547922503}
+  dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
+  skipInEditor: 0
+  choiceEvents: []
 --- !u!1001 &1978419004
 PrefabInstance:
   m_ObjectHideFlags: 0

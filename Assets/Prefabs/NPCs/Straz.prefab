@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameId: 5 GuardFight
-  dialogueOnDidntFight: {fileID: 7511781868651567024}
+  dialogueOnDidntFight: {fileID: 0}
   dialogueOnWin: {fileID: 0}
   dialogueOnLose: {fileID: 0}
   onWinNextState: {fileID: 8578590345995790255}
