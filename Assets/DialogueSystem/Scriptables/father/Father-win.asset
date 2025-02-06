@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0268bdc1baf48b429d0a02764a4c2ab, type: 3}
   m_Name: Father-win
   m_EditorClassIdentifier: 
-  monologues: []
+  monologues:
+  - speakerName: "T\xE1ta"
+    sequence: "Dostal si m\u011B. Asi jsem t\u011B podcenil. Ale mus\xEDm t\u011B
+      varovat, tam venku \u010Dekaj\xED monstra. Pros\xEDm t\u011B, necho\u010F."
+  - speakerName: "Medv\u011Bd"
+    sequence: "Mus\xEDm j\xEDt. Je to m\u016Fj medv\u011Bd\xED osud."
   delayPerSymbol: 0
   availableChoices: []

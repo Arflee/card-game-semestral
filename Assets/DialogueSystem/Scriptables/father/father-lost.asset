@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0268bdc1baf48b429d0a02764a4c2ab, type: 3}
   m_Name: father-lost
   m_EditorClassIdentifier: 
-  monologues: []
+  monologues:
+  - speakerName: "T\xE1ta"
+    sequence: "TY SI NED\xC1\u0160 POKOJ? NEPUST\xCDM T\u011A!"
+  - speakerName: "Vyprav\u011B\u010D"
+    sequence: "Mluvil pravdu, pustit sv\xE9ho syna opravdu necht\u011Bl"
   delayPerSymbol: 0
   availableChoices: []
