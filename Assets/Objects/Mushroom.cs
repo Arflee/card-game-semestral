@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
 public class Mushroom : MonoBehaviour
@@ -17,8 +18,10 @@ public class Mushroom : MonoBehaviour
 
     private void Eat()
     {
-        var playersDeck = FindObjectOfType<CardDeck>();
-        playersDeck.AddNewCard(card);
+        var reward = RewardPanel.Instance;
+        reward.gameObject.SetActive(true);
+        reward.SetRewardCard(new [] { card });
+        reward.AddCallback(() => reward.gameObject.SetActive(false));
         Destroy(gameObject);
     }
 
