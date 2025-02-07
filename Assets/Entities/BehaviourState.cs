@@ -3,6 +3,7 @@ using UnityEngine;
 
 public abstract class BehaviourState : MonoBehaviour
 {
+    public bool saveState = true;
     private string _id;
 
     public event Func<bool> CancelFinish;

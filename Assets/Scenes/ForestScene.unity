@@ -655,7 +655,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &60487294
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -735,6 +735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a58f43446f287814fa837a724d8c53ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
 --- !u!114 &60487298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -747,6 +748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bcd6630a83344cb6a66bdfb5ea307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   triggerArea: {fileID: 1546052060}
   layerMask:
     serializedVersion: 2
@@ -764,6 +766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e9cd33ea07c63c4d8ee0d5f7cb5c438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   speed: 4
   distanceThreshold: 0.1
   points:
@@ -782,6 +785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 577fbf8a5ca89344b8aeb1cb56822c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   gameId: 1 MomFight
   dialogueOnDidntFight: {fileID: 2069353502}
   dialogueOnWin: {fileID: 800046538}
@@ -801,6 +805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31fca91b69a4a844287408af506b0fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   sceneName: 1 MomFight
   playerPosition: {x: -4.617176, y: -9.725503}
   nextState: {fileID: 0}
@@ -7326,7 +7331,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &880324601
 Transform:
   m_ObjectHideFlags: 0
@@ -8376,6 +8381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 513abbf72955b044d8944bf667fbbc0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   nextState: {fileID: 0}
   go: {fileID: 99946593}
 --- !u!114 &975658906
@@ -8390,6 +8396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bcd6630a83344cb6a66bdfb5ea307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   triggerArea: {fileID: 99946594}
   layerMask:
     serializedVersion: 2
@@ -8407,6 +8414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31fca91b69a4a844287408af506b0fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   sceneName: 3 DadFight
   playerPosition: {x: 38.57567, y: -19.861925}
   nextState: {fileID: 0}
@@ -8422,6 +8430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 577fbf8a5ca89344b8aeb1cb56822c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   gameId: 3 DadFight
   dialogueOnDidntFight: {fileID: 1575068746}
   dialogueOnWin: {fileID: 770571646}
@@ -8810,11 +8819,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.1972847
+      value: 5.1947594
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.49776173
+      value: 0.4977646
       objectReference: {fileID: 0}
     - target: {fileID: 2684559008331962717, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_AnchorMax.y
@@ -9032,6 +9041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fae04ba74595d34c82711b76765fc23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   speed: 3.5
   distanceThreshold: 0.5
   points:
@@ -9056,6 +9066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bcd6630a83344cb6a66bdfb5ea307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   triggerArea: {fileID: 1569556370}
   layerMask:
     serializedVersion: 2
@@ -9073,6 +9084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bcd6630a83344cb6a66bdfb5ea307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   triggerArea: {fileID: 1020789515}
   layerMask:
     serializedVersion: 2
@@ -9125,6 +9137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e9cd33ea07c63c4d8ee0d5f7cb5c438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   speed: 2
   distanceThreshold: 0.5
   points:
@@ -9143,6 +9156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c9cbb92a6ff6ea4ba9b1f395230ca63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   nextState: {fileID: 1020789516}
   minTimeActive: 2
   maxTimeActive: 2
@@ -9158,6 +9172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54b527df4a6b20f449a6ed8798bf5617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   honeyTrees:
   - {fileID: 1787639551}
   - {fileID: 417048577}
@@ -9176,6 +9191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fae04ba74595d34c82711b76765fc23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   speed: 20
   distanceThreshold: 1
   points:
@@ -9203,6 +9219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31fca91b69a4a844287408af506b0fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   sceneName: 2 BeekeeperFight
   playerPosition: {x: 6.883289, y: -8.817114}
   nextState: {fileID: 1020789517}
@@ -9218,6 +9235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 577fbf8a5ca89344b8aeb1cb56822c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   gameId: 2 BeekeeperFight
   dialogueOnDidntFight: {fileID: 88047382}
   dialogueOnWin: {fileID: 1185685036}
@@ -9237,6 +9255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1670148a1d7ec0449d38992a78e81a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   dialogue: {fileID: 1567604838}
   nextState: {fileID: 0}
 --- !u!114 &1020789536
@@ -9251,6 +9270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1670148a1d7ec0449d38992a78e81a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   dialogue: {fileID: 226308046}
   nextState: {fileID: 1020789518}
 --- !u!4 &1023169173 stripped
@@ -13121,6 +13141,83 @@ Transform:
   - {fileID: 1569556369}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1501237676
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1501237677}
+  - component: {fileID: 1501237678}
+  m_Layer: 0
+  m_Name: EagleDestroyTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1501237677
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501237676}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.02, y: -6.25, z: 0}
+  m_LocalScale: {x: 3.50625, y: 3.9125, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1601592895}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1501237678
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501237676}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.010534998}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4, y: 4}
+  m_EdgeRadius: 0
 --- !u!4 &1503008319 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2754413547690233697, guid: d06e323b031426649a1fa684fd936a6b, type: 3}
@@ -13388,6 +13485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bcd6630a83344cb6a66bdfb5ea307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   triggerArea: {fileID: 2060602736}
   layerMask:
     serializedVersion: 2
@@ -13405,6 +13503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 577fbf8a5ca89344b8aeb1cb56822c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   gameId: 2 EagleFight
   dialogueOnDidntFight: {fileID: 1334161689}
   dialogueOnWin: {fileID: 106322974}
@@ -14260,6 +14359,7 @@ GameObject:
   - component: {fileID: 1601592895}
   - component: {fileID: 1601592894}
   - component: {fileID: 1601592902}
+  - component: {fileID: 1601592909}
   - component: {fileID: 1601592908}
   - component: {fileID: 1601592905}
   - component: {fileID: 1601592903}
@@ -14343,6 +14443,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 880324601}
+  - {fileID: 1501237677}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1601592896
@@ -14471,6 +14572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99699134f0539d949b00f7f6e4931421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   source: {fileID: 1601592896}
   sound:
     clips:
@@ -14493,6 +14595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c9cbb92a6ff6ea4ba9b1f395230ca63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   nextState: {fileID: 1601592899}
   minTimeActive: 0.2
   maxTimeActive: 5
@@ -14508,6 +14611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a3f0f810fd2212449a88ba0e5083f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   nextStates:
   - {fileID: 1601592898}
   - {fileID: 1601592897}
@@ -14525,6 +14629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e9cd33ea07c63c4d8ee0d5f7cb5c438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   speed: 5
   distanceThreshold: 0.25
   points:
@@ -14550,6 +14655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bcd6630a83344cb6a66bdfb5ea307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 0
   triggerArea: {fileID: 880324602}
   layerMask:
     serializedVersion: 2
@@ -14567,6 +14673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31fca91b69a4a844287408af506b0fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 0
   sceneName: 2 EagleFight
   playerPosition: {x: 36.678185, y: -4.5949306}
   nextState: {fileID: 0}
@@ -14582,6 +14689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a58f43446f287814fa837a724d8c53ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
 --- !u!95 &1601592906
 Animator:
   serializedVersion: 5
@@ -14627,13 +14735,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 577fbf8a5ca89344b8aeb1cb56822c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   gameId: 2 EagleFight
   dialogueOnDidntFight: {fileID: 445453501}
   dialogueOnWin: {fileID: 0}
   dialogueOnLose: {fileID: 950659999}
-  onWinNextState: {fileID: 1601592905}
+  onWinNextState: {fileID: 1601592909}
   onLoseNextState: {fileID: 1601592903}
   onDidntFightNextState: {fileID: 1601592903}
+--- !u!114 &1601592909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601592893}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274bcd6630a83344cb6a66bdfb5ea307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveState: 0
+  triggerArea: {fileID: 1501237678}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  nextState: {fileID: 1601592905}
 --- !u!1001 &1608070558
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18760,7 +18887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5414330540327196691, guid: af3b7c9253229c34aa21b8d0d298fe2b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -26,7 +26,10 @@ public class StateManager : MonoBehaviour
         BehaviourState[] states = FindObjectsOfType<BehaviourState>();
         foreach (BehaviourState state in states)
         {
-            _states[state.GetId()] = state.enabled;
+            if (state.saveState)
+            {
+                _states[state.GetId()] = state.enabled;
+            }
         }
     }
 
