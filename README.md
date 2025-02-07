@@ -2,7 +2,7 @@
 
 ## Game description
 
-"TEAM 3" (working title) is an adventure deck-building game set in a magical world. The player takes on the role of a young bear, the game's main character. One day, an evil beekeeper steals all the bees from the bear's home forest, prompting the bear to begin an epic adventure to rescue them.
+"Sladká pomsta" is an adventure deck-building game set in a magical world. The player takes on the role of a young bear, the game's main character. One day, an evil beekeeper steals all the bees from the bear's home forest, prompting the bear to begin an epic adventure to rescue them.
 
 ## Links
 
