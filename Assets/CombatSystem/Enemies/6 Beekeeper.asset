@@ -28,5 +28,13 @@ MonoBehaviour:
     _shuffleDeck: 0
     _reshufleWhenEmpty: 1
     _cardsPerTurn: 1
-  _reward: []
+  _reward:
+  - {fileID: 11400000, guid: 59d95d73542b472449d0f1f155d14172, type: 2}
+  - {fileID: 11400000, guid: 59d95d73542b472449d0f1f155d14172, type: 2}
+  - {fileID: 11400000, guid: 59d95d73542b472449d0f1f155d14172, type: 2}
+  - {fileID: 11400000, guid: 59d95d73542b472449d0f1f155d14172, type: 2}
+  - {fileID: 11400000, guid: 59d95d73542b472449d0f1f155d14172, type: 2}
+  - {fileID: 11400000, guid: 59d95d73542b472449d0f1f155d14172, type: 2}
   _crystals: {fileID: 11400000, guid: e5d2ce0ddd2f02740b706f1581dc6903, type: 2}
+  inGameDialogues: []
+  tutorial: 0
