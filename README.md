@@ -1,4 +1,4 @@
-# TEAM 4
+# Sladká pomsta
 
 ## Game description
 
