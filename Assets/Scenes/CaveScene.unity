@@ -556,6 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fae04ba74595d34c82711b76765fc23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   speed: 4
   distanceThreshold: 0.1
   points:
@@ -581,6 +582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 577fbf8a5ca89344b8aeb1cb56822c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   gameId: 0 SiblingFight
   dialogueOnDidntFight: {fileID: 0}
   dialogueOnWin: {fileID: 0}
@@ -600,6 +602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bcd6630a83344cb6a66bdfb5ea307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   triggerArea: {fileID: 720060303}
   layerMask:
     serializedVersion: 2
@@ -684,6 +687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1670148a1d7ec0449d38992a78e81a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   dialogue: {fileID: 1814984501}
   nextState: {fileID: 0}
 --- !u!114 &324294187
@@ -698,6 +702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214829a97f2754d4cba5a82e25543ab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   componentsToEnable:
   - {fileID: 324294183}
   nextState: {fileID: 324294181}
@@ -846,6 +851,9 @@ MonoBehaviour:
   dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
   skipInEditor: 0
   choiceEvents: []
+  onDialogueEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &528551031
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,6 +955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bcd6630a83344cb6a66bdfb5ea307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   triggerArea: {fileID: 783385012}
   layerMask:
     serializedVersion: 2
@@ -964,6 +973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31fca91b69a4a844287408af506b0fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 0
   sceneName: 0 SiblingFight
   playerPosition: {x: -2.5324826, y: -0.7945862}
   nextState: {fileID: 0}
@@ -979,6 +989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 577fbf8a5ca89344b8aeb1cb56822c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   gameId: 0 SiblingFight
   dialogueOnDidntFight: {fileID: 511029155}
   dialogueOnWin: {fileID: 1219770864}
@@ -998,6 +1009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33a859a40d123b940953f7abfa4accb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   componentsToDisable:
   - {fileID: 1847920921}
   nextState: {fileID: 0}
@@ -1013,6 +1025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 577fbf8a5ca89344b8aeb1cb56822c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   gameId: 0 SiblingFight
   dialogueOnDidntFight: {fileID: 0}
   dialogueOnWin: {fileID: 0}
@@ -1493,6 +1506,9 @@ MonoBehaviour:
   dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
   skipInEditor: 0
   choiceEvents: []
+  onDialogueEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &894160031 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6642431064650837467, guid: 8c96585d3a79bd146a3a0483abf59608, type: 3}
@@ -1755,7 +1771,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.6127806
+      value: 5.6102552
       objectReference: {fileID: 0}
     - target: {fileID: 2444067561812323941, guid: f0ecbd53e88f41549a0f5deedaa98e60, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2016,6 +2032,9 @@ MonoBehaviour:
   dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
   skipInEditor: 0
   choiceEvents: []
+  onDialogueEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1225799803 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5036861095795135201, guid: b35b020f6c9528e49afbe3030611f352, type: 3}
@@ -2668,6 +2687,9 @@ MonoBehaviour:
   dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
   skipInEditor: 0
   choiceEvents: []
+  onDialogueEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1847920919
 GameObject:
   m_ObjectHideFlags: 0
@@ -2684,7 +2706,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1847920920
 Transform:
   m_ObjectHideFlags: 0

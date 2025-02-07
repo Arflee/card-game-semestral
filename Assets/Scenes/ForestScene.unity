@@ -805,7 +805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31fca91b69a4a844287408af506b0fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveState: 1
+  saveState: 0
   sceneName: 1 MomFight
   playerPosition: {x: -4.617176, y: -9.725503}
   nextState: {fileID: 0}
@@ -9219,7 +9219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31fca91b69a4a844287408af506b0fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveState: 1
+  saveState: 0
   sceneName: 2 BeekeeperFight
   playerPosition: {x: 6.883289, y: -8.817114}
   nextState: {fileID: 1020789517}
@@ -9257,7 +9257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   saveState: 1
   dialogue: {fileID: 1567604838}
-  nextState: {fileID: 0}
+  nextState: {fileID: 1020789540}
 --- !u!114 &1020789536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9273,6 +9273,19 @@ MonoBehaviour:
   saveState: 1
   dialogue: {fileID: 226308046}
   nextState: {fileID: 1020789518}
+--- !u!114 &1020789540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020789508}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a58f43446f287814fa837a724d8c53ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveState: 1
 --- !u!4 &1023169173 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4515634688797879571, guid: d8787e712e3cb9549a8517b6ef28b24f, type: 3}
@@ -18853,6 +18866,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5414330540327196691, guid: af3b7c9253229c34aa21b8d0d298fe2b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1020789532}
+    - targetCorrespondingSourceObject: {fileID: 5414330540327196691, guid: af3b7c9253229c34aa21b8d0d298fe2b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1020789540}
   m_SourcePrefab: {fileID: 100100000, guid: af3b7c9253229c34aa21b8d0d298fe2b, type: 3}
 --- !u!1001 &5305305656738996720
 PrefabInstance:
