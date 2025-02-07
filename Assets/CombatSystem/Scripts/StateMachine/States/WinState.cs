@@ -1,5 +1,4 @@
-using DG.Tweening;
-using System.Collections;
+ï»¿using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class WinState : CombatState
@@ -13,10 +12,10 @@ public class WinState : CombatState
 
     public override IEnumerator EnterState()
     {
-        if (StateMachine.EnemyInitializer.Enemy.Reward.Length > 0)
+        if (StateMachine.EnemyInitializer.GetRewardCards().Length > 0)
         {
             RewardPanel.Instance.gameObject.SetActive(true);
-            RewardPanel.Instance.SetRewardCard(StateMachine.EnemyInitializer.Enemy.Reward, "Máte nové karty!");
+            RewardPanel.Instance.SetRewardCard(StateMachine.EnemyInitializer.GetRewardCards(), "MÃ¡te novÃ© karty!");
         }
 
         RewardPanel.Instance.AddCallback(() =>

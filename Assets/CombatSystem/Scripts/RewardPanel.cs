@@ -49,7 +49,6 @@ public class RewardPanel : MonoBehaviour
             var cardSlot = Instantiate(cardSlotPrefab, panel.transform);
             var card = cardSlot.GetComponentInChildren<Card>();
             card.Initialize(combatCard, null, panel.transform.position);
-            card.DisableCard();
 
             card.CardVisual.LocalCanvas.overrideSorting = true;
             card.CardVisual.LocalCanvas.sortingLayerName = "Foreground";
