@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fae04ba74595d34c82711b76765fc23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   speed: 5
   distanceThreshold: 0.2
   points:
@@ -197,6 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bcd6630a83344cb6a66bdfb5ea307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   triggerArea: {fileID: 95372121443522841}
   layerMask:
     serializedVersion: 2
@@ -214,6 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 577fbf8a5ca89344b8aeb1cb56822c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 0
   gameId: 5 GuardFight
   dialogueOnDidntFight: {fileID: 0}
   dialogueOnWin: {fileID: 0}
@@ -233,6 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31fca91b69a4a844287408af506b0fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 0
   sceneName: 5 GuardFight
   playerPosition: {x: 32.052765, y: -9.998227}
   nextState: {fileID: 0}
@@ -248,6 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33a859a40d123b940953f7abfa4accb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 1
   componentsToDisable:
   - {fileID: 95372121443522841}
   nextState: {fileID: 0}
@@ -263,6 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 513abbf72955b044d8944bf667fbbc0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveState: 0
   nextState: {fileID: 0}
   go: {fileID: 5835810558243609770}
 --- !u!1 &6098343844032431509
@@ -314,3 +320,6 @@ MonoBehaviour:
   dialogueBubblePrefab: {fileID: 3184751573435302533, guid: 6f623067d6d1db840aa4182f61b891e2, type: 3}
   skipInEditor: 0
   choiceEvents: []
+  onDialogueEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
