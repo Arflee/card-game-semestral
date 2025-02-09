@@ -556,7 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fae04ba74595d34c82711b76765fc23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveState: 1
+  saveState: 0
   speed: 4
   distanceThreshold: 0.1
   points:
@@ -582,7 +582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 577fbf8a5ca89344b8aeb1cb56822c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveState: 1
+  saveState: 0
   gameId: 0 SiblingFight
   dialogueOnDidntFight: {fileID: 0}
   dialogueOnWin: {fileID: 0}
@@ -602,7 +602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274bcd6630a83344cb6a66bdfb5ea307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveState: 1
+  saveState: 0
   triggerArea: {fileID: 720060303}
   layerMask:
     serializedVersion: 2
@@ -687,7 +687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1670148a1d7ec0449d38992a78e81a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveState: 1
+  saveState: 0
   dialogue: {fileID: 1814984501}
   nextState: {fileID: 0}
 --- !u!114 &324294187
@@ -702,7 +702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214829a97f2754d4cba5a82e25543ab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveState: 1
+  saveState: 0
   componentsToEnable:
   - {fileID: 324294183}
   nextState: {fileID: 324294181}

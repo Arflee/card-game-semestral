@@ -8414,7 +8414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31fca91b69a4a844287408af506b0fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveState: 1
+  saveState: 0
   sceneName: 3 DadFight
   playerPosition: {x: 38.57567, y: -19.861925}
   nextState: {fileID: 0}
